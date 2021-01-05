@@ -5,6 +5,7 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "AppDelegate.h"
+#import "AppKey.h"
 
 @interface AppDelegate ()
 
@@ -14,7 +15,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Initialize TuyaSmartSDK
+    [[TuyaSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
+    
+    // Enable debug mode, which allows you to see logs.
+    #ifdef DEBUG
+    [[TuyaSmartSDK sharedInstance] setDebugMode:YES];
+    #else
+    #endif
+    
     return YES;
 }
 

@@ -10,12 +10,14 @@
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
-		AF54CA5625A4191000FCAC1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5525A4191000FCAC1F /* ViewController.m */; };
 		AF54CA5925A4191000FCAC1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5725A4191000FCAC1F /* Main.storyboard */; };
 		AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */; };
 		AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */; };
 		AF54CA6125A4191A00FCAC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA6025A4191A00FCAC1F /* main.m */; };
 		AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = AF54CAA125A44C4D00FCAC1F /* t_s.bmp */; };
+		AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */; };
+		AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAAD25A4610D00FCAC1F /* RegisterTableViewController.m */; };
+		AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAB125A46C8000FCAC1F /* LoginTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,6 @@
 		AF54CA4F25A4191000FCAC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF54CA5125A4191000FCAC1F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		AF54CA5225A4191000FCAC1F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		AF54CA5425A4191000FCAC1F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AF54CA5525A4191000FCAC1F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF54CA5825A4191000FCAC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF54CA5D25A4191A00FCAC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,12 @@
 		AF54CA8925A4426F00FCAC1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF54CAA025A443D800FCAC1F /* AppKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKey.h; sourceTree = "<group>"; };
 		AF54CAA125A44C4D00FCAC1F /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
+		AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		AF54CAAC25A4610D00FCAC1F /* RegisterTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
+		AF54CAAD25A4610D00FCAC1F /* RegisterTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
+		AF54CAB025A46C8000FCAC1F /* LoginTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
+		AF54CAB125A46C8000FCAC1F /* LoginTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
 		C9842C2AD6012B1DDF4F810E /* Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; path = "Target Support Files/Pods-TuyaAppSDKSample-iOS-ObjC/Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,9 +101,13 @@
 				AF54CA4F25A4191000FCAC1F /* AppDelegate.m */,
 				AF54CA5125A4191000FCAC1F /* SceneDelegate.h */,
 				AF54CA5225A4191000FCAC1F /* SceneDelegate.m */,
-				AF54CA5425A4191000FCAC1F /* ViewController.h */,
-				AF54CA5525A4191000FCAC1F /* ViewController.m */,
 				AF54CA5725A4191000FCAC1F /* Main.storyboard */,
+				AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */,
+				AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */,
+				AF54CAAC25A4610D00FCAC1F /* RegisterTableViewController.h */,
+				AF54CAAD25A4610D00FCAC1F /* RegisterTableViewController.m */,
+				AF54CAB025A46C8000FCAC1F /* LoginTableViewController.h */,
+				AF54CAB125A46C8000FCAC1F /* LoginTableViewController.m */,
 				AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */,
 				AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */,
 				AF54CAA125A44C4D00FCAC1F /* t_s.bmp */,
@@ -239,7 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF54CA5625A4191000FCAC1F /* ViewController.m in Sources */,
+				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
+				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
+				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,
@@ -388,6 +400,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZYG66RMG;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "TuyaAppSDKSample-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +422,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZYG66RMG;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "TuyaAppSDKSample-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
