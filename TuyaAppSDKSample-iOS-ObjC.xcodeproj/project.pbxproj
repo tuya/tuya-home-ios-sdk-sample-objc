@@ -15,6 +15,7 @@
 		AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */; };
 		AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */; };
 		AF54CA6125A4191A00FCAC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA6025A4191A00FCAC1F /* main.m */; };
+		AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = AF54CAA125A44C4D00FCAC1F /* t_s.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AF54CA6025A4191A00FCAC1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF54CA8925A4426F00FCAC1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF54CAA025A443D800FCAC1F /* AppKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKey.h; sourceTree = "<group>"; };
+		AF54CAA125A44C4D00FCAC1F /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		C9842C2AD6012B1DDF4F810E /* Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; path = "Target Support Files/Pods-TuyaAppSDKSample-iOS-ObjC/Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				AF54CA5725A4191000FCAC1F /* Main.storyboard */,
 				AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */,
 				AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */,
+				AF54CAA125A44C4D00FCAC1F /* t_s.bmp */,
 				AF54CA5F25A4191A00FCAC1F /* Info.plist */,
 				AF54CA6025A4191A00FCAC1F /* main.m */,
 			);
@@ -165,6 +168,7 @@
 			files = (
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
 				AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */,
+				AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */,
 				AF54CA5925A4191000FCAC1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
