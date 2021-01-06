@@ -23,6 +23,7 @@
 		AF5531BD25A5601E00E13562 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5531BB25A5601E00E13562 /* Login.storyboard */; };
 		AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5531C425A5620900E13562 /* UserInformationTableViewController.m */; };
 		AF5531CA25A564EE00E13562 /* UserInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5531C825A564EE00E13562 /* UserInformation.storyboard */; };
+		AF5531D025A58F8A00E13562 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5531CF25A58F8A00E13562 /* Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		AF5531C325A5620900E13562 /* UserInformationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserInformationTableViewController.h; path = "TuyaAppSDKSample-iOS-ObjC/ViewController/UserManagement/UserInformationTableViewController.h"; sourceTree = SOURCE_ROOT; };
 		AF5531C425A5620900E13562 /* UserInformationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UserInformationTableViewController.m; path = "TuyaAppSDKSample-iOS-ObjC/ViewController/UserManagement/UserInformationTableViewController.m"; sourceTree = SOURCE_ROOT; };
 		AF5531C925A564EE00E13562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserInformation.storyboard; sourceTree = "<group>"; };
+		AF5531CE25A58F8A00E13562 /* Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		AF5531CF25A58F8A00E13562 /* Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		C9842C2AD6012B1DDF4F810E /* Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; path = "Target Support Files/Pods-TuyaAppSDKSample-iOS-ObjC/Pods-TuyaAppSDKSample-iOS-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +118,7 @@
 				AF54CA5225A4191000FCAC1F /* SceneDelegate.m */,
 				AF5531B925A55FD200E13562 /* StoryBoard */,
 				AF5531C025A560CF00E13562 /* ViewController */,
+				AF5531CD25A58F6D00E13562 /* Helper */,
 				AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */,
 				AF54CAA125A44C4D00FCAC1F /* t_s.bmp */,
 				AF54CA5F25A4191A00FCAC1F /* Info.plist */,
@@ -158,6 +162,15 @@
 				AF5531C425A5620900E13562 /* UserInformationTableViewController.m */,
 			);
 			path = UserManagement;
+			sourceTree = "<group>";
+		};
+		AF5531CD25A58F6D00E13562 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AF5531CE25A58F8A00E13562 /* Alert.h */,
+				AF5531CF25A58F8A00E13562 /* Alert.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,

@@ -5,10 +5,9 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "LoginTableViewController.h"
+#import "Alert.h"
 
 @interface LoginTableViewController ()
-
-@property (nonatomic, strong) UIAlertController *alertController;
 
 @property (weak, nonatomic) IBOutlet UITextField *countryCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
@@ -21,31 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [self.alertController addAction:action];
 }
 
 #pragma mark - IBAction
 
 - (IBAction)loginTapped:(UIButton *)sender {
-    [sender setEnabled:NO];
-    __weak typeof (self) weakSelf = self;
-    
     [[TuyaSmartUser sharedInstance] loginByEmail:self.countryCodeTextField.text email:self.emailAddressTextField.text password:self.passwordTextField.text success:^{
-        [weakSelf.alertController setTitle:@"Successfully Logged"];
-        [weakSelf.alertController setMessage:@"Please navigate back."];
+        [Alert showBasicAlertOnVC:self withTitle:@"Successfully Logged" message:@"Please navigate back."];
 
-        [weakSelf presentViewController:weakSelf.alertController animated:true completion:^{
-            [sender setEnabled:YES];
-        }];
     } failure:^(NSError *error) {
-        [weakSelf.alertController setTitle:@"Failed to Login"];
-        [weakSelf.alertController setMessage:error.localizedDescription];
-
-        [weakSelf presentViewController:weakSelf.alertController animated:true completion:^{
-            [sender setEnabled:YES];
-        }];
+        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
     }];
 }
 
