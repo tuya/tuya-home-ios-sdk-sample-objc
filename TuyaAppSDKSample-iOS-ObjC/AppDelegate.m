@@ -24,6 +24,16 @@
     #else
     #endif
     
+    if ([TuyaSmartUser sharedInstance].isLogin) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+        self.window.rootViewController = nav;
+    } else {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+        self.window.rootViewController = nav;
+    }
+    
     return YES;
 }
 

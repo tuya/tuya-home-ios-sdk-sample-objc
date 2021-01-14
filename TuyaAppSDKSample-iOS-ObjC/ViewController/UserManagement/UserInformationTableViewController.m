@@ -8,11 +8,11 @@
 
 @interface UserInformationTableViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *userNameDetailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumberDetailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailAddressDetailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *countryCodeDetailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeZoneDetailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countryCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeZoneLabel;
 
 @end
 
@@ -25,11 +25,11 @@
 }
 
 - (void)presentUserInformation {
-    [self.userNameDetailLabel setText:[[TuyaSmartUser sharedInstance] userName]];
-    [self.phoneNumberDetailLabel setText:[[TuyaSmartUser sharedInstance] phoneNumber]];
-    [self.emailAddressDetailLabel setText:[[TuyaSmartUser sharedInstance] email]];
-    [self.countryCodeDetailLabel setText:[[TuyaSmartUser sharedInstance] countryCode]];
-    [self.timeZoneDetailLabel setText:[[TuyaSmartUser sharedInstance] timezoneId]];
+    [self.userNameLabel setText:[[TuyaSmartUser sharedInstance] userName]];
+    [self.phoneNumberLabel setText:[[TuyaSmartUser sharedInstance] phoneNumber]];
+    [self.emailAddressLabel setText:[[TuyaSmartUser sharedInstance] email]];
+    [self.countryCodeLabel setText:[[TuyaSmartUser sharedInstance] countryCode]];
+    [self.timeZoneLabel setText:[[TuyaSmartUser sharedInstance] timezoneId]];
 }
 
 @end

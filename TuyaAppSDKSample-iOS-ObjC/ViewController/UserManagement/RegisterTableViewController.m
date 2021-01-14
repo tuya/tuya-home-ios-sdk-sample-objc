@@ -10,7 +10,7 @@
 @interface RegisterTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *countryCodeTextField;
-@property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
 
@@ -26,7 +26,7 @@
 #pragma mark - IBAction
 
 - (IBAction)sendVerificationCode:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] sendVerifyCodeByRegisterEmail:self.countryCodeTextField.text email:self.emailAddressTextField.text success:^{
+    [[TuyaSmartUser sharedInstance] sendVerifyCodeByRegisterEmail:self.countryCodeTextField.text email:self.accountTextField.text success:^{
         [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your email for the code."];
 
     } failure:^(NSError *error) {
@@ -35,9 +35,11 @@
 }
 
 - (IBAction)registerTapped:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.emailAddressTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
-        [Alert showBasicAlertOnVC:self withTitle:@"Registered Successfully" message:@"Please navigate back to login your account."];
-
+    [[TuyaSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+        [Alert showBasicAlertOnVC:nav withTitle:@"Registered Successfully" message:@"Please navigate back to login your account."];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
     }];

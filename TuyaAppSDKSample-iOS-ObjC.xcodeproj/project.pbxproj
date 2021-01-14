@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */; };
+		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
+		34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */; };
+		34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2CB325AE947200152CA6 /* Main.storyboard */; };
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
-		AF54CA5925A4191000FCAC1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5725A4191000FCAC1F /* Main.storyboard */; };
 		AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */; };
 		AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */; };
 		AF54CA6125A4191A00FCAC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA6025A4191A00FCAC1F /* main.m */; };
@@ -28,13 +31,18 @@
 
 /* Begin PBXFileReference section */
 		294ED4FB8988BB46DF95A857 /* Pods-TuyaAppSDKSample-iOS-ObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuyaAppSDKSample-iOS-ObjC.release.xcconfig"; path = "Target Support Files/Pods-TuyaAppSDKSample-iOS-ObjC/Pods-TuyaAppSDKSample-iOS-ObjC.release.xcconfig"; sourceTree = "<group>"; };
+		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaSmartMain.storyboard; sourceTree = "<group>"; };
+		34FF2C6925AE8CC900152CA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		34FF2C6A25AE8CC900152CA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		34FF2CAE25AE904E00152CA6 /* UIButton+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
+		34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extensions.m"; sourceTree = "<group>"; };
+		34FF2CB425AE947200152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF54CA4F25A4191000FCAC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF54CA5125A4191000FCAC1F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		AF54CA5225A4191000FCAC1F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		AF54CA5825A4191000FCAC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF54CA5D25A4191A00FCAC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF54CA5F25A4191A00FCAC1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,8 +138,9 @@
 		AF5531B925A55FD200E13562 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				34FF2CB325AE947200152CA6 /* Main.storyboard */,
+				34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */,
 				AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */,
-				AF54CA5725A4191000FCAC1F /* Main.storyboard */,
 				AF5531B125A55F9400E13562 /* Register.storyboard */,
 				AF5531BB25A5601E00E13562 /* Login.storyboard */,
 				AF5531C825A564EE00E13562 /* UserInformation.storyboard */,
@@ -142,6 +151,8 @@
 		AF5531C025A560CF00E13562 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				34FF2C6925AE8CC900152CA6 /* MainViewController.h */,
+				34FF2C6A25AE8CC900152CA6 /* MainViewController.m */,
 				AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */,
 				AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */,
 				AF5531C125A560E500E13562 /* UserManagement */,
@@ -169,6 +180,8 @@
 			children = (
 				AF5531CE25A58F8A00E13562 /* Alert.h */,
 				AF5531CF25A58F8A00E13562 /* Alert.m */,
+				34FF2CAE25AE904E00152CA6 /* UIButton+Extensions.h */,
+				34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -235,9 +248,10 @@
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
 				AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */,
 				AF5531BD25A5601E00E13562 /* Login.storyboard in Resources */,
+				34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */,
 				AF5531CA25A564EE00E13562 /* UserInformation.storyboard in Resources */,
 				AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */,
-				AF54CA5925A4191000FCAC1F /* Main.storyboard in Resources */,
+				34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */,
 				AF5531B325A55F9400E13562 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,9 +325,11 @@
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
+				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
 				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
+				34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */,
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,
@@ -323,10 +339,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF54CA5725A4191000FCAC1F /* Main.storyboard */ = {
+		34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF54CA5825A4191000FCAC1F /* Base */,
+				34FF2C6625AE8B6100152CA6 /* Base */,
+			);
+			name = TuyaSmartMain.storyboard;
+			sourceTree = "<group>";
+		};
+		34FF2CB325AE947200152CA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34FF2CB425AE947200152CA6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

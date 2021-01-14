@@ -20,10 +20,12 @@
 
 #pragma mark - IBAction
 
-- (IBAction)logout:(UIButton *)sender {
+- (IBAction)logoutTapped:(UIButton *)sender {
     [[TuyaSmartUser sharedInstance] loginOut:^{
-        [Alert showBasicAlertOnVC:self withTitle:@"Successfully Logged Out" message:@"Most of the functions will be unusable."];
-
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+        [Alert showBasicAlertOnVC:nav withTitle:@"Successfully Logged Out" message:@"Most of the functions will be unusable."];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:@"Failed to Logout." message:error.localizedDescription];
     }];
