@@ -11,6 +11,12 @@
 		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
 		34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */; };
 		34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2CB325AE947200152CA6 /* Main.storyboard */; };
+		34FF2DF525B02A7C00152CA6 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2DF425B02A7B00152CA6 /* Home.m */; };
+		34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2DF925B02DB600152CA6 /* NewHomeTableViewController.m */; };
+		34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2DFD25B0345500152CA6 /* SwitchHomeTableViewController.m */; };
+		34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */; };
+		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
+		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
@@ -37,6 +43,18 @@
 		34FF2CAE25AE904E00152CA6 /* UIButton+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
 		34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extensions.m"; sourceTree = "<group>"; };
 		34FF2CB425AE947200152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34FF2DF325B02A7B00152CA6 /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
+		34FF2DF425B02A7B00152CA6 /* Home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
+		34FF2DF825B02DB600152CA6 /* NewHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHomeTableViewController.h; sourceTree = "<group>"; };
+		34FF2DF925B02DB600152CA6 /* NewHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHomeTableViewController.m; sourceTree = "<group>"; };
+		34FF2DFC25B0345500152CA6 /* SwitchHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchHomeTableViewController.h; sourceTree = "<group>"; };
+		34FF2DFD25B0345500152CA6 /* SwitchHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchHomeTableViewController.m; sourceTree = "<group>"; };
+		34FF2E0025B03C2C00152CA6 /* HomeListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeListTableViewController.h; sourceTree = "<group>"; };
+		34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeListTableViewController.m; sourceTree = "<group>"; };
+		34FF2E0425B03E7300152CA6 /* HomeDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetailTableViewController.h; sourceTree = "<group>"; };
+		34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableViewController.m; sourceTree = "<group>"; };
+		34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHomeTableViewController.h; sourceTree = "<group>"; };
+		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +98,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34FF2DF225B02A4700152CA6 /* HomeManagement */ = {
+			isa = PBXGroup;
+			children = (
+				34FF2DF325B02A7B00152CA6 /* Home.h */,
+				34FF2DF425B02A7B00152CA6 /* Home.m */,
+				34FF2DF825B02DB600152CA6 /* NewHomeTableViewController.h */,
+				34FF2DF925B02DB600152CA6 /* NewHomeTableViewController.m */,
+				34FF2DFC25B0345500152CA6 /* SwitchHomeTableViewController.h */,
+				34FF2DFD25B0345500152CA6 /* SwitchHomeTableViewController.m */,
+				34FF2E0025B03C2C00152CA6 /* HomeListTableViewController.h */,
+				34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */,
+				34FF2E0425B03E7300152CA6 /* HomeDetailTableViewController.h */,
+				34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */,
+				34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */,
+				34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */,
+			);
+			path = HomeManagement;
+			sourceTree = "<group>";
+		};
 		89046D2CCA6C224CC0D020FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +193,7 @@
 				AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */,
 				AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */,
 				AF5531C125A560E500E13562 /* UserManagement */,
+				34FF2DF225B02A4700152CA6 /* HomeManagement */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -323,15 +361,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
+				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
+				34FF2DF525B02A7C00152CA6 /* Home.m in Sources */,
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
+				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
 				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
 				34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */,
+				34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */,
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
+				34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */,
+				34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
