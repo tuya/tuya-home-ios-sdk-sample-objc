@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgs-Vk-oD9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgs-Vk-oD9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -95,59 +95,58 @@
                                     <outlet property="switchButton" destination="fBr-Lq-lBB" id="v2I-gc-EEG"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="device-slider-cell" id="8oG-0K-BdC" customClass="SliderTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="device-slider-cell" id="H0J-4f-VtG" customClass="SliderTableViewCell">
                                 <rect key="frame" x="20" y="99" width="374" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8oG-0K-BdC" id="Bqn-oP-1hp" customClass="SliderTableViewCell">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H0J-4f-VtG" id="Qaf-Ch-VGg">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E87-xl-6S9">
-                                            <rect key="frame" x="20" y="4" width="334" height="35.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oUG-Nf-G68">
+                                            <rect key="frame" x="20" y="4.5" width="334" height="35"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LUU-W0-dgP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="35.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ist-Da-twW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7z-eY-PgJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efH-xP-fqx">
                                                             <rect key="frame" x="0.0" y="0.0" width="126" height="20.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20.5" id="HB4-MR-3qp"/>
+                                                                <constraint firstAttribute="height" constant="20.5" id="U3d-Tr-IMI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZf-aa-GbJ">
-                                                            <rect key="frame" x="0.0" y="20.5" width="126" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-KF-Io4">
+                                                            <rect key="frame" x="0.0" y="20.5" width="126" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xQg-3h-DYw">
-                                                    <rect key="frame" x="132" y="0.0" width="204" height="36.5"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xCD-Oo-SLD">
+                                                    <rect key="frame" x="132" y="0.0" width="204" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="M6Z-Gm-UXz"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="DGa-qk-0YZ"/>
                                                     </constraints>
                                                     <connections>
-                                                        <action selector="sliderValueChanged:" destination="8oG-0K-BdC" eventType="valueChanged" id="abQ-38-EAL"/>
+                                                        <action selector="sliderValueChanged:" destination="H0J-4f-VtG" eventType="valueChanged" id="G5A-yu-f22"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="E87-xl-6S9" secondAttribute="bottom" constant="4" id="1Wd-Cr-yD3"/>
-                                        <constraint firstItem="E87-xl-6S9" firstAttribute="leading" secondItem="Bqn-oP-1hp" secondAttribute="leadingMargin" id="1xO-xP-u5P"/>
-                                        <constraint firstAttribute="trailing" secondItem="E87-xl-6S9" secondAttribute="trailing" constant="20" symbolic="YES" id="BJj-y5-m8f"/>
-                                        <constraint firstItem="E87-xl-6S9" firstAttribute="top" secondItem="Bqn-oP-1hp" secondAttribute="top" constant="4" id="FQW-jn-Mg3"/>
+                                        <constraint firstItem="oUG-Nf-G68" firstAttribute="centerY" secondItem="Qaf-Ch-VGg" secondAttribute="centerY" id="GI3-qa-cPQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="oUG-Nf-G68" secondAttribute="trailing" constant="20" symbolic="YES" id="e1d-lx-c9T"/>
+                                        <constraint firstItem="oUG-Nf-G68" firstAttribute="leading" secondItem="Qaf-Ch-VGg" secondAttribute="leadingMargin" id="iyo-4Q-2de"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="detailLabel" destination="eZf-aa-GbJ" id="ImP-vj-wD9"/>
-                                    <outlet property="label" destination="f7z-eY-PgJ" id="qG4-9T-YqW"/>
-                                    <outlet property="slider" destination="xQg-3h-DYw" id="s0D-gp-nhW"/>
+                                    <outlet property="detailLabel" destination="Sq7-KF-Io4" id="3Qs-Wx-U6W"/>
+                                    <outlet property="label" destination="efH-xP-fqx" id="xww-aj-5FC"/>
+                                    <outlet property="slider" destination="xCD-Oo-SLD" id="ZkT-sq-cpc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="device-enum-cell" textLabel="m2H-Zb-62q" detailTextLabel="d0r-od-8Ve" style="IBUITableViewCellStyleValue1" id="hup-uI-Qwe" customClass="EnumTableViewCell">
