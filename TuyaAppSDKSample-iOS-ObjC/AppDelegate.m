@@ -6,6 +6,7 @@
 
 #import "AppDelegate.h"
 #import "AppKey.h"
+#import "SVProgressHUD.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,9 @@
     #else
     #endif
     
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    self.window.frame = [[UIScreen mainScreen] bounds];
+    
     if ([TuyaSmartUser sharedInstance].isLogin) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
@@ -33,7 +37,8 @@
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         self.window.rootViewController = nav;
     }
-    
+    [[UIApplication sharedApplication] delegate].window = self.window;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

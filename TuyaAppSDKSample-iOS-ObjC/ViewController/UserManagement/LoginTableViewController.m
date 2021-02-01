@@ -28,7 +28,6 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         [UIApplication sharedApplication].keyWindow.rootViewController = nav;
-        [Alert showBasicAlertOnVC:nav withTitle:@"Successfully Logged" message:@"Please navigate back."];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
     }];

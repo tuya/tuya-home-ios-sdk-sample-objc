@@ -1,0 +1,42 @@
+/* Class = "UILabel"; text = "AP Mode"; ObjectID = "8Hz-95-i0i"; */
+"8Hz-95-i0i.text" = "AP 模式";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "Aq0-Hw-9TL"; */
+"Aq0-Hw-9TL.text" = "详情";
+
+/* Class = "UITableViewSection"; headerTitle = "Home Management"; ObjectID = "fDa-sc-eBQ"; */
+"fDa-sc-eBQ.headerTitle" = "家庭管理";
+
+/* Class = "UILabel"; text = "Home List"; ObjectID = "hVu-vd-yrL"; */
+"hVu-vd-yrL.text" = "家庭列表";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "hWi-1l-FSC"; */
+"hWi-1l-FSC.normalTitle" = "退出登录";
+
+/* Class = "UITableViewSection"; headerTitle = "User Management"; ObjectID = "llS-dv-ZAG"; */
+"llS-dv-ZAG.headerTitle" = "用户管理";
+
+/* Class = "UITableViewSection"; headerTitle = "Device Network Configuration"; ObjectID = "Lww-IN-i6Q"; */
+"Lww-IN-i6Q.headerTitle" = "设备网络配置";
+
+/* Class = "UILabel"; text = "Device List"; ObjectID = "Sc8-6Q-jjJ"; */
+"Sc8-6Q-jjJ.text" = "设备列表";
+
+/* Class = "UILabel"; text = "User Information"; ObjectID = "sDU-vp-zT6"; */
+"sDU-vp-zT6.text" = "用户信息";
+
+/* Class = "UINavigationItem"; title = "TuyaSmart"; ObjectID = "sFB-be-PT7"; */
+"sFB-be-PT7.title" = "涂鸦智能";
+
+/* Class = "UILabel"; text = "New Home"; ObjectID = "UPg-L3-96Q"; */
+"UPg-L3-96Q.text" = "创建家庭";
+
+/* Class = "UILabel"; text = "EZ Mode"; ObjectID = "xKZ-bx-CAn"; */
+"xKZ-bx-CAn.text" = "EZ 模式";
+
+/* Class = "UITableViewSection"; headerTitle = "Device Management"; ObjectID = "y2h-dz-wG3"; */
+"y2h-dz-wG3.headerTitle" = "设备管理";
+
+/* Class = "UILabel"; text = "Current Home"; ObjectID = "Ylu-0o-u1B"; */
+"Ylu-0o-u1B.text" = "当前家庭";
+

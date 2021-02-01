@@ -9,6 +9,8 @@
 #import "Home.h"
 
 @interface MainTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *currentHomeLabel;
 
 @property (strong, nonatomic) TuyaSmartHomeManager *homeManager;

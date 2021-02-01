@@ -5,6 +5,7 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "SceneDelegate.h"
+#import "SVProgressHUD.h"
 
 @interface SceneDelegate ()
 
@@ -18,6 +19,9 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    self.window.frame = [[UIScreen mainScreen] bounds];
+    
     if ([TuyaSmartUser sharedInstance].isLogin) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
@@ -27,6 +31,8 @@
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         self.window.rootViewController = nav;
     }
+    [[UIApplication sharedApplication] delegate].window = self.window;
+    [self.window makeKeyAndVisible];
 }
 
 
