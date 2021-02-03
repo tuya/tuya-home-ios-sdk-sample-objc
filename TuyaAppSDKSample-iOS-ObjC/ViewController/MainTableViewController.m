@@ -43,14 +43,21 @@
 #pragma mark - IBAction
 
 - (IBAction)logoutTapped:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] loginOut:^{
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
-        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
-        [Alert showBasicAlertOnVC:nav withTitle:@"Successfully Logged Out" message:@"Most of the functions will be unusable."];
-    } failure:^(NSError *error) {
-        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Logout." message:error.localizedDescription];
+    UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"You're going to log out this account.", @"User tapped the logout button.") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Logout", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [[TuyaSmartUser sharedInstance] loginOut:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Logout." message:error.localizedDescription];
+        }];
     }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    [alertViewController addAction:logoutAction];
+    [alertViewController addAction:cancelAction];
+    [self.navigationController presentViewController:alertViewController animated:YES completion:nil];
 }
 
 
@@ -58,6 +65,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        [self logoutTapped:self.logoutButton];
+    }
 }
 
 - (TuyaSmartHomeManager *)homeManager {

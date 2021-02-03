@@ -42,12 +42,28 @@
 }
 
 - (IBAction)dismiss:(UIButton *)sender {
-    [self.home dismissHomeWithSuccess:^{
-        [Home setCurrentHome:[TuyaSmartHomeModel new]];
-        [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSError *error) {
-        [Alert showBasicAlertOnVC:[UIApplication sharedApplication].keyWindow.rootViewController withTitle:@"Failed to Dismiss" message:error.localizedDescription];
+    
+    UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Dismiss This Home", @"") message:NSLocalizedString(@"You're going to dismiss this home.", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"Dismiss", @"Dismiss a home.") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self.home dismissHomeWithSuccess:^{
+            [Home setCurrentHome:[TuyaSmartHomeModel new]];
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:[UIApplication sharedApplication].keyWindow.rootViewController withTitle:@"Failed to Dismiss" message:error.localizedDescription];
+        }];
     }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    [alertViewController addAction:action];
+    [alertViewController addAction:cancelAction];
+    [self.navigationController presentViewController:alertViewController animated:YES completion:nil];
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        [self dismiss:nil];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -23,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.title = self.device.deviceModel.name;
+    self.title = self.device.deviceModel.name;
     self.device.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceHasRemoved:) name:SVProgressHUDDidDisappearNotification object:nil];
 }
@@ -87,40 +86,59 @@
     NSDictionary *dps = device.deviceModel.dps;
     NSString *cellIdentifier = [DeviceControlCellHelper cellIdentifierWithSchemaModel:schema];
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == switchCell) {
-        ((SwitchTableViewCell *)cell).label.text = schema.name;
-        [((SwitchTableViewCell *)cell).switchButton setOn:[dps[schema.dpId] boolValue]];
-        ((SwitchTableViewCell *)cell).switchAction = ^(UISwitch *switchButton) {
-            [self publishMessage:@{schema.dpId: [NSNumber numberWithBool:switchButton.isOn]}];
-        };
-    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == sliderCell) {
-        ((SliderTableViewCell *)cell).label.text = schema.name;
-        ((SliderTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] stringValue];
-        ((SliderTableViewCell *)cell).slider.minimumValue = schema.property.min;
-        ((SliderTableViewCell *)cell).slider.maximumValue = schema.property.max;
-        [((SliderTableViewCell *)cell).slider setContinuous:NO];
-        ((SliderTableViewCell *)cell).slider.value = [dps[schema.dpId] floatValue];
-        ((SliderTableViewCell *)cell).sliderAction = ^(UISlider * _Nonnull slider) {
-            float step = schema.property.step;
-            float roundedValue = round(slider.value / step) * step;
-            [self publishMessage:@{schema.dpId : @((int)roundedValue)}];
-        };
-    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == enumCell) {
-        ((EnumTableViewCell *)cell).label.text = schema.name;
-        ((EnumTableViewCell *)cell).optionArray = [schema.property.range mutableCopy];
-        ((EnumTableViewCell *)cell).currentOption = dps[schema.dpId];
-        ((EnumTableViewCell *)cell).selectAction = ^(NSString * _Nonnull option) {
-            [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
-        };
-    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == stringCell) {
-        ((StringTableViewCell *)cell).label.text = schema.name;
-        ((StringTableViewCell *)cell).textField.text = dps[schema.dpId];
-        ((StringTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
-            [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
-        };
-    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == labelCell) {
-        ((LabelTableViewCell *)cell).label.text = schema.name;
-        ((LabelTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
+    switch ([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) {
+        case switchCell:
+        {
+            ((SwitchTableViewCell *)cell).label.text = schema.name;
+            [((SwitchTableViewCell *)cell).switchButton setOn:[dps[schema.dpId] boolValue]];
+            ((SwitchTableViewCell *)cell).switchAction = ^(UISwitch *switchButton) {
+                [self publishMessage:@{schema.dpId: [NSNumber numberWithBool:switchButton.isOn]}];
+            };
+            break;
+        }
+        case sliderCell:
+        {
+            ((SliderTableViewCell *)cell).label.text = schema.name;
+            ((SliderTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] stringValue];
+            ((SliderTableViewCell *)cell).slider.minimumValue = schema.property.min;
+            ((SliderTableViewCell *)cell).slider.maximumValue = schema.property.max;
+            [((SliderTableViewCell *)cell).slider setContinuous:NO];
+            ((SliderTableViewCell *)cell).slider.value = [dps[schema.dpId] floatValue];
+            ((SliderTableViewCell *)cell).sliderAction = ^(UISlider * _Nonnull slider) {
+                float step = schema.property.step;
+                float roundedValue = round(slider.value / step) * step;
+                [self publishMessage:@{schema.dpId : @((int)roundedValue)}];
+            };
+            break;
+        }
+        case enumCell:
+        {
+            ((EnumTableViewCell *)cell).label.text = schema.name;
+            ((EnumTableViewCell *)cell).optionArray = [schema.property.range mutableCopy];
+            ((EnumTableViewCell *)cell).currentOption = dps[schema.dpId];
+            ((EnumTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
+            ((EnumTableViewCell *)cell).selectAction = ^(NSString * _Nonnull option) {
+                [self publishMessage:@{schema.dpId: option}];
+            };
+            break;
+        }
+        case stringCell:
+        {
+            ((StringTableViewCell *)cell).label.text = schema.name;
+            ((StringTableViewCell *)cell).textField.text = dps[schema.dpId];
+            ((StringTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
+                [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
+            };
+            break;
+        }
+        case labelCell:
+        {
+            ((LabelTableViewCell *)cell).label.text = schema.name;
+            ((LabelTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
+            break;
+        }
+        default:
+            break;
     }
     
     return cell;
