@@ -6,7 +6,7 @@
 
 #import "DeviceControlTableViewController.h"
 #import "SVProgressHUD.h"
-#import "DeviceControlCell.h"
+#import "DeviceControlCellHelper.h"
 #import "NotificationName.h"
 #import "SwitchTableViewCell.h"
 #import "SliderTableViewCell.h"
@@ -85,15 +85,15 @@
     TuyaSmartDevice *device = self.device;
     TuyaSmartSchemaModel *schema = device.deviceModel.schemaArray[indexPath.row];
     NSDictionary *dps = device.deviceModel.dps;
-    NSString *cellIdentifier = [DeviceControlCell cellIdentifier:schema];
+    NSString *cellIdentifier = [DeviceControlCellHelper cellIdentifierWithSchemaModel:schema];
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (([DeviceControlCell cellIdentifierENUM:schema]) == switchCell) {
+    if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == switchCell) {
         ((SwitchTableViewCell *)cell).label.text = schema.name;
         [((SwitchTableViewCell *)cell).switchButton setOn:[dps[schema.dpId] boolValue]];
         ((SwitchTableViewCell *)cell).switchAction = ^(UISwitch *switchButton) {
             [self publishMessage:@{schema.dpId: [NSNumber numberWithBool:switchButton.isOn]}];
         };
-    } else if (([DeviceControlCell cellIdentifierENUM:schema]) == sliderCell) {
+    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == sliderCell) {
         ((SliderTableViewCell *)cell).label.text = schema.name;
         ((SliderTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] stringValue];
         ((SliderTableViewCell *)cell).slider.minimumValue = schema.property.min;
@@ -105,20 +105,20 @@
             float roundedValue = round(slider.value / step) * step;
             [self publishMessage:@{schema.dpId : @((int)roundedValue)}];
         };
-    } else if (([DeviceControlCell cellIdentifierENUM:schema]) == enumCell) {
+    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == enumCell) {
         ((EnumTableViewCell *)cell).label.text = schema.name;
         ((EnumTableViewCell *)cell).optionArray = [schema.property.range mutableCopy];
         ((EnumTableViewCell *)cell).currentOption = dps[schema.dpId];
         ((EnumTableViewCell *)cell).selectAction = ^(NSString * _Nonnull option) {
             [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
         };
-    } else if (([DeviceControlCell cellIdentifierENUM:schema]) == stringCell) {
+    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == stringCell) {
         ((StringTableViewCell *)cell).label.text = schema.name;
         ((StringTableViewCell *)cell).textField.text = dps[schema.dpId];
         ((StringTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
             [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
         };
-    } else if (([DeviceControlCell cellIdentifierENUM:schema]) == labelCell) {
+    } else if (([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) == labelCell) {
         ((LabelTableViewCell *)cell).label.text = schema.name;
         ((LabelTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
     }

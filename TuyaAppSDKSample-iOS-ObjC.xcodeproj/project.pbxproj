@@ -18,7 +18,7 @@
 		3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3485438625C2995700F1EF21 /* EZModeTableViewController.m */; };
 		348543A325C2AAF000F1EF21 /* DeviceListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543A225C2AAEF00F1EF21 /* DeviceListTableViewController.m */; };
 		348543A725C2AF1B00F1EF21 /* DeviceControlTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543A625C2AF1B00F1EF21 /* DeviceControlTableViewController.m */; };
-		348543AB25C2B8EB00F1EF21 /* DeviceControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543AA25C2B8EB00F1EF21 /* DeviceControlCell.m */; };
+		348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543AA25C2B8EB00F1EF21 /* DeviceControlCellHelper.m */; };
 		348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543AF25C2BDA700F1EF21 /* DeviceStatusBehaveCell.m */; };
 		348543B525C2C25D00F1EF21 /* NotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543B425C2C25D00F1EF21 /* NotificationName.m */; };
 		348543BA25C2C2E300F1EF21 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543B925C2C2E300F1EF21 /* SwitchTableViewCell.m */; };
@@ -83,8 +83,8 @@
 		348543A225C2AAEF00F1EF21 /* DeviceListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceListTableViewController.m; sourceTree = "<group>"; };
 		348543A525C2AF1B00F1EF21 /* DeviceControlTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceControlTableViewController.h; sourceTree = "<group>"; };
 		348543A625C2AF1B00F1EF21 /* DeviceControlTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceControlTableViewController.m; sourceTree = "<group>"; };
-		348543A925C2B8EB00F1EF21 /* DeviceControlCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceControlCell.h; sourceTree = "<group>"; };
-		348543AA25C2B8EB00F1EF21 /* DeviceControlCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceControlCell.m; sourceTree = "<group>"; };
+		348543A925C2B8EB00F1EF21 /* DeviceControlCellHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceControlCellHelper.h; sourceTree = "<group>"; };
+		348543AA25C2B8EB00F1EF21 /* DeviceControlCellHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceControlCellHelper.m; sourceTree = "<group>"; };
 		348543AE25C2BDA700F1EF21 /* DeviceStatusBehaveCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceStatusBehaveCell.h; sourceTree = "<group>"; };
 		348543AF25C2BDA700F1EF21 /* DeviceStatusBehaveCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusBehaveCell.m; sourceTree = "<group>"; };
 		348543B325C2C25D00F1EF21 /* NotificationName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationName.h; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 				348543A225C2AAEF00F1EF21 /* DeviceListTableViewController.m */,
 				348543A525C2AF1B00F1EF21 /* DeviceControlTableViewController.h */,
 				348543A625C2AF1B00F1EF21 /* DeviceControlTableViewController.m */,
-				348543A925C2B8EB00F1EF21 /* DeviceControlCell.h */,
-				348543AA25C2B8EB00F1EF21 /* DeviceControlCell.m */,
+				348543A925C2B8EB00F1EF21 /* DeviceControlCellHelper.h */,
+				348543AA25C2B8EB00F1EF21 /* DeviceControlCellHelper.m */,
 			);
 			path = "Device Management";
 			sourceTree = "<group>";
@@ -492,7 +492,7 @@
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
-				348543AB25C2B8EB00F1EF21 /* DeviceControlCell.m in Sources */,
+				348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */,
 				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
 				348543BE25C2C6AE00F1EF21 /* SliderTableViewCell.m in Sources */,

@@ -1,13 +1,13 @@
 //
-//  DeviceControlCell.m
+//  DeviceControlCellHelper.m
 //  TuyaAppSDKSample-iOS-ObjC
 //
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
-#import "DeviceControlCell.h"
+#import "DeviceControlCellHelper.h"
 
-@implementation DeviceControlCell
-+ (NSString *)cellIdentifier:(TuyaSmartSchemaModel *)schema {
+@implementation DeviceControlCellHelper
++ (NSString *)cellIdentifierWithSchemaModel:(TuyaSmartSchemaModel *)schema {
     NSString *type = [schema.type isEqualToString:@"obj"] ? schema.property.type : schema.type;
     if ([type isEqualToString:@"bool"]) {
         return @"device-switch-cell";
@@ -26,7 +26,7 @@
     }
 }
 
-+ (DeviceControlCellId)cellIdentifierENUM:(TuyaSmartSchemaModel *)schema {
++ (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema {
     NSString *type = [schema.type isEqualToString:@"obj"] ? schema.property.type : schema.type;
     if ([type isEqualToString:@"bool"]) {
         return switchCell;

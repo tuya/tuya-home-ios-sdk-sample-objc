@@ -25,7 +25,7 @@
     TuyaSmartHomeModel *model = self.homeModel;
     self.home = [TuyaSmartHome homeWithHomeId:model.homeId];
     
-    self.homeIDLabel.text = [NSString stringWithFormat:@"@%lld", model.homeId];
+    self.homeIDLabel.text = [NSString stringWithFormat:@"%lld", model.homeId];
     self.homeNameLabel.text = model.name;
     self.cityLabel.text = model.geoName;
     

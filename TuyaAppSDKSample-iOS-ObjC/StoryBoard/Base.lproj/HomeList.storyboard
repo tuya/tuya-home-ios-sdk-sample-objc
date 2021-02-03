@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4YK-wc-81d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4YK-wc-81d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -241,7 +241,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Home Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="by0-Jc-Lwn">
-                                                    <rect key="frame" x="13" y="4" width="341" height="44"/>
+                                                    <rect key="frame" x="20" y="4" width="334" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="28o-iJ-tmK"/>
                                                     </constraints>
@@ -251,7 +251,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="by0-Jc-Lwn" firstAttribute="top" secondItem="9UN-g1-SKS" secondAttribute="top" constant="4" id="6X3-l4-EA3"/>
-                                                <constraint firstItem="by0-Jc-Lwn" firstAttribute="leading" secondItem="9UN-g1-SKS" secondAttribute="leading" constant="13" id="TfZ-Ci-q9g"/>
+                                                <constraint firstItem="by0-Jc-Lwn" firstAttribute="leading" secondItem="9UN-g1-SKS" secondAttribute="leading" constant="20" symbolic="YES" id="TfZ-Ci-q9g"/>
                                                 <constraint firstAttribute="trailing" secondItem="by0-Jc-Lwn" secondAttribute="trailing" constant="20" symbolic="YES" id="i0L-p7-Rho"/>
                                                 <constraint firstAttribute="bottom" secondItem="by0-Jc-Lwn" secondAttribute="bottom" constant="4" id="xWw-sj-cvI"/>
                                             </constraints>
