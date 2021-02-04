@@ -29,19 +29,19 @@
 + (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema {
     NSString *type = [schema.type isEqualToString:@"obj"] ? schema.property.type : schema.type;
     if ([type isEqualToString:@"bool"]) {
-        return switchCell;
+        return DeviceControlCellTypeSwitchCell;
     } else if ([type isEqualToString:@"enum"]) {
-        return enumCell;
+        return DeviceControlCellTypeEnumCell;
     } else if ([type isEqualToString:@"value"]) {
-        return sliderCell;
+        return DeviceControlCellTypeSliderCell;
     } else if ([type isEqualToString:@"bitmap"]) {
-        return labelCell;
+        return DeviceControlCellTypeLabelCell;
     } else if ([type isEqualToString:@"string"]) {
-        return stringCell;
+        return DeviceControlCellTypeStringCell;
     } else if ([type isEqualToString:@"raw"]) {
-        return stringCell;
+        return DeviceControlCellTypeStringCell;
     } else {
-        return labelCell;
+        return DeviceControlCellTypeLabelCell;
     }
 }
 @end

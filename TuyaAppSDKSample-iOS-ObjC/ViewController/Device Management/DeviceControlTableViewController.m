@@ -87,7 +87,7 @@
     NSString *cellIdentifier = [DeviceControlCellHelper cellIdentifierWithSchemaModel:schema];
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     switch ([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) {
-        case switchCell:
+        case DeviceControlCellTypeSwitchCell:
         {
             ((SwitchTableViewCell *)cell).label.text = schema.name;
             [((SwitchTableViewCell *)cell).switchButton setOn:[dps[schema.dpId] boolValue]];
@@ -96,7 +96,7 @@
             };
             break;
         }
-        case sliderCell:
+        case DeviceControlCellTypeSliderCell:
         {
             ((SliderTableViewCell *)cell).label.text = schema.name;
             ((SliderTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] stringValue];
@@ -111,7 +111,7 @@
             };
             break;
         }
-        case enumCell:
+        case DeviceControlCellTypeEnumCell:
         {
             ((EnumTableViewCell *)cell).label.text = schema.name;
             ((EnumTableViewCell *)cell).optionArray = [schema.property.range mutableCopy];
@@ -122,7 +122,7 @@
             };
             break;
         }
-        case stringCell:
+        case DeviceControlCellTypeStringCell:
         {
             ((StringTableViewCell *)cell).label.text = schema.name;
             ((StringTableViewCell *)cell).textField.text = dps[schema.dpId];
@@ -131,7 +131,7 @@
             };
             break;
         }
-        case labelCell:
+        case DeviceControlCellTypeLabelCell:
         {
             ((LabelTableViewCell *)cell).label.text = schema.name;
             ((LabelTableViewCell *)cell).detailLabel.text = dps[schema.dpId];

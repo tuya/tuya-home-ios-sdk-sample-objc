@@ -9,11 +9,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, DeviceControlCellType) {
-    switchCell, //"device-switch-cell"
-    sliderCell, //"device-slider-cell"
-    enumCell,   //"device-enum-cell"
-    stringCell, //"device-string-cell"
-    labelCell   //"device-label-cell"
+    DeviceControlCellTypeSwitchCell, //"device-switch-cell"
+    DeviceControlCellTypeSliderCell, //"device-slider-cell"
+    DeviceControlCellTypeEnumCell,   //"device-enum-cell"
+    DeviceControlCellTypeStringCell, //"device-string-cell"
+    DeviceControlCellTypeLabelCell   //"device-label-cell"
 };
 
 @interface DeviceControlCellHelper : NSObject
