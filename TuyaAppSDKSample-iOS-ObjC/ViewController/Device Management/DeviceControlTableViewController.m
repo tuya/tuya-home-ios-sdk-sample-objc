@@ -134,7 +134,7 @@
         case DeviceControlCellTypeLabelCell:
         {
             ((LabelTableViewCell *)cell).label.text = schema.name;
-            ((LabelTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
+            ((LabelTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] tysdk_toString];
             break;
         }
         default:
