@@ -14,6 +14,7 @@
 #import "StringTableViewCell.h"
 #import "LabelTableViewCell.h"
 #import "NotificationName.h"
+#import "DeviceDetailTableViewController.h"
 
 @interface DeviceControlTableViewController () <TuyaSmartDeviceDelegate>
 
@@ -37,6 +38,12 @@
     [super viewDidDisappear:animated];
     [SVProgressHUD dismiss];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceHasRemoved:) name:SVProgressHUDDidDisappearNotification object:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"show-device-detail"]) {
+        ((DeviceDetailTableViewController *)segue.destinationViewController).device = self.device;
+    }
 }
 
 - (void)publishMessage:(NSDictionary *) dps {
@@ -84,13 +91,18 @@
     TuyaSmartDevice *device = self.device;
     TuyaSmartSchemaModel *schema = device.deviceModel.schemaArray[indexPath.row];
     NSDictionary *dps = device.deviceModel.dps;
+    bool isReadOnly = NO;
     NSString *cellIdentifier = [DeviceControlCellHelper cellIdentifierWithSchemaModel:schema];
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    isReadOnly = [@"ro" isEqualToString:schema.mode];
+    
     switch ([DeviceControlCellHelper cellTypeWithSchemaModel:schema]) {
         case DeviceControlCellTypeSwitchCell:
         {
             ((SwitchTableViewCell *)cell).label.text = schema.name;
             [((SwitchTableViewCell *)cell).switchButton setOn:[dps[schema.dpId] boolValue]];
+            ((SwitchTableViewCell *)cell).isReadOnly = isReadOnly;
             ((SwitchTableViewCell *)cell).switchAction = ^(UISwitch *switchButton) {
                 [self publishMessage:@{schema.dpId: [NSNumber numberWithBool:switchButton.isOn]}];
             };
@@ -104,6 +116,7 @@
             ((SliderTableViewCell *)cell).slider.maximumValue = schema.property.max;
             [((SliderTableViewCell *)cell).slider setContinuous:NO];
             ((SliderTableViewCell *)cell).slider.value = [dps[schema.dpId] floatValue];
+            ((SliderTableViewCell *)cell).isReadOnly = isReadOnly;
             ((SliderTableViewCell *)cell).sliderAction = ^(UISlider * _Nonnull slider) {
                 float step = schema.property.step;
                 float roundedValue = round(slider.value / step) * step;
@@ -117,6 +130,7 @@
             ((EnumTableViewCell *)cell).optionArray = [schema.property.range mutableCopy];
             ((EnumTableViewCell *)cell).currentOption = dps[schema.dpId];
             ((EnumTableViewCell *)cell).detailLabel.text = dps[schema.dpId];
+            ((EnumTableViewCell *)cell).isReadOnly = isReadOnly;
             ((EnumTableViewCell *)cell).selectAction = ^(NSString * _Nonnull option) {
                 [self publishMessage:@{schema.dpId: option}];
             };
@@ -126,6 +140,7 @@
         {
             ((StringTableViewCell *)cell).label.text = schema.name;
             ((StringTableViewCell *)cell).textField.text = dps[schema.dpId];
+            ((StringTableViewCell *)cell).isReadOnly = isReadOnly;
             ((StringTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
                 [self publishMessage:@{schema.dpId: dps[schema.dpId]}];
             };

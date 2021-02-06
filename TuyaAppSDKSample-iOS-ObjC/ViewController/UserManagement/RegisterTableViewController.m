@@ -26,23 +26,52 @@
 #pragma mark - IBAction
 
 - (IBAction)sendVerificationCode:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] sendVerifyCodeByRegisterEmail:self.countryCodeTextField.text email:self.accountTextField.text success:^{
-        [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your email for the code."];
+    if ([self.accountTextField.text containsString:@"@"]) {
+        [[TuyaSmartUser sharedInstance] sendVerifyCodeByRegisterEmail:self.countryCodeTextField.text email:self.accountTextField.text success:^{
+            [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your email for the code."];
 
-    } failure:^(NSError *error) {
-        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
-    }];
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
+        }];
+    } else {
+        [[TuyaSmartUser sharedInstance] sendVerifyCode:self.countryCodeTextField.text phoneNumber:self.accountTextField.text type:1 success:^{
+            [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your message for the code."];
+
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
+        }];
+    }
 }
 
 - (IBAction)registerTapped:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
-        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
-        [Alert showBasicAlertOnVC:nav withTitle:@"Registered Successfully" message:@"Please navigate back to login your account."];
-    } failure:^(NSError *error) {
-        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
-    }];
+    if ([self.accountTextField.text containsString:@"@"]) {
+        [[TuyaSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+            [Alert showBasicAlertOnVC:nav withTitle:@"Registered Successfully" message:@"Please navigate back to login your account."];
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
+        }];
+    } else {
+        [[TuyaSmartUser sharedInstance] registerByPhone:self.verificationCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+            [Alert showBasicAlertOnVC:nav withTitle:@"Registered Successfully" message:@"Please navigate back to login your account."];
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
+        }];
+    }
+    
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 && indexPath.row == 4) {
+        [self sendVerificationCode:nil];
+    } else if (indexPath.section == 1) {
+        [self registerTapped:nil];
+    }
+}
 @end

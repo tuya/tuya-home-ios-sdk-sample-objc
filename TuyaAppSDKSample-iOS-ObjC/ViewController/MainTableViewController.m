@@ -55,6 +55,8 @@
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    
+    alertViewController.popoverPresentationController.sourceView = sender;
     [alertViewController addAction:logoutAction];
     [alertViewController addAction:cancelAction];
     [self.navigationController presentViewController:alertViewController animated:YES completion:nil];

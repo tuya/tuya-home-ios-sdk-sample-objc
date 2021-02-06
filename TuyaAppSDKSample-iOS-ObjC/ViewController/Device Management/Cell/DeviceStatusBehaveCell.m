@@ -16,13 +16,28 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOnline) name:kDeviceOnline object:nil];
 }
 
+- (void)setIsReadOnly:(bool)isReadOnly {
+    _isReadOnly = isReadOnly;
+    isReadOnly ? [self disableControls] : [self enableControls];
+}
+
 - (void)deviceOffline {
+    [self disableControls];
+}
+
+- (void)deviceOnline {
+    if (!self.isReadOnly) {
+        [self enableControls];
+    }
+}
+
+- (void)disableControls {
     for (UIControl *control in self.controls) {
         [control setEnabled:NO];
     }
 }
 
-- (void)deviceOnline {
+- (void)enableControls {
     for (UIControl *control in self.controls) {
         [control setEnabled:YES];
     }

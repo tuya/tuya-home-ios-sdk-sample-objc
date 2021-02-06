@@ -10,8 +10,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DeviceStatusBehaveCell : UITableViewCell
 @property (strong, nonatomic) NSMutableArray *controls;
-- (void)deviceOffline;
-- (void)deviceOnline;
+@property (assign, nonatomic) bool isReadOnly;
+- (void)disableControls;
+- (void)enableControls;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherConditionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
 
 @end
 
@@ -54,6 +55,8 @@
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    
+    alertViewController.popoverPresentationController.sourceView = sender;
     [alertViewController addAction:action];
     [alertViewController addAction:cancelAction];
     [self.navigationController presentViewController:alertViewController animated:YES completion:nil];
@@ -62,7 +65,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row == 0) {
-        [self dismiss:nil];
+        [self dismiss:self.dismissButton];
     }
 }
 

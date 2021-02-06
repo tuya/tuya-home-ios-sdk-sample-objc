@@ -24,13 +24,30 @@
 #pragma mark - IBAction
 
 - (IBAction)login:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] loginByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text success:^{
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
-        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
-        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
-    } failure:^(NSError *error) {
-        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
-    }];
+    if ([self.accountTextField.text containsString:@"@"]) {
+        [[TuyaSmartUser sharedInstance] loginByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
+        }];
+    } else {
+        [[TuyaSmartUser sharedInstance] loginByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+        } failure:^(NSError *error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
+        }];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self login:nil];
+    }
 }
 
 @end

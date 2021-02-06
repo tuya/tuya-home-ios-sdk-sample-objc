@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4YK-wc-81d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4YK-wc-81d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -213,6 +213,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="uoq-3u-1L2" id="HK0-6g-agy"/>
+                        <outlet property="dismissButton" destination="HfD-A1-DtT" id="edB-9K-xvQ"/>
                         <outlet property="homeIDLabel" destination="gKn-jF-o1l" id="c0c-Tb-WQj"/>
                         <outlet property="homeNameLabel" destination="ZEM-Ps-kML" id="pyf-YE-Ms2"/>
                         <outlet property="temperatureLabel" destination="NZk-b8-J7P" id="DSF-ts-Qfp"/>

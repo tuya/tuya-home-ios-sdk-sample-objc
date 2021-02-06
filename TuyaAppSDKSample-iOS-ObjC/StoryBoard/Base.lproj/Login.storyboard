@@ -161,7 +161,7 @@
         <!--Reset Password-->
         <scene sceneID="sPu-w6-Igi">
             <objects>
-                <tableViewController id="8UT-Uw-bSm" customClass="ResetPasswordTableViewController" customModule="TuyaAppSDKSample_iOS_ObjC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8UT-Uw-bSm" customClass="ResetPasswordTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0ze-bc-rWx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,10 +324,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Reset Password" id="8dI-Me-up7"/>
                     <connections>
-                        <outlet property="accountTextField" destination="Tmz-IU-mNw" id="JRg-az-9uO"/>
-                        <outlet property="countryCodeTextField" destination="tmd-dx-fqr" id="PWo-Ck-93I"/>
-                        <outlet property="passwordTextField" destination="yCi-uu-Voj" id="stN-xc-Tsf"/>
-                        <outlet property="verificationCodeTextField" destination="jNx-Nw-Bag" id="Qh0-rG-raN"/>
+                        <outlet property="countryCodeTextField" destination="tmd-dx-fqr" id="FF9-GE-bOR"/>
+                        <outlet property="emailAddressTextField" destination="Tmz-IU-mNw" id="6Tf-yC-bCg"/>
+                        <outlet property="passwordTextField" destination="yCi-uu-Voj" id="4nn-qN-S7g"/>
+                        <outlet property="verificationCodeTextField" destination="jNx-Nw-Bag" id="Qjw-VF-XY5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fW-yo-wGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

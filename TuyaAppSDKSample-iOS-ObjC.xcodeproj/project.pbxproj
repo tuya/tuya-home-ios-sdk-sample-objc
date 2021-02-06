@@ -27,6 +27,7 @@
 		348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543C525C2CBDA00F1EF21 /* StringTableViewCell.m */; };
 		348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */; };
 		348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */; };
+		34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */; };
 		34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */; };
 		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
 		34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */; };
@@ -101,6 +102,8 @@
 		348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelTableViewCell.m; sourceTree = "<group>"; };
 		348543CC25C2DE5B00F1EF21 /* APModeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APModeTableViewController.h; sourceTree = "<group>"; };
 		348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APModeTableViewController.m; sourceTree = "<group>"; };
+		34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailTableViewController.h; sourceTree = "<group>"; };
+		34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailTableViewController.m; sourceTree = "<group>"; };
 		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaSmartMain.storyboard; sourceTree = "<group>"; };
 		34FF2C6925AE8CC900152CA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		34FF2C6A25AE8CC900152CA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				348543A625C2AF1B00F1EF21 /* DeviceControlTableViewController.m */,
 				348543A925C2B8EB00F1EF21 /* DeviceControlCellHelper.h */,
 				348543AA25C2B8EB00F1EF21 /* DeviceControlCellHelper.m */,
+				34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */,
+				34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */,
 			);
 			path = "Device Management";
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
 				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
+				34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */,
 				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
 				34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */,
 				348543BA25C2C2E300F1EF21 /* SwitchTableViewCell.m in Sources */,
@@ -784,7 +790,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dasautoooo.SDK-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -807,7 +813,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dasautoooo.SDK-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -28,6 +28,9 @@
             }];
             [alert addAction:action];
         }
+        
+        alert.popoverPresentationController.sourceView = self;
+        
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"") style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancelAction];
         
@@ -37,12 +40,14 @@
     }
 }
 
--(void)deviceOnline {
+- (void)enableControls {
     [self setUserInteractionEnabled:YES];
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
-- (void)deviceOffline {
+- (void)disableControls {
     [self setUserInteractionEnabled:NO];
+    self.accessoryType = UITableViewCellAccessoryNone;
 }
 
 @end
