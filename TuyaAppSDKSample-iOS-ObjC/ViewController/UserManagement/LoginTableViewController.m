@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *countryCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 
 @end
 
@@ -47,6 +48,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 1) {
         [self login:nil];
+    } else if (indexPath.section == 2) {
+        [self.forgetPasswordButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
 }
 
