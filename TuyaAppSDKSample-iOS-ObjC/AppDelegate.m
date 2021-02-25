@@ -26,19 +26,25 @@
     #endif
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    self.window.frame = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if ([TuyaSmartUser sharedInstance].isLogin) {
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
-        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
-        self.window.rootViewController = nav;
+    if (@available(iOS 13, *)) {
+        // Will go into scene delegate
     } else {
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
-        self.window.rootViewController = nav;
+        if ([TuyaSmartUser sharedInstance].isLogin) {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            self.window.rootViewController = nav;
+        } else {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
+            self.window.rootViewController = nav;
+        }
     }
+    
     [[UIApplication sharedApplication] delegate].window = self.window;
     [self.window makeKeyAndVisible];
+        
     return YES;
 }
 

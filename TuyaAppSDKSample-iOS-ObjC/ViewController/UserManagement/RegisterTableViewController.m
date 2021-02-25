@@ -54,7 +54,7 @@
             [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
         }];
     } else {
-        [[TuyaSmartUser sharedInstance] registerByPhone:self.verificationCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+        [[TuyaSmartUser sharedInstance] registerByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;

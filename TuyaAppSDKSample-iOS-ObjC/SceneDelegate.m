@@ -19,8 +19,8 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    self.window.frame = [[UIScreen mainScreen] bounds];
+    UIWindowScene *windowScene = (UIWindowScene *)scene;
+    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
     if ([TuyaSmartUser sharedInstance].isLogin) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
