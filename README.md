@@ -39,7 +39,7 @@ pod install
 #define APP_SECRET_KEY @"<#SecretKey#>"
 ```
 
-6. Download the security image and rename the image to `t_s.bmp`. Then, drag the image to the workspace to be at the same level as `Info.plist`.
+6. Download the security image, rename it to `t_s.bmp`, and then drag it to the workspace to be at the same level as `Info.plist`.
 
 **Note**: The bundle ID, AppKey, AppSecret, and security image must be the same as your app on the [Tuya IoT Platform](https://iot.tuya.com). Otherwise, the sample cannot request the API.
 
