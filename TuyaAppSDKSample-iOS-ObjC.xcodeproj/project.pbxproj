@@ -38,13 +38,19 @@
 		34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */; };
 		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
 		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
+		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
+		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
+		9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */; };
+		9A4C4918260B35230000D9EA /* DualModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C491A260B35230000D9EA /* DualModel.storyboard */; };
+		9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */; };
+		9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C4929260B39050000D9EA /* SIGMesh.storyboard */; };
+		9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9AF91FF8260835A100CA5D66 /* t_s.bmp */; };
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
 		AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */; };
 		AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */; };
 		AF54CA6125A4191A00FCAC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA6025A4191A00FCAC1F /* main.m */; };
-		AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = AF54CAA125A44C4D00FCAC1F /* t_s.bmp */; };
 		AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */; };
 		AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAAD25A4610D00FCAC1F /* RegisterTableViewController.m */; };
 		AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CAB125A46C8000FCAC1F /* LoginTableViewController.m */; };
@@ -123,6 +129,19 @@
 		34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHomeTableViewController.h; sourceTree = "<group>"; };
 		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4C4906260B29A20000D9EA /* BLEModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEModelViewController.h; sourceTree = "<group>"; };
+		9A4C4907260B29A20000D9EA /* BLEModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEModelViewController.m; sourceTree = "<group>"; };
+		9A4C490B260B2A960000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BLE.storyboard; sourceTree = "<group>"; };
+		9A4C490F260B2A9A0000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BLE.strings"; sourceTree = "<group>"; };
+		9A4C4914260B30A40000D9EA /* DualModelTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualModelTableViewController.h; sourceTree = "<group>"; };
+		9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DualModelTableViewController.m; sourceTree = "<group>"; };
+		9A4C4919260B35230000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DualModel.storyboard; sourceTree = "<group>"; };
+		9A4C491D260B35280000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DualModel.strings"; sourceTree = "<group>"; };
+		9A4C4923260B37EB0000D9EA /* SIGMeshTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGMeshTableViewController.h; sourceTree = "<group>"; };
+		9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGMeshTableViewController.m; sourceTree = "<group>"; };
+		9A4C4928260B39050000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SIGMesh.storyboard; sourceTree = "<group>"; };
+		9A4C492C260B39090000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SIGMesh.strings"; sourceTree = "<group>"; };
+		9AF91FF8260835A100CA5D66 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF54CA4F25A4191000FCAC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,7 +153,6 @@
 		AF54CA6025A4191A00FCAC1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF54CA8925A4426F00FCAC1F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF54CAA025A443D800FCAC1F /* AppKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKey.h; sourceTree = "<group>"; };
-		AF54CAA125A44C4D00FCAC1F /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		AF54CAAC25A4610D00FCAC1F /* RegisterTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
@@ -172,6 +190,12 @@
 				3485438625C2995700F1EF21 /* EZModeTableViewController.m */,
 				348543CC25C2DE5B00F1EF21 /* APModeTableViewController.h */,
 				348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */,
+				9A4C4906260B29A20000D9EA /* BLEModelViewController.h */,
+				9A4C4907260B29A20000D9EA /* BLEModelViewController.m */,
+				9A4C4914260B30A40000D9EA /* DualModelTableViewController.h */,
+				9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */,
+				9A4C4923260B37EB0000D9EA /* SIGMeshTableViewController.h */,
+				9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */,
 			);
 			path = "Device Network Configuration";
 			sourceTree = "<group>";
@@ -269,6 +293,7 @@
 		AF54CA4D25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				9AF91FF8260835A100CA5D66 /* t_s.bmp */,
 				AF54CAA025A443D800FCAC1F /* AppKey.h */,
 				AF54CA4E25A4191000FCAC1F /* AppDelegate.h */,
 				AF54CA4F25A4191000FCAC1F /* AppDelegate.m */,
@@ -278,7 +303,6 @@
 				AF5531C025A560CF00E13562 /* ViewController */,
 				AF5531CD25A58F6D00E13562 /* Helper */,
 				AF54CA5A25A4191A00FCAC1F /* Assets.xcassets */,
-				AF54CAA125A44C4D00FCAC1F /* t_s.bmp */,
 				AF54CA5F25A4191A00FCAC1F /* Info.plist */,
 				3485437C25C267BA00F1EF21 /* InfoPlist.strings */,
 				3485437E25C267BA00F1EF21 /* Localizable.strings */,
@@ -302,6 +326,9 @@
 				3485436025C2631D00F1EF21 /* EZMode.storyboard */,
 				3485435C25C2631D00F1EF21 /* APMode.storyboard */,
 				3485435E25C2631D00F1EF21 /* DeviceList.storyboard */,
+				9A4C490C260B2A960000D9EA /* BLE.storyboard */,
+				9A4C491A260B35230000D9EA /* DualModel.storyboard */,
+				9A4C4929260B39050000D9EA /* SIGMesh.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -415,11 +442,14 @@
 				AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */,
 				3485438025C267BA00F1EF21 /* InfoPlist.strings in Resources */,
 				3485436825C2631E00F1EF21 /* NewHome.storyboard in Resources */,
+				9A4C4918260B35230000D9EA /* DualModel.storyboard in Resources */,
 				AF5531BD25A5601E00E13562 /* Login.storyboard in Resources */,
 				3485436525C2631E00F1EF21 /* APMode.storyboard in Resources */,
 				34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */,
+				9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */,
+				9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */,
 				AF5531CA25A564EE00E13562 /* UserInformation.storyboard in Resources */,
-				AF54CAA225A44C4D00FCAC1F /* t_s.bmp in Resources */,
+				9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */,
 				3485436725C2631E00F1EF21 /* EZMode.storyboard in Resources */,
 				3485436625C2631E00F1EF21 /* DeviceList.storyboard in Resources */,
 				3485438125C267BA00F1EF21 /* Localizable.strings in Resources */,
@@ -497,9 +527,11 @@
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
+				9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */,
 				348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */,
 				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
+				9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */,
 				348543BE25C2C6AE00F1EF21 /* SliderTableViewCell.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
 				34FF2DF525B02A7C00152CA6 /* Home.m in Sources */,
@@ -516,6 +548,7 @@
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
 				348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */,
+				9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */,
 				348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */,
 				34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */,
 				34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */,
@@ -616,6 +649,33 @@
 				3485436F25C2672200F1EF21 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A4C490C260B2A960000D9EA /* BLE.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4C490B260B2A960000D9EA /* Base */,
+				9A4C490F260B2A9A0000D9EA /* zh-Hans */,
+			);
+			name = BLE.storyboard;
+			sourceTree = "<group>";
+		};
+		9A4C491A260B35230000D9EA /* DualModel.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4C4919260B35230000D9EA /* Base */,
+				9A4C491D260B35280000D9EA /* zh-Hans */,
+			);
+			name = DualModel.storyboard;
+			sourceTree = "<group>";
+		};
+		9A4C4929260B39050000D9EA /* SIGMesh.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4C4928260B39050000D9EA /* Base */,
+				9A4C492C260B39090000D9EA /* zh-Hans */,
+			);
+			name = SIGMesh.storyboard;
 			sourceTree = "<group>";
 		};
 		AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */ = {
@@ -778,7 +838,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64ZYG66RMG;
+				DEVELOPMENT_TEAM = D8399XH2VW;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -788,7 +848,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dasautoooo.SDK-Sample";
+				PRODUCT_BUNDLE_IDENTIFIER = liuguang.SmartProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -801,7 +861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64ZYG66RMG;
+				DEVELOPMENT_TEAM = D8399XH2VW;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -811,7 +871,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dasautoooo.SDK-Sample";
+				PRODUCT_BUNDLE_IDENTIFIER = liuguang.SmartProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Wi-Fi Password"; ObjectID = "eDQ-ek-SxM"; */
+"eDQ-ek-SxM.placeholder" = "Wi-Fi 密码";
+
+/* Class = "UITextField"; placeholder = "Wi-Fi SSID"; ObjectID = "hsi-Yq-6bh"; */
+"hsi-Yq-6bh.placeholder" = "Wi-Fi 名称";
+
+/* Class = "UIBarButtonItem"; title = "Search"; ObjectID = "jkN-jZ-nPs"; */
+"jkN-jZ-nPs.title" = "搜索";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "rFb-nG-tTi"; */
+"rFb-nG-tTi.title" = "蓝牙Wifi双模设备";

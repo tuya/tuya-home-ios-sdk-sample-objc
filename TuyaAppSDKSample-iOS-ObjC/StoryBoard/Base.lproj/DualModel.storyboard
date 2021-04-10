@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nhl-pm-hbA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dual Model-->
+        <scene sceneID="Pky-kx-JTV">
+            <objects>
+                <tableViewController id="Nhl-pm-hbA" customClass="DualModelTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iF5-gl-zkF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="hz7-yv-UgD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EdI-yj-uI8">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EdI-yj-uI8" id="GZt-tf-NtJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wi-Fi SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsi-Yq-6bh">
+                                                    <rect key="frame" x="15" y="5" width="384" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hsi-Yq-6bh" secondAttribute="bottom" constant="5" id="RlW-Rp-qgC"/>
+                                                <constraint firstAttribute="trailing" secondItem="hsi-Yq-6bh" secondAttribute="trailing" constant="15" id="ghH-er-VTu"/>
+                                                <constraint firstItem="hsi-Yq-6bh" firstAttribute="top" secondItem="GZt-tf-NtJ" secondAttribute="top" constant="5" id="soX-ZN-Rva"/>
+                                                <constraint firstItem="hsi-Yq-6bh" firstAttribute="leading" secondItem="GZt-tf-NtJ" secondAttribute="leading" constant="15" id="uv7-78-Tza"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oW4-sF-H8U">
+                                        <rect key="frame" x="0.0" y="72.5" width="414" height="44.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oW4-sF-H8U" id="Ngx-gV-w9n">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wi-Fi Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDQ-ek-SxM">
+                                                    <rect key="frame" x="15" y="5" width="384" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eDQ-ek-SxM" secondAttribute="trailing" constant="15" id="Ddb-TR-CIw"/>
+                                                <constraint firstItem="eDQ-ek-SxM" firstAttribute="top" secondItem="Ngx-gV-w9n" secondAttribute="top" constant="5" id="K4y-mS-bAv"/>
+                                                <constraint firstAttribute="bottom" secondItem="eDQ-ek-SxM" secondAttribute="bottom" constant="5" id="akG-yp-TJW"/>
+                                                <constraint firstItem="eDQ-ek-SxM" firstAttribute="leading" secondItem="Ngx-gV-w9n" secondAttribute="leading" constant="15" id="tfA-S1-Abe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Nhl-pm-hbA" id="UJ5-1C-wtQ"/>
+                            <outlet property="delegate" destination="Nhl-pm-hbA" id="22z-3H-H5M"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dual Model" id="rFb-nG-tTi">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="jkN-jZ-nPs">
+                            <connections>
+                                <action selector="searchClicked:" destination="Nhl-pm-hbA" id="d3D-K0-DoY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtFPS" destination="eDQ-ek-SxM" id="uDx-S7-RpP"/>
+                        <outlet property="txtFSSID" destination="hsi-Yq-6bh" id="Tmh-wt-gKB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pa7-mo-fSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="95"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
