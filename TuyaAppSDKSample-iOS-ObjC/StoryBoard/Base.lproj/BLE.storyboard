@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Bluetooth Low Energy-->
         <scene sceneID="A1X-Ed-tEI">
             <objects>
                 <viewController id="o3O-y9-07X" customClass="BLEModelViewController" sceneMemberID="viewController">
@@ -35,7 +35,7 @@ Tap Search to pair BLE device.</string>
                             <constraint firstItem="iAR-sv-IKa" firstAttribute="trailing" secondItem="7oa-0B-2jK" secondAttribute="trailing" constant="18" id="vwD-vH-1jr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="NhP-pO-l1S">
+                    <navigationItem key="navigationItem" title="Bluetooth Low Energy" id="NhP-pO-l1S">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="SeF-kB-zbN">
                             <connections>
                                 <action selector="searchClicked:" destination="o3O-y9-07X" id="6eN-5Q-b0G"/>

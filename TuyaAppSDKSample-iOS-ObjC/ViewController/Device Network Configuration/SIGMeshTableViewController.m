@@ -69,7 +69,7 @@
     [TuyaSmartSIGMeshManager.sharedInstance startActive:self.dataSource meshModel:model];
 }
 
-#pragma mark--TuyaSmartSIGMeshManagerDelegate
+#pragma mark - TuyaSmartSIGMeshManagerDelegate
 
 - (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didScanedDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device{
     [self.dataSource addObject:device];

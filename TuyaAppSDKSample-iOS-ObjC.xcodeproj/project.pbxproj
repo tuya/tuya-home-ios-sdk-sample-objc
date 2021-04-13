@@ -132,7 +132,6 @@
 		9A4C4906260B29A20000D9EA /* BLEModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEModelViewController.h; sourceTree = "<group>"; };
 		9A4C4907260B29A20000D9EA /* BLEModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEModelViewController.m; sourceTree = "<group>"; };
 		9A4C490B260B2A960000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BLE.storyboard; sourceTree = "<group>"; };
-		9A4C490F260B2A9A0000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BLE.strings"; sourceTree = "<group>"; };
 		9A4C4914260B30A40000D9EA /* DualModelTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualModelTableViewController.h; sourceTree = "<group>"; };
 		9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DualModelTableViewController.m; sourceTree = "<group>"; };
 		9A4C4919260B35230000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DualModel.storyboard; sourceTree = "<group>"; };
@@ -141,6 +140,7 @@
 		9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGMeshTableViewController.m; sourceTree = "<group>"; };
 		9A4C4928260B39050000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SIGMesh.storyboard; sourceTree = "<group>"; };
 		9A4C492C260B39090000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SIGMesh.strings"; sourceTree = "<group>"; };
+		9A6F375026259DB6002DE04A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BLE.strings"; sourceTree = "<group>"; };
 		9AF91FF8260835A100CA5D66 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -655,7 +655,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9A4C490B260B2A960000D9EA /* Base */,
-				9A4C490F260B2A9A0000D9EA /* zh-Hans */,
+				9A6F375026259DB6002DE04A /* zh-Hans */,
 			);
 			name = BLE.storyboard;
 			sourceTree = "<group>";
