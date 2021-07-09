@@ -26,21 +26,11 @@
 #pragma mark - IBAction
 
 - (IBAction)sendVerificationCode:(UIButton *)sender {
-    if ([self.accountTextField.text containsString:@"@"]) {
-        [[TuyaSmartUser sharedInstance] sendVerifyCodeByRegisterEmail:self.countryCodeTextField.text email:self.accountTextField.text success:^{
-            [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your email for the code."];
-
-        } failure:^(NSError *error) {
-            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
-        }];
-    } else {
-        [[TuyaSmartUser sharedInstance] sendVerifyCode:self.countryCodeTextField.text phoneNumber:self.accountTextField.text type:1 success:^{
-            [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your message for the code."];
-
-        } failure:^(NSError *error) {
-            [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
-        }];
-    }
+    [[TuyaSmartUser sharedInstance] sendVerifyCodeWithUserName:self.accountTextField.text region:[[TuyaSmartUser sharedInstance] getDefaultRegionWithCountryCode:self.countryCodeTextField.text] countryCode:self.countryCodeTextField.text type:1 success:^{
+        [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your message for the code."];
+    } failure:^(NSError *error) {
+        [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
+    }];
 }
 
 - (IBAction)registerTapped:(UIButton *)sender {
