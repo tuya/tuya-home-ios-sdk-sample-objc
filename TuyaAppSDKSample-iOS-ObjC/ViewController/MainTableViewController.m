@@ -31,9 +31,13 @@
 }
 
 - (void)initiateCurrentHome {
+    WEAKSELF_TYSDK
     [self.homeManager getHomeListWithSuccess:^(NSArray<TuyaSmartHomeModel *> *homes) {
         if (homes && homes.count > 0) {
-            [Home setCurrentHome:homes.firstObject];
+            if (![Home getCurrentHome]) {
+                [Home setCurrentHome:homes.firstObject];
+                weakSelf_TYSDK.currentHomeLabel.text = [Home getCurrentHome].name;
+            }
         }
     } failure:^(NSError *error) {
         

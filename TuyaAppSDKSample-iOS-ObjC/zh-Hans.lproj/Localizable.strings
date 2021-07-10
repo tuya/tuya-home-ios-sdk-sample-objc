@@ -124,3 +124,11 @@
 /* User tapped the logout button. */
 "You're going to log out this account." = "您将要退出登录。";
 
+/*Searching BLE device*/
+"Searching" = "正在搜索";
+
+/*Failed to configuration*/
+"Failed to configuration" = "配置失败";
+
+/*Sending Data to the Device*/
+"Sending Data to the Device" = "向设备发送数据";

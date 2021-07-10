@@ -5,8 +5,7 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "APModeTableViewController.h"
-#import "Home.h"
-#import "SVProgressHUD.h"
+
 
 @interface APModeTableViewController () <TuyaSmartActivatorDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *ssidTextField;
