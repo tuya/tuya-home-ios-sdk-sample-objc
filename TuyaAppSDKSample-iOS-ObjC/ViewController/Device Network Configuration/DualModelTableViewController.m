@@ -55,7 +55,7 @@
     }];
 }
 
-- (void)bleWifiActivator:(nonnull TuyaSmartBLEWifiActivator *)activator didReceiveBLEWifiConfigDevice:(nonnull TuyaSmartDeviceModel *)deviceModel error:(nonnull NSError *)error {
+- (void)bleWifiActivator:(TuyaSmartBLEWifiActivator *)activator didReceiveBLEWifiConfigDevice:(nullable TuyaSmartDeviceModel *)deviceModel error:(nullable NSError *)error {
     if (error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription ?: NSLocalizedString(@"Failed to configuration", "")];
         return;
