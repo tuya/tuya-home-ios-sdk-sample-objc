@@ -8,5 +8,8 @@
 #define PrefixHeader_pch
 
 #import <TuyaSmartHomeKit/TuyaSmartKit.h>
+#import <TuyaSmartActivatorKit/TuyaSmartActivatorKit.h>
+#import "SVProgressHUD.h"
+#import "Home.h"
 
 #endif /* PrefixHeader_pch */
