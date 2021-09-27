@@ -38,6 +38,18 @@
 - (IBAction)searchClicked:(id)sender {
     long long homeId = [Home getCurrentHome].homeId;
     TuyaSmartBleMeshModel *model = [TuyaSmartHome homeWithHomeId:homeId].sigMeshModel;
+    
+    if (model == nil) {
+        [SVProgressHUD show];
+        [TuyaSmartBleMesh createSIGMeshWithHomeId:homeId success:^(TuyaSmartBleMeshModel * _Nonnull meshModel) {
+            [TuyaSmartSIGMeshManager.sharedInstance startScanWithScanType:ScanForUnprovision meshModel:meshModel];
+            TuyaSmartSIGMeshManager.sharedInstance.delegate = self;
+        } failure:^(NSError *error) {
+            [SVProgressHUD dismiss];
+        }];
+        return;
+    }
+    
     [TuyaSmartSIGMeshManager.sharedInstance startScanWithScanType:ScanForUnprovision meshModel:model];
     TuyaSmartSIGMeshManager.sharedInstance.delegate = self;
 }
