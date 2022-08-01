@@ -38,6 +38,9 @@
 		34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */; };
 		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
 		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
+		677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */; };
+		677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */; };
+		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
 		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
 		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
 		9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */; };
@@ -128,6 +131,12 @@
 		34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableViewController.m; sourceTree = "<group>"; };
 		34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHomeTableViewController.h; sourceTree = "<group>"; };
 		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
+		677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkBindViewController.h; sourceTree = "<group>"; };
+		677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkBindViewController.m; sourceTree = "<group>"; };
+		677A4C622890D50C007C0AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaLinkBind.storyboard; sourceTree = "<group>"; };
+		677A4C6C2890D7FC007C0AE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TuyaLinkBind.strings"; sourceTree = "<group>"; };
+		67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanerViewController.h; sourceTree = "<group>"; };
+		67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanerViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4C4906260B29A20000D9EA /* BLEModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEModelViewController.h; sourceTree = "<group>"; };
 		9A4C4907260B29A20000D9EA /* BLEModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEModelViewController.m; sourceTree = "<group>"; };
@@ -196,6 +205,8 @@
 				9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */,
 				9A4C4923260B37EB0000D9EA /* SIGMeshTableViewController.h */,
 				9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */,
+				677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */,
+				677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */,
 			);
 			path = "Device Network Configuration";
 			sourceTree = "<group>";
@@ -314,6 +325,7 @@
 		AF5531B925A55FD200E13562 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */,
 				34FF2CB325AE947200152CA6 /* Main.storyboard */,
 				34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */,
 				AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */,
@@ -372,6 +384,8 @@
 				34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */,
 				348543B325C2C25D00F1EF21 /* NotificationName.h */,
 				348543B425C2C25D00F1EF21 /* NotificationName.m */,
+				67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */,
+				67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -436,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */,
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
 				3485436C25C2638100F1EF21 /* HomeList.storyboard in Resources */,
 				3485436425C2631E00F1EF21 /* SwitchHome.storyboard in Resources */,
@@ -538,6 +553,8 @@
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
+				677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */,
+				67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
 				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
 				34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */,
@@ -649,6 +666,15 @@
 				3485436F25C2672200F1EF21 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				677A4C622890D50C007C0AE8 /* Base */,
+				677A4C6C2890D7FC007C0AE8 /* zh-Hans */,
+			);
+			name = TuyaLinkBind.storyboard;
 			sourceTree = "<group>";
 		};
 		9A4C490C260B2A960000D9EA /* BLE.storyboard */ = {

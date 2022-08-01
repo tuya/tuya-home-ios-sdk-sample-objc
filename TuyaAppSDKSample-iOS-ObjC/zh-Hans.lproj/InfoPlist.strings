@@ -10,8 +10,3 @@
 /* Privacy - Location When In Use Usage Description */
 "NSLocationWhenInUseUsageDescription" = "为了更好的使用，建议您打开使用您的位置的权限。";
 
-/* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "为了更好的使用，建议您打开使用您的相机权限。"
-
-/* Privacy - Photo Library Usage Description */
-"NSPhotoLibraryUsageDescription" = "为了更好的使用，建议您打开使用您的相册权限。"
