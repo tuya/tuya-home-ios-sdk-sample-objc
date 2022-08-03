@@ -8,6 +8,7 @@
 #import "Home.h"
 #import "Alert.h"
 #import "DeviceControlTableViewController.h"
+#import "TuyaLinkDeviceControlController.h"
 
 @interface DeviceListTableViewController () <TuyaSmartHomeDelegate>
 @property (strong, nonatomic) TuyaSmartHome *home;
@@ -45,13 +46,26 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
-    DeviceControlTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"DeviceControlTableViewController"];
     NSString *deviceID = self.home.deviceList[indexPath.row].devId;
     TuyaSmartDevice *device = [TuyaSmartDevice deviceWithDeviceId:deviceID];
-    vc.device = device;
     
-    [self.navigationController pushViewController:vc animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
+    NSString *identifier = [device.deviceModel isSupportThingModelDevice] ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    
+    if ([device.deviceModel isSupportThingModelDevice]) {
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"Fetching Thing Model", @"")];
+        [device getThingModelWithSuccess:^(TuyaSmartThingModel * _Nullable thingModel) {
+            [SVProgressHUD dismiss];
+            ((TuyaLinkDeviceControlController *)vc).device = device;
+            [self.navigationController pushViewController:vc animated:YES];
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to Fetch Thing Model", @"")];
+        }];
+    } else {
+        ((DeviceControlTableViewController *)vc).device = device;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)updateHomeDetail {

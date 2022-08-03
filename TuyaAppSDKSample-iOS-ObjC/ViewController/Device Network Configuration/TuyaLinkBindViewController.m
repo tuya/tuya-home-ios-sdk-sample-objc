@@ -21,6 +21,7 @@
 
 - (void)_bindTuyaLinkWithQRCodeStr:(NSString *)codeStr {
     long long homeId = [Home getCurrentHome].homeId;
+    [SVProgressHUD show];
     [[TuyaSmartTuyaLinkActivator new] bindTuyaLinkDeviceWithQRCode:codeStr homeId:homeId success:^(TuyaSmartDeviceModel * _Nonnull deviceModel) {
         [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Bind Success.\n devId: %@ \n name: %@", deviceModel.devId, deviceModel.name]];
     } failure:^(NSError *error) {
