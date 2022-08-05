@@ -69,7 +69,7 @@
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDetailWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:NSLocalizedString(@"Failed to Fetch Home", @"") message:error.localizedDescription];

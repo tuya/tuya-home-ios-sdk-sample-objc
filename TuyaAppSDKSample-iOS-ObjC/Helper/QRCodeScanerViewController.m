@@ -11,7 +11,6 @@
     SGScanCode *scanCode;
 }
 @property (nonatomic, strong) SGScanView *scanView;
-@property (nonatomic, strong) UILabel *promptLabel;
 @end
 
 @implementation QRCodeScanerViewController
@@ -44,7 +43,6 @@
 
 - (void)configureUI {
     [self.view addSubview:self.scanView];
-    [self.view addSubview:self.promptLabel];
 }
 
 - (void)configureQRCode {
@@ -69,7 +67,7 @@
 }
 
 - (void)configureNav {
-    self.navigationItem.title = @"扫一扫";
+    self.navigationItem.title = @"Scan QRCode";
 }
 
 - (SGScanView *)scanView {
@@ -93,23 +91,6 @@
         _scanView.scanFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     }
     return _scanView;
-}
-
-- (UILabel *)promptLabel {
-    if (!_promptLabel) {
-        _promptLabel = [[UILabel alloc] init];
-        _promptLabel.backgroundColor = [UIColor clearColor];
-        CGFloat promptLabelX = 0;
-        CGFloat promptLabelY = 0.73 * self.view.frame.size.height;
-        CGFloat promptLabelW = self.view.frame.size.width;
-        CGFloat promptLabelH = 25;
-        _promptLabel.frame = CGRectMake(promptLabelX, promptLabelY, promptLabelW, promptLabelH);
-        _promptLabel.textAlignment = NSTextAlignmentCenter;
-        _promptLabel.font = [UIFont boldSystemFontOfSize:13.0];
-        _promptLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-        _promptLabel.text = @"将二维码/条码放入框内, 即可自动扫描";
-    }
-    return _promptLabel;
 }
 
 @end

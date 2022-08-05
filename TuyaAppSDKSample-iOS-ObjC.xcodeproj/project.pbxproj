@@ -41,6 +41,8 @@
 		6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */; };
 		677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */; };
 		677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */; };
+		679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */; };
+		679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */; };
 		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
 		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
 		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
@@ -138,6 +140,10 @@
 		677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkBindViewController.m; sourceTree = "<group>"; };
 		677A4C622890D50C007C0AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaLinkBind.storyboard; sourceTree = "<group>"; };
 		677A4C6C2890D7FC007C0AE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TuyaLinkBind.strings"; sourceTree = "<group>"; };
+		6795619F289BCB8B00BD0FAB /* TextViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewTableViewCell.h; sourceTree = "<group>"; };
+		679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextViewTableViewCell.m; sourceTree = "<group>"; };
+		679561A3289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkActionMsgSendController.h; sourceTree = "<group>"; };
+		679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkActionMsgSendController.m; sourceTree = "<group>"; };
 		67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanerViewController.h; sourceTree = "<group>"; };
 		67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanerViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +234,8 @@
 				34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */,
 				6714644B289A111A0045F9AD /* TuyaLinkDeviceControlController.h */,
 				6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */,
+				679561A3289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.h */,
+				679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */,
 			);
 			path = "Device Management";
 			sourceTree = "<group>";
@@ -247,6 +255,8 @@
 				348543C525C2CBDA00F1EF21 /* StringTableViewCell.m */,
 				348543C825C2CD6400F1EF21 /* LabelTableViewCell.h */,
 				348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */,
+				6795619F289BCB8B00BD0FAB /* TextViewTableViewCell.h */,
+				679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -546,8 +556,10 @@
 			files = (
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
+				679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */,
 				6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
+				679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */,
 				9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */,
 				348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */,
 				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
