@@ -123,8 +123,6 @@
     TuyaSmartThingModel *thing = self.device.deviceModel.thingModel;
     TuyaSmartThingServiceModel *service = thing.services.firstObject;
     
-    
-    
     if (indexPath.section == 0) {
         NSArray *properties = service.properties;
         TuyaSmartThingProperty *property = properties[indexPath.row];

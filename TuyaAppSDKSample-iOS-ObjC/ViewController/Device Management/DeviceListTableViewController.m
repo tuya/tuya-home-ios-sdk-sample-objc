@@ -49,23 +49,42 @@
     NSString *deviceID = self.home.deviceList[indexPath.row].devId;
     TuyaSmartDevice *device = [TuyaSmartDevice deviceWithDeviceId:deviceID];
     
+    BOOL isSupportThingModel = [device.deviceModel isSupportThingModelDevice];
+    
+    NSString *identifier = isSupportThingModel ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
-    NSString *identifier = [device.deviceModel isSupportThingModelDevice] ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:identifier];
     
-    if ([device.deviceModel isSupportThingModelDevice]) {
-        [SVProgressHUD showWithStatus:NSLocalizedString(@"Fetching Thing Model", @"")];
-        [device getThingModelWithSuccess:^(TuyaSmartThingModel * _Nullable thingModel) {
-            [SVProgressHUD dismiss];
-            ((TuyaLinkDeviceControlController *)vc).device = device;
-            [self.navigationController pushViewController:vc animated:YES];
-        } failure:^(NSError *error) {
-            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to Fetch Thing Model", @"")];
-        }];
+    if (isSupportThingModel) {
+        [self _jumpTuyaLinkDeviceControl:(TuyaLinkDeviceControlController*)vc device:device];
     } else {
-        ((DeviceControlTableViewController *)vc).device = device;
-        [self.navigationController pushViewController:vc animated:YES];
+        [self _jumpNormalDeviceControl:(DeviceControlTableViewController*)vc device:device];
     }
+}
+
+- (void)_jumpTuyaLinkDeviceControl:(TuyaLinkDeviceControlController *)vc device:(TuyaSmartDevice *)device {
+    void(^goTuyaLinkControl)(void) = ^() {
+        vc.device = device;
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    
+    if (device.deviceModel.thingModel) {
+        goTuyaLinkControl();
+        return;
+    }
+    
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Fetching Thing Model", @"")];
+    [device getThingModelWithSuccess:^(TuyaSmartThingModel * _Nullable thingModel) {
+        [SVProgressHUD dismiss];
+        goTuyaLinkControl();
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to Fetch Thing Model", @"")];
+    }];
+}
+
+- (void)_jumpNormalDeviceControl:(DeviceControlTableViewController *)vc device:(TuyaSmartDevice *)device {
+    vc.device = device;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)updateHomeDetail {
