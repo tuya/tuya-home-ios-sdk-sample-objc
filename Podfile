@@ -4,6 +4,7 @@ source 'https://github.com/tuya/TuyaPublicSpecs.git'
 target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
   pod 'TuyaSmartHomeKit'
+  pod 'SGQRCode', '~> 4.1.0'
 end
 
 post_install do |installer|
