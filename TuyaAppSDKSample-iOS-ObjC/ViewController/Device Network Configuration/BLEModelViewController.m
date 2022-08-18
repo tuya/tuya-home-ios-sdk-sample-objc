@@ -42,6 +42,16 @@
 - (void)didDiscoveryDeviceWithDeviceInfo:(TYBLEAdvModel *)deviceInfo{
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
+    
+    if (deviceInfo.bleType == TYSmartBLETypeBLEWifi ||
+        deviceInfo.bleType == TYSmartBLETypeBLEWifiSecurity ||
+        deviceInfo.bleType == TYSmartBLETypeBLEWifiPlugPlay ||
+        deviceInfo.bleType == TYSmartBLETypeBLEWifiPriorBLE ||
+        deviceInfo.bleType == TYSmartBLETypeBLELTESecurity) {
+        NSLog(@"Please use Dual Mode to pair: %@", deviceInfo.uuid);
+        return;
+    }
+    
     [TuyaSmartBLEManager.sharedInstance activeBLE:deviceInfo homeId:homeId success:^(TuyaSmartDeviceModel * _Nonnull deviceModel) {
         self.isSuccess = YES;
         NSString *name = deviceModel.name?deviceModel.name:NSLocalizedString(@"Unknown Name", @"Unknown name device.");

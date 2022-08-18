@@ -10,6 +10,7 @@
 
 @property (nonatomic, assign) BOOL isSuccess;
 @property (nonatomic, strong) NSMutableArray<TuyaSmartSIGMeshDiscoverDeviceInfo *> *dataSource;
+@property (nonatomic, strong) TuyaSmartSIGMeshManager *manager;
 
 @end
 
@@ -37,21 +38,14 @@
 
 - (IBAction)searchClicked:(id)sender {
     long long homeId = [Home getCurrentHome].homeId;
-    TuyaSmartBleMeshModel *model = [TuyaSmartHome homeWithHomeId:homeId].sigMeshModel;
-    
-    if (model == nil) {
-        [SVProgressHUD show];
-        [TuyaSmartBleMesh createSIGMeshWithHomeId:homeId success:^(TuyaSmartBleMeshModel * _Nonnull meshModel) {
-            [TuyaSmartSIGMeshManager.sharedInstance startScanWithScanType:ScanForUnprovision meshModel:meshModel];
-            TuyaSmartSIGMeshManager.sharedInstance.delegate = self;
-        } failure:^(NSError *error) {
-            [SVProgressHUD dismiss];
-        }];
-        return;
-    }
-    
-    [TuyaSmartSIGMeshManager.sharedInstance startScanWithScanType:ScanForUnprovision meshModel:model];
-    TuyaSmartSIGMeshManager.sharedInstance.delegate = self;
+    TuyaSmartHome *home = [TuyaSmartHome homeWithHomeId:homeId];
+    [home getSIGMeshListWithSuccess:^(NSArray<TuyaSmartBleMeshModel *> * _Nonnull list) {
+        self.manager = [TuyaSmartBleMesh initSIGMeshManager:home.sigMeshModel ttl:8 nodeIds:nil];
+        self.manager.delegate = self;
+        [self.manager startSearch];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (NSMutableArray *)dataSource{
@@ -75,10 +69,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    long long homeId = [Home getCurrentHome].homeId;
-    TuyaSmartBleMeshModel *model = [TuyaSmartHome homeWithHomeId:homeId].sigMeshModel;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
-    [TuyaSmartSIGMeshManager.sharedInstance startActive:self.dataSource meshModel:model];
+    [self.manager startActive:self.dataSource];
 }
 
 #pragma mark - TuyaSmartSIGMeshManagerDelegate
@@ -89,16 +81,11 @@
 }
 
 - (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didActiveSubDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device devId:(NSString *)devId error:(NSError *)error{
-    long long homeId = [Home getCurrentHome].homeId;
-    TuyaSmartBleMeshModel *model = [TuyaSmartHome homeWithHomeId:homeId].sigMeshModel;
-    [TuyaSmartSIGMeshManager.sharedInstance startScanWithScanType:ScanForProxyed meshModel:model];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
-        self.isSuccess = YES;
-        NSString *name = device.mac ?: NSLocalizedString(@"Unknown Name", @"Unknown name device.");
-        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ %@" ,NSLocalizedString(@"Successfully Added", @"") ,name]];
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    if (!error) {
+        [self.dataSource removeObject:device];
+        [self.tableView reloadData];
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ %@" ,NSLocalizedString(@"Successfully Added", @"") ,device.mac]];
+    }
 }
 
 - (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didFailToActiveDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device error:(NSError *)error{

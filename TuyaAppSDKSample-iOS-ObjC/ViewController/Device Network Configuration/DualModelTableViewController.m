@@ -45,6 +45,16 @@
 }
 
 - (void)didDiscoveryDeviceWithDeviceInfo:(TYBLEAdvModel *)deviceInfo{
+    if (deviceInfo.bleType == TYSmartBLETypeUnknow ||
+        deviceInfo.bleType == TYSmartBLETypeBLE ||
+        deviceInfo.bleType == TYSmartBLETypeBLEPlus ||
+        deviceInfo.bleType == TYSmartBLETypeBLESecurity ||
+        deviceInfo.bleType == TYSmartBLETypeBLEZigbee ||
+        deviceInfo.bleType == TYSmartBLETypeBLEBeacon) {
+        NSLog(@"Please use BLE Mode to pair: %@", deviceInfo.uuid);
+        return;
+    }
+    
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Sending Data to the Device", @"")];
     TuyaSmartBLEWifiActivator.sharedInstance.bleWifiDelegate = self;
