@@ -13,12 +13,17 @@ typedef NS_ENUM(NSInteger, DeviceControlCellType) {
     DeviceControlCellTypeSliderCell, //"device-slider-cell"
     DeviceControlCellTypeEnumCell,   //"device-enum-cell"
     DeviceControlCellTypeStringCell, //"device-string-cell"
-    DeviceControlCellTypeLabelCell   //"device-label-cell"
+    DeviceControlCellTypeLabelCell,   //"device-label-cell"
+    DeviceControlCellTypeTextviewCell,   //"device-textview-cell"
 };
 
 @interface DeviceControlCellHelper : NSObject
 + (NSString *)cellIdentifierWithSchemaModel:(TuyaSmartSchemaModel *)schema;
 + (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema;
+
++ (NSString *)cellIdentifierWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
++ (DeviceControlCellType)cellTypeWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
+
 @end
 
 NS_ASSUME_NONNULL_END

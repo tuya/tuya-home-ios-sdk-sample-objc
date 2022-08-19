@@ -73,4 +73,16 @@
     }
 }
 
+// Only the Security Level Device Need this.
+- (void)activator:(TuyaSmartActivator *)activator didPassWIFIToSecurityLevelDeviceWithUUID:(NSString *)uuid {
+    [SVProgressHUD dismiss];
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"SecurityLevelDevice" message:@"continue pair? (Please check you phone connected the same Wi-Fi as you Inputed)" preferredStyle:UIAlertControllerStyleAlert];
+    [vc addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [vc addAction:[UIAlertAction actionWithTitle:@"continue" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [[TuyaSmartActivator sharedInstance] continueConfigSecurityLevelDevice];
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
+    }]];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 @end

@@ -1,20 +1,20 @@
 //
-//  StringTableViewCell.m
+//  TextViewTableViewCell.m
 //  TuyaAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2022 Tuya Inc. (https://developer.tuya.com/)
 
-#import "StringTableViewCell.h"
+#import "TextViewTableViewCell.h"
 
-@implementation StringTableViewCell
+@implementation TextViewTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     if (self.button) {
         [self.controls addObject:self.button];
     }
-    if (self.textField) {
-        [self.controls addObject:self.textField];
+    if (self.textview) {
+        [self.controls addObject:self.textview];
     }
 }
 
@@ -25,8 +25,9 @@
 - (IBAction)buttonTapped:(UIButton *)sender {
     [self endEditing:YES];
     if (self.buttonAction) {
-        self.buttonAction(self.textField.text);
+        self.buttonAction(self.textview.text);
     }
 }
+
 
 @end

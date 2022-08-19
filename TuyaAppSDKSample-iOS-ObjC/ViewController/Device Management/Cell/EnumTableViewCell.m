@@ -16,7 +16,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     if (selected && self.optionArray > 0) {
-        UIViewController *vc = [[UIApplication sharedApplication] delegate].window.rootViewController;
+        UIViewController *vc = (UIViewController *)(self.nextResponder.nextResponder.nextResponder);
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Select Option", @"") message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         for (NSString *option in self.optionArray) {
             UIAlertAction *action = [UIAlertAction actionWithTitle:option style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
