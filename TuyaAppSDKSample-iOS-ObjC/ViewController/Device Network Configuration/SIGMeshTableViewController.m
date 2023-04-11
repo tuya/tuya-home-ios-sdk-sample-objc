@@ -1,16 +1,16 @@
 //
 //  SIGMeshTableViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "SIGMeshTableViewController.h"
 
-@interface SIGMeshTableViewController ()<TuyaSmartSIGMeshManagerDelegate>
+@interface SIGMeshTableViewController ()<ThingSmartSIGMeshManagerDelegate>
 
 @property (nonatomic, assign) BOOL isSuccess;
-@property (nonatomic, strong) NSMutableArray<TuyaSmartSIGMeshDiscoverDeviceInfo *> *dataSource;
-@property (nonatomic, strong) TuyaSmartSIGMeshManager *manager;
+@property (nonatomic, strong) NSMutableArray<ThingSmartSIGMeshDiscoverDeviceInfo *> *dataSource;
+@property (nonatomic, strong) ThingSmartSIGMeshManager *manager;
 
 @end
 
@@ -31,16 +31,16 @@
     if (!self.isSuccess) {
         [SVProgressHUD dismiss];
     }
-    [TuyaSmartSIGMeshManager.sharedInstance stopActiveDevice];
-    [TuyaSmartSIGMeshManager.sharedInstance stopSerachDevice];
-    TuyaSmartSIGMeshManager.sharedInstance.delegate = nil;
+    [ThingSmartSIGMeshManager.sharedInstance stopActiveDevice];
+    [ThingSmartSIGMeshManager.sharedInstance stopSerachDevice];
+    ThingSmartSIGMeshManager.sharedInstance.delegate = nil;
 }
 
 - (IBAction)searchClicked:(id)sender {
     long long homeId = [Home getCurrentHome].homeId;
-    TuyaSmartHome *home = [TuyaSmartHome homeWithHomeId:homeId];
-    [home getSIGMeshListWithSuccess:^(NSArray<TuyaSmartBleMeshModel *> * _Nonnull list) {
-        self.manager = [TuyaSmartBleMesh initSIGMeshManager:home.sigMeshModel ttl:8 nodeIds:nil];
+    ThingSmartHome *home = [ThingSmartHome homeWithHomeId:homeId];
+    [home getSIGMeshListWithSuccess:^(NSArray<ThingSmartBleMeshModel *> * _Nonnull list) {
+        self.manager = [ThingSmartBleMesh initSIGMeshManager:home.sigMeshModel ttl:8 nodeIds:nil];
         self.manager.delegate = self;
         [self.manager startSearch];
     } failure:^(NSError *error) {
@@ -63,7 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SIGMeshCellID" forIndexPath:indexPath];
-    TuyaSmartSIGMeshDiscoverDeviceInfo *info = self.dataSource[indexPath.row];
+    ThingSmartSIGMeshDiscoverDeviceInfo *info = self.dataSource[indexPath.row];
     cell.textLabel.text = info.mac;
     return cell;
 }
@@ -73,14 +73,14 @@
     [self.manager startActive:self.dataSource];
 }
 
-#pragma mark - TuyaSmartSIGMeshManagerDelegate
+#pragma mark - ThingSmartSIGMeshManagerDelegate
 
-- (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didScanedDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device{
+- (void)sigMeshManager:(ThingSmartSIGMeshManager *)manager didScanedDevice:(ThingSmartSIGMeshDiscoverDeviceInfo *)device{
     [self.dataSource addObject:device];
     [self.tableView reloadData];
 }
 
-- (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didActiveSubDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device devId:(NSString *)devId error:(NSError *)error{
+- (void)sigMeshManager:(ThingSmartSIGMeshManager *)manager didActiveSubDevice:(ThingSmartSIGMeshDiscoverDeviceInfo *)device devId:(NSString *)devId error:(NSError *)error{
     if (!error) {
         [self.dataSource removeObject:device];
         [self.tableView reloadData];
@@ -88,7 +88,7 @@
     }
 }
 
-- (void)sigMeshManager:(TuyaSmartSIGMeshManager *)manager didFailToActiveDevice:(TuyaSmartSIGMeshDiscoverDeviceInfo *)device error:(NSError *)error{
+- (void)sigMeshManager:(ThingSmartSIGMeshManager *)manager didFailToActiveDevice:(ThingSmartSIGMeshDiscoverDeviceInfo *)device error:(NSError *)error{
     [SVProgressHUD showErrorWithStatus:error.localizedDescription ?: NSLocalizedString(@"Failed to configuration", "")];
 }
 

@@ -1,8 +1,8 @@
 //
 //  DeviceControlCellHelper.h
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import <Foundation/Foundation.h>
 
@@ -18,11 +18,11 @@ typedef NS_ENUM(NSInteger, DeviceControlCellType) {
 };
 
 @interface DeviceControlCellHelper : NSObject
-+ (NSString *)cellIdentifierWithSchemaModel:(TuyaSmartSchemaModel *)schema;
-+ (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema;
++ (NSString *)cellIdentifierWithSchemaModel:(ThingSmartSchemaModel *)schema;
++ (DeviceControlCellType)cellTypeWithSchemaModel:(ThingSmartSchemaModel *)schema;
 
-+ (NSString *)cellIdentifierWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
-+ (DeviceControlCellType)cellTypeWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
++ (NSString *)cellIdentifierWithPropertyModel:(ThingSmartSchemaPropertyModel *)property;
++ (DeviceControlCellType)cellTypeWithPropertyModel:(ThingSmartSchemaPropertyModel *)property;
 
 @end
 

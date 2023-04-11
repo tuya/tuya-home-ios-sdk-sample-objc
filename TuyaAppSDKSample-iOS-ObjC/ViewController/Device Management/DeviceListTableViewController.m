@@ -1,17 +1,17 @@
 //
 //  DeviceListTableViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "DeviceListTableViewController.h"
 #import "Home.h"
 #import "Alert.h"
 #import "DeviceControlTableViewController.h"
-#import "TuyaLinkDeviceControlController.h"
+#import "ThingLinkDeviceControlController.h"
 
-@interface DeviceListTableViewController () <TuyaSmartHomeDelegate>
-@property (strong, nonatomic) TuyaSmartHome *home;
+@interface DeviceListTableViewController () <ThingSmartHomeDelegate>
+@property (strong, nonatomic) ThingSmartHome *home;
 @end
 
 @implementation DeviceListTableViewController
@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([Home getCurrentHome]) {
-        self.home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+        self.home = [ThingSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
         self.home.delegate = self;
         [self updateHomeDetail];
     }
@@ -37,7 +37,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"device-list-cell" forIndexPath:indexPath];
-    TuyaSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
+    ThingSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
     cell.textLabel.text = deviceModel.name;
     cell.detailTextLabel.text = deviceModel.isOnline ? NSLocalizedString(@"Online", @"") : NSLocalizedString(@"Offline", @"");
     return cell;
@@ -47,71 +47,71 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *deviceID = self.home.deviceList[indexPath.row].devId;
-    TuyaSmartDevice *device = [TuyaSmartDevice deviceWithDeviceId:deviceID];
+    ThingSmartDevice *device = [ThingSmartDevice deviceWithDeviceId:deviceID];
     
     BOOL isSupportThingModel = [device.deviceModel isSupportThingModelDevice];
     
-    NSString *identifier = isSupportThingModel ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
+    NSString *identifier = isSupportThingModel ? @"ThingLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:identifier];
     
     if (isSupportThingModel) {
-        [self _jumpTuyaLinkDeviceControl:(TuyaLinkDeviceControlController*)vc device:device];
+        [self _jumpThingLinkDeviceControl:(ThingLinkDeviceControlController*)vc device:device];
     } else {
         [self _jumpNormalDeviceControl:(DeviceControlTableViewController*)vc device:device];
     }
 }
 
-- (void)_jumpTuyaLinkDeviceControl:(TuyaLinkDeviceControlController *)vc device:(TuyaSmartDevice *)device {
-    void(^goTuyaLinkControl)(void) = ^() {
+- (void)_jumpThingLinkDeviceControl:(ThingLinkDeviceControlController *)vc device:(ThingSmartDevice *)device {
+    void(^goThingLinkControl)(void) = ^() {
         vc.device = device;
         [self.navigationController pushViewController:vc animated:YES];
     };
     
     if (device.deviceModel.thingModel) {
-        goTuyaLinkControl();
+        goThingLinkControl();
         return;
     }
     
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Fetching Thing Model", @"")];
-    [device getThingModelWithSuccess:^(TuyaSmartThingModel * _Nullable thingModel) {
+    [device getThingModelWithSuccess:^(ThingSmartThingModel * _Nullable thingModel) {
         [SVProgressHUD dismiss];
-        goTuyaLinkControl();
+        goThingLinkControl();
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to Fetch Thing Model", @"")];
     }];
 }
 
-- (void)_jumpNormalDeviceControl:(DeviceControlTableViewController *)vc device:(TuyaSmartDevice *)device {
+- (void)_jumpNormalDeviceControl:(DeviceControlTableViewController *)vc device:(ThingSmartDevice *)device {
     vc.device = device;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(ThingSmartHomeModel *homeModel) {
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:NSLocalizedString(@"Failed to Fetch Home", @"") message:error.localizedDescription];
     }];
 }
 
-- (void)homeDidUpdateInfo:(TuyaSmartHome *)home {
+- (void)homeDidUpdateInfo:(ThingSmartHome *)home {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home didAddDeivice:(TuyaSmartDeviceModel *)device {
+-(void)home:(ThingSmartHome *)home didAddDeivice:(ThingSmartDeviceModel *)device {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home didRemoveDeivice:(NSString *)devId {
+-(void)home:(ThingSmartHome *)home didRemoveDeivice:(NSString *)devId {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home deviceInfoUpdate:(TuyaSmartDeviceModel *)device {
+-(void)home:(ThingSmartHome *)home deviceInfoUpdate:(ThingSmartDeviceModel *)device {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home device:(TuyaSmartDeviceModel *)device dpsUpdate:(NSDictionary *)dps {
+-(void)home:(ThingSmartHome *)home device:(ThingSmartDeviceModel *)device dpsUpdate:(NSDictionary *)dps {
     [self.tableView reloadData];
 }
 @end

@@ -1,28 +1,28 @@
 //
-//  TuyaLinkBindViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingLinkBindViewController.m
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2022 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "TuyaLinkBindViewController.h"
+#import "ThingLinkBindViewController.h"
 #import "QRCodeScanerViewController.h"
-#import <TuyaSmartActivatorKit/TuyaSmartActivatorKit.h>>
+#import <ThingSmartActivatorKit/ThingSmartActivatorKit.h>>
 
-@interface TuyaLinkBindViewController ()
+@interface ThingLinkBindViewController ()
 
 @end
 
-@implementation TuyaLinkBindViewController
+@implementation ThingLinkBindViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
 
-- (void)_bindTuyaLinkWithQRCodeStr:(NSString *)codeStr {
+- (void)_bindThingLinkWithQRCodeStr:(NSString *)codeStr {
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD show];
-    [[TuyaSmartTuyaLinkActivator new] bindTuyaLinkDeviceWithQRCode:codeStr homeId:homeId success:^(TuyaSmartDeviceModel * _Nonnull deviceModel) {
+    [[ThingSmartThingLinkActivator new] bindThingLinkDeviceWithQRCode:codeStr homeId:homeId success:^(ThingSmartDeviceModel * _Nonnull deviceModel) {
         [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Bind Success.\n devId: %@ \n name: %@", deviceModel.devId, deviceModel.name]];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Bind failure.(%@)", error.localizedDescription]];
@@ -35,7 +35,7 @@
     if (indexPath.row == 0) {
         QRCodeScanerViewController *vc = [QRCodeScanerViewController new];
         [vc setScanCallback:^(NSString *result) {
-            [self _bindTuyaLinkWithQRCodeStr:result];
+            [self _bindThingLinkWithQRCodeStr:result];
         }];
         [self.navigationController pushViewController:vc animated:nil];
     }

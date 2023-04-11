@@ -1,8 +1,8 @@
 //
 //  LoginTableViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "LoginTableViewController.h"
 #import "Alert.h"
@@ -26,16 +26,16 @@
 
 - (IBAction)login:(UIButton *)sender {
     if ([self.accountTextField.text containsString:@"@"]) {
-        [[TuyaSmartUser sharedInstance] loginByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text success:^{
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+        [[ThingSmartUser sharedInstance] loginByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"ThingSmartMain" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;
         } failure:^(NSError *error) {
             [Alert showBasicAlertOnVC:self withTitle:@"Failed to Login" message:error.localizedDescription];
         }];
     } else {
-        [[TuyaSmartUser sharedInstance] loginByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text success:^{
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+        [[ThingSmartUser sharedInstance] loginByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text success:^{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"ThingSmartMain" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;
         } failure:^(NSError *error) {

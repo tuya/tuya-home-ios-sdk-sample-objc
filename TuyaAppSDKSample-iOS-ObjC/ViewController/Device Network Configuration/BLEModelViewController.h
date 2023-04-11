@@ -1,8 +1,8 @@
 //
 //  BLEModelViewController.h
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import <UIKit/UIKit.h>
 

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "AppDelegate.h"
 #import "AppKey.h"
@@ -16,12 +16,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Initialize TuyaSmartSDK
-    [[TuyaSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
+    // Initialize ThingSmartSDK
+    [[ThingSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
     
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
-    [[TuyaSmartSDK sharedInstance] setDebugMode:YES];
+    [[ThingSmartSDK sharedInstance] setDebugMode:YES];
     #else
     #endif
     
@@ -31,8 +31,8 @@
     if (@available(iOS 13, *)) {
         // Will go into scene delegate
     } else {
-        if ([TuyaSmartUser sharedInstance].isLogin) {
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+        if ([ThingSmartUser sharedInstance].isLogin) {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"ThingSmartMain" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             self.window.rootViewController = nav;
         } else {

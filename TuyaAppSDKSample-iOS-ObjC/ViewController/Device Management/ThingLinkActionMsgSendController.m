@@ -1,10 +1,10 @@
 //
-//  TuyaLinkActionMsgSendController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingLinkActionMsgSendController.m
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2022 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "TuyaLinkActionMsgSendController.h"
+#import "ThingLinkActionMsgSendController.h"
 #import "SVProgressHUD.h"
 #import "DeviceControlCellHelper.h"
 #import "NotificationName.h"
@@ -16,12 +16,12 @@
 #import "LabelTableViewCell.h"
 #import "TextViewTableViewCell.h"
 
-@interface TuyaLinkActionMsgSendController ()
+@interface ThingLinkActionMsgSendController ()
 @property (nonatomic, strong) NSMutableDictionary *payload;
 @property (nonatomic, strong) NSArray<NSDictionary *> *inputParams;
 @end
 
-@implementation TuyaLinkActionMsgSendController
+@implementation ThingLinkActionMsgSendController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,7 +56,7 @@
     
     NSDictionary *params = self.inputParams[indexPath.row];
     NSString *code = params[@"code"];
-    TuyaSmartSchemaPropertyModel *typeSpec = [TuyaSmartSchemaPropertyModel yy_modelWithDictionary:params[@"typeSpec"]];
+    ThingSmartSchemaPropertyModel *typeSpec = [ThingSmartSchemaPropertyModel yy_modelWithDictionary:params[@"typeSpec"]];
     
     NSString *cellIdentifier       = [DeviceControlCellHelper cellIdentifierWithPropertyModel:typeSpec];
     DeviceControlCellType cellType = [DeviceControlCellHelper cellTypeWithPropertyModel:typeSpec];
@@ -64,7 +64,7 @@
     
     BOOL isReadOnly = NO;
     
-    WEAKSELF_TYSDK
+    WEAKSELF_ThingSDK
     switch (cellType) {
         case DeviceControlCellTypeSwitchCell:
         {
@@ -72,7 +72,7 @@
             [((SwitchTableViewCell *)cell).switchButton setOn:NO];
             ((SwitchTableViewCell *)cell).isReadOnly = isReadOnly;
             ((SwitchTableViewCell *)cell).switchAction = ^(UISwitch *switchButton) {
-                weakSelf_TYSDK.payload[code] = [NSNumber numberWithBool:switchButton.isOn];
+                weakSelf_ThingSDK.payload[code] = [NSNumber numberWithBool:switchButton.isOn];
             };
             break;
         }
@@ -88,7 +88,7 @@
             ((SliderTableViewCell *)cell).sliderAction = ^(UISlider * _Nonnull slider) {
                 float step = typeSpec.step;
                 float roundedValue = round(slider.value / step) * step;
-                weakSelf_TYSDK.payload[code] =  @((int)roundedValue);
+                weakSelf_ThingSDK.payload[code] =  @((int)roundedValue);
             };
             break;
         }
@@ -100,7 +100,7 @@
             ((EnumTableViewCell *)cell).detailLabel.text = typeSpec.range.firstObject;
             ((EnumTableViewCell *)cell).isReadOnly = isReadOnly;
             ((EnumTableViewCell *)cell).selectAction = ^(NSString * _Nonnull option) {
-                weakSelf_TYSDK.payload[code] =  option;
+                weakSelf_ThingSDK.payload[code] =  option;
             };
             break;
         }
@@ -110,7 +110,7 @@
             ((StringTableViewCell *)cell).textField.text = @"";
             ((StringTableViewCell *)cell).isReadOnly = isReadOnly;
             ((StringTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
-                weakSelf_TYSDK.payload[code] = text;
+                weakSelf_ThingSDK.payload[code] = text;
             };
             break;
         }
@@ -126,9 +126,9 @@
             ((TextViewTableViewCell *)cell).textview.text = @"";
             ((TextViewTableViewCell *)cell).isReadOnly = isReadOnly;
             ((TextViewTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
-                NSDictionary *dict = [text tysdk_objectFromJSONString];
+                NSDictionary *dict = [text thingsdk_objectFromJSONString];
                 if (dict) {
-                    weakSelf_TYSDK.payload[code] =  dict;
+                    weakSelf_ThingSDK.payload[code] =  dict;
                 } else {
                     [SVProgressHUD showErrorWithStatus:@"Not json string"];
                 }

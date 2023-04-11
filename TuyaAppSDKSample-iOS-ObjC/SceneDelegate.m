@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "SceneDelegate.h"
 #import "SVProgressHUD.h"
@@ -22,8 +22,8 @@
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
-    if ([TuyaSmartUser sharedInstance].isLogin) {
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
+    if ([ThingSmartUser sharedInstance].isLogin) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"ThingSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         self.window.rootViewController = nav;
     } else {

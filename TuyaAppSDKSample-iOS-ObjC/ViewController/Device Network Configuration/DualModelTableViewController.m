@@ -1,12 +1,12 @@
 //
 //  DualModelTableViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "DualModelTableViewController.h"
 
-@interface DualModelTableViewController ()<TuyaSmartBLEManagerDelegate, TuyaSmartBLEWifiActivatorDelegate>
+@interface DualModelTableViewController ()<ThingSmartBLEManagerDelegate, ThingSmartBLEWifiActivatorDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFSSID;
 @property (weak, nonatomic) IBOutlet UITextField *txtFPS;
@@ -31,41 +31,41 @@
         [SVProgressHUD dismiss];
     }
     
-    TuyaSmartBLEManager.sharedInstance.delegate = nil;
-    [TuyaSmartBLEManager.sharedInstance stopListening:YES];
+    ThingSmartBLEManager.sharedInstance.delegate = nil;
+    [ThingSmartBLEManager.sharedInstance stopListening:YES];
 
-    TuyaSmartBLEWifiActivator.sharedInstance.bleWifiDelegate = nil;
-    [TuyaSmartBLEWifiActivator.sharedInstance stopDiscover];
+    ThingSmartBLEWifiActivator.sharedInstance.bleWifiDelegate = nil;
+    [ThingSmartBLEWifiActivator.sharedInstance stopDiscover];
 }
 
 - (IBAction)searchClicked:(id)sender {
-    TuyaSmartBLEManager.sharedInstance.delegate = self;
-    [TuyaSmartBLEManager.sharedInstance startListening:YES];
+    ThingSmartBLEManager.sharedInstance.delegate = self;
+    [ThingSmartBLEManager.sharedInstance startListening:YES];
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Searching", @"")];
 }
 
-- (void)didDiscoveryDeviceWithDeviceInfo:(TYBLEAdvModel *)deviceInfo{
-    if (deviceInfo.bleType == TYSmartBLETypeUnknow ||
-        deviceInfo.bleType == TYSmartBLETypeBLE ||
-        deviceInfo.bleType == TYSmartBLETypeBLEPlus ||
-        deviceInfo.bleType == TYSmartBLETypeBLESecurity ||
-        deviceInfo.bleType == TYSmartBLETypeBLEZigbee ||
-        deviceInfo.bleType == TYSmartBLETypeBLEBeacon) {
+- (void)didDiscoveryDeviceWithDeviceInfo:(ThingBLEAdvModel *)deviceInfo{
+    if (deviceInfo.bleType == ThingSmartBLETypeUnknow ||
+        deviceInfo.bleType == ThingSmartBLETypeBLE ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEPlus ||
+        deviceInfo.bleType == ThingSmartBLETypeBLESecurity ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEZigbee ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEBeacon) {
         NSLog(@"Please use BLE Mode to pair: %@", deviceInfo.uuid);
         return;
     }
     
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Sending Data to the Device", @"")];
-    TuyaSmartBLEWifiActivator.sharedInstance.bleWifiDelegate = self;
-    [TuyaSmartBLEWifiActivator.sharedInstance startConfigBLEWifiDeviceWithUUID:deviceInfo.uuid homeId:homeId productId:deviceInfo.productId ssid:_txtFSSID.text ?: @"" password:_txtFPS.text ?: @"" timeout:100 success:^{
+    ThingSmartBLEWifiActivator.sharedInstance.bleWifiDelegate = self;
+    [ThingSmartBLEWifiActivator.sharedInstance startConfigBLEWifiDeviceWithUUID:deviceInfo.uuid homeId:homeId productId:deviceInfo.productId ssid:_txtFSSID.text ?: @"" password:_txtFPS.text ?: @"" timeout:100 success:^{
         [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to configuration", "")];
     }];
 }
 
-- (void)bleWifiActivator:(TuyaSmartBLEWifiActivator *)activator didReceiveBLEWifiConfigDevice:(nullable TuyaSmartDeviceModel *)deviceModel error:(nullable NSError *)error {
+- (void)bleWifiActivator:(ThingSmartBLEWifiActivator *)activator didReceiveBLEWifiConfigDevice:(nullable ThingSmartDeviceModel *)deviceModel error:(nullable NSError *)error {
     if (error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription ?: NSLocalizedString(@"Failed to configuration", "")];
         return;

@@ -1,13 +1,13 @@
 //
 //  APModeTableViewController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "APModeTableViewController.h"
 
 
-@interface APModeTableViewController () <TuyaSmartActivatorDelegate>
+@interface APModeTableViewController () <ThingSmartActivatorDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *ssidTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -34,7 +34,7 @@
 - (void)requestToken {
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Requesting for Token", @"")];
-    [[TuyaSmartActivator sharedInstance] getTokenWithHomeId:homeId success:^(NSString *result) {
+    [[ThingSmartActivator sharedInstance] getTokenWithHomeId:homeId success:^(NSString *result) {
         if (result && result.length > 0) {
             self.token = result;
         }
@@ -48,19 +48,19 @@
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
     NSString *ssid = self.ssidTextField.text;
     NSString *password = self.passwordTextField.text;
-    [TuyaSmartActivator sharedInstance].delegate = self;
-    [[TuyaSmartActivator sharedInstance] startConfigWiFi:TYActivatorModeAP ssid:ssid password:password token:self.token timeout:100];
+    [ThingSmartActivator sharedInstance].delegate = self;
+    [[ThingSmartActivator sharedInstance] startConfigWiFi:ThingActivatorModeAP ssid:ssid password:password token:self.token timeout:100];
 }
 
 - (void)stopConfigWifi {
     if (!self.isSuccess) {
         [SVProgressHUD dismiss];
     }
-    [TuyaSmartActivator sharedInstance].delegate = nil;
-    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
+    [ThingSmartActivator sharedInstance].delegate = nil;
+    [[ThingSmartActivator sharedInstance] stopConfigWiFi];
 }
 
-- (void)activator:(TuyaSmartActivator *)activator didReceiveDevice:(TuyaSmartDeviceModel *)deviceModel error:(NSError *)error {
+- (void)activator:(ThingSmartActivator *)activator didReceiveDevice:(ThingSmartDeviceModel *)deviceModel error:(NSError *)error {
     if (deviceModel && error == nil) {
         NSString *name = deviceModel.name?deviceModel.name:NSLocalizedString(@"Unknown Name", @"Unknown name device.");
         [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ %@" ,NSLocalizedString(@"Successfully Added", @"") ,name]];
@@ -74,12 +74,12 @@
 }
 
 // Only the Security Level Device Need this.
-- (void)activator:(TuyaSmartActivator *)activator didPassWIFIToSecurityLevelDeviceWithUUID:(NSString *)uuid {
+- (void)activator:(ThingSmartActivator *)activator didPassWIFIToSecurityLevelDeviceWithUUID:(NSString *)uuid {
     [SVProgressHUD dismiss];
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"SecurityLevelDevice" message:@"continue pair? (Please check you phone connected the same Wi-Fi as you Inputed)" preferredStyle:UIAlertControllerStyleAlert];
     [vc addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil]];
     [vc addAction:[UIAlertAction actionWithTitle:@"continue" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [[TuyaSmartActivator sharedInstance] continueConfigSecurityLevelDevice];
+        [[ThingSmartActivator sharedInstance] continueConfigSecurityLevelDevice];
         [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
     }]];
     [self presentViewController:vc animated:YES completion:nil];

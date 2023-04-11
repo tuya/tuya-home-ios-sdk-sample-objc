@@ -1,10 +1,10 @@
 //
-//  TuyaLinkDeviceControlController.m
-//  TuyaAppSDKSample-iOS-ObjC
+//  ThingLinkDeviceControlController.m
+//  ThingAppSDKSample-iOS-ObjC
 //
-//  Copyright (c) 2014-2022 Tuya Inc. (https://developer.tuya.com/)
+//  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "TuyaLinkDeviceControlController.h"
+#import "ThingLinkDeviceControlController.h"
 #import "DeviceDetailTableViewController.h"
 #import "SVProgressHUD.h"
 #import "DeviceControlCellHelper.h"
@@ -16,13 +16,13 @@
 #import "StringTableViewCell.h"
 #import "LabelTableViewCell.h"
 #import "TextViewTableViewCell.h"
-#import "TuyaLinkActionMsgSendController.h"
+#import "ThingLinkActionMsgSendController.h"
 
-@interface TuyaLinkDeviceControlController ()<TuyaSmartDeviceDelegate>
+@interface ThingLinkDeviceControlController ()<ThingSmartDeviceDelegate>
 
 @end
 
-@implementation TuyaLinkDeviceControlController
+@implementation ThingLinkDeviceControlController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,7 +67,7 @@
 }
 
 - (void)publishProperty:(NSDictionary *)payload {
-    [self.device publishThingMessageWithType:TuyaSmartThingMessageTypeProperty payload:payload success:^{
+    [self.device publishThingMessageWithType:ThingSmartThingMessageTypeProperty payload:payload success:^{
         
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
@@ -79,7 +79,7 @@
         [SVProgressHUD showErrorWithStatus:@"params error"];
         return;
     }
-    [self.device publishThingMessageWithType:TuyaSmartThingMessageTypeAction payload:@{
+    [self.device publishThingMessageWithType:ThingSmartThingMessageTypeAction payload:@{
         @"actionCode": action,
         @"inputParams": payload
     } success:^{
@@ -105,7 +105,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    TuyaSmartThingModel *thing = self.device.deviceModel.thingModel;
+    ThingSmartThingModel *thing = self.device.deviceModel.thingModel;
     if (!thing) {
         return 0;
     } else {
@@ -119,18 +119,18 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TuyaSmartDevice *device = self.device;
-    TuyaSmartThingModel *thing = self.device.deviceModel.thingModel;
-    TuyaSmartThingServiceModel *service = thing.services.firstObject;
+    ThingSmartDevice *device = self.device;
+    ThingSmartThingModel *thing = self.device.deviceModel.thingModel;
+    ThingSmartThingServiceModel *service = thing.services.firstObject;
     
     if (indexPath.section == 0) {
         NSArray *properties = service.properties;
-        TuyaSmartThingProperty *property = properties[indexPath.row];
+        ThingSmartThingProperty *property = properties[indexPath.row];
         bool isReadOnly = [property.accessMode isEqualToString:@"ro"];
         
         NSDictionary *dps = device.deviceModel.dps;
         
-        TuyaSmartSchemaPropertyModel *typeSpec = [TuyaSmartSchemaPropertyModel yy_modelWithDictionary:property.typeSpec];
+        ThingSmartSchemaPropertyModel *typeSpec = [ThingSmartSchemaPropertyModel yy_modelWithDictionary:property.typeSpec];
         NSString *cellIdentifier       = [DeviceControlCellHelper cellIdentifierWithPropertyModel:typeSpec];
         DeviceControlCellType cellType = [DeviceControlCellHelper cellTypeWithPropertyModel:typeSpec];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -190,16 +190,16 @@
             case DeviceControlCellTypeLabelCell:
             {
                 ((LabelTableViewCell *)cell).label.text = code;
-                ((LabelTableViewCell *)cell).detailLabel.text = [dps[dpId] tysdk_toString];
+                ((LabelTableViewCell *)cell).detailLabel.text = [dps[dpId] thingsdk_JSONString];
                 break;
             }
             case DeviceControlCellTypeTextviewCell:
             {
                 ((TextViewTableViewCell *)cell).title.text = code;
-                ((TextViewTableViewCell *)cell).textview.text = [dps[dpId] tysdk_JSONString];
+                ((TextViewTableViewCell *)cell).textview.text = [dps[dpId] thingsdk_JSONString];
                 ((TextViewTableViewCell *)cell).isReadOnly = isReadOnly;
                 ((TextViewTableViewCell *)cell).buttonAction = ^(NSString * _Nonnull text) {
-                    NSDictionary *dict = [text tysdk_objectFromJSONString];
+                    NSDictionary *dict = [text thingsdk_objectFromJSONString];
                     if (dict) {
                         [self publishProperty:@{code: dict}];
                     } else {
@@ -216,7 +216,7 @@
         return cell;
     } else if (indexPath.section == 1) {
         NSArray *actions = service.actions;
-        TuyaSmartThingAction *action = actions[indexPath.row];
+        ThingSmartThingAction *action = actions[indexPath.row];
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"default-cell"];
         cell.textLabel.text = action.code;
@@ -228,14 +228,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         NSArray *actions = self.device.deviceModel.thingModel.services.firstObject.actions;
-        TuyaSmartThingAction *action = actions[indexPath.row];
+        ThingSmartThingAction *action = actions[indexPath.row];
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
-        TuyaLinkActionMsgSendController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TuyaLinkActionMsgSendController"];
+        ThingLinkActionMsgSendController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ThingLinkActionMsgSendController"];
         vc.action = action;
-        WEAKSELF_TYSDK
+        WEAKSELF_ThingSDK
         [vc setCallback:^(NSDictionary *dict) {
-            [weakSelf_TYSDK publishAction:action.code payload:dict];
+            [weakSelf_ThingSDK publishAction:action.code payload:dict];
         }];
         
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -243,41 +243,41 @@
     }
 }
 
--(void)deviceInfoUpdate:(TuyaSmartDevice *)device {
+-(void)deviceInfoUpdate:(ThingSmartDevice *)device {
     [self detectDeviceAvailability];
     [self.tableView reloadData];
 }
 
--(void)deviceRemoved:(TuyaSmartDevice *)device {
+-(void)deviceRemoved:(ThingSmartDevice *)device {
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceOffline object:nil];
     [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"The device has been removed.", @"")];
 }
 
-- (void)device:(TuyaSmartDevice *)device didReceiveThingMessageWithType:(TuyaSmartThingMessageType)thingMessageType payload:(NSDictionary *)payload {
-    if (thingMessageType == TuyaSmartThingMessageTypeProperty) {
+- (void)device:(ThingSmartDevice *)device didReceiveThingMessageWithType:(ThingSmartThingMessageType)thingMessageType payload:(NSDictionary *)payload {
+    if (thingMessageType == ThingSmartThingMessageTypeProperty) {
         [self detectDeviceAvailability];
         [self.tableView reloadData];
-    } else if (thingMessageType == TuyaSmartThingMessageTypeAction) {
+    } else if (thingMessageType == ThingSmartThingMessageTypeAction) {
         NSLog(@"--- action: %@", payload);
         NSString *code = payload[@"actionCode"];
         NSDictionary *outputParams = payload[@"outputParams"];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:code message:outputParams.tysdk_JSONString preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:code message:outputParams.thingsdk_JSONString preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-    } else if (thingMessageType == TuyaSmartThingMessageTypeEvent) {
+    } else if (thingMessageType == ThingSmartThingMessageTypeEvent) {
         NSLog(@"--- event: %@", payload);
         
         NSString *code = payload[@"eventCode"];
         NSDictionary *outputParams = payload[@"outputParams"];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:code message:outputParams.tysdk_JSONString preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:code message:outputParams.thingsdk_JSONString preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
--(void)device:(TuyaSmartDevice *)device dpsUpdate:(NSDictionary *)dps {
+-(void)device:(ThingSmartDevice *)device dpsUpdate:(NSDictionary *)dps {
     NSLog(@"---dps update: %@", dps);
 }
 @end

@@ -28,7 +28,7 @@
 		348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */; };
 		348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */; };
 		34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */; };
-		34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */; };
+		34FF2C6725AE8B6100152CA6 /* ThingSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* ThingSmartMain.storyboard */; };
 		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
 		34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */; };
 		34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2CB325AE947200152CA6 /* Main.storyboard */; };
@@ -38,11 +38,11 @@
 		34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */; };
 		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
 		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
-		6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */; };
-		677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */; };
-		677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */; };
+		6714644D289A111A0045F9AD /* ThingLinkDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714644C289A111A0045F9AD /* ThingLinkDeviceControlController.m */; };
+		677A4C5E2890D372007C0AE8 /* ThingLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* ThingLinkBindViewController.m */; };
+		677A4C632890D50C007C0AE8 /* ThingLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* ThingLinkBind.storyboard */; };
 		679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */; };
-		679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */; };
+		679561A5289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m */; };
 		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
 		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
 		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
@@ -50,7 +50,6 @@
 		9A4C4918260B35230000D9EA /* DualModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C491A260B35230000D9EA /* DualModel.storyboard */; };
 		9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */; };
 		9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C4929260B39050000D9EA /* SIGMesh.storyboard */; };
-		9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9AF91FF8260835A100CA5D66 /* t_s.bmp */; };
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
@@ -77,7 +76,7 @@
 		3485436325C2631D00F1EF21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewHome.storyboard; sourceTree = "<group>"; };
 		3485436B25C2638000F1EF21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeList.storyboard; sourceTree = "<group>"; };
 		3485436F25C2672200F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		3485437025C2672300F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TuyaSmartMain.strings"; sourceTree = "<group>"; };
+		3485437025C2672300F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ThingSmartMain.strings"; sourceTree = "<group>"; };
 		3485437125C2672300F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3485437225C2672400F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Register.strings"; sourceTree = "<group>"; };
 		3485437325C2672500F1EF21 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Login.strings"; sourceTree = "<group>"; };
@@ -116,7 +115,7 @@
 		348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APModeTableViewController.m; sourceTree = "<group>"; };
 		34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailTableViewController.h; sourceTree = "<group>"; };
 		34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailTableViewController.m; sourceTree = "<group>"; };
-		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaSmartMain.storyboard; sourceTree = "<group>"; };
+		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ThingSmartMain.storyboard; sourceTree = "<group>"; };
 		34FF2C6925AE8CC900152CA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		34FF2C6A25AE8CC900152CA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		34FF2CAE25AE904E00152CA6 /* UIButton+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
@@ -134,16 +133,16 @@
 		34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableViewController.m; sourceTree = "<group>"; };
 		34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHomeTableViewController.h; sourceTree = "<group>"; };
 		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
-		6714644B289A111A0045F9AD /* TuyaLinkDeviceControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkDeviceControlController.h; sourceTree = "<group>"; };
-		6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkDeviceControlController.m; sourceTree = "<group>"; };
-		677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkBindViewController.h; sourceTree = "<group>"; };
-		677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkBindViewController.m; sourceTree = "<group>"; };
-		677A4C622890D50C007C0AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuyaLinkBind.storyboard; sourceTree = "<group>"; };
-		677A4C6C2890D7FC007C0AE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TuyaLinkBind.strings"; sourceTree = "<group>"; };
+		6714644B289A111A0045F9AD /* ThingLinkDeviceControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThingLinkDeviceControlController.h; sourceTree = "<group>"; };
+		6714644C289A111A0045F9AD /* ThingLinkDeviceControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThingLinkDeviceControlController.m; sourceTree = "<group>"; };
+		677A4C5C2890D372007C0AE8 /* ThingLinkBindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThingLinkBindViewController.h; sourceTree = "<group>"; };
+		677A4C5D2890D372007C0AE8 /* ThingLinkBindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThingLinkBindViewController.m; sourceTree = "<group>"; };
+		677A4C622890D50C007C0AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ThingLinkBind.storyboard; sourceTree = "<group>"; };
+		677A4C6C2890D7FC007C0AE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ThingLinkBind.strings"; sourceTree = "<group>"; };
 		6795619F289BCB8B00BD0FAB /* TextViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewTableViewCell.h; sourceTree = "<group>"; };
 		679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextViewTableViewCell.m; sourceTree = "<group>"; };
-		679561A3289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkActionMsgSendController.h; sourceTree = "<group>"; };
-		679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkActionMsgSendController.m; sourceTree = "<group>"; };
+		679561A3289CAB5700BD0FAB /* ThingLinkActionMsgSendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThingLinkActionMsgSendController.h; sourceTree = "<group>"; };
+		679561A4289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThingLinkActionMsgSendController.m; sourceTree = "<group>"; };
 		67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanerViewController.h; sourceTree = "<group>"; };
 		67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanerViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +158,6 @@
 		9A4C4928260B39050000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SIGMesh.storyboard; sourceTree = "<group>"; };
 		9A4C492C260B39090000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SIGMesh.strings"; sourceTree = "<group>"; };
 		9A6F375026259DB6002DE04A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BLE.strings"; sourceTree = "<group>"; };
-		9AF91FF8260835A100CA5D66 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF54CA4F25A4191000FCAC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -214,8 +212,8 @@
 				9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */,
 				9A4C4923260B37EB0000D9EA /* SIGMeshTableViewController.h */,
 				9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */,
-				677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */,
-				677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */,
+				677A4C5C2890D372007C0AE8 /* ThingLinkBindViewController.h */,
+				677A4C5D2890D372007C0AE8 /* ThingLinkBindViewController.m */,
 			);
 			path = "Device Network Configuration";
 			sourceTree = "<group>";
@@ -232,10 +230,10 @@
 				348543AA25C2B8EB00F1EF21 /* DeviceControlCellHelper.m */,
 				34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */,
 				34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */,
-				6714644B289A111A0045F9AD /* TuyaLinkDeviceControlController.h */,
-				6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */,
-				679561A3289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.h */,
-				679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */,
+				6714644B289A111A0045F9AD /* ThingLinkDeviceControlController.h */,
+				6714644C289A111A0045F9AD /* ThingLinkDeviceControlController.m */,
+				679561A3289CAB5700BD0FAB /* ThingLinkActionMsgSendController.h */,
+				679561A4289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m */,
 			);
 			path = "Device Management";
 			sourceTree = "<group>";
@@ -319,7 +317,6 @@
 		AF54CA4D25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				9AF91FF8260835A100CA5D66 /* t_s.bmp */,
 				AF54CAA025A443D800FCAC1F /* AppKey.h */,
 				AF54CA4E25A4191000FCAC1F /* AppDelegate.h */,
 				AF54CA4F25A4191000FCAC1F /* AppDelegate.m */,
@@ -340,9 +337,9 @@
 		AF5531B925A55FD200E13562 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */,
+				677A4C612890D50C007C0AE8 /* ThingLinkBind.storyboard */,
 				34FF2CB325AE947200152CA6 /* Main.storyboard */,
-				34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */,
+				34FF2C6525AE8B6100152CA6 /* ThingSmartMain.storyboard */,
 				AF54CA5C25A4191A00FCAC1F /* LaunchScreen.storyboard */,
 				AF5531B125A55F9400E13562 /* Register.storyboard */,
 				AF5531BB25A5601E00E13562 /* Login.storyboard */,
@@ -465,7 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */,
+				677A4C632890D50C007C0AE8 /* ThingLinkBind.storyboard in Resources */,
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
 				3485436C25C2638100F1EF21 /* HomeList.storyboard in Resources */,
 				3485436425C2631E00F1EF21 /* SwitchHome.storyboard in Resources */,
@@ -479,11 +476,10 @@
 				9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */,
 				9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */,
 				AF5531CA25A564EE00E13562 /* UserInformation.storyboard in Resources */,
-				9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */,
 				3485436725C2631E00F1EF21 /* EZMode.storyboard in Resources */,
 				3485436625C2631E00F1EF21 /* DeviceList.storyboard in Resources */,
 				3485438125C267BA00F1EF21 /* Localizable.strings in Resources */,
-				34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */,
+				34FF2C6725AE8B6100152CA6 /* ThingSmartMain.storyboard in Resources */,
 				AF5531B325A55F9400E13562 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,8 +552,8 @@
 			files = (
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
-				679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */,
-				6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */,
+				679561A5289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m in Sources */,
+				6714644D289A111A0045F9AD /* ThingLinkDeviceControlController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
 				679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */,
 				9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */,
@@ -571,7 +567,7 @@
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
-				677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */,
+				677A4C5E2890D372007C0AE8 /* ThingLinkBindViewController.m in Sources */,
 				67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
 				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
@@ -668,13 +664,13 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		34FF2C6525AE8B6100152CA6 /* TuyaSmartMain.storyboard */ = {
+		34FF2C6525AE8B6100152CA6 /* ThingSmartMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				34FF2C6625AE8B6100152CA6 /* Base */,
 				3485437025C2672300F1EF21 /* zh-Hans */,
 			);
-			name = TuyaSmartMain.storyboard;
+			name = ThingSmartMain.storyboard;
 			sourceTree = "<group>";
 		};
 		34FF2CB325AE947200152CA6 /* Main.storyboard */ = {
@@ -686,13 +682,13 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */ = {
+		677A4C612890D50C007C0AE8 /* ThingLinkBind.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				677A4C622890D50C007C0AE8 /* Base */,
 				677A4C6C2890D7FC007C0AE8 /* zh-Hans */,
 			);
-			name = TuyaLinkBind.storyboard;
+			name = ThingLinkBind.storyboard;
 			sourceTree = "<group>";
 		};
 		9A4C490C260B2A960000D9EA /* BLE.storyboard */ = {
@@ -882,7 +878,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D8399XH2VW;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -905,7 +901,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D8399XH2VW;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
