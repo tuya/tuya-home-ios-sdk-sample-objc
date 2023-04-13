@@ -8,6 +8,8 @@
 #import "AppKey.h"
 #import "SVProgressHUD.h"
 
+#import "CameraDoorbellManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +21,9 @@
     // Initialize TuyaSmartSDK
     [[TuyaSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
     
+    // Doorbell Observer. If you have a doorbell device
+    [[CameraDoorbellManager sharedInstance] addDoorbellObserver];
+    
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
     [[TuyaSmartSDK sharedInstance] setDebugMode:YES];
@@ -26,6 +31,7 @@
     #endif
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:2];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     if (@available(iOS 13, *)) {

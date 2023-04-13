@@ -5,10 +5,12 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "DeviceListTableViewController.h"
+#import <TuyaSmartCameraKit/TuyaSmartCameraKit.h>
 #import "Home.h"
 #import "Alert.h"
 #import "DeviceControlTableViewController.h"
 #import "TuyaLinkDeviceControlController.h"
+#import "CameraNewViewController.h"
 
 @interface DeviceListTableViewController () <TuyaSmartHomeDelegate>
 @property (strong, nonatomic) TuyaSmartHome *home;
@@ -48,8 +50,13 @@
     
     NSString *deviceID = self.home.deviceList[indexPath.row].devId;
     TuyaSmartDevice *device = [TuyaSmartDevice deviceWithDeviceId:deviceID];
-    
-    BOOL isSupportThingModel = [device.deviceModel isSupportThingModelDevice];
+    TuyaSmartDeviceModel *deviceModel = device.deviceModel;
+    if (deviceModel.isIPCDevice) {
+        CameraNewViewController *vc = [[CameraNewViewController alloc] initWithDeviceId:deviceModel.devId];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+    BOOL isSupportThingModel = [deviceModel isSupportThingModelDevice];
     
     NSString *identifier = isSupportThingModel ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];

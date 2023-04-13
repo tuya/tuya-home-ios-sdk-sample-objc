@@ -7,9 +7,14 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import <TuyaSmartHomeKit/TuyaSmartKit.h>
+//#import <TuyaSmartHomeKit/TuyaSmartKit.h>
 #import <TuyaSmartActivatorKit/TuyaSmartActivatorKit.h>
 #import "SVProgressHUD.h"
 #import "Home.h"
+#import <CoreLocation/CoreLocation.h>
+
+#import <TuyaSmartBLEMeshKit/TuyaSmartBLEMeshKit.h>
+#import <TuyaSmartBLECoreKit/TuyaSmartBLECoreKit.h>
+#import <TuyaSmartBLEKit/TuyaSmartBLEKit.h>
 
 #endif /* PrefixHeader_pch */

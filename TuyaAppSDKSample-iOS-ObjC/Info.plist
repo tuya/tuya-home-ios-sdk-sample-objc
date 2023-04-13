@@ -22,6 +22,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Use the camera to scan QR code</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>The app requests microphone access to control smart devices</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Use the camera to scan QR code</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Use the camera to scan QR code</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

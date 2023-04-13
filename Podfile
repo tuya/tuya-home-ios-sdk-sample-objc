@@ -4,9 +4,17 @@ source 'https://github.com/tuya/tuya-pod-specs.git'
 
 target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
+  pod 'Masonry'
+  
   pod 'SGQRCode', '~> 4.1.0'
 
-  pod 'TuyaSmartHomeKit', '>= 4.0.0'
+  pod 'TuyaSmartHomeKit'
+  pod 'TuyaSmartCameraKit'
+  pod 'TuyaCameraUIKit'
+  pod 'TuyaCloudStorageDebugger'
+  
+#  pod 'TuyaCameraAutomation'
+  
 end
 
 post_install do |installer|

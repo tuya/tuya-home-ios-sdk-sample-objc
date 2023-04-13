@@ -1,0 +1,12 @@
+{
+    "config": {
+        "appId": 0,
+        "tyAppKey": "your appKey",
+        "appScheme": "your appScheme",
+        "hotspotPrefixs": ["xxxxx"],
+        "needBle": false
+    },
+   "colors":{
+        "themeColor": "#FF5A28",
+    }
+}

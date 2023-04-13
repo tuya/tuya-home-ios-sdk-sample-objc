@@ -38,19 +38,115 @@
 		34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0125B03C2C00152CA6 /* HomeListTableViewController.m */; };
 		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
 		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
+		53A6B21E292E021400D06151 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 53A6B21D292E021400D06151 /* t_s.bmp */; };
 		6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */; };
 		677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */; };
 		677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */; };
 		679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */; };
 		679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m */; };
 		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
+		931C65CA29B6D0EE00A255B1 /* UIImage+TYQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C65C929B6D0EE00A255B1 /* UIImage+TYQRCode.m */; };
+		931C65D429B9BA2C00A255B1 /* CameraLocalPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C65D329B9BA2C00A255B1 /* CameraLocalPathUtil.m */; };
+		932E5A2A29BF207300A3110D /* CameraControlNewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 932E5A2929BF207300A3110D /* CameraControlNewView.m */; };
+		932EDDDC29ACDCF8005E6B28 /* CameraConnectBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EDDDB29ACDCF8005E6B28 /* CameraConnectBaseViewController.m */; };
+		932EDDE429AF3E16005E6B28 /* CameraLoadingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EDDE329AF3E16005E6B28 /* CameraLoadingButton.m */; };
+		932EDDE729B0732D005E6B28 /* CameraBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EDDE629B0732D005E6B28 /* CameraBaseViewController.m */; };
+		936CD8FD29A74D03000AC423 /* IPCViewsLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 936CD87F29A74D03000AC423 /* IPCViewsLocalizable.strings */; };
+		936CD8FE29A74D03000AC423 /* IPCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 936CD88129A74D03000AC423 /* IPCLocalizable.strings */; };
+		936CD8FF29A74D03000AC423 /* ty_custom_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 936CD88529A74D03000AC423 /* ty_custom_config.json */; };
+		936CD90129A74D03000AC423 /* CameraPermissionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD88A29A74D03000AC423 /* CameraPermissionUtil.m */; };
+		936CD90229A74D03000AC423 /* UIView+CameraAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD88C29A74D03000AC423 /* UIView+CameraAdditions.m */; };
+		936CD90329A74D03000AC423 /* CloudTimePieceModel+Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89029A74D03000AC423 /* CloudTimePieceModel+Timeline.m */; };
+		936CD90429A74D03000AC423 /* CameraTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89129A74D03000AC423 /* CameraTimeLineModel.m */; };
+		936CD90529A74D03000AC423 /* CameraDoorbellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89529A74D03000AC423 /* CameraDoorbellManager.m */; };
+		936CD90629A74D03000AC423 /* CameraCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89629A74D03000AC423 /* CameraCloudViewController.m */; };
+		936CD90729A74D03000AC423 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89729A74D03000AC423 /* CameraViewController.m */; };
+		936CD90829A74D03000AC423 /* CameraSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89929A74D03000AC423 /* CameraSettingViewController.m */; };
+		936CD90929A74D03000AC423 /* CameraMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD89C29A74D03000AC423 /* CameraMessageViewController.m */; };
+		936CD90A29A74D03000AC423 /* CameraSDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8A029A74D03000AC423 /* CameraSDCardViewController.m */; };
+		936CD90B29A74D03000AC423 /* CameraPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8A129A74D03000AC423 /* CameraPlaybackViewController.m */; };
+		936CD90C29A74D03000AC423 /* CameraDoorbellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8A329A74D03000AC423 /* CameraDoorbellViewController.m */; };
+		936CD90D29A74D03000AC423 /* CameraVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8A529A74D03000AC423 /* CameraVideoView.m */; };
+		936CD90E29A74D03000AC423 /* CameraCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8A629A74D03000AC423 /* CameraCalendarView.m */; };
+		936CD91029A74D03000AC423 /* CameraCruiseSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8AC29A74D03000AC423 /* CameraCruiseSelectView.m */; };
+		936CD91129A74D03000AC423 /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8AE29A74D03000AC423 /* CameraControlView.m */; };
+		936CD91229A74D03000AC423 /* CameraPTZControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8AF29A74D03000AC423 /* CameraPTZControlView.m */; };
+		936CD91329A74D03000AC423 /* CameraCollectionPointListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8B529A74D03000AC423 /* CameraCollectionPointListCell.m */; };
+		936CD91429A74D03000AC423 /* CameraBottomSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8B829A74D03000AC423 /* CameraBottomSwitchView.m */; };
+		936CD91529A74D03000AC423 /* CameraCustomTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8BB29A74D03000AC423 /* CameraCustomTimeView.m */; };
+		936CD91629A74D03000AC423 /* CameraCollectionPointListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8BC29A74D03000AC423 /* CameraCollectionPointListView.m */; };
+		936CD91729A74D03000AC423 /* CameraSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8BD29A74D03000AC423 /* CameraSwitchCell.m */; };
+		936CD91829A74D03000AC423 /* CameraCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8BE29A74D03000AC423 /* CameraCalendarCollectionViewCell.m */; };
+		936CD91A29A74D03000AC423 /* CameraCloudDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8C229A74D03000AC423 /* CameraCloudDayCollectionViewCell.m */; };
+		936CD91B29A74D03000AC423 /* CameraCruiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8C429A74D03000AC423 /* CameraCruiseView.m */; };
+		936CD91C29A74D03000AC423 /* CameraControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD8C529A74D03000AC423 /* CameraControlButton.m */; };
+		936CD91D29A74D03000AC423 /* ty_camera_mic_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8C729A74D03000AC423 /* ty_camera_mic_icon@3x.png */; };
+		936CD91E29A74D03000AC423 /* tysmart_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8C829A74D03000AC423 /* tysmart_selected@3x.png */; };
+		936CD91F29A74D03000AC423 /* tp_top_bar_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8C929A74D03000AC423 /* tp_top_bar_more@2x.png */; };
+		936CD92029A74D03000AC423 /* ty_camera_soundOff_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CA29A74D03000AC423 /* ty_camera_soundOff_icon@2x.png */; };
+		936CD92129A74D03000AC423 /* ty_camera_rec_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CB29A74D03000AC423 /* ty_camera_rec_icon@2x.png */; };
+		936CD92229A74D03000AC423 /* ty_camera_cloud_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CC29A74D03000AC423 /* ty_camera_cloud_icon@2x.png */; };
+		936CD92329A74D03000AC423 /* ty_mainbt_about_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CD29A74D03000AC423 /* ty_mainbt_about_active@2x.png */; };
+		936CD92429A74D03000AC423 /* ty_camera_tool_download_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CE29A74D03000AC423 /* ty_camera_tool_download_normal@2x.png */; };
+		936CD92529A74D03000AC423 /* ty_camera_tool_download_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8CF29A74D03000AC423 /* ty_camera_tool_download_normal@3x.png */; };
+		936CD92629A74D03000AC423 /* ty_mainbt_about_active@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D029A74D03000AC423 /* ty_mainbt_about_active@3x.png */; };
+		936CD92729A74D03000AC423 /* ty_camera_cloud_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D129A74D03000AC423 /* ty_camera_cloud_icon@3x.png */; };
+		936CD92829A74D03000AC423 /* ty_camera_rec_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D229A74D03000AC423 /* ty_camera_rec_icon@3x.png */; };
+		936CD92929A74D03000AC423 /* ty_camera_soundOff_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D329A74D03000AC423 /* ty_camera_soundOff_icon@3x.png */; };
+		936CD92A29A74D03000AC423 /* tp_top_bar_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D429A74D03000AC423 /* tp_top_bar_more@3x.png */; };
+		936CD92B29A74D03000AC423 /* tysmart_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D529A74D03000AC423 /* tysmart_selected@2x.png */; };
+		936CD92C29A74D03000AC423 /* ty_camera_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D629A74D03000AC423 /* ty_camera_mic_icon@2x.png */; };
+		936CD92D29A74D03000AC423 /* ty_camera_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D729A74D03000AC423 /* ty_camera_message@2x.png */; };
+		936CD92E29A74D03000AC423 /* ty_mainbt_add_active@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D829A74D03000AC423 /* ty_mainbt_add_active@3x.png */; };
+		936CD92F29A74D03000AC423 /* tp_top_bar_goBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8D929A74D03000AC423 /* tp_top_bar_goBack@2x.png */; };
+		936CD93029A74D03000AC423 /* pps_right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DA29A74D03000AC423 /* pps_right_arrow@2x.png */; };
+		936CD93129A74D03000AC423 /* ty_camera_tool_pause_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DB29A74D03000AC423 /* ty_camera_tool_pause_normal@3x.png */; };
+		936CD93229A74D03000AC423 /* ty_camera_control_hd_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DC29A74D03000AC423 /* ty_camera_control_hd_normal@2x.png */; };
+		936CD93329A74D03000AC423 /* ty_camera_control_hd_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DD29A74D03000AC423 /* ty_camera_control_hd_normal@3x.png */; };
+		936CD93429A74D03000AC423 /* ty_camera_tool_pause_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DE29A74D03000AC423 /* ty_camera_tool_pause_normal@2x.png */; };
+		936CD93529A74D03000AC423 /* tp_top_bar_goBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8DF29A74D03000AC423 /* tp_top_bar_goBack@3x.png */; };
+		936CD93629A74D03000AC423 /* pps_right_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E029A74D03000AC423 /* pps_right_arrow@3x.png */; };
+		936CD93729A74D03000AC423 /* ty_mainbt_add_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E129A74D03000AC423 /* ty_mainbt_add_active@2x.png */; };
+		936CD93829A74D03000AC423 /* ty_camera_message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E229A74D03000AC423 /* ty_camera_message@3x.png */; };
+		936CD93929A74D03000AC423 /* ty_mainbt_devicelist_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E329A74D03000AC423 /* ty_mainbt_devicelist_active@2x.png */; };
+		936CD93A29A74D03000AC423 /* ty_camera_tool_delete_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E429A74D03000AC423 /* ty_camera_tool_delete_normal@3x.png */; };
+		936CD93B29A74D03000AC423 /* ty_camera_hangup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E529A74D03000AC423 /* ty_camera_hangup@3x.png */; };
+		936CD93C29A74D03000AC423 /* ty_camera_tool_play_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E629A74D03000AC423 /* ty_camera_tool_play_normal@2x.png */; };
+		936CD93D29A74D03000AC423 /* ty_camera_control_sd_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E729A74D03000AC423 /* ty_camera_control_sd_normal@3x.png */; };
+		936CD93E29A74D03000AC423 /* ty_camera_playback_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E829A74D03000AC423 /* ty_camera_playback_icon@3x.png */; };
+		936CD93F29A74D03000AC423 /* tp_top_bar_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8E929A74D03000AC423 /* tp_top_bar_back@3x.png */; };
+		936CD94029A74D03000AC423 /* ty_mainbt_devicelist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8EA29A74D03000AC423 /* ty_mainbt_devicelist@2x.png */; };
+		936CD94129A74D03000AC423 /* ty_mainbt_devicelist@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8EB29A74D03000AC423 /* ty_mainbt_devicelist@3x.png */; };
+		936CD94229A74D03000AC423 /* tp_top_bar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8EC29A74D03000AC423 /* tp_top_bar_back@2x.png */; };
+		936CD94329A74D03000AC423 /* ty_camera_control_sd_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8ED29A74D03000AC423 /* ty_camera_control_sd_normal@2x.png */; };
+		936CD94429A74D03000AC423 /* ty_camera_playback_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8EE29A74D03000AC423 /* ty_camera_playback_icon@2x.png */; };
+		936CD94529A74D03000AC423 /* ty_camera_tool_play_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8EF29A74D03000AC423 /* ty_camera_tool_play_normal@3x.png */; };
+		936CD94629A74D03000AC423 /* ty_camera_tool_delete_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F029A74D03000AC423 /* ty_camera_tool_delete_normal@2x.png */; };
+		936CD94729A74D03000AC423 /* ty_camera_hangup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F129A74D03000AC423 /* ty_camera_hangup@2x.png */; };
+		936CD94829A74D03000AC423 /* ty_mainbt_devicelist_active@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F229A74D03000AC423 /* ty_mainbt_devicelist_active@3x.png */; };
+		936CD94929A74D03000AC423 /* ty_camera_photo_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F329A74D03000AC423 /* ty_camera_photo_icon@3x.png */; };
+		936CD94A29A74D03000AC423 /* ty_mainbt_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F429A74D03000AC423 /* ty_mainbt_add@3x.png */; };
+		936CD94B29A74D03000AC423 /* ty_camera_soundOn_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F529A74D03000AC423 /* ty_camera_soundOn_icon@3x.png */; };
+		936CD94C29A74D03000AC423 /* pps_left_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F629A74D03000AC423 /* pps_left_arrow@3x.png */; };
+		936CD94D29A74D03000AC423 /* ty_mainbt_about@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F729A74D03000AC423 /* ty_mainbt_about@3x.png */; };
+		936CD94E29A74D03000AC423 /* ty_mainbt_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F829A74D03000AC423 /* ty_mainbt_about@2x.png */; };
+		936CD94F29A74D03000AC423 /* pps_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8F929A74D03000AC423 /* pps_left_arrow@2x.png */; };
+		936CD95029A74D03000AC423 /* ty_camera_soundOn_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8FA29A74D03000AC423 /* ty_camera_soundOn_icon@2x.png */; };
+		936CD95129A74D03000AC423 /* ty_camera_photo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8FB29A74D03000AC423 /* ty_camera_photo_icon@2x.png */; };
+		936CD95229A74D03000AC423 /* ty_mainbt_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CD8FC29A74D03000AC423 /* ty_mainbt_add@2x.png */; };
+		936CD95C29A8C2F4000AC423 /* CameraDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD95B29A8C2F4000AC423 /* CameraDevice.m */; };
+		936CD95F29A8C301000AC423 /* CameraDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD95E29A8C301000AC423 /* CameraDeviceManager.m */; };
+		936CD96929A90A4B000AC423 /* CameraNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD96229A90A4B000AC423 /* CameraNewViewController.m */; };
+		936CD96A29A90A4B000AC423 /* CameraDoorbellNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD96429A90A4B000AC423 /* CameraDoorbellNewViewController.m */; };
+		936CD96B29A90A4B000AC423 /* CameraPlaybackNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD96629A90A4B000AC423 /* CameraPlaybackNewViewController.m */; };
+		936CD96C29A90A4B000AC423 /* CameraCloudNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD96829A90A4B000AC423 /* CameraCloudNewViewController.m */; };
+		936CD97029AC4443000AC423 /* CameraDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CD96F29AC4443000AC423 /* CameraDeviceModel.m */; };
 		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
 		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
 		9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */; };
 		9A4C4918260B35230000D9EA /* DualModel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C491A260B35230000D9EA /* DualModel.storyboard */; };
 		9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4924260B37EB0000D9EA /* SIGMeshTableViewController.m */; };
 		9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C4929260B39050000D9EA /* SIGMesh.storyboard */; };
-		9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9AF91FF8260835A100CA5D66 /* t_s.bmp */; };
 		A5DB7929DFCE8487D4B82248 /* libPods-TuyaAppSDKSample-iOS-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */; };
 		AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA4F25A4191000FCAC1F /* AppDelegate.m */; };
 		AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF54CA5225A4191000FCAC1F /* SceneDelegate.m */; };
@@ -134,6 +230,7 @@
 		34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableViewController.m; sourceTree = "<group>"; };
 		34FF2E0825B0649100152CA6 /* EditHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHomeTableViewController.h; sourceTree = "<group>"; };
 		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
+		53A6B21D292E021400D06151 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = t_s.bmp; path = "TuyaAppSDKSample-iOS-ObjC/t_s.bmp"; sourceTree = SOURCE_ROOT; };
 		6714644B289A111A0045F9AD /* TuyaLinkDeviceControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkDeviceControlController.h; sourceTree = "<group>"; };
 		6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkDeviceControlController.m; sourceTree = "<group>"; };
 		677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkBindViewController.h; sourceTree = "<group>"; };
@@ -147,6 +244,144 @@
 		67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanerViewController.h; sourceTree = "<group>"; };
 		67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanerViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		931C65C829B6D0EE00A255B1 /* UIImage+TYQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYQRCode.h"; sourceTree = "<group>"; };
+		931C65C929B6D0EE00A255B1 /* UIImage+TYQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYQRCode.m"; sourceTree = "<group>"; };
+		931C65D229B9BA2C00A255B1 /* CameraLocalPathUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraLocalPathUtil.h; sourceTree = "<group>"; };
+		931C65D329B9BA2C00A255B1 /* CameraLocalPathUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraLocalPathUtil.m; sourceTree = "<group>"; };
+		932E5A2829BF207300A3110D /* CameraControlNewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraControlNewView.h; sourceTree = "<group>"; };
+		932E5A2929BF207300A3110D /* CameraControlNewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraControlNewView.m; sourceTree = "<group>"; };
+		932EDDDA29ACDCF8005E6B28 /* CameraConnectBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraConnectBaseViewController.h; sourceTree = "<group>"; };
+		932EDDDB29ACDCF8005E6B28 /* CameraConnectBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraConnectBaseViewController.m; sourceTree = "<group>"; };
+		932EDDE229AF3E16005E6B28 /* CameraLoadingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraLoadingButton.h; sourceTree = "<group>"; };
+		932EDDE329AF3E16005E6B28 /* CameraLoadingButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraLoadingButton.m; sourceTree = "<group>"; };
+		932EDDE529B0732D005E6B28 /* CameraBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraBaseViewController.h; sourceTree = "<group>"; };
+		932EDDE629B0732D005E6B28 /* CameraBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraBaseViewController.m; sourceTree = "<group>"; };
+		936CD88029A74D03000AC423 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCViewsLocalizable.strings"; sourceTree = "<group>"; };
+		936CD88229A74D03000AC423 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCLocalizable.strings"; sourceTree = "<group>"; };
+		936CD88329A74D03000AC423 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCViewsLocalizable.strings; sourceTree = "<group>"; };
+		936CD88429A74D03000AC423 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCLocalizable.strings; sourceTree = "<group>"; };
+		936CD88529A74D03000AC423 /* ty_custom_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ty_custom_config.json; sourceTree = "<group>"; };
+		936CD88A29A74D03000AC423 /* CameraPermissionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPermissionUtil.m; sourceTree = "<group>"; };
+		936CD88B29A74D03000AC423 /* UIView+CameraAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CameraAdditions.h"; sourceTree = "<group>"; };
+		936CD88C29A74D03000AC423 /* UIView+CameraAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CameraAdditions.m"; sourceTree = "<group>"; };
+		936CD88D29A74D03000AC423 /* CameraPermissionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPermissionUtil.h; sourceTree = "<group>"; };
+		936CD88F29A74D03000AC423 /* CameraTimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTimeLineModel.h; sourceTree = "<group>"; };
+		936CD89029A74D03000AC423 /* CloudTimePieceModel+Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CloudTimePieceModel+Timeline.m"; sourceTree = "<group>"; };
+		936CD89129A74D03000AC423 /* CameraTimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraTimeLineModel.m; sourceTree = "<group>"; };
+		936CD89229A74D03000AC423 /* CloudTimePieceModel+Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CloudTimePieceModel+Timeline.h"; sourceTree = "<group>"; };
+		936CD89429A74D03000AC423 /* CameraSDCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSDCardViewController.h; sourceTree = "<group>"; };
+		936CD89529A74D03000AC423 /* CameraDoorbellManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDoorbellManager.m; sourceTree = "<group>"; };
+		936CD89629A74D03000AC423 /* CameraCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCloudViewController.m; sourceTree = "<group>"; };
+		936CD89729A74D03000AC423 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		936CD89829A74D03000AC423 /* CameraMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraMessageViewController.h; sourceTree = "<group>"; };
+		936CD89929A74D03000AC423 /* CameraSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingViewController.m; sourceTree = "<group>"; };
+		936CD89A29A74D03000AC423 /* CameraPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPlaybackViewController.h; sourceTree = "<group>"; };
+		936CD89B29A74D03000AC423 /* CameraDoorbellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDoorbellViewController.h; sourceTree = "<group>"; };
+		936CD89C29A74D03000AC423 /* CameraMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraMessageViewController.m; sourceTree = "<group>"; };
+		936CD89D29A74D03000AC423 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		936CD89E29A74D03000AC423 /* CameraCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCloudViewController.h; sourceTree = "<group>"; };
+		936CD89F29A74D03000AC423 /* CameraDoorbellManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDoorbellManager.h; sourceTree = "<group>"; };
+		936CD8A029A74D03000AC423 /* CameraSDCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSDCardViewController.m; sourceTree = "<group>"; };
+		936CD8A129A74D03000AC423 /* CameraPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPlaybackViewController.m; sourceTree = "<group>"; };
+		936CD8A229A74D03000AC423 /* CameraSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingViewController.h; sourceTree = "<group>"; };
+		936CD8A329A74D03000AC423 /* CameraDoorbellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDoorbellViewController.m; sourceTree = "<group>"; };
+		936CD8A529A74D03000AC423 /* CameraVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVideoView.m; sourceTree = "<group>"; };
+		936CD8A629A74D03000AC423 /* CameraCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCalendarView.m; sourceTree = "<group>"; };
+		936CD8A729A74D03000AC423 /* CameraCollectionPointListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCollectionPointListCell.h; sourceTree = "<group>"; };
+		936CD8A829A74D03000AC423 /* CameraSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSwitchCell.h; sourceTree = "<group>"; };
+		936CD8A929A74D03000AC423 /* CameraCollectionPointListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCollectionPointListView.h; sourceTree = "<group>"; };
+		936CD8AA29A74D03000AC423 /* CameraCustomTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCustomTimeView.h; sourceTree = "<group>"; };
+		936CD8AC29A74D03000AC423 /* CameraCruiseSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCruiseSelectView.m; sourceTree = "<group>"; };
+		936CD8AD29A74D03000AC423 /* CameraBottomSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraBottomSwitchView.h; sourceTree = "<group>"; };
+		936CD8AE29A74D03000AC423 /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
+		936CD8AF29A74D03000AC423 /* CameraPTZControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPTZControlView.m; sourceTree = "<group>"; };
+		936CD8B129A74D03000AC423 /* CameraCalendarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCalendarCollectionViewCell.h; sourceTree = "<group>"; };
+		936CD8B229A74D03000AC423 /* CameraCruiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCruiseView.h; sourceTree = "<group>"; };
+		936CD8B329A74D03000AC423 /* CameraControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlButton.h; sourceTree = "<group>"; };
+		936CD8B429A74D03000AC423 /* CameraCloudDayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCloudDayCollectionViewCell.h; sourceTree = "<group>"; };
+		936CD8B529A74D03000AC423 /* CameraCollectionPointListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCollectionPointListCell.m; sourceTree = "<group>"; };
+		936CD8B629A74D03000AC423 /* CameraVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVideoView.h; sourceTree = "<group>"; };
+		936CD8B729A74D03000AC423 /* CameraCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCalendarView.h; sourceTree = "<group>"; };
+		936CD8B829A74D03000AC423 /* CameraBottomSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraBottomSwitchView.m; sourceTree = "<group>"; };
+		936CD8B929A74D03000AC423 /* CameraCruiseSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCruiseSelectView.h; sourceTree = "<group>"; };
+		936CD8BB29A74D03000AC423 /* CameraCustomTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCustomTimeView.m; sourceTree = "<group>"; };
+		936CD8BC29A74D03000AC423 /* CameraCollectionPointListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCollectionPointListView.m; sourceTree = "<group>"; };
+		936CD8BD29A74D03000AC423 /* CameraSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSwitchCell.m; sourceTree = "<group>"; };
+		936CD8BE29A74D03000AC423 /* CameraCalendarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCalendarCollectionViewCell.m; sourceTree = "<group>"; };
+		936CD8C029A74D03000AC423 /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
+		936CD8C129A74D03000AC423 /* CameraPTZControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPTZControlView.h; sourceTree = "<group>"; };
+		936CD8C229A74D03000AC423 /* CameraCloudDayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCloudDayCollectionViewCell.m; sourceTree = "<group>"; };
+		936CD8C329A74D03000AC423 /* CameraViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewConstants.h; sourceTree = "<group>"; };
+		936CD8C429A74D03000AC423 /* CameraCruiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCruiseView.m; sourceTree = "<group>"; };
+		936CD8C529A74D03000AC423 /* CameraControlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlButton.m; sourceTree = "<group>"; };
+		936CD8C729A74D03000AC423 /* ty_camera_mic_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_mic_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8C829A74D03000AC423 /* tysmart_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tysmart_selected@3x.png"; sourceTree = "<group>"; };
+		936CD8C929A74D03000AC423 /* tp_top_bar_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_more@2x.png"; sourceTree = "<group>"; };
+		936CD8CA29A74D03000AC423 /* ty_camera_soundOff_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_soundOff_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8CB29A74D03000AC423 /* ty_camera_rec_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_rec_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8CC29A74D03000AC423 /* ty_camera_cloud_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_cloud_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8CD29A74D03000AC423 /* ty_mainbt_about_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_about_active@2x.png"; sourceTree = "<group>"; };
+		936CD8CE29A74D03000AC423 /* ty_camera_tool_download_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_download_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8CF29A74D03000AC423 /* ty_camera_tool_download_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_download_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8D029A74D03000AC423 /* ty_mainbt_about_active@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_about_active@3x.png"; sourceTree = "<group>"; };
+		936CD8D129A74D03000AC423 /* ty_camera_cloud_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_cloud_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8D229A74D03000AC423 /* ty_camera_rec_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_rec_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8D329A74D03000AC423 /* ty_camera_soundOff_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_soundOff_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8D429A74D03000AC423 /* tp_top_bar_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_more@3x.png"; sourceTree = "<group>"; };
+		936CD8D529A74D03000AC423 /* tysmart_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tysmart_selected@2x.png"; sourceTree = "<group>"; };
+		936CD8D629A74D03000AC423 /* ty_camera_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_mic_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8D729A74D03000AC423 /* ty_camera_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_message@2x.png"; sourceTree = "<group>"; };
+		936CD8D829A74D03000AC423 /* ty_mainbt_add_active@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_add_active@3x.png"; sourceTree = "<group>"; };
+		936CD8D929A74D03000AC423 /* tp_top_bar_goBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_goBack@2x.png"; sourceTree = "<group>"; };
+		936CD8DA29A74D03000AC423 /* pps_right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pps_right_arrow@2x.png"; sourceTree = "<group>"; };
+		936CD8DB29A74D03000AC423 /* ty_camera_tool_pause_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_pause_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8DC29A74D03000AC423 /* ty_camera_control_hd_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_control_hd_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8DD29A74D03000AC423 /* ty_camera_control_hd_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_control_hd_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8DE29A74D03000AC423 /* ty_camera_tool_pause_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_pause_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8DF29A74D03000AC423 /* tp_top_bar_goBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_goBack@3x.png"; sourceTree = "<group>"; };
+		936CD8E029A74D03000AC423 /* pps_right_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pps_right_arrow@3x.png"; sourceTree = "<group>"; };
+		936CD8E129A74D03000AC423 /* ty_mainbt_add_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_add_active@2x.png"; sourceTree = "<group>"; };
+		936CD8E229A74D03000AC423 /* ty_camera_message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_message@3x.png"; sourceTree = "<group>"; };
+		936CD8E329A74D03000AC423 /* ty_mainbt_devicelist_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_devicelist_active@2x.png"; sourceTree = "<group>"; };
+		936CD8E429A74D03000AC423 /* ty_camera_tool_delete_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_delete_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8E529A74D03000AC423 /* ty_camera_hangup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_hangup@3x.png"; sourceTree = "<group>"; };
+		936CD8E629A74D03000AC423 /* ty_camera_tool_play_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_play_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8E729A74D03000AC423 /* ty_camera_control_sd_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_control_sd_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8E829A74D03000AC423 /* ty_camera_playback_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_playback_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8E929A74D03000AC423 /* tp_top_bar_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_back@3x.png"; sourceTree = "<group>"; };
+		936CD8EA29A74D03000AC423 /* ty_mainbt_devicelist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_devicelist@2x.png"; sourceTree = "<group>"; };
+		936CD8EB29A74D03000AC423 /* ty_mainbt_devicelist@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_devicelist@3x.png"; sourceTree = "<group>"; };
+		936CD8EC29A74D03000AC423 /* tp_top_bar_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tp_top_bar_back@2x.png"; sourceTree = "<group>"; };
+		936CD8ED29A74D03000AC423 /* ty_camera_control_sd_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_control_sd_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8EE29A74D03000AC423 /* ty_camera_playback_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_playback_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8EF29A74D03000AC423 /* ty_camera_tool_play_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_play_normal@3x.png"; sourceTree = "<group>"; };
+		936CD8F029A74D03000AC423 /* ty_camera_tool_delete_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_tool_delete_normal@2x.png"; sourceTree = "<group>"; };
+		936CD8F129A74D03000AC423 /* ty_camera_hangup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_hangup@2x.png"; sourceTree = "<group>"; };
+		936CD8F229A74D03000AC423 /* ty_mainbt_devicelist_active@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_devicelist_active@3x.png"; sourceTree = "<group>"; };
+		936CD8F329A74D03000AC423 /* ty_camera_photo_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_photo_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8F429A74D03000AC423 /* ty_mainbt_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_add@3x.png"; sourceTree = "<group>"; };
+		936CD8F529A74D03000AC423 /* ty_camera_soundOn_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_soundOn_icon@3x.png"; sourceTree = "<group>"; };
+		936CD8F629A74D03000AC423 /* pps_left_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pps_left_arrow@3x.png"; sourceTree = "<group>"; };
+		936CD8F729A74D03000AC423 /* ty_mainbt_about@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_about@3x.png"; sourceTree = "<group>"; };
+		936CD8F829A74D03000AC423 /* ty_mainbt_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_about@2x.png"; sourceTree = "<group>"; };
+		936CD8F929A74D03000AC423 /* pps_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pps_left_arrow@2x.png"; sourceTree = "<group>"; };
+		936CD8FA29A74D03000AC423 /* ty_camera_soundOn_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_soundOn_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8FB29A74D03000AC423 /* ty_camera_photo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_photo_icon@2x.png"; sourceTree = "<group>"; };
+		936CD8FC29A74D03000AC423 /* ty_mainbt_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_add@2x.png"; sourceTree = "<group>"; };
+		936CD95A29A8C2F4000AC423 /* CameraDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraDevice.h; sourceTree = "<group>"; };
+		936CD95B29A8C2F4000AC423 /* CameraDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraDevice.m; sourceTree = "<group>"; };
+		936CD95D29A8C301000AC423 /* CameraDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraDeviceManager.h; sourceTree = "<group>"; };
+		936CD95E29A8C301000AC423 /* CameraDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceManager.m; sourceTree = "<group>"; };
+		936CD96129A90A4B000AC423 /* CameraPlaybackNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPlaybackNewViewController.h; sourceTree = "<group>"; };
+		936CD96229A90A4B000AC423 /* CameraNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraNewViewController.m; sourceTree = "<group>"; };
+		936CD96329A90A4B000AC423 /* CameraCloudNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCloudNewViewController.h; sourceTree = "<group>"; };
+		936CD96429A90A4B000AC423 /* CameraDoorbellNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDoorbellNewViewController.m; sourceTree = "<group>"; };
+		936CD96529A90A4B000AC423 /* CameraNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraNewViewController.h; sourceTree = "<group>"; };
+		936CD96629A90A4B000AC423 /* CameraPlaybackNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPlaybackNewViewController.m; sourceTree = "<group>"; };
+		936CD96729A90A4B000AC423 /* CameraDoorbellNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDoorbellNewViewController.h; sourceTree = "<group>"; };
+		936CD96829A90A4B000AC423 /* CameraCloudNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCloudNewViewController.m; sourceTree = "<group>"; };
+		936CD96E29AC4443000AC423 /* CameraDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraDeviceModel.h; sourceTree = "<group>"; };
+		936CD96F29AC4443000AC423 /* CameraDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceModel.m; sourceTree = "<group>"; };
 		9A4C4906260B29A20000D9EA /* BLEModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEModelViewController.h; sourceTree = "<group>"; };
 		9A4C4907260B29A20000D9EA /* BLEModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEModelViewController.m; sourceTree = "<group>"; };
 		9A4C490B260B2A960000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BLE.storyboard; sourceTree = "<group>"; };
@@ -159,7 +394,6 @@
 		9A4C4928260B39050000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SIGMesh.storyboard; sourceTree = "<group>"; };
 		9A4C492C260B39090000D9EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SIGMesh.strings"; sourceTree = "<group>"; };
 		9A6F375026259DB6002DE04A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BLE.strings"; sourceTree = "<group>"; };
-		9AF91FF8260835A100CA5D66 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		AF54CA4B25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuyaAppSDKSample-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF54CA4E25A4191000FCAC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF54CA4F25A4191000FCAC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -297,6 +531,219 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		936CD87D29A74D03000AC423 /* CameraDevice */ = {
+			isa = PBXGroup;
+			children = (
+				936CD95929A8C298000AC423 /* Manager */,
+				936CD87E29A74D03000AC423 /* Config */,
+				936CD88929A74D03000AC423 /* Utils */,
+				936CD88E29A74D03000AC423 /* Models */,
+				936CD89329A74D03000AC423 /* Controller */,
+				936CD8A429A74D03000AC423 /* View */,
+				936CD8C629A74D03000AC423 /* Assets */,
+			);
+			path = CameraDevice;
+			sourceTree = "<group>";
+		};
+		936CD87E29A74D03000AC423 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				936CD87F29A74D03000AC423 /* IPCViewsLocalizable.strings */,
+				936CD88129A74D03000AC423 /* IPCLocalizable.strings */,
+				936CD88529A74D03000AC423 /* ty_custom_config.json */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		936CD88929A74D03000AC423 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				936CD88B29A74D03000AC423 /* UIView+CameraAdditions.h */,
+				936CD88C29A74D03000AC423 /* UIView+CameraAdditions.m */,
+				936CD88D29A74D03000AC423 /* CameraPermissionUtil.h */,
+				936CD88A29A74D03000AC423 /* CameraPermissionUtil.m */,
+				931C65D229B9BA2C00A255B1 /* CameraLocalPathUtil.h */,
+				931C65D329B9BA2C00A255B1 /* CameraLocalPathUtil.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		936CD88E29A74D03000AC423 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				936CD88F29A74D03000AC423 /* CameraTimeLineModel.h */,
+				936CD89129A74D03000AC423 /* CameraTimeLineModel.m */,
+				936CD89229A74D03000AC423 /* CloudTimePieceModel+Timeline.h */,
+				936CD89029A74D03000AC423 /* CloudTimePieceModel+Timeline.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		936CD89329A74D03000AC423 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				936CD96029A90A4B000AC423 /* New */,
+				936CD96D29A90BAB000AC423 /* Old */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		936CD8A429A74D03000AC423 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				936CD8B629A74D03000AC423 /* CameraVideoView.h */,
+				936CD8A529A74D03000AC423 /* CameraVideoView.m */,
+				936CD8C329A74D03000AC423 /* CameraViewConstants.h */,
+				936CD8C029A74D03000AC423 /* CameraControlView.h */,
+				936CD8AE29A74D03000AC423 /* CameraControlView.m */,
+				936CD8B129A74D03000AC423 /* CameraCalendarCollectionViewCell.h */,
+				936CD8BE29A74D03000AC423 /* CameraCalendarCollectionViewCell.m */,
+				936CD8B329A74D03000AC423 /* CameraControlButton.h */,
+				936CD8C529A74D03000AC423 /* CameraControlButton.m */,
+				936CD8A829A74D03000AC423 /* CameraSwitchCell.h */,
+				936CD8BD29A74D03000AC423 /* CameraSwitchCell.m */,
+				936CD8B729A74D03000AC423 /* CameraCalendarView.h */,
+				936CD8A629A74D03000AC423 /* CameraCalendarView.m */,
+				936CD8B429A74D03000AC423 /* CameraCloudDayCollectionViewCell.h */,
+				936CD8C229A74D03000AC423 /* CameraCloudDayCollectionViewCell.m */,
+				936CD8AD29A74D03000AC423 /* CameraBottomSwitchView.h */,
+				936CD8B829A74D03000AC423 /* CameraBottomSwitchView.m */,
+				936CD8C129A74D03000AC423 /* CameraPTZControlView.h */,
+				936CD8AF29A74D03000AC423 /* CameraPTZControlView.m */,
+				936CD8A929A74D03000AC423 /* CameraCollectionPointListView.h */,
+				936CD8BC29A74D03000AC423 /* CameraCollectionPointListView.m */,
+				936CD8A729A74D03000AC423 /* CameraCollectionPointListCell.h */,
+				936CD8B529A74D03000AC423 /* CameraCollectionPointListCell.m */,
+				936CD8B229A74D03000AC423 /* CameraCruiseView.h */,
+				936CD8C429A74D03000AC423 /* CameraCruiseView.m */,
+				936CD8B929A74D03000AC423 /* CameraCruiseSelectView.h */,
+				936CD8AC29A74D03000AC423 /* CameraCruiseSelectView.m */,
+				936CD8AA29A74D03000AC423 /* CameraCustomTimeView.h */,
+				936CD8BB29A74D03000AC423 /* CameraCustomTimeView.m */,
+				932EDDE229AF3E16005E6B28 /* CameraLoadingButton.h */,
+				932EDDE329AF3E16005E6B28 /* CameraLoadingButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		936CD8C629A74D03000AC423 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				936CD8C729A74D03000AC423 /* ty_camera_mic_icon@3x.png */,
+				936CD8C829A74D03000AC423 /* tysmart_selected@3x.png */,
+				936CD8C929A74D03000AC423 /* tp_top_bar_more@2x.png */,
+				936CD8CA29A74D03000AC423 /* ty_camera_soundOff_icon@2x.png */,
+				936CD8CB29A74D03000AC423 /* ty_camera_rec_icon@2x.png */,
+				936CD8CC29A74D03000AC423 /* ty_camera_cloud_icon@2x.png */,
+				936CD8CD29A74D03000AC423 /* ty_mainbt_about_active@2x.png */,
+				936CD8CE29A74D03000AC423 /* ty_camera_tool_download_normal@2x.png */,
+				936CD8CF29A74D03000AC423 /* ty_camera_tool_download_normal@3x.png */,
+				936CD8D029A74D03000AC423 /* ty_mainbt_about_active@3x.png */,
+				936CD8D129A74D03000AC423 /* ty_camera_cloud_icon@3x.png */,
+				936CD8D229A74D03000AC423 /* ty_camera_rec_icon@3x.png */,
+				936CD8D329A74D03000AC423 /* ty_camera_soundOff_icon@3x.png */,
+				936CD8D429A74D03000AC423 /* tp_top_bar_more@3x.png */,
+				936CD8D529A74D03000AC423 /* tysmart_selected@2x.png */,
+				936CD8D629A74D03000AC423 /* ty_camera_mic_icon@2x.png */,
+				936CD8D729A74D03000AC423 /* ty_camera_message@2x.png */,
+				936CD8D829A74D03000AC423 /* ty_mainbt_add_active@3x.png */,
+				936CD8D929A74D03000AC423 /* tp_top_bar_goBack@2x.png */,
+				936CD8DA29A74D03000AC423 /* pps_right_arrow@2x.png */,
+				936CD8DB29A74D03000AC423 /* ty_camera_tool_pause_normal@3x.png */,
+				936CD8DC29A74D03000AC423 /* ty_camera_control_hd_normal@2x.png */,
+				936CD8DD29A74D03000AC423 /* ty_camera_control_hd_normal@3x.png */,
+				936CD8DE29A74D03000AC423 /* ty_camera_tool_pause_normal@2x.png */,
+				936CD8DF29A74D03000AC423 /* tp_top_bar_goBack@3x.png */,
+				936CD8E029A74D03000AC423 /* pps_right_arrow@3x.png */,
+				936CD8E129A74D03000AC423 /* ty_mainbt_add_active@2x.png */,
+				936CD8E229A74D03000AC423 /* ty_camera_message@3x.png */,
+				936CD8E329A74D03000AC423 /* ty_mainbt_devicelist_active@2x.png */,
+				936CD8E429A74D03000AC423 /* ty_camera_tool_delete_normal@3x.png */,
+				936CD8E529A74D03000AC423 /* ty_camera_hangup@3x.png */,
+				936CD8E629A74D03000AC423 /* ty_camera_tool_play_normal@2x.png */,
+				936CD8E729A74D03000AC423 /* ty_camera_control_sd_normal@3x.png */,
+				936CD8E829A74D03000AC423 /* ty_camera_playback_icon@3x.png */,
+				936CD8E929A74D03000AC423 /* tp_top_bar_back@3x.png */,
+				936CD8EA29A74D03000AC423 /* ty_mainbt_devicelist@2x.png */,
+				936CD8EB29A74D03000AC423 /* ty_mainbt_devicelist@3x.png */,
+				936CD8EC29A74D03000AC423 /* tp_top_bar_back@2x.png */,
+				936CD8ED29A74D03000AC423 /* ty_camera_control_sd_normal@2x.png */,
+				936CD8EE29A74D03000AC423 /* ty_camera_playback_icon@2x.png */,
+				936CD8EF29A74D03000AC423 /* ty_camera_tool_play_normal@3x.png */,
+				936CD8F029A74D03000AC423 /* ty_camera_tool_delete_normal@2x.png */,
+				936CD8F129A74D03000AC423 /* ty_camera_hangup@2x.png */,
+				936CD8F229A74D03000AC423 /* ty_mainbt_devicelist_active@3x.png */,
+				936CD8F329A74D03000AC423 /* ty_camera_photo_icon@3x.png */,
+				936CD8F429A74D03000AC423 /* ty_mainbt_add@3x.png */,
+				936CD8F529A74D03000AC423 /* ty_camera_soundOn_icon@3x.png */,
+				936CD8F629A74D03000AC423 /* pps_left_arrow@3x.png */,
+				936CD8F729A74D03000AC423 /* ty_mainbt_about@3x.png */,
+				936CD8F829A74D03000AC423 /* ty_mainbt_about@2x.png */,
+				936CD8F929A74D03000AC423 /* pps_left_arrow@2x.png */,
+				936CD8FA29A74D03000AC423 /* ty_camera_soundOn_icon@2x.png */,
+				936CD8FB29A74D03000AC423 /* ty_camera_photo_icon@2x.png */,
+				936CD8FC29A74D03000AC423 /* ty_mainbt_add@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		936CD95929A8C298000AC423 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				936CD95A29A8C2F4000AC423 /* CameraDevice.h */,
+				936CD95B29A8C2F4000AC423 /* CameraDevice.m */,
+				936CD95D29A8C301000AC423 /* CameraDeviceManager.h */,
+				936CD95E29A8C301000AC423 /* CameraDeviceManager.m */,
+				936CD96E29AC4443000AC423 /* CameraDeviceModel.h */,
+				936CD96F29AC4443000AC423 /* CameraDeviceModel.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		936CD96029A90A4B000AC423 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				932EDDE529B0732D005E6B28 /* CameraBaseViewController.h */,
+				932EDDE629B0732D005E6B28 /* CameraBaseViewController.m */,
+				932EDDDA29ACDCF8005E6B28 /* CameraConnectBaseViewController.h */,
+				932EDDDB29ACDCF8005E6B28 /* CameraConnectBaseViewController.m */,
+				936CD96529A90A4B000AC423 /* CameraNewViewController.h */,
+				936CD96229A90A4B000AC423 /* CameraNewViewController.m */,
+				936CD96729A90A4B000AC423 /* CameraDoorbellNewViewController.h */,
+				936CD96429A90A4B000AC423 /* CameraDoorbellNewViewController.m */,
+				936CD96129A90A4B000AC423 /* CameraPlaybackNewViewController.h */,
+				936CD96629A90A4B000AC423 /* CameraPlaybackNewViewController.m */,
+				936CD96329A90A4B000AC423 /* CameraCloudNewViewController.h */,
+				936CD96829A90A4B000AC423 /* CameraCloudNewViewController.m */,
+				932E5A2829BF207300A3110D /* CameraControlNewView.h */,
+				932E5A2929BF207300A3110D /* CameraControlNewView.m */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		936CD96D29A90BAB000AC423 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				936CD89F29A74D03000AC423 /* CameraDoorbellManager.h */,
+				936CD89529A74D03000AC423 /* CameraDoorbellManager.m */,
+				936CD89D29A74D03000AC423 /* CameraViewController.h */,
+				936CD89729A74D03000AC423 /* CameraViewController.m */,
+				936CD89B29A74D03000AC423 /* CameraDoorbellViewController.h */,
+				936CD8A329A74D03000AC423 /* CameraDoorbellViewController.m */,
+				936CD8A229A74D03000AC423 /* CameraSettingViewController.h */,
+				936CD89929A74D03000AC423 /* CameraSettingViewController.m */,
+				936CD89E29A74D03000AC423 /* CameraCloudViewController.h */,
+				936CD89629A74D03000AC423 /* CameraCloudViewController.m */,
+				936CD89A29A74D03000AC423 /* CameraPlaybackViewController.h */,
+				936CD8A129A74D03000AC423 /* CameraPlaybackViewController.m */,
+				936CD89429A74D03000AC423 /* CameraSDCardViewController.h */,
+				936CD8A029A74D03000AC423 /* CameraSDCardViewController.m */,
+				936CD89829A74D03000AC423 /* CameraMessageViewController.h */,
+				936CD89C29A74D03000AC423 /* CameraMessageViewController.m */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		AF54CA4225A4191000FCAC1F = {
 			isa = PBXGroup;
 			children = (
@@ -319,7 +766,7 @@
 		AF54CA4D25A4191000FCAC1F /* TuyaAppSDKSample-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				9AF91FF8260835A100CA5D66 /* t_s.bmp */,
+				53A6B21D292E021400D06151 /* t_s.bmp */,
 				AF54CAA025A443D800FCAC1F /* AppKey.h */,
 				AF54CA4E25A4191000FCAC1F /* AppDelegate.h */,
 				AF54CA4F25A4191000FCAC1F /* AppDelegate.m */,
@@ -367,6 +814,7 @@
 				34FF2C6A25AE8CC900152CA6 /* MainViewController.m */,
 				AF54CAA525A44F0300FCAC1F /* MainTableViewController.h */,
 				AF54CAA625A44F0300FCAC1F /* MainTableViewController.m */,
+				936CD87D29A74D03000AC423 /* CameraDevice */,
 				AF5531C125A560E500E13562 /* UserManagement */,
 				34FF2DF225B02A4700152CA6 /* HomeManagement */,
 				3485438325C2990300F1EF21 /* Device Network Configuration */,
@@ -401,6 +849,8 @@
 				348543B425C2C25D00F1EF21 /* NotificationName.m */,
 				67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */,
 				67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */,
+				931C65C829B6D0EE00A255B1 /* UIImage+TYQRCode.h */,
+				931C65C929B6D0EE00A255B1 /* UIImage+TYQRCode.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -465,26 +915,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936CD92929A74D03000AC423 /* ty_camera_soundOff_icon@3x.png in Resources */,
+				936CD94F29A74D03000AC423 /* pps_left_arrow@2x.png in Resources */,
+				936CD92129A74D03000AC423 /* ty_camera_rec_icon@2x.png in Resources */,
+				936CD93829A74D03000AC423 /* ty_camera_message@3x.png in Resources */,
+				936CD8FD29A74D03000AC423 /* IPCViewsLocalizable.strings in Resources */,
+				936CD93629A74D03000AC423 /* pps_right_arrow@3x.png in Resources */,
 				677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */,
+				936CD92E29A74D03000AC423 /* ty_mainbt_add_active@3x.png in Resources */,
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
+				936CD93329A74D03000AC423 /* ty_camera_control_hd_normal@3x.png in Resources */,
 				3485436C25C2638100F1EF21 /* HomeList.storyboard in Resources */,
 				3485436425C2631E00F1EF21 /* SwitchHome.storyboard in Resources */,
+				936CD94929A74D03000AC423 /* ty_camera_photo_icon@3x.png in Resources */,
 				AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */,
+				936CD93929A74D03000AC423 /* ty_mainbt_devicelist_active@2x.png in Resources */,
 				3485438025C267BA00F1EF21 /* InfoPlist.strings in Resources */,
+				936CD93C29A74D03000AC423 /* ty_camera_tool_play_normal@2x.png in Resources */,
+				936CD92329A74D03000AC423 /* ty_mainbt_about_active@2x.png in Resources */,
+				936CD94829A74D03000AC423 /* ty_mainbt_devicelist_active@3x.png in Resources */,
 				3485436825C2631E00F1EF21 /* NewHome.storyboard in Resources */,
+				936CD94729A74D03000AC423 /* ty_camera_hangup@2x.png in Resources */,
+				936CD94229A74D03000AC423 /* tp_top_bar_back@2x.png in Resources */,
+				936CD93729A74D03000AC423 /* ty_mainbt_add_active@2x.png in Resources */,
+				936CD94429A74D03000AC423 /* ty_camera_playback_icon@2x.png in Resources */,
+				936CD94A29A74D03000AC423 /* ty_mainbt_add@3x.png in Resources */,
+				936CD93229A74D03000AC423 /* ty_camera_control_hd_normal@2x.png in Resources */,
 				9A4C4918260B35230000D9EA /* DualModel.storyboard in Resources */,
 				AF5531BD25A5601E00E13562 /* Login.storyboard in Resources */,
+				53A6B21E292E021400D06151 /* t_s.bmp in Resources */,
+				936CD95229A74D03000AC423 /* ty_mainbt_add@2x.png in Resources */,
+				936CD93029A74D03000AC423 /* pps_right_arrow@2x.png in Resources */,
 				3485436525C2631E00F1EF21 /* APMode.storyboard in Resources */,
+				936CD93F29A74D03000AC423 /* tp_top_bar_back@3x.png in Resources */,
 				34FF2CB525AE947200152CA6 /* Main.storyboard in Resources */,
+				936CD92229A74D03000AC423 /* ty_camera_cloud_icon@2x.png in Resources */,
+				936CD94029A74D03000AC423 /* ty_mainbt_devicelist@2x.png in Resources */,
+				936CD91F29A74D03000AC423 /* tp_top_bar_more@2x.png in Resources */,
+				936CD94329A74D03000AC423 /* ty_camera_control_sd_normal@2x.png in Resources */,
 				9A4C4927260B39050000D9EA /* SIGMesh.storyboard in Resources */,
+				936CD93429A74D03000AC423 /* ty_camera_tool_pause_normal@2x.png in Resources */,
+				936CD94629A74D03000AC423 /* ty_camera_tool_delete_normal@2x.png in Resources */,
 				9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */,
 				AF5531CA25A564EE00E13562 /* UserInformation.storyboard in Resources */,
-				9AF91FF9260835A100CA5D66 /* t_s.bmp in Resources */,
+				936CD93129A74D03000AC423 /* ty_camera_tool_pause_normal@3x.png in Resources */,
+				936CD92529A74D03000AC423 /* ty_camera_tool_download_normal@3x.png in Resources */,
+				936CD94C29A74D03000AC423 /* pps_left_arrow@3x.png in Resources */,
+				936CD94129A74D03000AC423 /* ty_mainbt_devicelist@3x.png in Resources */,
+				936CD93B29A74D03000AC423 /* ty_camera_hangup@3x.png in Resources */,
+				936CD92F29A74D03000AC423 /* tp_top_bar_goBack@2x.png in Resources */,
 				3485436725C2631E00F1EF21 /* EZMode.storyboard in Resources */,
+				936CD94529A74D03000AC423 /* ty_camera_tool_play_normal@3x.png in Resources */,
+				936CD8FF29A74D03000AC423 /* ty_custom_config.json in Resources */,
+				936CD92029A74D03000AC423 /* ty_camera_soundOff_icon@2x.png in Resources */,
+				936CD92729A74D03000AC423 /* ty_camera_cloud_icon@3x.png in Resources */,
+				936CD92A29A74D03000AC423 /* tp_top_bar_more@3x.png in Resources */,
 				3485436625C2631E00F1EF21 /* DeviceList.storyboard in Resources */,
+				936CD94B29A74D03000AC423 /* ty_camera_soundOn_icon@3x.png in Resources */,
+				936CD91E29A74D03000AC423 /* tysmart_selected@3x.png in Resources */,
+				936CD8FE29A74D03000AC423 /* IPCLocalizable.strings in Resources */,
+				936CD95129A74D03000AC423 /* ty_camera_photo_icon@2x.png in Resources */,
+				936CD91D29A74D03000AC423 /* ty_camera_mic_icon@3x.png in Resources */,
+				936CD93A29A74D03000AC423 /* ty_camera_tool_delete_normal@3x.png in Resources */,
+				936CD93529A74D03000AC423 /* tp_top_bar_goBack@3x.png in Resources */,
+				936CD92629A74D03000AC423 /* ty_mainbt_about_active@3x.png in Resources */,
+				936CD94D29A74D03000AC423 /* ty_mainbt_about@3x.png in Resources */,
 				3485438125C267BA00F1EF21 /* Localizable.strings in Resources */,
 				34FF2C6725AE8B6100152CA6 /* TuyaSmartMain.storyboard in Resources */,
+				936CD92429A74D03000AC423 /* ty_camera_tool_download_normal@2x.png in Resources */,
+				936CD92C29A74D03000AC423 /* ty_camera_mic_icon@2x.png in Resources */,
+				936CD92829A74D03000AC423 /* ty_camera_rec_icon@3x.png in Resources */,
+				936CD92B29A74D03000AC423 /* tysmart_selected@2x.png in Resources */,
+				936CD95029A74D03000AC423 /* ty_camera_soundOn_icon@2x.png in Resources */,
+				936CD94E29A74D03000AC423 /* ty_mainbt_about@2x.png in Resources */,
+				936CD92D29A74D03000AC423 /* ty_camera_message@2x.png in Resources */,
 				AF5531B325A55F9400E13562 /* Register.storyboard in Resources */,
+				936CD93D29A74D03000AC423 /* ty_camera_control_sd_normal@3x.png in Resources */,
+				936CD93E29A74D03000AC423 /* ty_camera_playback_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,41 +1061,80 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936CD90529A74D03000AC423 /* CameraDoorbellManager.m in Sources */,
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
+				936CD91C29A74D03000AC423 /* CameraControlButton.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
 				679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */,
 				6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */,
+				936CD90229A74D03000AC423 /* UIView+CameraAdditions.m in Sources */,
+				936CD90829A74D03000AC423 /* CameraSettingViewController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
+				936CD90729A74D03000AC423 /* CameraViewController.m in Sources */,
+				931C65CA29B6D0EE00A255B1 /* UIImage+TYQRCode.m in Sources */,
+				936CD90429A74D03000AC423 /* CameraTimeLineModel.m in Sources */,
+				936CD95C29A8C2F4000AC423 /* CameraDevice.m in Sources */,
+				936CD96C29A90A4B000AC423 /* CameraCloudNewViewController.m in Sources */,
 				679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */,
 				9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */,
 				348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */,
+				936CD90329A74D03000AC423 /* CloudTimePieceModel+Timeline.m in Sources */,
 				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
+				936CD90C29A74D03000AC423 /* CameraDoorbellViewController.m in Sources */,
+				936CD96A29A90A4B000AC423 /* CameraDoorbellNewViewController.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
+				932EDDDC29ACDCF8005E6B28 /* CameraConnectBaseViewController.m in Sources */,
+				936CD91729A74D03000AC423 /* CameraSwitchCell.m in Sources */,
+				936CD90E29A74D03000AC423 /* CameraCalendarView.m in Sources */,
+				936CD97029AC4443000AC423 /* CameraDeviceModel.m in Sources */,
 				9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */,
+				931C65D429B9BA2C00A255B1 /* CameraLocalPathUtil.m in Sources */,
 				348543BE25C2C6AE00F1EF21 /* SliderTableViewCell.m in Sources */,
+				936CD90A29A74D03000AC423 /* CameraSDCardViewController.m in Sources */,
+				932EDDE729B0732D005E6B28 /* CameraBaseViewController.m in Sources */,
+				936CD90B29A74D03000AC423 /* CameraPlaybackViewController.m in Sources */,
+				932E5A2A29BF207300A3110D /* CameraControlNewView.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
 				34FF2DF525B02A7C00152CA6 /* Home.m in Sources */,
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
+				936CD91329A74D03000AC423 /* CameraCollectionPointListCell.m in Sources */,
+				936CD91629A74D03000AC423 /* CameraCollectionPointListView.m in Sources */,
+				936CD90129A74D03000AC423 /* CameraPermissionUtil.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
 				677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */,
+				936CD91029A74D03000AC423 /* CameraCruiseSelectView.m in Sources */,
 				67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */,
+				932EDDE429AF3E16005E6B28 /* CameraLoadingButton.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
+				936CD96929A90A4B000AC423 /* CameraNewViewController.m in Sources */,
 				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
+				936CD91529A74D03000AC423 /* CameraCustomTimeView.m in Sources */,
 				34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */,
+				936CD91429A74D03000AC423 /* CameraBottomSwitchView.m in Sources */,
 				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
 				34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */,
 				348543BA25C2C2E300F1EF21 /* SwitchTableViewCell.m in Sources */,
+				936CD90629A74D03000AC423 /* CameraCloudViewController.m in Sources */,
 				34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */,
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
+				936CD91A29A74D03000AC423 /* CameraCloudDayCollectionViewCell.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
+				936CD91129A74D03000AC423 /* CameraControlView.m in Sources */,
+				936CD95F29A8C301000AC423 /* CameraDeviceManager.m in Sources */,
+				936CD90929A74D03000AC423 /* CameraMessageViewController.m in Sources */,
 				348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */,
 				9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */,
+				936CD91229A74D03000AC423 /* CameraPTZControlView.m in Sources */,
+				936CD90D29A74D03000AC423 /* CameraVideoView.m in Sources */,
 				348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */,
 				34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */,
+				936CD96B29A90A4B000AC423 /* CameraPlaybackNewViewController.m in Sources */,
 				34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */,
 				348543A725C2AF1B00F1EF21 /* DeviceControlTableViewController.m in Sources */,
+				936CD91B29A74D03000AC423 /* CameraCruiseView.m in Sources */,
 				348543B525C2C25D00F1EF21 /* NotificationName.m in Sources */,
+				936CD91829A74D03000AC423 /* CameraCalendarCollectionViewCell.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,
 				348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */,
 				348543A325C2AAF000F1EF21 /* DeviceListTableViewController.m in Sources */,
@@ -693,6 +1239,24 @@
 				677A4C6C2890D7FC007C0AE8 /* zh-Hans */,
 			);
 			name = TuyaLinkBind.storyboard;
+			sourceTree = "<group>";
+		};
+		936CD87F29A74D03000AC423 /* IPCViewsLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				936CD88029A74D03000AC423 /* zh-Hans */,
+				936CD88329A74D03000AC423 /* en */,
+			);
+			name = IPCViewsLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		936CD88129A74D03000AC423 /* IPCLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				936CD88229A74D03000AC423 /* zh-Hans */,
+				936CD88429A74D03000AC423 /* en */,
+			);
+			name = IPCLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		9A4C490C260B2A960000D9EA /* BLE.storyboard */ = {
@@ -882,7 +1446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D8399XH2VW;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -892,7 +1456,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = liuguang.SmartProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuya.smart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -905,7 +1469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D8399XH2VW;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -915,7 +1479,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = liuguang.SmartProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuya.smart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
