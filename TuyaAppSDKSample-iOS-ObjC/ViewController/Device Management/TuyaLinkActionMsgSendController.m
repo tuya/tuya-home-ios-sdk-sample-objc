@@ -4,7 +4,7 @@
 //
 //  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "ThingLinkActionMsgSendController.h"
+#import "TuyaLinkActionMsgSendController.h"
 #import "SVProgressHUD.h"
 #import "DeviceControlCellHelper.h"
 #import "NotificationName.h"
@@ -16,12 +16,12 @@
 #import "LabelTableViewCell.h"
 #import "TextViewTableViewCell.h"
 
-@interface ThingLinkActionMsgSendController ()
+@interface TuyaLinkActionMsgSendController ()
 @property (nonatomic, strong) NSMutableDictionary *payload;
 @property (nonatomic, strong) NSArray<NSDictionary *> *inputParams;
 @end
 
-@implementation ThingLinkActionMsgSendController
+@implementation TuyaLinkActionMsgSendController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

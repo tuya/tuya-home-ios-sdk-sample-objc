@@ -8,7 +8,7 @@
 #import "Home.h"
 #import "Alert.h"
 #import "DeviceControlTableViewController.h"
-#import "ThingLinkDeviceControlController.h"
+#import "TuyaLinkDeviceControlController.h"
 
 @interface DeviceListTableViewController () <ThingSmartHomeDelegate>
 @property (strong, nonatomic) ThingSmartHome *home;
@@ -51,18 +51,18 @@
     
     BOOL isSupportThingModel = [device.deviceModel isSupportThingModelDevice];
     
-    NSString *identifier = isSupportThingModel ? @"ThingLinkDeviceControlController" : @"DeviceControlTableViewController";
+    NSString *identifier = isSupportThingModel ? @"TuyaLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:identifier];
     
     if (isSupportThingModel) {
-        [self _jumpThingLinkDeviceControl:(ThingLinkDeviceControlController*)vc device:device];
+        [self _jumpThingLinkDeviceControl:(TuyaLinkDeviceControlController*)vc device:device];
     } else {
         [self _jumpNormalDeviceControl:(DeviceControlTableViewController*)vc device:device];
     }
 }
 
-- (void)_jumpThingLinkDeviceControl:(ThingLinkDeviceControlController *)vc device:(ThingSmartDevice *)device {
+- (void)_jumpThingLinkDeviceControl:(TuyaLinkDeviceControlController *)vc device:(ThingSmartDevice *)device {
     void(^goThingLinkControl)(void) = ^() {
         vc.device = device;
         [self.navigationController pushViewController:vc animated:YES];

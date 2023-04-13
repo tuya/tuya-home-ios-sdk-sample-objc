@@ -4,15 +4,15 @@
 //
 //  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "ThingLinkBindViewController.h"
+#import "TuyaLinkBindViewController.h"
 #import "QRCodeScanerViewController.h"
 #import <ThingSmartActivatorKit/ThingSmartActivatorKit.h>>
 
-@interface ThingLinkBindViewController ()
+@interface TuyaLinkBindViewController ()
 
 @end
 
-@implementation ThingLinkBindViewController
+@implementation TuyaLinkBindViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

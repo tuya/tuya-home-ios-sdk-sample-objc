@@ -56,15 +56,5 @@ pod install
 
 **Note**: The bundle ID, AppKey, AppSecret, and security image must be the same as your app on the [Tuya IoT Platform](https://iot.tuya.com). Otherwise, the sample cannot request the API.
 
-## 5.x migration guide
-
-> The test was conducted on Ruby version 2.7.2p137.
-
-The Ruby script `/Tools/translator/translator.rb` can translate the code in your project that contains Tuya identifiers API to Thing identifiers API. For more information on migrating to version 5.x, please refer to the [migration guide](https://developer.tuya.com/en/docs/app-development/migration_guide?id=Kci3zqm3wlcut). To run the script, use the following command:
-
-```ruby
-ruby translator.rb [you project path]
-```
-
 ## References
 For more information about Tuya iOS HomeSDK, see [App SDK](https://developer.tuya.com/en/docs/app-development).

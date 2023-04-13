@@ -1,5 +1,5 @@
 //
-//  ThingLinkBindViewController.h
+//  SweeperMsgControllerViewController.h
 //  ThingAppSDKSample-iOS-ObjC
 //
 //  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
@@ -8,8 +8,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ThingLinkBindViewController : UITableViewController
-@property (nonatomic, assign) long long homeId;
+@interface SweeperMsgControllerViewController : UIViewController
+
 @end
 
 NS_ASSUME_NONNULL_END

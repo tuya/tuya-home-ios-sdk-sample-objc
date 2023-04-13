@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ThingLinkActionMsgSendController : UITableViewController
+@interface TuyaLinkActionMsgSendController : UITableViewController
 @property (nonatomic, strong) ThingSmartThingAction *action;
 @property (nonatomic, copy) ThingSuccessDict callback;
 @end

@@ -4,7 +4,7 @@
 //
 //  Copyright (c) 2014-2022 Thing Inc. (https://developer.tuya.com/)
 
-#import "ThingLinkDeviceControlController.h"
+#import "TuyaLinkDeviceControlController.h"
 #import "DeviceDetailTableViewController.h"
 #import "SVProgressHUD.h"
 #import "DeviceControlCellHelper.h"
@@ -16,13 +16,13 @@
 #import "StringTableViewCell.h"
 #import "LabelTableViewCell.h"
 #import "TextViewTableViewCell.h"
-#import "ThingLinkActionMsgSendController.h"
+#import "TuyaLinkActionMsgSendController.h"
 
-@interface ThingLinkDeviceControlController ()<ThingSmartDeviceDelegate>
+@interface TuyaLinkDeviceControlController ()<ThingSmartDeviceDelegate>
 
 @end
 
-@implementation ThingLinkDeviceControlController
+@implementation TuyaLinkDeviceControlController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -190,7 +190,7 @@
             case DeviceControlCellTypeLabelCell:
             {
                 ((LabelTableViewCell *)cell).label.text = code;
-                ((LabelTableViewCell *)cell).detailLabel.text = [dps[dpId] thingsdk_JSONString];
+                ((LabelTableViewCell *)cell).detailLabel.text = [dps[dpId] thingsdk_toString];
                 break;
             }
             case DeviceControlCellTypeTextviewCell:
@@ -231,7 +231,7 @@
         ThingSmartThingAction *action = actions[indexPath.row];
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];
-        ThingLinkActionMsgSendController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ThingLinkActionMsgSendController"];
+        TuyaLinkActionMsgSendController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TuyaLinkActionMsgSendController"];
         vc.action = action;
         WEAKSELF_ThingSDK
         [vc setCallback:^(NSDictionary *dict) {
