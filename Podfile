@@ -7,6 +7,7 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SGQRCode', '~> 4.1.0'
 
   pod 'ThingSmartHomeKit', '~> 5.0.0'
+  pod 'ThingSmartCryption', :path => './'
 end
 
 post_install do |installer|
