@@ -8,6 +8,11 @@
 #import "AppKey.h"
 #import "SVProgressHUD.h"
 
+#import "CameraDoorbellManager.h"
+
+#import <ThingSmartCameraKit/ThingSmartCameraKit.h>
+#import <ThingSmartAVBaseKit/ThingSmartAVBaseKit.h>
+
 @interface AppDelegate ()
 
 @end
@@ -19,13 +24,19 @@
     // Initialize ThingSmartSDK
     [[ThingSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
     
+    // Doorbell Observer. If you have a doorbell device
+    [[CameraDoorbellManager sharedInstance] addDoorbellObserver];
+
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
     [[ThingSmartSDK sharedInstance] setDebugMode:YES];
+    [[ThingSmartCameraSDK sharedInstance] setDebugMode:YES];
     #else
     #endif
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:2];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     if (@available(iOS 13, *)) {

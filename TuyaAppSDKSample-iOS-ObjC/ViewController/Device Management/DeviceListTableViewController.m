@@ -5,10 +5,13 @@
 //  Copyright (c) 2014-2021 Thing Inc. (https://developer.tuya.com/)
 
 #import "DeviceListTableViewController.h"
+#import <ThingSmartCameraKit/ThingSmartCameraKit.h>
+
 #import "Home.h"
 #import "Alert.h"
 #import "DeviceControlTableViewController.h"
 #import "ThingLinkDeviceControlController.h"
+#import "CameraNewViewController.h"
 
 @interface DeviceListTableViewController () <ThingSmartHomeDelegate>
 @property (strong, nonatomic) ThingSmartHome *home;
@@ -49,7 +52,14 @@
     NSString *deviceID = self.home.deviceList[indexPath.row].devId;
     ThingSmartDevice *device = [ThingSmartDevice deviceWithDeviceId:deviceID];
     
-    BOOL isSupportThingModel = [device.deviceModel isSupportThingModelDevice];
+    ThingSmartDeviceModel *deviceModel = device.deviceModel;
+    if (deviceModel.isIPCDevice) {
+        CameraNewViewController *vc = [[CameraNewViewController alloc] initWithDeviceId:deviceModel.devId];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+
+    BOOL isSupportThingModel = [deviceModel isSupportThingModelDevice];
     
     NSString *identifier = isSupportThingModel ? @"ThingLinkDeviceControlController" : @"DeviceControlTableViewController";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"DeviceList" bundle:nil];

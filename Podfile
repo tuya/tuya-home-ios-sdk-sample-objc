@@ -7,6 +7,12 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SGQRCode', '~> 4.1.0'
 
   pod 'ThingSmartHomeKit', '~> 5.0.0'
+  pod 'ThingSmartCameraKit', '~> 5.6.0'
+  pod 'ThingCameraUIKit', '~> 5.0.0'
+  pod 'ThingCloudStorageDebugger', '~> 5.0.0'
+
+#  pod 'ThingCameraAutomation'
+
 end
 
 post_install do |installer|
