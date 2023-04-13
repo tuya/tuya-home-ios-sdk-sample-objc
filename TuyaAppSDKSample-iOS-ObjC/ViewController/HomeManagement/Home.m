@@ -8,19 +8,19 @@
 
 @implementation Home
 
-+ (TuyaSmartHomeModel *)getCurrentHome {
++ (ThingSmartHomeModel *)getCurrentHome {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults valueForKey:@"CurrentHome"]) {
         return nil;
     }
     long long homeId = [[defaults valueForKey:@"CurrentHome"] longLongValue];
-    if (![TuyaSmartHome homeWithHomeId:homeId]) {
+    if (![ThingSmartHome homeWithHomeId:homeId]) {
         return nil;
     }
-    return [TuyaSmartHome homeWithHomeId:homeId].homeModel;
+    return [ThingSmartHome homeWithHomeId:homeId].homeModel;
 }
 
-+ (void)setCurrentHome:(TuyaSmartHomeModel *)homeModel {
++ (void)setCurrentHome:(ThingSmartHomeModel *)homeModel {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSString stringWithFormat:@"%lld", homeModel.homeId] forKey:@"CurrentHome"];
 }

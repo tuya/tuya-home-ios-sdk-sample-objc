@@ -9,7 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EditHomeTableViewController : UITableViewController
-@property(strong, nonatomic) TuyaSmartHome *home;
+@property(strong, nonatomic) ThingSmartHome *home;
 @end
 
 NS_ASSUME_NONNULL_END

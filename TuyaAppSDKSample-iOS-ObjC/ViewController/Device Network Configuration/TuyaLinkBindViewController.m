@@ -6,7 +6,7 @@
 
 #import "TuyaLinkBindViewController.h"
 #import "QRCodeScanerViewController.h"
-#import <TuyaSmartActivatorKit/TuyaSmartActivatorKit.h>>
+#import <ThingSmartActivatorKit/ThingSmartActivatorKit.h>
 
 @interface TuyaLinkBindViewController ()
 
@@ -22,7 +22,7 @@
 - (void)_bindTuyaLinkWithQRCodeStr:(NSString *)codeStr {
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD show];
-    [[TuyaSmartTuyaLinkActivator new] bindTuyaLinkDeviceWithQRCode:codeStr homeId:homeId success:^(TuyaSmartDeviceModel * _Nonnull deviceModel) {
+    [[ThingSmartThingLinkActivator new] bindThingLinkDeviceWithQRCode:codeStr homeId:homeId success:^(ThingSmartDeviceModel * _Nonnull deviceModel) {
         [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Bind Success.\n devId: %@ \n name: %@", deviceModel.devId, deviceModel.name]];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Bind failure.(%@)", error.localizedDescription]];

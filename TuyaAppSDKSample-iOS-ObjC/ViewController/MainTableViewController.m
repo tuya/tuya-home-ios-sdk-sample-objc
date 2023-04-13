@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *currentHomeLabel;
 
-@property (strong, nonatomic) TuyaSmartHomeManager *homeManager;
+@property (strong, nonatomic) ThingSmartHomeManager *homeManager;
 @end
 
 @implementation MainTableViewController
@@ -31,12 +31,12 @@
 }
 
 - (void)initiateCurrentHome {
-    WEAKSELF_TYSDK
-    [self.homeManager getHomeListWithSuccess:^(NSArray<TuyaSmartHomeModel *> *homes) {
+    WEAKSELF_ThingSDK
+    [self.homeManager getHomeListWithSuccess:^(NSArray<ThingSmartHomeModel *> *homes) {
         if (homes && homes.count > 0) {
             if (![Home getCurrentHome]) {
                 [Home setCurrentHome:homes.firstObject];
-                weakSelf_TYSDK.currentHomeLabel.text = [Home getCurrentHome].name;
+                weakSelf_ThingSDK.currentHomeLabel.text = [Home getCurrentHome].name;
             }
         }
     } failure:^(NSError *error) {
@@ -49,7 +49,7 @@
 - (IBAction)logoutTapped:(UIButton *)sender {
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"You're going to log out this account.", @"User tapped the logout button.") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Logout", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [[TuyaSmartUser sharedInstance] loginOut:^{
+        [[ThingSmartUser sharedInstance] loginOut:^{
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;
@@ -76,9 +76,9 @@
     }
 }
 
-- (TuyaSmartHomeManager *)homeManager {
+- (ThingSmartHomeManager *)homeManager {
     if (!_homeManager) {
-        _homeManager = [[TuyaSmartHomeManager alloc] init];
+        _homeManager = [[ThingSmartHomeManager alloc] init];
     }
     return _homeManager;
 }

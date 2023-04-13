@@ -23,14 +23,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    TuyaSmartHomeModel *model = self.homeModel;
-    self.home = [TuyaSmartHome homeWithHomeId:model.homeId];
+    ThingSmartHomeModel *model = self.homeModel;
+    self.home = [ThingSmartHome homeWithHomeId:model.homeId];
     
     self.homeIDLabel.text = [NSString stringWithFormat:@"%lld", model.homeId];
     self.homeNameLabel.text = model.name;
     self.cityLabel.text = model.geoName;
     
-    [self.home getHomeWeatherSketchWithSuccess:^(TuyaSmartWeatherSketchModel *weatherModel) {
+    [self.home getHomeWeatherSketchWithSuccess:^(ThingSmartWeatherSketchModel *weatherModel) {
         self.weatherConditionLabel.text = weatherModel.condition;
         self.temperatureLabel.text = weatherModel.temp;
     } failure:^(NSError *error) {
@@ -47,7 +47,7 @@
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Dismiss This Home", @"") message:NSLocalizedString(@"You're going to dismiss this home.", @"") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"Dismiss", @"Dismiss a home.") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self.home dismissHomeWithSuccess:^{
-            [Home setCurrentHome:[TuyaSmartHomeModel new]];
+            [Home setCurrentHome:[ThingSmartHomeModel new]];
             [self.navigationController popViewControllerAnimated:YES];
         } failure:^(NSError *error) {
             [Alert showBasicAlertOnVC:[UIApplication sharedApplication].keyWindow.rootViewController withTitle:@"Failed to Dismiss" message:error.localizedDescription];

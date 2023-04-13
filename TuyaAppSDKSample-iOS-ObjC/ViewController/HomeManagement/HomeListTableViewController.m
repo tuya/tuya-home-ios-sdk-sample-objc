@@ -9,8 +9,8 @@
 #import "HomeDetailTableViewController.h"
 
 @interface HomeListTableViewController ()
-@property(strong, nonatomic) TuyaSmartHomeManager *homeManager;
-@property(strong, nonatomic) NSMutableArray<TuyaSmartHomeModel *> *homeList;
+@property(strong, nonatomic) ThingSmartHomeManager *homeManager;
+@property(strong, nonatomic) NSMutableArray<ThingSmartHomeModel *> *homeList;
 @end
 
 @implementation HomeListTableViewController
@@ -22,7 +22,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.homeManager getHomeListWithSuccess:^(NSArray<TuyaSmartHomeModel *> *homes) {
+    [self.homeManager getHomeListWithSuccess:^(NSArray<ThingSmartHomeModel *> *homes) {
         self.homeList = [homes mutableCopy];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -57,24 +57,24 @@
         return;
     }
     
-    if (![sender isKindOfClass:[TuyaSmartHomeModel class]]) {
+    if (![sender isKindOfClass:[ThingSmartHomeModel class]]) {
         return;
     }
     
-    TuyaSmartHomeModel *model = sender;
+    ThingSmartHomeModel *model = sender;
     if ([segue.destinationViewController isKindOfClass:[HomeDetailTableViewController class]]) {
         ((HomeDetailTableViewController*)(segue.destinationViewController)).homeModel = model;
     }
 }
 
-- (TuyaSmartHomeManager *)homeManager {
+- (ThingSmartHomeManager *)homeManager {
     if (!_homeManager) {
-        _homeManager = [[TuyaSmartHomeManager alloc] init];
+        _homeManager = [[ThingSmartHomeManager alloc] init];
     }
     return _homeManager;
 }
 
-- (NSMutableArray<TuyaSmartHomeModel *> *)homeList {
+- (NSMutableArray<ThingSmartHomeModel *> *)homeList {
     if (!_homeList) {
         _homeList = [[NSMutableArray alloc] init];
     }

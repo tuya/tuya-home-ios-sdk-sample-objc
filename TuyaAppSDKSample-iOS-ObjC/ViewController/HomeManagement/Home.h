@@ -9,8 +9,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Home : NSObject
-+ (TuyaSmartHomeModel *)getCurrentHome;
-+ (void)setCurrentHome:(nullable TuyaSmartHomeModel *)homeModel;
++ (ThingSmartHomeModel *)getCurrentHome;
++ (void)setCurrentHome:(nullable ThingSmartHomeModel *)homeModel;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,7 +6,7 @@
 
 #import "BLEModelViewController.h"
 
-@interface BLEModelViewController ()<TuyaSmartBLEManagerDelegate>
+@interface BLEModelViewController ()<ThingSmartBLEManagerDelegate>
 
 @property (nonatomic, assign) BOOL isSuccess;
 
@@ -25,34 +25,34 @@
 }
 
 - (void)stopScan{
-    TuyaSmartBLEManager.sharedInstance.delegate = nil;
-    [TuyaSmartBLEManager.sharedInstance stopListening:YES];
+    ThingSmartBLEManager.sharedInstance.delegate = nil;
+    [ThingSmartBLEManager.sharedInstance stopListening:YES];
     if (!self.isSuccess) {
         [SVProgressHUD dismiss];
     }
 }
 
 - (IBAction)searchClicked:(id)sender {
-    TuyaSmartBLEManager.sharedInstance.delegate = self;
-    [TuyaSmartBLEManager.sharedInstance startListening:YES];
+    ThingSmartBLEManager.sharedInstance.delegate = self;
+    [ThingSmartBLEManager.sharedInstance startListening:YES];
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Searching", @"")];
 }
 
 #pragma --mark TuyaSmartBLEManagerDelegate
-- (void)didDiscoveryDeviceWithDeviceInfo:(TYBLEAdvModel *)deviceInfo{
+- (void)didDiscoveryDeviceWithDeviceInfo:(ThingBLEAdvModel *)deviceInfo{
     long long homeId = [Home getCurrentHome].homeId;
     [SVProgressHUD showWithStatus:NSLocalizedString(@"Configuring", @"")];
     
-    if (deviceInfo.bleType == TYSmartBLETypeBLEWifi ||
-        deviceInfo.bleType == TYSmartBLETypeBLEWifiSecurity ||
-        deviceInfo.bleType == TYSmartBLETypeBLEWifiPlugPlay ||
-        deviceInfo.bleType == TYSmartBLETypeBLEWifiPriorBLE ||
-        deviceInfo.bleType == TYSmartBLETypeBLELTESecurity) {
+    if (deviceInfo.bleType == ThingSmartBLETypeBLEWifi ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEWifiSecurity ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEWifiPlugPlay ||
+        deviceInfo.bleType == ThingSmartBLETypeBLEWifiPriorBLE ||
+        deviceInfo.bleType == ThingSmartBLETypeBLELTESecurity) {
         NSLog(@"Please use Dual Mode to pair: %@", deviceInfo.uuid);
         return;
     }
     
-    [TuyaSmartBLEManager.sharedInstance activeBLE:deviceInfo homeId:homeId success:^(TuyaSmartDeviceModel * _Nonnull deviceModel) {
+    [ThingSmartBLEManager.sharedInstance activeBLE:deviceInfo homeId:homeId success:^(ThingSmartDeviceModel * _Nonnull deviceModel) {
         self.isSuccess = YES;
         NSString *name = deviceModel.name?deviceModel.name:NSLocalizedString(@"Unknown Name", @"Unknown name device.");
         [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ %@" ,NSLocalizedString(@"Successfully Added", @"") ,name]];

@@ -25,11 +25,11 @@
 }
 
 - (void)presentUserInformation {
-    [self.userNameLabel setText:[[TuyaSmartUser sharedInstance] userName]];
-    [self.phoneNumberLabel setText:[[TuyaSmartUser sharedInstance] phoneNumber]];
-    [self.emailAddressLabel setText:[[TuyaSmartUser sharedInstance] email]];
-    [self.countryCodeLabel setText:[[TuyaSmartUser sharedInstance] countryCode]];
-    [self.timeZoneLabel setText:[[TuyaSmartUser sharedInstance] timezoneId]];
+    [self.userNameLabel setText:[[ThingSmartUser sharedInstance] userName]];
+    [self.phoneNumberLabel setText:[[ThingSmartUser sharedInstance] phoneNumber]];
+    [self.emailAddressLabel setText:[[ThingSmartUser sharedInstance] email]];
+    [self.countryCodeLabel setText:[[ThingSmartUser sharedInstance] countryCode]];
+    [self.timeZoneLabel setText:[[ThingSmartUser sharedInstance] timezoneId]];
 }
 
 @end

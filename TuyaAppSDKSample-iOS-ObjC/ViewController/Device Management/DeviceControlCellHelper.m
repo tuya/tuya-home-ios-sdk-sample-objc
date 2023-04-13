@@ -5,26 +5,27 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "DeviceControlCellHelper.h"
+#import <ThingSmartDeviceCoreKit/ThingSmartDeviceCoreKit.h>
 
 @implementation DeviceControlCellHelper
-+ (NSString *)cellIdentifierWithSchemaModel:(TuyaSmartSchemaModel *)schema {
++ (NSString *)cellIdentifierWithSchemaModel:(ThingSmartSchemaModel *)schema {
     NSString *type = [schema.type isEqualToString:@"obj"] ? schema.property.type : schema.type;
     NSString *identifier = [self _cellIdentifierFromTypeString:type];
     return identifier;
 }
 
-+ (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema {
++ (DeviceControlCellType)cellTypeWithSchemaModel:(ThingSmartSchemaModel *)schema {
     NSString *typeStr = [schema.type isEqualToString:@"obj"] ? schema.property.type : schema.type;
     DeviceControlCellType type = [self _cellTypeFormTypeString:typeStr];
     return type;
 }
 
-+ (NSString *)cellIdentifierWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property {
++ (NSString *)cellIdentifierWithPropertyModel:(ThingSmartSchemaPropertyModel *)property {
     NSString *identifier = [self _cellIdentifierFromTypeString:property.type];
     return identifier;
 }
 
-+ (DeviceControlCellType)cellTypeWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property {
++ (DeviceControlCellType)cellTypeWithPropertyModel:(ThingSmartSchemaPropertyModel *)property {
     DeviceControlCellType type = [self _cellTypeFormTypeString:property.type];
     return type;
 }

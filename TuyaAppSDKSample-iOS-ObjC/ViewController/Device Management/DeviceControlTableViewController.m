@@ -16,7 +16,7 @@
 #import "NotificationName.h"
 #import "DeviceDetailTableViewController.h"
 
-@interface DeviceControlTableViewController () <TuyaSmartDeviceDelegate>
+@interface DeviceControlTableViewController () <ThingSmartDeviceDelegate>
 
 @end
 
@@ -88,8 +88,8 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    TuyaSmartDevice *device = self.device;
-    TuyaSmartSchemaModel *schema = device.deviceModel.schemaArray[indexPath.row];
+    ThingSmartDevice *device = self.device;
+    ThingSmartSchemaModel *schema = device.deviceModel.schemaArray[indexPath.row];
     NSDictionary *dps = device.deviceModel.dps;
     bool isReadOnly = NO;
     NSString *cellIdentifier = [DeviceControlCellHelper cellIdentifierWithSchemaModel:schema];
@@ -149,7 +149,7 @@
         case DeviceControlCellTypeLabelCell:
         {
             ((LabelTableViewCell *)cell).label.text = schema.name;
-            ((LabelTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] tysdk_toString];
+            ((LabelTableViewCell *)cell).detailLabel.text = [dps[schema.dpId] thingsdk_toString];
             break;
         }
         default:
@@ -159,17 +159,17 @@
     return cell;
 }
 
--(void)deviceInfoUpdate:(TuyaSmartDevice *)device {
+-(void)deviceInfoUpdate:(ThingSmartDevice *)device {
     [self detectDeviceAvailability];
     [self.tableView reloadData];
 }
 
--(void)deviceRemoved:(TuyaSmartDevice *)device {
+-(void)deviceRemoved:(ThingSmartDevice *)device {
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceOffline object:nil];
     [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"The device has been removed.", @"")];
 }
 
--(void)device:(TuyaSmartDevice *)device dpsUpdate:(NSDictionary *)dps {
+-(void)device:(ThingSmartDevice *)device dpsUpdate:(NSDictionary *)dps {
     [self detectDeviceAvailability];
     [self.tableView reloadData];
 }

@@ -26,7 +26,7 @@
 #pragma mark - IBAction
 
 - (IBAction)sendVerificationCode:(UIButton *)sender {
-    [[TuyaSmartUser sharedInstance] sendVerifyCodeWithUserName:self.accountTextField.text region:[[TuyaSmartUser sharedInstance] getDefaultRegionWithCountryCode:self.countryCodeTextField.text] countryCode:self.countryCodeTextField.text type:1 success:^{
+    [[ThingSmartUser sharedInstance] sendVerifyCodeWithUserName:self.accountTextField.text region:[[ThingSmartUser sharedInstance] getDefaultRegionWithCountryCode:self.countryCodeTextField.text] countryCode:self.countryCodeTextField.text type:1 success:^{
         [Alert showBasicAlertOnVC:self withTitle:@"Verification Code Sent Successfully" message:@"Please check your message for the code."];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:@"Failed to Sent Verification Code" message:error.localizedDescription];
@@ -35,7 +35,7 @@
 
 - (IBAction)registerTapped:(UIButton *)sender {
     if ([self.accountTextField.text containsString:@"@"]) {
-        [[TuyaSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+        [[ThingSmartUser sharedInstance] registerByEmail:self.countryCodeTextField.text email:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;
@@ -44,7 +44,7 @@
             [Alert showBasicAlertOnVC:self withTitle:@"Failed to Register" message:error.localizedDescription];
         }];
     } else {
-        [[TuyaSmartUser sharedInstance] registerByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
+        [[ThingSmartUser sharedInstance] registerByPhone:self.countryCodeTextField.text phoneNumber:self.accountTextField.text password:self.passwordTextField.text code:self.verificationCodeTextField.text success:^{
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;

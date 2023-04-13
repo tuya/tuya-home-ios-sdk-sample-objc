@@ -9,7 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DeviceDetailTableViewController : UITableViewController
-@property (strong, nonatomic) TuyaSmartDevice *device;
+@property (strong, nonatomic) ThingSmartDevice *device;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -22,7 +22,7 @@
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
-    if ([TuyaSmartUser sharedInstance].isLogin) {
+    if ([ThingSmartUser sharedInstance].isLogin) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         self.window.rootViewController = nav;

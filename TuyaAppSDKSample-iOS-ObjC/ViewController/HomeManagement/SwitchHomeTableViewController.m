@@ -9,8 +9,8 @@
 #import "Home.h"
 
 @interface SwitchHomeTableViewController ()
-@property(strong, nonatomic) TuyaSmartHomeManager *homeManager;
-@property(strong, nonatomic) NSMutableArray<TuyaSmartHomeModel *> *homeList;
+@property(strong, nonatomic) ThingSmartHomeManager *homeManager;
+@property(strong, nonatomic) NSMutableArray<ThingSmartHomeModel *> *homeList;
 @end
 
 @implementation SwitchHomeTableViewController
@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.homeManager getHomeListWithSuccess:^(NSArray<TuyaSmartHomeModel *> *homes) {
+    [self.homeManager getHomeListWithSuccess:^(NSArray<ThingSmartHomeModel *> *homes) {
         self.homeList = [homes mutableCopy];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -62,14 +62,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (TuyaSmartHomeManager *)homeManager {
+- (ThingSmartHomeManager *)homeManager {
     if (!_homeManager) {
-        _homeManager = [[TuyaSmartHomeManager alloc] init];
+        _homeManager = [[ThingSmartHomeManager alloc] init];
     }
     return _homeManager;
 }
 
-- (NSMutableArray<TuyaSmartHomeModel *> *)homeList {
+- (NSMutableArray<ThingSmartHomeModel *> *)homeList {
     if (!_homeList) {
         _homeList = [[NSMutableArray alloc] init];
     }

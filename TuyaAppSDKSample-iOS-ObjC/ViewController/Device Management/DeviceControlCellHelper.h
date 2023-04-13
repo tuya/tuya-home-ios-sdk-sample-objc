@@ -18,11 +18,11 @@ typedef NS_ENUM(NSInteger, DeviceControlCellType) {
 };
 
 @interface DeviceControlCellHelper : NSObject
-+ (NSString *)cellIdentifierWithSchemaModel:(TuyaSmartSchemaModel *)schema;
-+ (DeviceControlCellType)cellTypeWithSchemaModel:(TuyaSmartSchemaModel *)schema;
++ (NSString *)cellIdentifierWithSchemaModel:(ThingSmartSchemaModel *)schema;
++ (DeviceControlCellType)cellTypeWithSchemaModel:(ThingSmartSchemaModel *)schema;
 
-+ (NSString *)cellIdentifierWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
-+ (DeviceControlCellType)cellTypeWithPropertyModel:(TuyaSmartSchemaPropertyModel *)property;
++ (NSString *)cellIdentifierWithPropertyModel:(ThingSmartSchemaPropertyModel *)property;
++ (DeviceControlCellType)cellTypeWithPropertyModel:(ThingSmartSchemaPropertyModel *)property;
 
 @end
 

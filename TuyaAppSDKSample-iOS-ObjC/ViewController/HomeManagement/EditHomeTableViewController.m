@@ -6,6 +6,7 @@
 
 #import "EditHomeTableViewController.h"
 #import "Alert.h"
+#import <CoreLocation/CLLocationManagerDelegate.h>
 
 @interface EditHomeTableViewController ()<CLLocationManagerDelegate>
 

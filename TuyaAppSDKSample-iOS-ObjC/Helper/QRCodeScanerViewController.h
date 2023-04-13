@@ -9,7 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QRCodeScanerViewController : UIViewController
-@property (nonatomic, copy) TYSuccessString scanCallback;
+@property (nonatomic, copy) ThingSuccessString scanCallback;
 @end
 
 NS_ASSUME_NONNULL_END

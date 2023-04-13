@@ -7,8 +7,10 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import <TuyaSmartHomeKit/TuyaSmartKit.h>
-#import <TuyaSmartActivatorKit/TuyaSmartActivatorKit.h>
+//#import <ThingSmartHomeKit/ThingSmartKit.h>
+#import <ThingSmartActivatorKit/ThingSmartActivatorKit.h>
+#import <ThingSmartDeviceKit/ThingSmartDeviceKit.h>
+#import <ThingSmartBLEKit/ThingSmartBLEKit.h>
 #import "SVProgressHUD.h"
 #import "Home.h"
 
