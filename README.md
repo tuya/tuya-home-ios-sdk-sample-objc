@@ -63,7 +63,7 @@ pod install
 The Ruby script `/Tools/translator/translator.rb` can translate the code in your project that contains Tuya identifiers API to Thing identifiers API. For more information on migrating to version 5.x, please refer to the [migration guide](https://developer.tuya.com/en/docs/app-development/migration_guide?id=Kci3zqm3wlcut). To run the script, use the following command:
 
 ```ruby
-ruby translator.rb [you project path]
+sudo ruby translator.rb [you project path]
 ```
 
 ## References
