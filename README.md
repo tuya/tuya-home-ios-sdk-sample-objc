@@ -9,7 +9,7 @@ Self-Developed Smart Life App is one of Tuya’s IoT app development solutions. 
 
 Self-Developed Smart Life App is classified into the **Development** and **Official** editions:
 
-- **Self-Developed App Development**: provided for a free trial. It supports up to 100,000 cloud API calls per month and up to 100 registered end users in total.
+- **Self-Developed App Development**: provided for a free trial. It supports up to 1 million cloud API calls per month and up to 100 registered end users in total.
 
 - **Self-Developed App Official**: provided for commercial use and costs $5,000/year (¥33,500/year) for the initial subscription and $2,000/year (¥13,500/year) for subsequent annual renewal. It is supplied with the Custom Domain Name service and up to 100 million cloud API calls per month.
 
