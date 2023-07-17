@@ -6,7 +6,7 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
   pod 'SGQRCode', '~> 4.1.0'
 
-  pod 'ThingSmartHomeKit', '~> 5.0.0'
+  pod 'ThingSmartHomeKit', '~> 5.1.0'
   
   # 从 iot.tuya.com 构建和获取 ThingSmartCryption
   #  购买正式版后，需重新在 IoT 平台构建 SDK 并重新集成
