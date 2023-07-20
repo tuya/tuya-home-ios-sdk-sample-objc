@@ -764,6 +764,7 @@
 "ipc_errmsg_speaker_failed" = "开启声音失败";
 "ipc_errormsg_data_load_failed" = "数据加载失败，请检查网络状态后重试。";
 "ipc_live_page_cstorage_motion_detected" = "移动侦测";
+"ipc_live_page_cstorage_out_of_bounds" = "越线框";
 "ipc_motion_sensitivity_high" = "高灵敏度";
 "ipc_motion_sensitivity_low" = "低灵敏度";
 "ipc_motion_sensitivity_mid" = "中灵敏度";

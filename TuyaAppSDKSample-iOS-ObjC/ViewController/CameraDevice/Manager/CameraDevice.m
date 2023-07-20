@@ -9,6 +9,40 @@
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 #import <ThingSmartCameraM/ThingSmartCameraM.h>
 
+#import <YYModel/YYModel.h>
+
+@interface NSDictionary (ConvertedJsonString)
+
+@end
+
+@implementation NSDictionary (ConvertedJsonString)
+
+- (NSString *)convertedJsonString {
+    if (![NSJSONSerialization isValidJSONObject:self]) {
+        return nil;
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = nil;
+    if (!jsonData) {
+        return nil;
+    }else{
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+    NSRange range = {0,jsonString.length};
+    //去掉字符串中的空格
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+    NSRange range2 = {0,mutStr.length};
+    //去掉字符串中的换行符
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+    return mutStr.copy;
+}
+
+
+
+@end
+
 @interface CameraDevice ()<ThingSmartCameraDelegate>
 
 @property (nonatomic, strong) id<ThingSmartCameraType> camera;
@@ -18,6 +52,12 @@
 @property (nonatomic, strong) NSHashTable<id<ThingSmartCameraDelegate>> *innerDelegates;
 
 @property (nonatomic, assign) BOOL lastMuted;
+
+@property (nonatomic, strong) CameraDeviceOutlineProperty *innerObjectOutlineFeature;
+@property (nonatomic, copy) NSArray<CameraDeviceOutlineProperty *> *innerOutOffBoundsFeatures;
+
+@property (nonatomic, assign) BOOL innerObjectOutlineEnabled;
+@property (nonatomic, assign) BOOL innerOutOffBoundsEnabled;
 
 @end
 
@@ -109,6 +149,9 @@
     self.cameraModel.previewState = CameraDevicePreviewLoading;
     [self.camera startPreview];
     self.lastMuted = self.cameraModel.mutedForPreview;
+    
+    [self setOutLineEnable];
+    [self setSmartRectFeatures];
 }
 
 - (void)stopPreview {
@@ -217,6 +260,9 @@
 
 - (void)setDefinition:(ThingSmartCameraDefinition)definition {
     [self.camera setDefinition:definition];
+    
+    [self setOutLineEnable];
+    [self setSmartRectFeatures];
 }
 
 - (void)startTalk {
@@ -253,6 +299,53 @@
 
 - (UIImage *)snapshoot {
     return [self.camera snapShoot];
+}
+
+
+- (void)setOutLineEnable {
+    if (self.innerObjectOutlineEnabled || self.innerOutOffBoundsEnabled) {
+        [self.camera setOutLineEnable:YES];
+        return;
+    }
+    [self.camera setOutLineEnable:NO];
+}
+
+//set ipc_object_outline switch, set before startPreview
+- (void)setObjectOutlineEnable:(BOOL)enable {
+    self.innerObjectOutlineEnabled = enable;
+}
+
+//set out_off_bounds switch, set before startPreview
+- (void)setOutOffBoundsEnable:(BOOL)enable {
+    self.innerOutOffBoundsEnabled = enable;
+}
+
+//set ipc_object_outline feature
+- (void)setObjectOutlineFeature:(CameraDeviceOutlineProperty *)feature {
+    self.innerObjectOutlineFeature = feature;
+}
+
+//set out_off_bounds features
+- (void)setOutOffBoundsFeatures:(NSArray<CameraDeviceOutlineProperty *> *)features {
+    self.innerOutOffBoundsFeatures = features;
+}
+
+- (int)setSmartRectFeatures {
+     
+    NSMutableArray *allFrameFeatures = NSMutableArray.array;
+    //智能画框/ipc_object_outline
+    if (self.innerObjectOutlineFeature) {
+        [allFrameFeatures addObject:self.innerObjectOutlineFeature];
+    }
+    //越线框/out_off_bounds
+    NSArray *outOffBoundsFeatures = self.innerOutOffBoundsFeatures;
+    if (outOffBoundsFeatures) {
+        [allFrameFeatures addObjectsFromArray:outOffBoundsFeatures];
+    }
+    //{"SmartRectFeature":[{"index":0,"brushWidth":0,"type":1,"shape":0,"flashFps":{"drawKeepFrames":0,"stopKeepFrames":0}}]}
+    NSDictionary *resultFeatureMap = @{@"SmartRectFeature" : [allFrameFeatures yy_modelToJSONObject]};
+    NSString *featuresJson = [resultFeatureMap convertedJsonString];
+    return [self.camera setSmartRectFeatures:featuresJson];
 }
 
 #pragma mark - ThingSmartCameraDelegate

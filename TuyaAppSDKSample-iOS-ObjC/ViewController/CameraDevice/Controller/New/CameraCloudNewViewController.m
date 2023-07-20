@@ -90,6 +90,10 @@
     [self.view addSubview:self.cloudManager.videoView];
     [self.cloudManager.videoView thing_clear];
     
+    [self getAICloudSettingInfomation];
+    [self enableAIDetect];
+    [self enableAIDetectEventType];
+    
     self.cloudManager.videoView.frame = CGRectMake(0, APP_TOP_BAR_HEIGHT, VideoViewWidth, VideoViewHeight);
     
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
@@ -248,6 +252,7 @@
         case ThingSmartCloudStateExpiredData:
             [self.dayCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.cloudManager.cloudDays.count-1 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionLeft];
             [self loadTimePieceForDay:self.cloudManager.cloudDays.lastObject];
+            [self queryTimelineData:self.cloudManager.cloudDays.lastObject];
         default:
             break;
     }
@@ -283,6 +288,37 @@
 //            });
 //        }
 //    }];
+}
+
+- (void)getAICloudSettingInfomation {
+    [self.cloudManager queryAIDetectConfigSuccess:^(ThingCameraAIDetectConfigModel *model) {
+        NSLog(@"%@",model.isAiDevice ? @"1" : @"0");
+        } failure:^(NSError *error) {
+            
+        }];
+}
+
+- (void)enableAIDetect {
+    [self.cloudManager enableAIDetect:NO success:^(BOOL result) {
+        NSLog(@"%@",result ? @"1" : @"0");
+        } failure:^(NSError *error) {
+            
+        }];
+}
+
+- (void)enableAIDetectEventType {
+    [self.cloudManager enableAIDetectEventType:@"ai_human" enable:NO success:^(BOOL result) {
+        NSLog(@"%@",result ? @"1" : @"0");
+        } failure:^(NSError *error) {
+            
+        }];
+}
+
+- (void)queryTimelineData:(ThingSmartCloudDayModel *)dayModel {
+    [self.cloudManager timeEventsWithCloudDay:dayModel offset:0 limit:15 aiCodes:@"all" success:^(NSArray<ThingSmartCloudTimeEventModel *> *timeEvents) {
+        NSLog(@"====");
+        } failure:^(NSError *error) {
+        }];
 }
 
 - (void)playCloudTimePiece:(ThingSmartCloudTimePieceModel *)pieceModel playTime:(NSInteger)playTime {

@@ -28,6 +28,8 @@
 
 #import <ThingCloudStorageDebugger/ThingCloudStorageDebugger.h>
 
+#import <YYModel/YYModel.h>
+
 #define VideoViewWidth [UIScreen mainScreen].bounds.size.width
 #define VideoViewHeight ([UIScreen mainScreen].bounds.size.width / 16 * 9)
 #define BottomSwitchViewHeight 44.0
@@ -83,6 +85,7 @@
 - (instancetype)initWithDeviceId:(NSString *)devId {
     if (self = [super initWithDeviceId:devId]) {
         _needsReconnect = YES;
+        [self setCameraDeviceOutLineFeatures];
     }
     return self;
 }
@@ -448,6 +451,22 @@
 }
 
 #pragma mark - Private
+
+- (void)setCameraDeviceOutLineFeatures {
+    [self.cameraDevice setOutOffBoundsEnable:YES];
+    CameraDeviceOutlineProperty *outlineProperty = [[CameraDeviceOutlineProperty alloc] init];
+    outlineProperty.type = 1;
+    outlineProperty.index = 0;
+    outlineProperty.rgb = @(0x4200c8);
+    outlineProperty.shape = CameraDeviceOutlineShapeStyleFull;
+    outlineProperty.brushWidth = CameraDeviceOutlineWidthWide;
+
+    CameraDeviceOutlineFlashFps *flashFps = [[CameraDeviceOutlineFlashFps alloc] init];
+    flashFps.drawKeepFrames = CameraDeviceOutlineFlashFast;
+    flashFps.stopKeepFrames = CameraDeviceOutlineFlashFast;
+    outlineProperty.flashFps = flashFps;
+    [self.cameraDevice setOutOffBoundsFeatures:@[outlineProperty]];
+}
 
 #pragma mark - Accessor
 

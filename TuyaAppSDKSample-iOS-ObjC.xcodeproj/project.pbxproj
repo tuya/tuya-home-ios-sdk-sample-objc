@@ -44,6 +44,7 @@
 		679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A0289BCB8B00BD0FAB /* TextViewTableViewCell.m */; };
 		679561A5289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m */; };
 		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
+		931807502A68CB890098F894 /* CameraDeviceOutlineProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9318074E2A68CB890098F894 /* CameraDeviceOutlineProperty.m */; };
 		938CBC9829E810DE0086C6F4 /* IPCViewsLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0629E810DD0086C6F4 /* IPCViewsLocalizable.strings */; };
 		938CBC9929E810DE0086C6F4 /* IPCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0829E810DD0086C6F4 /* IPCLocalizable.strings */; };
 		938CBC9A29E810DE0086C6F4 /* ty_custom_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0C29E810DD0086C6F4 /* ty_custom_config.json */; };
@@ -241,6 +242,8 @@
 		67C6522C2897D01800F1D972 /* QRCodeScanerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanerViewController.h; sourceTree = "<group>"; };
 		67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanerViewController.m; sourceTree = "<group>"; };
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9318074E2A68CB890098F894 /* CameraDeviceOutlineProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceOutlineProperty.m; sourceTree = "<group>"; };
+		9318074F2A68CB890098F894 /* CameraDeviceOutlineProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDeviceOutlineProperty.h; sourceTree = "<group>"; };
 		938CBC0729E810DD0086C6F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCViewsLocalizable.strings"; sourceTree = "<group>"; };
 		938CBC0929E810DD0086C6F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCLocalizable.strings"; sourceTree = "<group>"; };
 		938CBC0A29E810DD0086C6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCViewsLocalizable.strings; sourceTree = "<group>"; };
@@ -610,19 +613,19 @@
 			isa = PBXGroup;
 			children = (
 				938CBC2C29E810DD0086C6F4 /* CameraControlNewView.h */,
-				938CBC2D29E810DD0086C6F4 /* CameraPlaybackNewViewController.h */,
-				938CBC2E29E810DD0086C6F4 /* CameraNewViewController.m */,
-				938CBC2F29E810DD0086C6F4 /* CameraBaseViewController.m */,
-				938CBC3029E810DD0086C6F4 /* CameraCloudNewViewController.m */,
-				938CBC3129E810DD0086C6F4 /* CameraConnectBaseViewController.m */,
-				938CBC3229E810DD0086C6F4 /* CameraDoorbellNewViewController.m */,
-				938CBC3329E810DD0086C6F4 /* CameraNewViewController.h */,
-				938CBC3429E810DD0086C6F4 /* CameraPlaybackNewViewController.m */,
 				938CBC3529E810DD0086C6F4 /* CameraControlNewView.m */,
 				938CBC3629E810DD0086C6F4 /* CameraBaseViewController.h */,
+				938CBC2F29E810DD0086C6F4 /* CameraBaseViewController.m */,
+				938CBC3129E810DD0086C6F4 /* CameraConnectBaseViewController.m */,
 				938CBC3729E810DD0086C6F4 /* CameraConnectBaseViewController.h */,
+				938CBC3329E810DD0086C6F4 /* CameraNewViewController.h */,
+				938CBC2E29E810DD0086C6F4 /* CameraNewViewController.m */,
+				938CBC2D29E810DD0086C6F4 /* CameraPlaybackNewViewController.h */,
+				938CBC3429E810DD0086C6F4 /* CameraPlaybackNewViewController.m */,
 				938CBC3829E810DD0086C6F4 /* CameraCloudNewViewController.h */,
+				938CBC3029E810DD0086C6F4 /* CameraCloudNewViewController.m */,
 				938CBC3929E810DD0086C6F4 /* CameraDoorbellNewViewController.h */,
+				938CBC3229E810DD0086C6F4 /* CameraDoorbellNewViewController.m */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -630,12 +633,14 @@
 		938CBC3A29E810DD0086C6F4 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				9318074F2A68CB890098F894 /* CameraDeviceOutlineProperty.h */,
+				9318074E2A68CB890098F894 /* CameraDeviceOutlineProperty.m */,
+				938CBC3E29E810DD0086C6F4 /* CameraDeviceModel.h */,
 				938CBC3B29E810DD0086C6F4 /* CameraDeviceModel.m */,
+				938CBC4029E810DD0086C6F4 /* CameraDevice.h */,
 				938CBC3C29E810DD0086C6F4 /* CameraDevice.m */,
 				938CBC3D29E810DD0086C6F4 /* CameraDeviceManager.h */,
-				938CBC3E29E810DD0086C6F4 /* CameraDeviceModel.h */,
 				938CBC3F29E810DD0086C6F4 /* CameraDeviceManager.m */,
-				938CBC4029E810DD0086C6F4 /* CameraDevice.h */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1113,6 +1118,7 @@
 				938CBCB229E810DE0086C6F4 /* CameraVideoView.m in Sources */,
 				938CBCA429E810DE0086C6F4 /* CameraMessageViewController.m in Sources */,
 				348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */,
+				931807502A68CB890098F894 /* CameraDeviceOutlineProperty.m in Sources */,
 				9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */,
 				938CBCAB29E810DE0086C6F4 /* CameraConnectBaseViewController.m in Sources */,
 				348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */,
@@ -1436,7 +1442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94JFPTRDN5;
+				DEVELOPMENT_TEAM = DWPHVGUZ22;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -1446,7 +1452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taojing.androidtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.xxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1459,7 +1465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94JFPTRDN5;
+				DEVELOPMENT_TEAM = DWPHVGUZ22;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -1469,7 +1475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taojing.androidtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.xxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

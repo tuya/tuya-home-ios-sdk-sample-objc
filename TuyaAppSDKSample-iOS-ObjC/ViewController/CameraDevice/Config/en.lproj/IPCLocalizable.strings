@@ -764,6 +764,7 @@
 "ipc_errmsg_speaker_failed" = "Failed to enable sound";
 "ipc_errormsg_data_load_failed" = "Loading failed";
 "ipc_live_page_cstorage_motion_detected" = "Motion Detection";
+"ipc_live_page_cstorage_out_of_bounds" = "crossline outline";
 "ipc_motion_sensitivity_high" = "High";
 "ipc_motion_sensitivity_low" = "Low";
 "ipc_motion_sensitivity_mid" = "Medium";

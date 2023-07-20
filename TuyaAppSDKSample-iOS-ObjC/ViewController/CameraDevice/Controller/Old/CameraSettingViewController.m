@@ -8,12 +8,17 @@
 #import "CameraSwitchCell.h"
 #import "CameraSDCardViewController.h"
 #import "CameraViewConstants.h"
+#import <YYModel/YYModel.h>
 
 #define kTitle  @"title"
 #define kValue  @"value"
 #define kAction @"action"
 #define kArrow  @"arrow"
 #define kSwitch @"switch"
+
+static ThingSmartCameraDPKey const kOutOffBoundsDPCode = @"out_off_bounds";
+static ThingSmartCameraDPKey const kOutOffBoundsSetDPCode = @"out_off_bounds_set";
+
 
 @interface CameraSettingViewController ()<ThingSmartCameraDPObserver, UITableViewDelegate, UITableViewDataSource>
 
@@ -32,6 +37,8 @@
 @property (nonatomic, strong) ThingSmartCameraPIR pirState;
 
 @property (nonatomic, assign) BOOL motionDetectOn;
+
+@property (nonatomic, assign) BOOL outOffBoundsOn;
 
 @property (nonatomic, strong) ThingSmartCameraMotion motionSensitivity;
 
@@ -64,7 +71,7 @@
     self.view.backgroundColor = HEXCOLOR(0xE8E9EF);
     self.title = NSLocalizedStringFromTable(@"ipc_panel_button_settings", @"IPCLocalizable", @"");
     [self.dpManager addObserver:self];
-    [self.tableView registerClass:[CameraSwitchCell class] forCellReuseIdentifier:@"switchCell"];
+//    [self.tableView registerClass:[CameraSwitchCell class] forCellReuseIdentifier:@"switchCell"];
     [self getDeviceInfo];
     [self setupTableFooter];
 }
@@ -120,6 +127,9 @@
     }
     if ([self.dpManager isSupportDP:ThingSmartCameraMotionDetectDPName]) {
         self.motionDetectOn = [[self.dpManager valueForDP:ThingSmartCameraMotionDetectDPName] thingsdk_toBool];
+    }
+    if ([self.dpManager isSupportDPCode:kOutOffBoundsDPCode]) {
+        self.outOffBoundsOn = [[self.dpManager valueForDPCode:kOutOffBoundsDPCode] thingsdk_toBool];
     }
     if ([self.dpManager isSupportDP:ThingSmartCameraMotionSensitivityDPName]) {
         self.motionSensitivity = [[self.dpManager valueForDP:ThingSmartCameraMotionSensitivityDPName] thingsdk_toString];
@@ -187,7 +197,9 @@
     if ([self.dpManager isSupportDP:ThingSmartCameraMotionDetectDPName]) {
         [section1 addObject:@{kTitle: NSLocalizedStringFromTable(@"ipc_live_page_cstorage_motion_detected", @"IPCLocalizable", @""), kValue: @(self.motionDetectOn), kAction: @"motionDetectAction:", kSwitch: @"1"}];
     }
-    
+    if ([self.dpManager isSupportDPCode:kOutOffBoundsDPCode] && self.motionDetectOn) {
+        [section1 addObject:@{kTitle: NSLocalizedStringFromTable(@"ipc_live_page_cstorage_out_of_bounds", @"IPCLocalizable", @""), kValue: @(self.outOffBoundsOn), kAction: @"outOffBoundsAction:", kSwitch: @"1"}];
+    }
     if ([self.dpManager isSupportDP:ThingSmartCameraMotionSensitivityDPName] && self.motionDetectOn) {
         NSString *text = [self motionSensitivityText:self.motionSensitivity];
         [section1 addObject:@{kTitle: NSLocalizedStringFromTable(@"ipc_motion_sensitivity_settings", @"IPCLocalizable", @""), kValue: text, kAction: @"motionSensitivityAction", kArrow: @"1"}];
@@ -329,6 +341,28 @@
         [weakSelf reloadData];
     } failure:^(NSError *error) {
         [weakSelf reloadData];
+    }];
+}
+
+- (void)outOffBoundsAction:(UISwitch *)switchButton {
+    __weak typeof(self) weakSelf = self;
+    [self.dpManager setValue:@(switchButton.on) forDPCode:kOutOffBoundsDPCode success:^(id result) {
+        weakSelf.outOffBoundsOn = switchButton.on;
+        [weakSelf reloadData];
+    } failure:^(NSError *error) {
+        [weakSelf reloadData];
+    }];
+    if (!switchButton.isOn) {
+        return;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    //2023-05-19 16:25:38.679 [ThingCameraSDK] ThingAVModule::GetDrawParam Port[1] sei:{"agtx":{"time":1684484736883,"chn":0,"key":1,"iva":{"od":[{"obj":{"id":0,"type":1,"twinkle":1,"rect": [46,129,1152,388,2304,401,1382,648,1382,907,1152,907,921,907,921,648],"vel":[0,0],"cat":"PEDESTRIAN"}}]}}}
+    [params setValue:@[@2,@10,@50,@30,@100,@31,@60,@50,@81,@92,@50,@70,@21,@87,@40,@50] forKey:@"points"];
+    NSString *jsonString = [@[params] yy_modelToJSONString];
+    [self.dpManager setValue:jsonString forDPCode:kOutOffBoundsSetDPCode success:^(id result) {
+        NSLog(@"%@", result);
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
 
@@ -543,7 +577,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *data = [[[self.dataSource objectAtIndex:indexPath.section] valueForKey:kValue] objectAtIndex:indexPath.row];
     if ([data objectForKey:kSwitch]) {
-        CameraSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"switchCell"];
+        NSString *identifier = [NSString stringWithFormat:@"switchCell_%ld_%ld", indexPath.section, indexPath.row];
+        CameraSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[CameraSwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
         BOOL value = [[data objectForKey:kValue] boolValue];
         SEL action = NSSelectorFromString([data objectForKey:kAction]);
         [cell setValueChangedTarget:self selector:action value:value];

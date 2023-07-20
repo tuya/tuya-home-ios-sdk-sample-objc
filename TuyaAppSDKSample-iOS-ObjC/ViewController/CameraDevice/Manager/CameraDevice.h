@@ -10,6 +10,7 @@
 
 #import "CameraDeviceModel.h"
 #import "CameraTimeLineModel.h"
+#import "CameraDeviceOutlineProperty.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -67,6 +68,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stopRecord;
 
 - (UIImage *)snapshoot;
+
+//set ipc_object_outline switch, set before startPreview
+- (void)setObjectOutlineEnable:(BOOL)enable;
+
+//set out_off_bounds switch, set before startPreview
+- (void)setOutOffBoundsEnable:(BOOL)enable;
+
+//set ipc_object_outline feature, set before startPreview
+- (void)setObjectOutlineFeature:(CameraDeviceOutlineProperty *)feature;
+
+//set out_off_bounds features, set before startPreview
+- (void)setOutOffBoundsFeatures:(NSArray<CameraDeviceOutlineProperty *> *)features;
 
 @end
 
