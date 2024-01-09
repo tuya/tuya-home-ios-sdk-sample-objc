@@ -9,17 +9,59 @@
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 #import "UIView+CameraAdditions.h"
 
-@interface CameraMessageViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MessageTypeViewCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@end
+
+@implementation MessageTypeViewCollectionViewCell
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont systemFontOfSize:12];
+        _titleLabel.textColor = UIColor.blackColor;
+        self.contentView.backgroundColor = UIColor.whiteColor;
+        self.contentView.layer.masksToBounds = YES;
+        [self.contentView addSubview:_titleLabel];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.contentView.frame = ({
+        CGRect frame = self.contentView.frame;
+        frame.origin.y = 10;
+        frame.size.height -= 20;
+        frame;
+    });
+    self.contentView.layer.cornerRadius = CGRectGetHeight(self.contentView.frame) * 0.5;
+    self.titleLabel.frame = self.contentView.bounds;
+}
+
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    self.contentView.backgroundColor = (selected == YES ? UIColor.blueColor : UIColor.whiteColor);
+    self.titleLabel.textColor = (selected == YES ? UIColor.redColor : UIColor.blackColor);
+}
+
+@end
+
+@interface CameraMessageViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
     
 @property (nonatomic, strong) ThingSmartCameraMessage *cameraMessage;
 
 @property (nonatomic, strong) NSArray<ThingSmartCameraMessageSchemeModel *> *schemeModels;
 
-@property (nonatomic, strong) UISegmentedControl *segmentedControl;
-
 @property (nonatomic, strong) UITableView *messageTableView;
 
 @property (nonatomic, strong) NSArray<ThingSmartCameraMessageModel *> *messageModelList;
+
+@property (nonatomic, strong) UICollectionView *messageTypeView;
 
 @end
 
@@ -29,10 +71,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.messageTableView];
+    __weak typeof(self) weakSelf = self;
     [self.cameraMessage getMessageSchemes:^(NSArray<ThingSmartCameraMessageSchemeModel *> *result) {
-        self.schemeModels = result;
-        [self setupSegmentedControl];
-        [self reloadMessageListWithScheme:result.firstObject];
+        weakSelf.schemeModels = result;
+        [weakSelf.messageTypeView reloadData];
+        if (weakSelf.schemeModels.count > 0) {
+            [weakSelf.messageTypeView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+        }
+        [weakSelf reloadMessageListWithScheme:result.firstObject];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -56,25 +102,9 @@
     return NSLocalizedStringFromTable(@"ipc_panel_button_message", @"IPCLocalizable", @"");
 }
 
-- (void)setupSegmentedControl {
-    NSMutableArray *titles = [NSMutableArray new];
-    [self.schemeModels enumerateObjectsUsingBlock:^(ThingSmartCameraMessageSchemeModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [titles addObject:obj.describe];
-    }];
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:titles];
-    _segmentedControl.selectedSegmentIndex = 0;
-    [self.view addSubview:_segmentedControl];
-    _segmentedControl.frame = CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.frame.size.width, 44);
-    [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged) forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)segmentedControlValueChanged {
-    NSInteger index = self.segmentedControl.selectedSegmentIndex;
-    ThingSmartCameraMessageSchemeModel *schemeModel = [self.schemeModels objectAtIndex:index];
-    [self reloadMessageListWithScheme:schemeModel];
-}
 
 - (void)reloadMessageListWithScheme:(ThingSmartCameraMessageSchemeModel *)schemeModel {
+
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"yyyy-MM-dd";
     NSDate *date = [formatter dateFromString:@"2019-09-17"];
@@ -115,6 +145,28 @@
     return 50;
 }
 
+#pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.schemeModels.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MessageTypeViewCollectionViewCell *cell = (MessageTypeViewCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(MessageTypeViewCollectionViewCell.class) forIndexPath:indexPath];
+    if (indexPath.row >= self.schemeModels.count) {
+        return cell;
+    }
+    ThingSmartCameraMessageSchemeModel *schemeModel = [self.schemeModels objectAtIndex:indexPath.row];
+    cell.titleLabel.text = schemeModel.describe;
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ThingSmartCameraMessageSchemeModel *schemeModel = [self.schemeModels objectAtIndex:indexPath.row];
+    [self reloadMessageListWithScheme:schemeModel];
+}
+
 - (UIImage *)placeHolder {
     static UIImage *image = nil;
     static dispatch_once_t onceToken;
@@ -135,13 +187,31 @@
 
 - (UITableView *)messageTableView {
     if (!_messageTableView) {
-        CGFloat top = CGRectGetMaxY(self.navigationController.navigationBar.frame) + 44;
+        CGFloat top = CGRectGetMaxY(self.navigationController.navigationBar.frame) + 64;
         CGFloat height = self.view.size.height - top;
         _messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, top, self.view.size.width, height) style:UITableViewStylePlain];
         _messageTableView.delegate = self;
         _messageTableView.dataSource = self;
     }
     return _messageTableView;
+}
+
+- (UICollectionView *)messageTypeView {
+    if (!_messageTypeView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.itemSize = CGSizeMake(80, 60);
+        layout.minimumInteritemSpacing = 0;
+        layout.minimumLineSpacing = 0;
+        _messageTypeView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.frame.size.width, 64) collectionViewLayout:layout];
+        [_messageTypeView registerClass:MessageTypeViewCollectionViewCell.class forCellWithReuseIdentifier:NSStringFromClass(MessageTypeViewCollectionViewCell.class)];
+        _messageTypeView.backgroundColor = [UIColor clearColor];
+        _messageTypeView.showsHorizontalScrollIndicator = NO;
+        _messageTypeView.delegate = self;
+        _messageTypeView.dataSource = self;
+        [self.view addSubview:_messageTypeView];
+    }
+    return _messageTypeView;
 }
 
 @end

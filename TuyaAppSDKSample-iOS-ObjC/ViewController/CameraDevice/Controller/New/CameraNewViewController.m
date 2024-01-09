@@ -145,13 +145,17 @@
 }
 
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
-    [self stopPreview];
-    [super applicationDidEnterBackgroundNotification:notification];
+    if (tp_topMostViewController() == self) {
+        [self stopPreview];
+        [super applicationDidEnterBackgroundNotification:notification];
+    }
 }
 
 - (void)applicationWillEnterForegroundNotification:(NSNotification *)notification {
-    [self retryAction];
-    [super applicationWillEnterForegroundNotification:notification];
+    if (tp_topMostViewController() == self) {
+        [self retryAction];
+        [super applicationWillEnterForegroundNotification:notification];
+    }
 }
 
 #pragma mark - Action

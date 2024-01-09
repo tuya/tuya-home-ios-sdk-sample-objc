@@ -78,6 +78,8 @@ typedef NSArray<NSDictionary *> TYDictArray;
 
 @property (nonatomic, strong) UIButton *rightBtn;
 
+@property (nonatomic, assign) BOOL fetchSDCardStatusFlag;
+
 @end
 
 @implementation CameraPlaybackNewViewController
@@ -98,6 +100,32 @@ typedef NSArray<NSDictionary *> TYDictArray;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = HEXCOLOR(0xd8d8d8);
+    
+    __weak typeof(self) weakSelf = self;
+    [self.cameraDevice.dpManager valueForDP:ThingSmartCameraSDCardStatusDPName success:^(id result) {
+        if (ThingSmartCameraSDCardStatusNone == [result integerValue]) {
+            [weakSelf showAlertWithMessage:NSLocalizedStringFromTable(@"pps_no_sdcard", @"IPCLocalizable", @"") complete:^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }];
+        } else if (ThingSmartCameraSDCardStatusException == [result integerValue]) {
+            [weakSelf showAlertWithMessage:NSLocalizedStringFromTable(@"Abnormally", @"IPCLocalizable", @"") complete:^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }];
+        } else if (ThingSmartCameraSDCardStatusFormatting == [result integerValue]) {
+            [weakSelf showAlertWithMessage:NSLocalizedStringFromTable(@"ipc_status_sdcard_format", @"IPCLocalizable", @"") complete:^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }];
+        } else {
+            weakSelf.fetchSDCardStatusFlag = YES;
+            [weakSelf retryAction];
+            if (weakSelf.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
+                [weakSelf startPlayback];
+            }
+            [weakSelf showSupportPlaySpeedList];
+        }
+    } failure:^(NSError *error) {
+        [weakSelf showSupportPlaySpeedList];
+    }];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     NSString *rightTitle = NSLocalizedStringFromTable(@"ipc_panel_button_calendar", @"IPCLocalizable", @"");
@@ -135,7 +163,6 @@ typedef NSArray<NSDictionary *> TYDictArray;
     [self.recordButton addTarget:self action:@selector(recordAction) forControlEvents:UIControlEventTouchUpInside];
     [self.pauseButton addTarget:self action:@selector(pauseAction) forControlEvents:UIControlEventTouchUpInside];
     
-    [self showSupportPlaySpeedList];
 }
 
 - (NSString *)titleForCenterItem {
@@ -147,9 +174,11 @@ typedef NSArray<NSDictionary *> TYDictArray;
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = NO;
     }
-    [self retryAction];
-    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
-        [self startPlayback];
+    if (self.fetchSDCardStatusFlag) {
+        [self retryAction];
+        if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
+            [self startPlayback];
+        }
     }
 }
 
@@ -162,16 +191,20 @@ typedef NSArray<NSDictionary *> TYDictArray;
 }
 
 - (void)applicationWillEnterForegroundNotification:(NSNotification *)notification {
-    [self retryAction];
-    [super applicationWillEnterForegroundNotification:notification];
+    if (tp_topMostViewController() == self) {
+        [self retryAction];
+        [super applicationWillEnterForegroundNotification:notification];
+    }
 }
 
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
-    [self stopPlayback];
-    if (self.cameraDevice.cameraModel.isDownloading) {
-        [self stopPlayBackDownload];
+    if (tp_topMostViewController() == self) {
+        [self stopPlayback];
+        if (self.cameraDevice.cameraModel.isDownloading) {
+            [self stopPlayBackDownload];
+        }
+        [super applicationDidEnterBackgroundNotification:notification];
     }
-    [super applicationDidEnterBackgroundNotification:notification];
 }
 
 #pragma mark - Action

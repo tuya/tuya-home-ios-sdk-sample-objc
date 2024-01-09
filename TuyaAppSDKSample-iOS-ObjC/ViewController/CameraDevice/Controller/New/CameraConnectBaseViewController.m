@@ -19,7 +19,6 @@
     if (self) {
         _devId = devId;
         _cameraDevice = [CameraDeviceManager.sharedManager getCameraDeviceWithDevId:devId];
-        [_cameraDevice addDelegate:self];
         
         _videoView = [[CameraVideoView alloc] initWithFrame:CGRectZero];
         _videoView.renderView = _cameraDevice.videoView;
@@ -37,6 +36,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.cameraDevice addDelegate:self];
+
     [self.cameraDevice bindVideoRenderView];
     self.videoView.renderView = self.cameraDevice.videoView;
 }
@@ -44,6 +45,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.cameraDevice removeDelegate:self];
     [self.cameraDevice unbindVideoRenderView];
 }
 

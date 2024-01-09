@@ -278,7 +278,9 @@
 
 - (void)gotoCloudServicePanel {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self showAlertWithMessage:NSLocalizedStringFromTable(@"please import ThingSmartCloudServiceBizBundle", @"IPCLocalizable", @"")];
+        [self showAlertWithMessage:NSLocalizedStringFromTable(@"please import ThingSmartCloudServiceBizBundle", @"IPCLocalizable", @"") complete:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
     });
 //    id<ThingCameraCloudServiceProtocol> cloudService = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingCameraCloudServiceProtocol)];
 //    [cloudService requestCloudServicePageWithDevice:self.device.deviceModel completionBlock:^(__kindof UIViewController *page, NSError *error) {

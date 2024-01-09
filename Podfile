@@ -6,10 +6,9 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
   pod 'SGQRCode', '~> 4.1.0'
 
-  pod 'ThingSmartHomeKit', '~> 5.1.0'
-  pod 'ThingSmartCameraKit', '~> 5.6.6'
-  pod 'ThingCameraUIKit', '~> 5.0.2'
-  pod 'ThingCloudStorageDebugger', '~> 5.0.0'
+  pod 'ThingSmartHomeKit', '~> 5.8.0'
+  pod 'ThingSmartCameraKit', '~> 5.8.0'
+  pod 'ThingCameraUIKit'
 
   # 从 iot.tuya.com 构建和获取 ThingSmartCryption
   #  购买正式版后，需重新在 IoT 平台构建 SDK 并重新集成
@@ -18,6 +17,7 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'ThingSmartCryption', :path => './'
 
 #  pod 'ThingCameraAutomation'
+#pod 'ThingCloudStorageDebugger', '~> 5.0.0'
 
 end
 
