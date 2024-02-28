@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,52 +39,73 @@
 		34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0525B03E7300152CA6 /* HomeDetailTableViewController.m */; };
 		34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */; };
 		53FE2BEC292E2ED500BBD62F /* SweeperMsgControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FE2BEB292E2ED500BBD62F /* SweeperMsgControllerViewController.m */; };
-		563B202429A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B1FF929A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.m */; };
-		563B204129A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204029A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.m */; };
-		563B204429A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204329A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.m */; };
-		563B204729A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204629A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.m */; };
-		563B204A29A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204929A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.m */; };
-		563B204D29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204C29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.m */; };
-		563B205029A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B204F29A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.m */; };
-		563B205329A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B205229A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.m */; };
-		563B205629A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B205529A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.m */; };
-		563B205929A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B205829A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.m */; };
-		563B205C29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B205B29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.m */; };
-		563B205F29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B205E29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.m */; };
-		563B206229A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B206129A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.m */; };
-		567DA79B2996453C008DB810 /* TuyaLockDeviceBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7702996453C008DB810 /* TuyaLockDeviceBaseViewController.m */; };
-		567DA79C2996453C008DB810 /* TuyaLockDeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7712996453C008DB810 /* TuyaLockDeviceListViewController.m */; };
-		567DA79D2996453C008DB810 /* TuyaLockDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7722996453C008DB810 /* TuyaLockDeviceTableViewController.m */; };
-		567DA79E2996453C008DB810 /* TuyaLockDeviceSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7762996453C008DB810 /* TuyaLockDeviceSettingViewController.m */; };
-		567DA7A02996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA77F2996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.m */; };
-		567DA7A12996453C008DB810 /* TuyaLockDeviceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7852996453C008DB810 /* TuyaLockDeviceRecordViewController.m */; };
-		567DA7A22996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA78A2996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.m */; };
-		567DA7A32996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA78E2996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.m */; };
-		567DA7A42996453C008DB810 /* TuyaLockDevicePasswordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA78F2996453C008DB810 /* TuyaLockDevicePasswordListViewController.m */; };
-		567DA7A52996453C008DB810 /* TuyaLockDevicePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7932996453C008DB810 /* TuyaLockDevicePasswordViewController.m */; };
-		567DA7A62996453C008DB810 /* TuyaLockDevicePasswordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7982996453C008DB810 /* TuyaLockDevicePasswordListCell.m */; };
-		567DA7A72996453C008DB810 /* TuyaLockDeviceInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7992996453C008DB810 /* TuyaLockDeviceInputView.m */; };
-		567DA7A82996453C008DB810 /* TuyaLockDeviceCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA79A2996453C008DB810 /* TuyaLockDeviceCycleView.m */; };
-		567DA7AB299645D5008DB810 /* TuyaLockDeviceMemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567DA7AA299645D5008DB810 /* TuyaLockDeviceMemberListViewController.m */; };
-		56AB2243299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2242299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.m */; };
-		56AB2246299A3918008484B2 /* TuyaLockDeviceRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2245299A3918008484B2 /* TuyaLockDeviceRecordListCell.m */; };
-		56AB2249299A3992008484B2 /* TuyaLockDeviceRecordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2248299A3992008484B2 /* TuyaLockDeviceRecordFilterView.m */; };
-		56AB224C299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB224B299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */; };
-		56AB224F299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB224E299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.m */; };
-		56AB2252299B31B0008484B2 /* TuyaLockDeviceMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2251299B31B0008484B2 /* TuyaLockDeviceMemberListCell.m */; };
-		56AB2255299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2254299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.m */; };
-		56AB2258299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB2257299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.m */; };
-		56AB225B29A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB225A29A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.m */; };
-		56AB225E29A31E21008484B2 /* TuyaLockDeviceAddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB225D29A31E21008484B2 /* TuyaLockDeviceAddMemberView.m */; };
-		56AB226129A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB226029A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.m */; };
-		56AB226429A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AB226329A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.m */; };
+		564440D92AFDDA8700946576 /* TuyaLockDeviceRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440582AFDDA8600946576 /* TuyaLockDeviceRecordListViewController.m */; };
+		564440DA2AFDDA8700946576 /* TuyaLockDeviceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644405B2AFDDA8600946576 /* TuyaLockDeviceRecordViewController.m */; };
+		564440DB2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644405D2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.m */; };
+		564440DC2AFDDA8700946576 /* TuyaLockDeviceRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440602AFDDA8700946576 /* TuyaLockDeviceRecordListCell.m */; };
+		564440DD2AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440632AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.m */; };
+		564440DE2AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440642AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.m */; };
+		564440DF2AFDDA8700946576 /* TuyaLockDevicePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440682AFDDA8700946576 /* TuyaLockDevicePasswordViewController.m */; };
+		564440E02AFDDA8700946576 /* TuyaLockDeviceCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644406A2AFDDA8700946576 /* TuyaLockDeviceCycleView.m */; };
+		564440E12AFDDA8700946576 /* TuyaLockDeviceInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644406B2AFDDA8700946576 /* TuyaLockDeviceInputView.m */; };
+		564440E22AFDDA8700946576 /* TuyaLockDevicePasswordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644406D2AFDDA8700946576 /* TuyaLockDevicePasswordListCell.m */; };
+		564440E32AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440732AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.m */; };
+		564440E42AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440772AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.m */; };
+		564440E52AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440782AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.m */; };
+		564440E62AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644407B2AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.m */; };
+		564440E72AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644407F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.m */; };
+		564440E82AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440802AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.m */; };
+		564440E92AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440812AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.m */; };
+		564440EA2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440822AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.m */; };
+		564440EB2AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440892AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.m */; };
+		564440EC2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644408D2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.m */; };
+		564440ED2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644408E2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.m */; };
+		564440EE2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644408F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.m */; };
+		564440EF2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440912AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.m */; };
+		564440F02AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440922AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.m */; };
+		564440F12AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440932AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.m */; };
+		564440F22AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440962AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.m */; };
+		564440F32AFDDA8700946576 /* TuyaLockDeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440992AFDDA8700946576 /* TuyaLockDeviceListViewController.m */; };
+		564440F42AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644409D2AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.m */; };
+		564440F52AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440A02AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */; };
+		564440F62AFDDA8700946576 /* TuyaLockDeviceSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440A22AFDDA8700946576 /* TuyaLockDeviceSettingViewController.m */; };
+		564440F72AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440A42AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */; };
+		564440F82AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440A52AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.m */; };
+		564440F92AFDDA8700946576 /* TuyaLockDeviceBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440A82AFDDA8700946576 /* TuyaLockDeviceBaseViewController.m */; };
+		564440FA2AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440AB2AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.m */; };
+		564440FB2AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B02AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.m */; };
+		564440FC2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B12AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.m */; };
+		564440FD2AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B22AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.m */; };
+		564440FE2AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B32AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.m */; };
+		564440FF2AFDDA8700946576 /* TuyaLockDeviceMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B62AFDDA8700946576 /* TuyaLockDeviceMemberListCell.m */; };
+		564441002AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440B92AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.m */; };
+		564441012AFDDA8700946576 /* TuyaLockDeviceAddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440BB2AFDDA8700946576 /* TuyaLockDeviceAddMemberView.m */; };
+		564441022AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440BC2AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.m */; };
+		564441032AFDDA8700946576 /* TuyaLockDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440C02AFDDA8700946576 /* TuyaLockDeviceTableViewController.m */; };
+		564441042AFDDA8700946576 /* TuyaZigbeeLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440C32AFDDA8700946576 /* TuyaZigbeeLockViewController.m */; };
+		564441052AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440C62AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.m */; };
+		564441062AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440C92AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.m */; };
+		564441072AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440CA2AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.m */; };
+		564441082AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440CD2AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.m */; };
+		564441092AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440CF2AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.m */; };
+		5644410A2AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440D02AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.m */; };
+		5644410B2AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440D42AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.m */; };
+		5644410C2AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564440D72AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.m */; };
+		56C590922B5616DE00450C5D /* TuyaWiFiLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590912B5616DE00450C5D /* TuyaWiFiLockViewController.m */; };
+		56C590952B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590942B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.m */; };
+		56C590982B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590972B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.m */; };
+		56C5909B2B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C5909A2B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.m */; };
+		56C5909E2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C5909D2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.m */; };
+		56C590A12B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590A02B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.m */; };
+		56C590A42B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590A32B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.m */; };
+		56C590B02B58C14A00450C5D /* TuyaWiFiMemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590AD2B58C14A00450C5D /* TuyaWiFiMemberListViewController.m */; };
+		56C590B12B58C14A00450C5D /* TuyaWiFiAddMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590AF2B58C14A00450C5D /* TuyaWiFiAddMemberViewController.m */; };
+		56C590B42B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590B32B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.m */; };
+		56C590B72B58D50800450C5D /* TuyaWiFiMemberManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590B62B58D50800450C5D /* TuyaWiFiMemberManagementViewController.m */; };
+		56C590BA2B58F6FE00450C5D /* TuyaWiFiAddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C590B92B58F6FE00450C5D /* TuyaWiFiAddMemberView.m */; };
 		56D0A5C8293DA07D00BB81D9 /* t_s_daily.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 56D0A5C6293DA07D00BB81D9 /* t_s_daily.bmp */; };
 		56D0A5C9293DA07D00BB81D9 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 56D0A5C7293DA07D00BB81D9 /* t_s.bmp */; };
 		56D0A5CB293DA22700BB81D9 /* custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 56D0A5CA293DA22600BB81D9 /* custom.json */; };
-		56F5E23029E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5E22F29E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.m */; };
-		56F5E23329E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5E23129E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.m */; };
-		56FFF9BD29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFF9BC29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.m */; };
-		56FFF9C029AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFF9BF29AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */; };
 		6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */; };
 		677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A4C5D2890D372007C0AE8 /* TuyaLinkBindViewController.m */; };
 		677A4C632890D50C007C0AE8 /* TuyaLinkBind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677A4C612890D50C007C0AE8 /* TuyaLinkBind.storyboard */; };
@@ -182,96 +203,138 @@
 		34FF2E0925B0649100152CA6 /* EditHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHomeTableViewController.m; sourceTree = "<group>"; };
 		53FE2BEA292E2ED500BBD62F /* SweeperMsgControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SweeperMsgControllerViewController.h; sourceTree = "<group>"; };
 		53FE2BEB292E2ED500BBD62F /* SweeperMsgControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SweeperMsgControllerViewController.m; sourceTree = "<group>"; };
-		563B1FF929A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeViewController.m; sourceTree = "<group>"; };
-		563B1FFA29A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeViewController.h; sourceTree = "<group>"; };
-		563B203F29A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeListViewController.h; sourceTree = "<group>"; };
-		563B204029A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeListViewController.m; sourceTree = "<group>"; };
-		563B204229A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeGuideViewController.h; sourceTree = "<group>"; };
-		563B204329A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeGuideViewController.m; sourceTree = "<group>"; };
-		563B204529A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeEntryViewController.h; sourceTree = "<group>"; };
-		563B204629A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeEntryViewController.m; sourceTree = "<group>"; };
-		563B204829A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeResultViewController.h; sourceTree = "<group>"; };
-		563B204929A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeResultViewController.m; sourceTree = "<group>"; };
-		563B204B29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeListCell.h; sourceTree = "<group>"; };
-		563B204C29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeListCell.m; sourceTree = "<group>"; };
-		563B204E29A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeGuideView.h; sourceTree = "<group>"; };
-		563B204F29A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeGuideView.m; sourceTree = "<group>"; };
-		563B205129A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeEntryView.h; sourceTree = "<group>"; };
-		563B205229A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeEntryView.m; sourceTree = "<group>"; };
-		563B205429A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeResultView.h; sourceTree = "<group>"; };
-		563B205529A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeResultView.m; sourceTree = "<group>"; };
-		563B205729A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModePasswordViewController.h; sourceTree = "<group>"; };
-		563B205829A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModePasswordViewController.m; sourceTree = "<group>"; };
-		563B205A29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModePasswordView.h; sourceTree = "<group>"; };
-		563B205B29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModePasswordView.m; sourceTree = "<group>"; };
-		563B205D29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeModifyViewController.h; sourceTree = "<group>"; };
-		563B205E29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeModifyViewController.m; sourceTree = "<group>"; };
-		563B206029A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeModifyView.h; sourceTree = "<group>"; };
-		563B206129A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeModifyView.m; sourceTree = "<group>"; };
-		567DA76D2996453C008DB810 /* TuyaLockDeviceBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceBaseViewController.h; sourceTree = "<group>"; };
-		567DA76E2996453C008DB810 /* TuyaLockDeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceListViewController.h; sourceTree = "<group>"; };
-		567DA76F2996453C008DB810 /* TuyaLockDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceTableViewController.h; sourceTree = "<group>"; };
-		567DA7702996453C008DB810 /* TuyaLockDeviceBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceBaseViewController.m; sourceTree = "<group>"; };
-		567DA7712996453C008DB810 /* TuyaLockDeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceListViewController.m; sourceTree = "<group>"; };
-		567DA7722996453C008DB810 /* TuyaLockDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceTableViewController.m; sourceTree = "<group>"; };
-		567DA7752996453C008DB810 /* TuyaLockDeviceSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSettingViewController.h; sourceTree = "<group>"; };
-		567DA7762996453C008DB810 /* TuyaLockDeviceSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSettingViewController.m; sourceTree = "<group>"; };
-		567DA77F2996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockOrLockViewController.m; sourceTree = "<group>"; };
-		567DA7802996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockOrLockViewController.h; sourceTree = "<group>"; };
-		567DA7842996453C008DB810 /* TuyaLockDeviceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordViewController.h; sourceTree = "<group>"; };
-		567DA7852996453C008DB810 /* TuyaLockDeviceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordViewController.m; sourceTree = "<group>"; };
-		567DA7892996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberManagementViewController.h; sourceTree = "<group>"; };
-		567DA78A2996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberManagementViewController.m; sourceTree = "<group>"; };
-		567DA78E2996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordDetailViewController.m; sourceTree = "<group>"; };
-		567DA78F2996453C008DB810 /* TuyaLockDevicePasswordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordListViewController.m; sourceTree = "<group>"; };
-		567DA7902996453C008DB810 /* TuyaLockDevicePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordViewController.h; sourceTree = "<group>"; };
-		567DA7912996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordDetailViewController.h; sourceTree = "<group>"; };
-		567DA7922996453C008DB810 /* TuyaLockDevicePasswordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordListViewController.h; sourceTree = "<group>"; };
-		567DA7932996453C008DB810 /* TuyaLockDevicePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordViewController.m; sourceTree = "<group>"; };
-		567DA7952996453C008DB810 /* TuyaLockDeviceCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceCycleView.h; sourceTree = "<group>"; };
-		567DA7962996453C008DB810 /* TuyaLockDeviceInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceInputView.h; sourceTree = "<group>"; };
-		567DA7972996453C008DB810 /* TuyaLockDevicePasswordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordListCell.h; sourceTree = "<group>"; };
-		567DA7982996453C008DB810 /* TuyaLockDevicePasswordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordListCell.m; sourceTree = "<group>"; };
-		567DA7992996453C008DB810 /* TuyaLockDeviceInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceInputView.m; sourceTree = "<group>"; };
-		567DA79A2996453C008DB810 /* TuyaLockDeviceCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceCycleView.m; sourceTree = "<group>"; };
-		567DA7A9299645D5008DB810 /* TuyaLockDeviceMemberListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberListViewController.h; sourceTree = "<group>"; };
-		567DA7AA299645D5008DB810 /* TuyaLockDeviceMemberListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberListViewController.m; sourceTree = "<group>"; };
-		56AB2241299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordListViewController.h; sourceTree = "<group>"; };
-		56AB2242299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordListViewController.m; sourceTree = "<group>"; };
-		56AB2244299A3918008484B2 /* TuyaLockDeviceRecordListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordListCell.h; sourceTree = "<group>"; };
-		56AB2245299A3918008484B2 /* TuyaLockDeviceRecordListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordListCell.m; sourceTree = "<group>"; };
-		56AB2247299A3992008484B2 /* TuyaLockDeviceRecordFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordFilterView.h; sourceTree = "<group>"; };
-		56AB2248299A3992008484B2 /* TuyaLockDeviceRecordFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordFilterView.m; sourceTree = "<group>"; };
-		56AB224A299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSetRemoteVoicePasswordView.h; sourceTree = "<group>"; };
-		56AB224B299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSetRemoteVoicePasswordView.m; sourceTree = "<group>"; };
-		56AB224D299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRemoteSettingView.h; sourceTree = "<group>"; };
-		56AB224E299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRemoteSettingView.m; sourceTree = "<group>"; };
-		56AB2250299B31B0008484B2 /* TuyaLockDeviceMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberListCell.h; sourceTree = "<group>"; };
-		56AB2251299B31B0008484B2 /* TuyaLockDeviceMemberListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberListCell.m; sourceTree = "<group>"; };
-		56AB2253299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberDetailViewController.h; sourceTree = "<group>"; };
-		56AB2254299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberDetailViewController.m; sourceTree = "<group>"; };
-		56AB2256299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberDetailView.h; sourceTree = "<group>"; };
-		56AB2257299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberDetailView.m; sourceTree = "<group>"; };
-		56AB225929A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceAddMemberViewController.h; sourceTree = "<group>"; };
-		56AB225A29A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceAddMemberViewController.m; sourceTree = "<group>"; };
-		56AB225C29A31E21008484B2 /* TuyaLockDeviceAddMemberView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceAddMemberView.h; sourceTree = "<group>"; };
-		56AB225D29A31E21008484B2 /* TuyaLockDeviceAddMemberView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceAddMemberView.m; sourceTree = "<group>"; };
-		56AB225F29A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberUpdateTimeViewController.h; sourceTree = "<group>"; };
-		56AB226029A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberUpdateTimeViewController.m; sourceTree = "<group>"; };
-		56AB226229A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberUpdateTimeView.h; sourceTree = "<group>"; };
-		56AB226329A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberUpdateTimeView.m; sourceTree = "<group>"; };
+		564440582AFDDA8600946576 /* TuyaLockDeviceRecordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordListViewController.m; sourceTree = "<group>"; };
+		564440592AFDDA8600946576 /* TuyaLockDeviceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordViewController.h; sourceTree = "<group>"; };
+		5644405A2AFDDA8600946576 /* TuyaLockDeviceRecordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordListViewController.h; sourceTree = "<group>"; };
+		5644405B2AFDDA8600946576 /* TuyaLockDeviceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordViewController.m; sourceTree = "<group>"; };
+		5644405D2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordFilterView.m; sourceTree = "<group>"; };
+		5644405E2AFDDA8700946576 /* TuyaLockDeviceRecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordListCell.h; sourceTree = "<group>"; };
+		5644405F2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRecordFilterView.h; sourceTree = "<group>"; };
+		564440602AFDDA8700946576 /* TuyaLockDeviceRecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRecordListCell.m; sourceTree = "<group>"; };
+		564440632AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordDetailViewController.m; sourceTree = "<group>"; };
+		564440642AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordListViewController.m; sourceTree = "<group>"; };
+		564440652AFDDA8700946576 /* TuyaLockDevicePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordViewController.h; sourceTree = "<group>"; };
+		564440662AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordDetailViewController.h; sourceTree = "<group>"; };
+		564440672AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordListViewController.h; sourceTree = "<group>"; };
+		564440682AFDDA8700946576 /* TuyaLockDevicePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordViewController.m; sourceTree = "<group>"; };
+		5644406A2AFDDA8700946576 /* TuyaLockDeviceCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceCycleView.m; sourceTree = "<group>"; };
+		5644406B2AFDDA8700946576 /* TuyaLockDeviceInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceInputView.m; sourceTree = "<group>"; };
+		5644406C2AFDDA8700946576 /* TuyaLockDevicePasswordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevicePasswordListCell.h; sourceTree = "<group>"; };
+		5644406D2AFDDA8700946576 /* TuyaLockDevicePasswordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDevicePasswordListCell.m; sourceTree = "<group>"; };
+		5644406E2AFDDA8700946576 /* TuyaLockDeviceCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceCycleView.h; sourceTree = "<group>"; };
+		5644406F2AFDDA8700946576 /* TuyaLockDeviceInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceInputView.h; sourceTree = "<group>"; };
+		564440732AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeViewController.m; sourceTree = "<group>"; };
+		564440742AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeViewController.h; sourceTree = "<group>"; };
+		564440772AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeListViewController.m; sourceTree = "<group>"; };
+		564440782AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModePasswordViewController.m; sourceTree = "<group>"; };
+		564440792AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeEntryViewController.h; sourceTree = "<group>"; };
+		5644407A2AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeResultViewController.h; sourceTree = "<group>"; };
+		5644407B2AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnBoundListViewController.m; sourceTree = "<group>"; };
+		5644407C2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModePasswordViewController.h; sourceTree = "<group>"; };
+		5644407D2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeGuideViewController.h; sourceTree = "<group>"; };
+		5644407E2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeListViewController.h; sourceTree = "<group>"; };
+		5644407F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeEntryViewController.m; sourceTree = "<group>"; };
+		564440802AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeModifyViewController.m; sourceTree = "<group>"; };
+		564440812AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeResultViewController.m; sourceTree = "<group>"; };
+		564440822AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeGuideViewController.m; sourceTree = "<group>"; };
+		564440832AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeModifyViewController.h; sourceTree = "<group>"; };
+		564440842AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnBoundListViewController.h; sourceTree = "<group>"; };
+		564440862AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeEntryView.h; sourceTree = "<group>"; };
+		564440872AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeGuideView.h; sourceTree = "<group>"; };
+		564440882AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeListCell.h; sourceTree = "<group>"; };
+		564440892AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnBoundListCell.m; sourceTree = "<group>"; };
+		5644408A2AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeModifyView.h; sourceTree = "<group>"; };
+		5644408B2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModePasswordView.h; sourceTree = "<group>"; };
+		5644408C2AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockModeResultView.h; sourceTree = "<group>"; };
+		5644408D2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeListCell.m; sourceTree = "<group>"; };
+		5644408E2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeGuideView.m; sourceTree = "<group>"; };
+		5644408F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeEntryView.m; sourceTree = "<group>"; };
+		564440902AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnBoundListCell.h; sourceTree = "<group>"; };
+		564440912AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModePasswordView.m; sourceTree = "<group>"; };
+		564440922AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeResultView.m; sourceTree = "<group>"; };
+		564440932AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockModeModifyView.m; sourceTree = "<group>"; };
+		564440962AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnlockOrLockViewController.m; sourceTree = "<group>"; };
+		564440972AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnlockOrLockViewController.h; sourceTree = "<group>"; };
+		564440982AFDDA8700946576 /* TuyaLockDeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceListViewController.h; sourceTree = "<group>"; };
+		564440992AFDDA8700946576 /* TuyaLockDeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceListViewController.m; sourceTree = "<group>"; };
+		5644409D2AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRemoteSettingViewController.m; sourceTree = "<group>"; };
+		5644409E2AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSetRemoteVoicePasswordViewController.h; sourceTree = "<group>"; };
+		5644409F2AFDDA8700946576 /* TuyaLockDeviceSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSettingViewController.h; sourceTree = "<group>"; };
+		564440A02AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSetRemoteVoicePasswordViewController.m; sourceTree = "<group>"; };
+		564440A12AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRemoteSettingViewController.h; sourceTree = "<group>"; };
+		564440A22AFDDA8700946576 /* TuyaLockDeviceSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSettingViewController.m; sourceTree = "<group>"; };
+		564440A42AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSetRemoteVoicePasswordView.m; sourceTree = "<group>"; };
+		564440A52AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRemoteSettingView.m; sourceTree = "<group>"; };
+		564440A62AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSetRemoteVoicePasswordView.h; sourceTree = "<group>"; };
+		564440A72AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRemoteSettingView.h; sourceTree = "<group>"; };
+		564440A82AFDDA8700946576 /* TuyaLockDeviceBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceBaseViewController.m; sourceTree = "<group>"; };
+		564440AB2AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberListViewController.m; sourceTree = "<group>"; };
+		564440AC2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberUpdateTimeViewController.h; sourceTree = "<group>"; };
+		564440AD2AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberDetailViewController.h; sourceTree = "<group>"; };
+		564440AE2AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceAddMemberViewController.h; sourceTree = "<group>"; };
+		564440AF2AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberManagementViewController.h; sourceTree = "<group>"; };
+		564440B02AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberDetailViewController.m; sourceTree = "<group>"; };
+		564440B12AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberUpdateTimeViewController.m; sourceTree = "<group>"; };
+		564440B22AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberManagementViewController.m; sourceTree = "<group>"; };
+		564440B32AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceAddMemberViewController.m; sourceTree = "<group>"; };
+		564440B42AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberListViewController.h; sourceTree = "<group>"; };
+		564440B62AFDDA8700946576 /* TuyaLockDeviceMemberListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberListCell.m; sourceTree = "<group>"; };
+		564440B72AFDDA8700946576 /* TuyaLockDeviceAddMemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceAddMemberView.h; sourceTree = "<group>"; };
+		564440B82AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberDetailView.h; sourceTree = "<group>"; };
+		564440B92AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberUpdateTimeView.m; sourceTree = "<group>"; };
+		564440BA2AFDDA8700946576 /* TuyaLockDeviceMemberListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberListCell.h; sourceTree = "<group>"; };
+		564440BB2AFDDA8700946576 /* TuyaLockDeviceAddMemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceAddMemberView.m; sourceTree = "<group>"; };
+		564440BC2AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceMemberDetailView.m; sourceTree = "<group>"; };
+		564440BD2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceMemberUpdateTimeView.h; sourceTree = "<group>"; };
+		564440BE2AFDDA8700946576 /* TuyaLockDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceTableViewController.h; sourceTree = "<group>"; };
+		564440BF2AFDDA8700946576 /* TuyaLockDeviceBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceBaseViewController.h; sourceTree = "<group>"; };
+		564440C02AFDDA8700946576 /* TuyaLockDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceTableViewController.m; sourceTree = "<group>"; };
+		564440C12AFDDA8700946576 /* TuyaLockDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevice.h; sourceTree = "<group>"; };
+		564440C32AFDDA8700946576 /* TuyaZigbeeLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeLockViewController.m; sourceTree = "<group>"; };
+		564440C42AFDDA8700946576 /* TuyaZigbeeLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeLockViewController.h; sourceTree = "<group>"; };
+		564440C62AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDeviceRecordListViewController.m; sourceTree = "<group>"; };
+		564440C72AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDeviceRecordListViewController.h; sourceTree = "<group>"; };
+		564440C82AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDeviceRecordFilterView.h; sourceTree = "<group>"; };
+		564440C92AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDeviceRecordFilterView.m; sourceTree = "<group>"; };
+		564440CA2AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDeviceRecordListCell.m; sourceTree = "<group>"; };
+		564440CB2AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDeviceRecordListCell.h; sourceTree = "<group>"; };
+		564440CD2AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDevicePasswordListViewController.m; sourceTree = "<group>"; };
+		564440CE2AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDevicePasswordListViewController.h; sourceTree = "<group>"; };
+		564440CF2AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDevicePasswordDetailViewController.m; sourceTree = "<group>"; };
+		564440D02AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDevicePasswordFilterView.m; sourceTree = "<group>"; };
+		564440D12AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDevicePasswordFilterView.h; sourceTree = "<group>"; };
+		564440D22AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDevicePasswordDetailViewController.h; sourceTree = "<group>"; };
+		564440D42AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDeviceOncePasswordView.m; sourceTree = "<group>"; };
+		564440D52AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDeviceOncePasswordView.h; sourceTree = "<group>"; };
+		564440D72AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaZigbeeDeviceUnlockViewController.m; sourceTree = "<group>"; };
+		564440D82AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaZigbeeDeviceUnlockViewController.h; sourceTree = "<group>"; };
+		56C590902B5616DE00450C5D /* TuyaWiFiLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiLockViewController.h; sourceTree = "<group>"; };
+		56C590912B5616DE00450C5D /* TuyaWiFiLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiLockViewController.m; sourceTree = "<group>"; };
+		56C590932B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDeviceUnlockViewController.h; sourceTree = "<group>"; };
+		56C590942B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDeviceUnlockViewController.m; sourceTree = "<group>"; };
+		56C590962B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDevicePasswordListViewController.h; sourceTree = "<group>"; };
+		56C590972B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDevicePasswordListViewController.m; sourceTree = "<group>"; };
+		56C590992B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDevicePasswordDetailViewController.h; sourceTree = "<group>"; };
+		56C5909A2B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDevicePasswordDetailViewController.m; sourceTree = "<group>"; };
+		56C5909C2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDeviceRecordListViewController.h; sourceTree = "<group>"; };
+		56C5909D2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDeviceRecordListViewController.m; sourceTree = "<group>"; };
+		56C5909F2B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDeviceRecordFilterView.h; sourceTree = "<group>"; };
+		56C590A02B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDeviceRecordFilterView.m; sourceTree = "<group>"; };
+		56C590A22B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDeviceRecordListCell.h; sourceTree = "<group>"; };
+		56C590A32B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDeviceRecordListCell.m; sourceTree = "<group>"; };
+		56C590AC2B58C14A00450C5D /* TuyaWiFiMemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiMemberListViewController.h; sourceTree = "<group>"; };
+		56C590AD2B58C14A00450C5D /* TuyaWiFiMemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiMemberListViewController.m; sourceTree = "<group>"; };
+		56C590AE2B58C14A00450C5D /* TuyaWiFiAddMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiAddMemberViewController.h; sourceTree = "<group>"; };
+		56C590AF2B58C14A00450C5D /* TuyaWiFiAddMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiAddMemberViewController.m; sourceTree = "<group>"; };
+		56C590B22B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiDeviceMemberListCell.h; sourceTree = "<group>"; };
+		56C590B32B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiDeviceMemberListCell.m; sourceTree = "<group>"; };
+		56C590B52B58D50800450C5D /* TuyaWiFiMemberManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiMemberManagementViewController.h; sourceTree = "<group>"; };
+		56C590B62B58D50800450C5D /* TuyaWiFiMemberManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiMemberManagementViewController.m; sourceTree = "<group>"; };
+		56C590B82B58F6FE00450C5D /* TuyaWiFiAddMemberView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaWiFiAddMemberView.h; sourceTree = "<group>"; };
+		56C590B92B58F6FE00450C5D /* TuyaWiFiAddMemberView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaWiFiAddMemberView.m; sourceTree = "<group>"; };
 		56D0A5C6293DA07D00BB81D9 /* t_s_daily.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s_daily.bmp; sourceTree = "<group>"; };
 		56D0A5C7293DA07D00BB81D9 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		56D0A5CA293DA22600BB81D9 /* custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom.json; sourceTree = "<group>"; };
-		56E120A529658B18004AB4A8 /* TuyaLockDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDevice.h; sourceTree = "<group>"; };
-		56F5E22E29E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnBoundListViewController.h; sourceTree = "<group>"; };
-		56F5E22F29E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnBoundListViewController.m; sourceTree = "<group>"; };
-		56F5E23129E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceUnBoundListCell.m; sourceTree = "<group>"; };
-		56F5E23229E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceUnBoundListCell.h; sourceTree = "<group>"; };
-		56FFF9BB29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceRemoteSettingViewController.h; sourceTree = "<group>"; };
-		56FFF9BC29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceRemoteSettingViewController.m; sourceTree = "<group>"; };
-		56FFF9BE29AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLockDeviceSetRemoteVoicePasswordViewController.h; sourceTree = "<group>"; };
-		56FFF9BF29AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLockDeviceSetRemoteVoicePasswordViewController.m; sourceTree = "<group>"; };
 		6714644B289A111A0045F9AD /* TuyaLinkDeviceControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkDeviceControlController.h; sourceTree = "<group>"; };
 		6714644C289A111A0045F9AD /* TuyaLinkDeviceControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuyaLinkDeviceControlController.m; sourceTree = "<group>"; };
 		677A4C5C2890D372007C0AE8 /* TuyaLinkBindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuyaLinkBindViewController.h; sourceTree = "<group>"; };
@@ -428,288 +491,394 @@
 			path = Sweeper;
 			sourceTree = "<group>";
 		};
-		563B1FF729A6341800DF09FE /* Common */ = {
+		564440552AFDDA8600946576 /* BLE */ = {
 			isa = PBXGroup;
 			children = (
-				563B1FF829A6341800DF09FE /* Controller */,
-				563B1FFB29A6341800DF09FE /* View */,
+				564440562AFDDA8600946576 /* Logs */,
+				564440612AFDDA8700946576 /* Password */,
+				564440702AFDDA8700946576 /* UnlockMode */,
+				564440942AFDDA8700946576 /* UnlockOrLock */,
+				564440982AFDDA8700946576 /* TuyaLockDeviceListViewController.h */,
+				564440992AFDDA8700946576 /* TuyaLockDeviceListViewController.m */,
 			);
-			path = Common;
+			path = BLE;
 			sourceTree = "<group>";
 		};
-		563B1FF829A6341800DF09FE /* Controller */ = {
+		564440562AFDDA8600946576 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
-				563B1FF929A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.m */,
-				563B1FFA29A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.h */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		563B1FFB29A6341800DF09FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		563B203929A6359900DF09FE /* Unlock */ = {
-			isa = PBXGroup;
-			children = (
-				563B203A29A6359900DF09FE /* Controller */,
-				563B203B29A6359900DF09FE /* View */,
-			);
-			path = Unlock;
-			sourceTree = "<group>";
-		};
-		563B203A29A6359900DF09FE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				56F5E22E29E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.h */,
-				56F5E22F29E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.m */,
-				563B203F29A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.h */,
-				563B204029A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.m */,
-				563B204229A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.h */,
-				563B204329A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.m */,
-				563B204529A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.h */,
-				563B204629A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.m */,
-				563B204829A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.h */,
-				563B204929A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.m */,
-				563B205729A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.h */,
-				563B205829A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.m */,
-				563B205D29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.h */,
-				563B205E29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		563B203B29A6359900DF09FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				56F5E23229E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.h */,
-				56F5E23129E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.m */,
-				563B204B29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.h */,
-				563B204C29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.m */,
-				563B204E29A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.h */,
-				563B204F29A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.m */,
-				563B205129A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.h */,
-				563B205229A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.m */,
-				563B205429A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.h */,
-				563B205529A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.m */,
-				563B205A29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.h */,
-				563B205B29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.m */,
-				563B206029A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.h */,
-				563B206129A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		567DA76B2996453C008DB810 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				567DA76C2996453C008DB810 /* Controller */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		567DA76C2996453C008DB810 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				567DA76D2996453C008DB810 /* TuyaLockDeviceBaseViewController.h */,
-				567DA76E2996453C008DB810 /* TuyaLockDeviceListViewController.h */,
-				567DA76F2996453C008DB810 /* TuyaLockDeviceTableViewController.h */,
-				567DA7702996453C008DB810 /* TuyaLockDeviceBaseViewController.m */,
-				567DA7712996453C008DB810 /* TuyaLockDeviceListViewController.m */,
-				567DA7722996453C008DB810 /* TuyaLockDeviceTableViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		567DA7732996453C008DB810 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				567DA7742996453C008DB810 /* Controller */,
-				567DA7772996453C008DB810 /* View */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		567DA7742996453C008DB810 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				567DA7752996453C008DB810 /* TuyaLockDeviceSettingViewController.h */,
-				567DA7762996453C008DB810 /* TuyaLockDeviceSettingViewController.m */,
-				56FFF9BB29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.h */,
-				56FFF9BC29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.m */,
-				56FFF9BE29AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.h */,
-				56FFF9BF29AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		567DA7772996453C008DB810 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				56AB224A299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.h */,
-				56AB224B299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */,
-				56AB224D299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.h */,
-				56AB224E299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		567DA7782996453C008DB810 /* UnlockMode */ = {
-			isa = PBXGroup;
-			children = (
-				563B203929A6359900DF09FE /* Unlock */,
-				563B1FF729A6341800DF09FE /* Common */,
-			);
-			path = UnlockMode;
-			sourceTree = "<group>";
-		};
-		567DA77D2996453C008DB810 /* UnlockOrLock */ = {
-			isa = PBXGroup;
-			children = (
-				567DA77E2996453C008DB810 /* Controller */,
-				567DA7812996453C008DB810 /* View */,
-			);
-			path = UnlockOrLock;
-			sourceTree = "<group>";
-		};
-		567DA77E2996453C008DB810 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				567DA77F2996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.m */,
-				567DA7802996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.h */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		567DA7812996453C008DB810 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		567DA7822996453C008DB810 /* Logs */ = {
-			isa = PBXGroup;
-			children = (
-				567DA7832996453C008DB810 /* Controller */,
-				567DA7862996453C008DB810 /* View */,
+				564440572AFDDA8600946576 /* Controller */,
+				5644405C2AFDDA8600946576 /* View */,
 			);
 			path = Logs;
 			sourceTree = "<group>";
 		};
-		567DA7832996453C008DB810 /* Controller */ = {
+		564440572AFDDA8600946576 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				567DA7842996453C008DB810 /* TuyaLockDeviceRecordViewController.h */,
-				567DA7852996453C008DB810 /* TuyaLockDeviceRecordViewController.m */,
-				56AB2241299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.h */,
-				56AB2242299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.m */,
+				564440582AFDDA8600946576 /* TuyaLockDeviceRecordListViewController.m */,
+				564440592AFDDA8600946576 /* TuyaLockDeviceRecordViewController.h */,
+				5644405A2AFDDA8600946576 /* TuyaLockDeviceRecordListViewController.h */,
+				5644405B2AFDDA8600946576 /* TuyaLockDeviceRecordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		567DA7862996453C008DB810 /* View */ = {
+		5644405C2AFDDA8600946576 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				56AB2244299A3918008484B2 /* TuyaLockDeviceRecordListCell.h */,
-				56AB2245299A3918008484B2 /* TuyaLockDeviceRecordListCell.m */,
-				56AB2247299A3992008484B2 /* TuyaLockDeviceRecordFilterView.h */,
-				56AB2248299A3992008484B2 /* TuyaLockDeviceRecordFilterView.m */,
+				5644405D2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.m */,
+				5644405E2AFDDA8700946576 /* TuyaLockDeviceRecordListCell.h */,
+				5644405F2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.h */,
+				564440602AFDDA8700946576 /* TuyaLockDeviceRecordListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		567DA7872996453C008DB810 /* Member */ = {
+		564440612AFDDA8700946576 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				567DA7882996453C008DB810 /* Controller */,
-				567DA78B2996453C008DB810 /* View */,
-			);
-			path = Member;
-			sourceTree = "<group>";
-		};
-		567DA7882996453C008DB810 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				567DA7892996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.h */,
-				567DA78A2996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.m */,
-				567DA7A9299645D5008DB810 /* TuyaLockDeviceMemberListViewController.h */,
-				567DA7AA299645D5008DB810 /* TuyaLockDeviceMemberListViewController.m */,
-				56AB2253299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.h */,
-				56AB2254299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.m */,
-				56AB225929A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.h */,
-				56AB225A29A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.m */,
-				56AB225F29A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.h */,
-				56AB226029A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		567DA78B2996453C008DB810 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				56AB2250299B31B0008484B2 /* TuyaLockDeviceMemberListCell.h */,
-				56AB2251299B31B0008484B2 /* TuyaLockDeviceMemberListCell.m */,
-				56AB2256299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.h */,
-				56AB2257299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.m */,
-				56AB225C29A31E21008484B2 /* TuyaLockDeviceAddMemberView.h */,
-				56AB225D29A31E21008484B2 /* TuyaLockDeviceAddMemberView.m */,
-				56AB226229A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.h */,
-				56AB226329A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		567DA78C2996453C008DB810 /* Password */ = {
-			isa = PBXGroup;
-			children = (
-				567DA78D2996453C008DB810 /* Controller */,
-				567DA7942996453C008DB810 /* View */,
+				564440622AFDDA8700946576 /* Controller */,
+				564440692AFDDA8700946576 /* View */,
 			);
 			path = Password;
 			sourceTree = "<group>";
 		};
-		567DA78D2996453C008DB810 /* Controller */ = {
+		564440622AFDDA8700946576 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				567DA78E2996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.m */,
-				567DA78F2996453C008DB810 /* TuyaLockDevicePasswordListViewController.m */,
-				567DA7902996453C008DB810 /* TuyaLockDevicePasswordViewController.h */,
-				567DA7912996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.h */,
-				567DA7922996453C008DB810 /* TuyaLockDevicePasswordListViewController.h */,
-				567DA7932996453C008DB810 /* TuyaLockDevicePasswordViewController.m */,
+				564440632AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.m */,
+				564440642AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.m */,
+				564440652AFDDA8700946576 /* TuyaLockDevicePasswordViewController.h */,
+				564440662AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.h */,
+				564440672AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.h */,
+				564440682AFDDA8700946576 /* TuyaLockDevicePasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		567DA7942996453C008DB810 /* View */ = {
+		564440692AFDDA8700946576 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				567DA7952996453C008DB810 /* TuyaLockDeviceCycleView.h */,
-				567DA7962996453C008DB810 /* TuyaLockDeviceInputView.h */,
-				567DA7972996453C008DB810 /* TuyaLockDevicePasswordListCell.h */,
-				567DA7982996453C008DB810 /* TuyaLockDevicePasswordListCell.m */,
-				567DA7992996453C008DB810 /* TuyaLockDeviceInputView.m */,
-				567DA79A2996453C008DB810 /* TuyaLockDeviceCycleView.m */,
+				5644406A2AFDDA8700946576 /* TuyaLockDeviceCycleView.m */,
+				5644406B2AFDDA8700946576 /* TuyaLockDeviceInputView.m */,
+				5644406C2AFDDA8700946576 /* TuyaLockDevicePasswordListCell.h */,
+				5644406D2AFDDA8700946576 /* TuyaLockDevicePasswordListCell.m */,
+				5644406E2AFDDA8700946576 /* TuyaLockDeviceCycleView.h */,
+				5644406F2AFDDA8700946576 /* TuyaLockDeviceInputView.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		564440702AFDDA8700946576 /* UnlockMode */ = {
+			isa = PBXGroup;
+			children = (
+				564440712AFDDA8700946576 /* Common */,
+				564440752AFDDA8700946576 /* Unlock */,
+			);
+			path = UnlockMode;
+			sourceTree = "<group>";
+		};
+		564440712AFDDA8700946576 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				564440722AFDDA8700946576 /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		564440722AFDDA8700946576 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				564440732AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.m */,
+				564440742AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		564440752AFDDA8700946576 /* Unlock */ = {
+			isa = PBXGroup;
+			children = (
+				564440762AFDDA8700946576 /* Controller */,
+				564440852AFDDA8700946576 /* View */,
+			);
+			path = Unlock;
+			sourceTree = "<group>";
+		};
+		564440762AFDDA8700946576 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				564440772AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.m */,
+				564440782AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.m */,
+				564440792AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.h */,
+				5644407A2AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.h */,
+				5644407B2AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.m */,
+				5644407C2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.h */,
+				5644407D2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.h */,
+				5644407E2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.h */,
+				5644407F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.m */,
+				564440802AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.m */,
+				564440812AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.m */,
+				564440822AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.m */,
+				564440832AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.h */,
+				564440842AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		564440852AFDDA8700946576 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				564440862AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.h */,
+				564440872AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.h */,
+				564440882AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.h */,
+				564440892AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.m */,
+				5644408A2AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.h */,
+				5644408B2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.h */,
+				5644408C2AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.h */,
+				5644408D2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.m */,
+				5644408E2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.m */,
+				5644408F2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.m */,
+				564440902AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.h */,
+				564440912AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.m */,
+				564440922AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.m */,
+				564440932AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		564440942AFDDA8700946576 /* UnlockOrLock */ = {
+			isa = PBXGroup;
+			children = (
+				564440952AFDDA8700946576 /* Controller */,
+			);
+			path = UnlockOrLock;
+			sourceTree = "<group>";
+		};
+		564440952AFDDA8700946576 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				564440962AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.m */,
+				564440972AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5644409A2AFDDA8700946576 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5644409B2AFDDA8700946576 /* Setting */,
+				564440A82AFDDA8700946576 /* TuyaLockDeviceBaseViewController.m */,
+				564440A92AFDDA8700946576 /* Member */,
+				564440BE2AFDDA8700946576 /* TuyaLockDeviceTableViewController.h */,
+				564440BF2AFDDA8700946576 /* TuyaLockDeviceBaseViewController.h */,
+				564440C02AFDDA8700946576 /* TuyaLockDeviceTableViewController.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5644409B2AFDDA8700946576 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				5644409C2AFDDA8700946576 /* Controller */,
+				564440A32AFDDA8700946576 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		5644409C2AFDDA8700946576 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5644409D2AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.m */,
+				5644409E2AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.h */,
+				5644409F2AFDDA8700946576 /* TuyaLockDeviceSettingViewController.h */,
+				564440A02AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m */,
+				564440A12AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.h */,
+				564440A22AFDDA8700946576 /* TuyaLockDeviceSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		564440A32AFDDA8700946576 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				564440A42AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.m */,
+				564440A52AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.m */,
+				564440A62AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.h */,
+				564440A72AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		564440A92AFDDA8700946576 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				564440AA2AFDDA8700946576 /* Controller */,
+				564440B52AFDDA8700946576 /* View */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		564440AA2AFDDA8700946576 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				564440AB2AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.m */,
+				564440AC2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.h */,
+				564440AD2AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.h */,
+				564440AE2AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.h */,
+				564440AF2AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.h */,
+				564440B02AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.m */,
+				564440B12AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.m */,
+				564440B22AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.m */,
+				564440B32AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.m */,
+				564440B42AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		564440B52AFDDA8700946576 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				564440B62AFDDA8700946576 /* TuyaLockDeviceMemberListCell.m */,
+				564440B72AFDDA8700946576 /* TuyaLockDeviceAddMemberView.h */,
+				564440B82AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.h */,
+				564440B92AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.m */,
+				564440BA2AFDDA8700946576 /* TuyaLockDeviceMemberListCell.h */,
+				564440BB2AFDDA8700946576 /* TuyaLockDeviceAddMemberView.m */,
+				564440BC2AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.m */,
+				564440BD2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		564440C22AFDDA8700946576 /* Zigbee */ = {
+			isa = PBXGroup;
+			children = (
+				564440C32AFDDA8700946576 /* TuyaZigbeeLockViewController.m */,
+				564440C42AFDDA8700946576 /* TuyaZigbeeLockViewController.h */,
+				564440C52AFDDA8700946576 /* Logs */,
+				564440CC2AFDDA8700946576 /* Password */,
+				564440D62AFDDA8700946576 /* UnlockOrLock */,
+			);
+			path = Zigbee;
+			sourceTree = "<group>";
+		};
+		564440C52AFDDA8700946576 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				564440C62AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.m */,
+				564440C72AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.h */,
+				564440C82AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.h */,
+				564440C92AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.m */,
+				564440CA2AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.m */,
+				564440CB2AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.h */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		564440CC2AFDDA8700946576 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				564440CD2AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.m */,
+				564440CE2AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.h */,
+				564440CF2AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.m */,
+				564440D02AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.m */,
+				564440D12AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.h */,
+				564440D22AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.h */,
+				564440D32AFDDA8700946576 /* View */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		564440D32AFDDA8700946576 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				564440D42AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.m */,
+				564440D52AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		564440D62AFDDA8700946576 /* UnlockOrLock */ = {
+			isa = PBXGroup;
+			children = (
+				564440D72AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.m */,
+				564440D82AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.h */,
+			);
+			path = UnlockOrLock;
+			sourceTree = "<group>";
+		};
+		56C5908C2B5616DE00450C5D /* WIFI */ = {
+			isa = PBXGroup;
+			children = (
+				56C590AB2B58C14A00450C5D /* Member */,
+				56C5908D2B5616DE00450C5D /* Logs */,
+				56C5908E2B5616DE00450C5D /* Password */,
+				56C5908F2B5616DE00450C5D /* UnlockOrLock */,
+				56C590902B5616DE00450C5D /* TuyaWiFiLockViewController.h */,
+				56C590912B5616DE00450C5D /* TuyaWiFiLockViewController.m */,
+			);
+			path = WIFI;
+			sourceTree = "<group>";
+		};
+		56C5908D2B5616DE00450C5D /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				56C5909C2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.h */,
+				56C5909D2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.m */,
+				56C5909F2B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.h */,
+				56C590A02B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.m */,
+				56C590A22B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.h */,
+				56C590A32B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.m */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		56C5908E2B5616DE00450C5D /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				56C590962B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.h */,
+				56C590972B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.m */,
+				56C590992B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.h */,
+				56C5909A2B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.m */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		56C5908F2B5616DE00450C5D /* UnlockOrLock */ = {
+			isa = PBXGroup;
+			children = (
+				56C590932B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.h */,
+				56C590942B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.m */,
+			);
+			path = UnlockOrLock;
+			sourceTree = "<group>";
+		};
+		56C590AB2B58C14A00450C5D /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				56C590AC2B58C14A00450C5D /* TuyaWiFiMemberListViewController.h */,
+				56C590AD2B58C14A00450C5D /* TuyaWiFiMemberListViewController.m */,
+				56C590AE2B58C14A00450C5D /* TuyaWiFiAddMemberViewController.h */,
+				56C590AF2B58C14A00450C5D /* TuyaWiFiAddMemberViewController.m */,
+				56C590B22B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.h */,
+				56C590B32B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.m */,
+				56C590B52B58D50800450C5D /* TuyaWiFiMemberManagementViewController.h */,
+				56C590B62B58D50800450C5D /* TuyaWiFiMemberManagementViewController.m */,
+				56C590B82B58F6FE00450C5D /* TuyaWiFiAddMemberView.h */,
+				56C590B92B58F6FE00450C5D /* TuyaWiFiAddMemberView.m */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		56D0A5CF293DBC1200BB81D9 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
-				567DA76B2996453C008DB810 /* Common */,
-				567DA7822996453C008DB810 /* Logs */,
-				567DA7872996453C008DB810 /* Member */,
-				567DA78C2996453C008DB810 /* Password */,
-				567DA7732996453C008DB810 /* Setting */,
-				567DA7782996453C008DB810 /* UnlockMode */,
-				567DA77D2996453C008DB810 /* UnlockOrLock */,
-				56E120A529658B18004AB4A8 /* TuyaLockDevice.h */,
+				56C5908C2B5616DE00450C5D /* WIFI */,
+				564440552AFDDA8600946576 /* BLE */,
+				5644409A2AFDDA8700946576 /* Common */,
+				564440C12AFDDA8700946576 /* TuyaLockDevice.h */,
+				564440C22AFDDA8700946576 /* Zigbee */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -992,88 +1161,109 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56FFF9BD29AC53A0007B6E3B /* TuyaLockDeviceRemoteSettingViewController.m in Sources */,
-				563B204429A6365100DF09FE /* TuyaLockDeviceUnlockModeGuideViewController.m in Sources */,
-				56AB225B29A31DE1008484B2 /* TuyaLockDeviceAddMemberViewController.m in Sources */,
 				AF5531D025A58F8A00E13562 /* Alert.m in Sources */,
 				3485438725C2995700F1EF21 /* EZModeTableViewController.m in Sources */,
 				679561A5289CAB5700BD0FAB /* TuyaLinkActionMsgSendController.m in Sources */,
-				56AB2258299F8A60008484B2 /* TuyaLockDeviceMemberDetailView.m in Sources */,
 				6714644D289A111A0045F9AD /* TuyaLinkDeviceControlController.m in Sources */,
+				564440FA2AFDDA8700946576 /* TuyaLockDeviceMemberListViewController.m in Sources */,
 				348543C225C2C80100F1EF21 /* EnumTableViewCell.m in Sources */,
-				56F5E23329E53FC10045A636 /* TuyaLockDeviceUnBoundListCell.m in Sources */,
-				563B205629A6369E00DF09FE /* TuyaLockDeviceUnlockModeResultView.m in Sources */,
 				679561A1289BCB8B00BD0FAB /* TextViewTableViewCell.m in Sources */,
+				564440E72AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryViewController.m in Sources */,
+				56C590A12B576CB900450C5D /* TuyaWiFiDeviceRecordFilterView.m in Sources */,
 				9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */,
-				567DA7AB299645D5008DB810 /* TuyaLockDeviceMemberListViewController.m in Sources */,
+				564440DE2AFDDA8700946576 /* TuyaLockDevicePasswordListViewController.m in Sources */,
+				564440F82AFDDA8700946576 /* TuyaLockDeviceRemoteSettingView.m in Sources */,
+				564441042AFDDA8700946576 /* TuyaZigbeeLockViewController.m in Sources */,
 				348543AB25C2B8EB00F1EF21 /* DeviceControlCellHelper.m in Sources */,
-				563B205329A6369300DF09FE /* TuyaLockDeviceUnlockModeEntryView.m in Sources */,
+				56C5909B2B567F8900450C5D /* TuyaWiFiDevicePasswordDetailViewController.m in Sources */,
 				34FF2DFA25B02DB600152CA6 /* NewHomeTableViewController.m in Sources */,
-				56AB2255299F89E1008484B2 /* TuyaLockDeviceMemberDetailViewController.m in Sources */,
-				563B205929A7526F00DF09FE /* TuyaLockDeviceUnlockModePasswordViewController.m in Sources */,
-				567DA79D2996453C008DB810 /* TuyaLockDeviceTableViewController.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
-				563B204D29A6367D00DF09FE /* TuyaLockDeviceUnlockModeListCell.m in Sources */,
-				567DA79C2996453C008DB810 /* TuyaLockDeviceListViewController.m in Sources */,
-				563B205F29A7713B00DF09FE /* TuyaLockDeviceUnlockModeModifyViewController.m in Sources */,
-				567DA7A52996453C008DB810 /* TuyaLockDevicePasswordViewController.m in Sources */,
-				563B204729A6365C00DF09FE /* TuyaLockDeviceUnlockModeEntryViewController.m in Sources */,
+				564440E02AFDDA8700946576 /* TuyaLockDeviceCycleView.m in Sources */,
 				9A4C4925260B37EB0000D9EA /* SIGMeshTableViewController.m in Sources */,
+				564440F92AFDDA8700946576 /* TuyaLockDeviceBaseViewController.m in Sources */,
 				348543BE25C2C6AE00F1EF21 /* SliderTableViewCell.m in Sources */,
-				56AB2252299B31B0008484B2 /* TuyaLockDeviceMemberListCell.m in Sources */,
+				564440E52AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordViewController.m in Sources */,
+				564440DA2AFDDA8700946576 /* TuyaLockDeviceRecordViewController.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
 				34FF2DF525B02A7C00152CA6 /* Home.m in Sources */,
-				567DA7A82996453C008DB810 /* TuyaLockDeviceCycleView.m in Sources */,
-				563B205029A6368900DF09FE /* TuyaLockDeviceUnlockModeGuideView.m in Sources */,
-				563B206229A7714A00DF09FE /* TuyaLockDeviceUnlockModeModifyView.m in Sources */,
 				AF54CAB225A46C8000FCAC1F /* LoginTableViewController.m in Sources */,
-				567DA7A72996453C008DB810 /* TuyaLockDeviceInputView.m in Sources */,
-				56F5E23029E53FB90045A636 /* TuyaLockDeviceUnBoundListViewController.m in Sources */,
-				563B202429A6341800DF09FE /* TuyaLockDeviceUnlockModeViewController.m in Sources */,
-				56AB2243299A38C0008484B2 /* TuyaLockDeviceRecordListViewController.m in Sources */,
-				56AB224C299A4811008484B2 /* TuyaLockDeviceSetRemoteVoicePasswordView.m in Sources */,
+				564440EA2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideViewController.m in Sources */,
+				564441062AFDDA8700946576 /* TuyaZigbeeDeviceRecordFilterView.m in Sources */,
+				564440EC2AFDDA8700946576 /* TuyaLockDeviceUnlockModeListCell.m in Sources */,
+				564440E92AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultViewController.m in Sources */,
+				564440E22AFDDA8700946576 /* TuyaLockDevicePasswordListCell.m in Sources */,
+				564440E82AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyViewController.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
+				564441092AFDDA8700946576 /* TuyaZigbeeDevicePasswordDetailViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
-				56AB226129A39F5D008484B2 /* TuyaLockDeviceMemberUpdateTimeViewController.m in Sources */,
+				564440FC2AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeViewController.m in Sources */,
+				564440DB2AFDDA8700946576 /* TuyaLockDeviceRecordFilterView.m in Sources */,
+				564440D92AFDDA8700946576 /* TuyaLockDeviceRecordListViewController.m in Sources */,
+				564440FD2AFDDA8700946576 /* TuyaLockDeviceMemberManagementViewController.m in Sources */,
+				56C590BA2B58F6FE00450C5D /* TuyaWiFiAddMemberView.m in Sources */,
+				564440DF2AFDDA8700946576 /* TuyaLockDevicePasswordViewController.m in Sources */,
 				53FE2BEC292E2ED500BBD62F /* SweeperMsgControllerViewController.m in Sources */,
-				567DA7A12996453C008DB810 /* TuyaLockDeviceRecordViewController.m in Sources */,
-				56FFF9C029AC57A2007B6E3B /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m in Sources */,
-				56AB224F299A4855008484B2 /* TuyaLockDeviceRemoteSettingView.m in Sources */,
-				56AB226429A39F78008484B2 /* TuyaLockDeviceMemberUpdateTimeView.m in Sources */,
+				564440F52AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordViewController.m in Sources */,
+				564441032AFDDA8700946576 /* TuyaLockDeviceTableViewController.m in Sources */,
+				564440F12AFDDA8700946576 /* TuyaLockDeviceUnlockModeModifyView.m in Sources */,
 				677A4C5E2890D372007C0AE8 /* TuyaLinkBindViewController.m in Sources */,
-				567DA7A42996453C008DB810 /* TuyaLockDevicePasswordListViewController.m in Sources */,
 				67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */,
-				567DA7A32996453C008DB810 /* TuyaLockDevicePasswordDetailViewController.m in Sources */,
 				AF5531C525A5620900E13562 /* UserInformationTableViewController.m in Sources */,
-				56AB2246299A3918008484B2 /* TuyaLockDeviceRecordListCell.m in Sources */,
-				563B205C29A7528500DF09FE /* TuyaLockDeviceUnlockModePasswordView.m in Sources */,
+				564440EF2AFDDA8700946576 /* TuyaLockDeviceUnlockModePasswordView.m in Sources */,
+				564441052AFDDA8700946576 /* TuyaZigbeeDeviceRecordListViewController.m in Sources */,
 				34FF2E0225B03C2C00152CA6 /* HomeListTableViewController.m in Sources */,
+				564441002AFDDA8700946576 /* TuyaLockDeviceMemberUpdateTimeView.m in Sources */,
+				564440F02AFDDA8700946576 /* TuyaLockDeviceUnlockModeResultView.m in Sources */,
 				34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */,
-				567DA79B2996453C008DB810 /* TuyaLockDeviceBaseViewController.m in Sources */,
+				564440FB2AFDDA8700946576 /* TuyaLockDeviceMemberDetailViewController.m in Sources */,
 				AF54CAAE25A4610D00FCAC1F /* RegisterTableViewController.m in Sources */,
+				564441012AFDDA8700946576 /* TuyaLockDeviceAddMemberView.m in Sources */,
+				564440EE2AFDDA8700946576 /* TuyaLockDeviceUnlockModeEntryView.m in Sources */,
+				564441072AFDDA8700946576 /* TuyaZigbeeDeviceRecordListCell.m in Sources */,
+				564440E32AFDDA8700946576 /* TuyaLockDeviceUnlockModeViewController.m in Sources */,
+				56C590922B5616DE00450C5D /* TuyaWiFiLockViewController.m in Sources */,
+				564441082AFDDA8700946576 /* TuyaZigbeeDevicePasswordListViewController.m in Sources */,
+				564440FE2AFDDA8700946576 /* TuyaLockDeviceAddMemberViewController.m in Sources */,
+				564440F32AFDDA8700946576 /* TuyaLockDeviceListViewController.m in Sources */,
 				34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */,
 				348543BA25C2C2E300F1EF21 /* SwitchTableViewCell.m in Sources */,
+				5644410C2AFDDA8700946576 /* TuyaZigbeeDeviceUnlockViewController.m in Sources */,
+				5644410A2AFDDA8700946576 /* TuyaZigbeeDevicePasswordFilterView.m in Sources */,
 				34FF2E0A25B0649200152CA6 /* EditHomeTableViewController.m in Sources */,
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
+				564440DC2AFDDA8700946576 /* TuyaLockDeviceRecordListCell.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
-				56AB225E29A31E21008484B2 /* TuyaLockDeviceAddMemberView.m in Sources */,
+				564440ED2AFDDA8700946576 /* TuyaLockDeviceUnlockModeGuideView.m in Sources */,
 				348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */,
+				56C590982B566C8900450C5D /* TuyaWiFiDevicePasswordListViewController.m in Sources */,
+				56C590B42B58C7E100450C5D /* TuyaWiFiDeviceMemberListCell.m in Sources */,
 				9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */,
-				567DA7A02996453C008DB810 /* TuyaLockDeviceUnlockOrLockViewController.m in Sources */,
-				56AB2249299A3992008484B2 /* TuyaLockDeviceRecordFilterView.m in Sources */,
 				348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */,
+				56C590A42B576E3800450C5D /* TuyaWiFiDeviceRecordListCell.m in Sources */,
+				564440DD2AFDDA8700946576 /* TuyaLockDevicePasswordDetailViewController.m in Sources */,
+				56C590B72B58D50800450C5D /* TuyaWiFiMemberManagementViewController.m in Sources */,
 				34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */,
+				564440F42AFDDA8700946576 /* TuyaLockDeviceRemoteSettingViewController.m in Sources */,
+				56C590B12B58C14A00450C5D /* TuyaWiFiAddMemberViewController.m in Sources */,
+				564440F72AFDDA8700946576 /* TuyaLockDeviceSetRemoteVoicePasswordView.m in Sources */,
+				5644410B2AFDDA8700946576 /* TuyaZigbeeDeviceOncePasswordView.m in Sources */,
 				34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */,
+				56C590B02B58C14A00450C5D /* TuyaWiFiMemberListViewController.m in Sources */,
+				564440F22AFDDA8700946576 /* TuyaLockDeviceUnlockOrLockViewController.m in Sources */,
 				348543A725C2AF1B00F1EF21 /* DeviceControlTableViewController.m in Sources */,
-				567DA7A22996453C008DB810 /* TuyaLockDeviceMemberManagementViewController.m in Sources */,
-				563B204129A6364700DF09FE /* TuyaLockDeviceUnlockModeListViewController.m in Sources */,
-				567DA79E2996453C008DB810 /* TuyaLockDeviceSettingViewController.m in Sources */,
+				564440E12AFDDA8700946576 /* TuyaLockDeviceInputView.m in Sources */,
+				56C590952B562F8400450C5D /* TuyaWiFiDeviceUnlockViewController.m in Sources */,
+				564440F62AFDDA8700946576 /* TuyaLockDeviceSettingViewController.m in Sources */,
+				564440EB2AFDDA8700946576 /* TuyaLockDeviceUnBoundListCell.m in Sources */,
+				564440E42AFDDA8700946576 /* TuyaLockDeviceUnlockModeListViewController.m in Sources */,
 				348543B525C2C25D00F1EF21 /* NotificationName.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,
 				348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */,
+				564440E62AFDDA8700946576 /* TuyaLockDeviceUnBoundListViewController.m in Sources */,
 				348543A325C2AAF000F1EF21 /* DeviceListTableViewController.m in Sources */,
-				563B204A29A6366700DF09FE /* TuyaLockDeviceUnlockModeResultViewController.m in Sources */,
-				567DA7A62996453C008DB810 /* TuyaLockDevicePasswordListCell.m in Sources */,
+				564441022AFDDA8700946576 /* TuyaLockDeviceMemberDetailView.m in Sources */,
+				564440FF2AFDDA8700946576 /* TuyaLockDeviceMemberListCell.m in Sources */,
+				56C5909E2B576CAA00450C5D /* TuyaWiFiDeviceRecordListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1368,7 +1558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94JFPTRDN5;
+				DEVELOPMENT_TEAM = DWPHVGUZ22;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -1400,7 +1590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94JFPTRDN5;
+				DEVELOPMENT_TEAM = DWPHVGUZ22;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";

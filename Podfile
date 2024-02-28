@@ -1,9 +1,7 @@
 source 'https://cdn.cocoapods.org/'
-#source 'https://github.com/tuya/TuyaPublicSpecs.git'
-#source 'https://github.com/tuya/tuya-pod-specs.git'
+source 'https://github.com/tuya/TuyaPublicSpecs.git'
+source 'https://github.com/tuya/tuya-pod-specs.git'
 
-source 'https://registry.code.tuya-inc.top/tuyaIOS/TYSpecsThird.git' # 三方库源
-source 'https://registry.code.tuya-inc.top/tuyaIOS/TYSpecs.git'   # 私有库
 
 target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
@@ -11,12 +9,12 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'Masonry'
   pod 'BlocksKit'
   
-  pod 'ThingSmartLockKit', '5.0.1'
+  pod 'ThingSmartLockKit', '5.2.0'
   
-  pod 'ThingCameraSDK','4.4.0'
-  pod 'ThingOpenSSLSDK','111.28.0-rc.1'
-  pod 'ThingSmartActivatorKit','4.2.0-develop.4'
-  pod 'ThingSmartBLEMeshKit','4.4.6'
+  pod 'ThingCameraSDK','4.8.0'
+  pod 'ThingOpenSSLSDK','1.1.1-t.0'
+  pod 'ThingSmartActivatorKit','5.1.3'
+  pod 'ThingSmartBLEMeshKit','5.3.0.1'
   
 end
 

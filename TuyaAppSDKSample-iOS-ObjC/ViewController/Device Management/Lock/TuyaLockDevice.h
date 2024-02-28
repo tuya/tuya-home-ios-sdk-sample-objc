@@ -19,6 +19,9 @@ typedef enum : NSInteger {
     PasswordType_ProOfflineOnce,//离线密码（Pro）：单次
     PasswordType_ProOfflineEmptyAll,//离线密码（Pro）：清空码（所有）
     PasswordType_ProOfflineEmptyOne,//离线密码（Pro）：清空码（单个）
+    PasswordType_ZigbeeTempOne,//zigbee门锁临时一次性密码
+    PasswordType_ZigbeeTempCycle,//zigbee门锁临时周期性密码
+    PasswordType_WiFiTempCycle,//WiFi门锁临时密码
 } PasswordType;
 
 typedef enum : NSInteger {
