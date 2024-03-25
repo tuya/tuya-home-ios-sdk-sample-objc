@@ -779,6 +779,7 @@
 "ipc_panel_button_screenshot" = "Take Photo";
 "ipc_panel_button_settings" = "Settings";
 "ipc_panel_button_speak" = "Speak";
+"ipc_panel_button_video_talk" = "Video talk";
 "ipc_pir_switch" = "PIR";
 "ipc_playback_no_records_today" = "No playback videos for the current day";
 "ipc_sdcard_capacity" = "Storage Capacity";
@@ -825,6 +826,8 @@
 "enable mute failed" = "enable mute failed";
 "record failed" = "record failed";
 "Photo library permission denied" = "Photo library permission denied";
+"Camera permission denied" = "Camera permission denied";
+"call_call_finish" = "call finished";
 "Video failed save to photo library" = "Video failed save to photo library";
 "Normal" = "Normal";
 "Motion" = "Motion";
@@ -844,6 +847,7 @@
 "Dollbell is ringing" = "Dollbell is ringing";
 "Answer" = "Answer";
 "Hangup" = "Hangup";
+"Refuse" = "Refuse";
 "DollBell answered success" = "DollBell answered success";
 "Dollbell is ringing timeOut" = "Dollbell is ringing timeOut";
 "The device has canceled doorbell ringing" = "The device has canceled doorbell ringing";

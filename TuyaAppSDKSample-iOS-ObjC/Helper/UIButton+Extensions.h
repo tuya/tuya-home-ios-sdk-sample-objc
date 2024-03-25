@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (Extensions)
 - (void)roundCorner;
+- (void)demo_setBackgroundColor:(UIColor *)color forState:(UIControlState)state;
+
 @end
 
 NS_ASSUME_NONNULL_END

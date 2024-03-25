@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) BOOL disabled;
 
+@property (nonatomic, copy) NSDictionary *extra;
+
 - (void)addTarget:(id)target action:(SEL)action;
 
 @end

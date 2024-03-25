@@ -779,6 +779,7 @@
 "ipc_panel_button_screenshot" = "拍照";
 "ipc_panel_button_settings" = "设置";
 "ipc_panel_button_speak" = "讲话";
+"ipc_panel_button_video_talk" = "视频通话";
 "ipc_pir_switch" = "PIR开关";
 "ipc_playback_no_records_today" = "当天暂无回放录像";
 "ipc_sdcard_capacity" = "存储容量";
@@ -822,6 +823,8 @@
 "enable mute failed" = "声音开关失败";
 "record failed" = "视频录制失败";
 "Photo library permission denied" = "相册访问权限被拒绝";
+"Camera permission denied" = "摄像机访问权限被拒绝";
+"call_call_finish" = "通话结束";
 "Start" = "开始";
 "End" = "结束";
 "Change Speed Failed" = "切换播放速度失败";
@@ -844,6 +847,7 @@
 "Dollbell is ringing" = "门铃呼叫中";
 "Answer" = "接听";
 "Hangup" = "挂断";
+"Refuse" = "拒接";
 "DollBell answered success" = "门铃接听成功";
 "Dollbell is ringing timeOut" = "门铃呼叫超时";
 "The device has canceled doorbell ringing" = "设备主动取消门铃呼叫";

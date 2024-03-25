@@ -45,6 +45,7 @@
 - (void)dealloc {
     [self stopPreview];
     [self.cameraDevice removeDelegate:self];
+    [self.cameraDevice leaveCallState];
 }
 
 - (instancetype)initWithDeviceId:(NSString *)devId {
@@ -68,14 +69,13 @@
     [self.view addSubview:self.hangupTextButton];
     
     [self.retryButton addTarget:self action:@selector(retryAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.cameraDevice enterCallState];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self retryAction];
-    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
-        [self startPreview];
-    }
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = NO;
     }
@@ -108,9 +108,15 @@
         self.stateLabel.text = NSLocalizedStringFromTable(@"title_device_offline", @"IPCLocalizable", @"");
         return;
     }
-    [self connectCamera];
-    [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
-    self.retryButton.hidden = YES;
+    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnecting || self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
+        [self startPreview];
+    } else {
+        [self connectCamera];
+    }
+    if (self.cameraDevice.cameraModel.previewState != CameraDevicePreviewing) {
+        [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
+        self.retryButton.hidden = YES;
+    }
 }
 
 - (void)talkAction {

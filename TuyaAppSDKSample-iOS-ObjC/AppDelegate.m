@@ -10,8 +10,11 @@
 
 #import "CameraDoorbellManager.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 #import <ThingSmartAVBaseKit/ThingSmartAVBaseKit.h>
+#import <ThingSmartCallChannelKit/ThingSmartCallChannelKit.h>
 
 @interface AppDelegate ()
 
@@ -59,6 +62,57 @@
     return YES;
 }
 
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
+    
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        NSDictionary *userInfo = response.notification.request.content.userInfo;
+        if (userInfo) {
+            [self handleRemoteNotificationWithHigherVersion:userInfo];
+        }
+    }else {
+        //本地通知处理
+        
+    }
+    completionHandler();
+}
+
+- (void)handleRemoteNotificationWithHigherVersion:(NSDictionary *)userInfo {
+    NSString *link = [userInfo objectForKey:@"link"];
+    NSNumber *ts = [userInfo objectForKey:@"ts"];
+    NSNumber *voipEnable = [userInfo objectForKey:@"voipEnable"];
+    
+    if ([link isKindOfClass:NSString.class] && link.length > 0 && [link containsString:@"://rtcCall"]) {
+        NSURL *url = [NSURL URLWithString:link];
+        if ([url.host isEqualToString:@"rtcCall"]) {
+            //解析url中的参数
+//            NSDictionary *info = [url queryDictionary];//伪代码
+//            NSString *param = [info thing_stringForKey:@"param"];
+//            if (![param isKindOfClass:NSString.class]) {
+//                return;
+//            }
+//                      
+//            
+//            NSError *error;
+//            NSData *jsonData = [param dataUsingEncoding:NSUTF8StringEncoding];
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+//            if (error == nil) {
+//                return;
+//            }
+//            
+//            if (dic == nil && ![dic isKindOfClass:NSDictionary.class]) {
+//                return;
+//            }
+//            
+//            NSMutableDictionary *map = [dic mutableCopy];
+//            if (voipEnable) [map setObject:voipEnable forKey:@"voipEnable"];
+//
+//            [ThingSmartCallChannel.sharedInstance handlePushMessage:map];
+
+            return;
+        }
+    }
+}
 
 #pragma mark - UISceneSession lifecycle
 

@@ -30,11 +30,14 @@
 
 #import <YYModel/YYModel.h>
 
+#import "ThingCallManager.h"
+
 #define VideoViewWidth [UIScreen mainScreen].bounds.size.width
 #define VideoViewHeight ([UIScreen mainScreen].bounds.size.width / 16 * 9)
 #define BottomSwitchViewHeight 44.0
 
 #define kControlTalk        @"talk"
+#define kControlVideoTalk   @"videoTalk"
 #define kControlRecord      @"record"
 #define kControlPhoto       @"photo"
 #define kControlPlayback    @"playback"
@@ -123,14 +126,12 @@
     [self.retryButton addTarget:self action:@selector(retryAction) forControlEvents:UIControlEventTouchUpInside];
     [self.soundButton addTarget:self action:@selector(soundActionClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.hdButton addTarget:self action:@selector(hdActionClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self refreshControlViewDatas];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self retryAction];
-    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
-        [self startPreview];
-    }
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = NO;
     }
@@ -138,10 +139,19 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self stopPreview];
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = YES;
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self retryAction];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self stopPreview];
 }
 
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
@@ -173,9 +183,15 @@
         self.stateLabel.text = NSLocalizedStringFromTable(@"title_device_offline", @"IPCLocalizable", @"");
         return;
     }
-    [self connectCamera];
-    [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
-    self.retryButton.hidden = YES;
+    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnecting || self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
+        [self startPreview];
+    } else {
+        [self connectCamera];
+    }
+    if (self.cameraDevice.cameraModel.previewState != CameraDevicePreviewing) {
+        [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
+        self.retryButton.hidden = YES;
+    }
 }
 
 - (void)soundActionClicked:(CameraLoadingButton *)sender {
@@ -274,6 +290,24 @@
     [self.cameraDevice stopPlayback];
 }
 
+- (void)startVideoCall {
+    if ([ThingCallManager.sharedInstance canStartCall]) {
+        __weak typeof(self) weak_self = self;
+        NSDictionary *extraMap = @{@"bizType" : @"screen_ipc",
+                                   @"category" : @"sp_dpsxj",
+                                   @"channelType" : @2};
+        [ThingCallManager.sharedInstance startCallWithTargetId:self.devId timeout:60 extra:extraMap success:^{
+            
+        } failure:^(NSError * _Nullable error) {
+            if (error.localizedDescription) {
+                [weak_self showErrorTip:error.localizedDescription];
+            }
+        }];
+    } else {
+
+    }
+}
+
 #pragma mark - Loading && Alert
 
 - (void)showLoadingWithTitle:(NSString *)title {
@@ -310,6 +344,10 @@
 - (void)controlView:(CameraControlNewView *)controlView didSelectedControl:(NSString *)identifier {
     if ([identifier isEqualToString:kControlTalk]) {
         [self talkAction];
+        return;
+    }
+    if ([identifier isEqualToString:kControlVideoTalk]) {
+        [self startVideoCall];
         return;
     }
     if ([identifier isEqualToString:kControlPlayback]) {
@@ -472,6 +510,19 @@
     [self.cameraDevice setOutOffBoundsFeatures:@[outlineProperty]];
 }
 
+- (void)refreshControlViewDatas {
+    __weak typeof(self) weak_self = self;
+    [ThingCallManager.sharedInstance fetchDeviceCallAbilityByDevId:self.devId completion:^(BOOL result, NSError * _Nullable error) {
+        if (result == YES) {
+            NSMutableArray<NSDictionary *> *controlDatas = [NSMutableArray arrayWithArray:[weak_self controlDatas]];
+            NSMutableDictionary *controlTalkMap = [NSMutableDictionary dictionaryWithDictionary:controlDatas.firstObject];
+            [controlTalkMap setObject:@YES forKey:@"videoTalk"];
+            controlDatas[0] = controlTalkMap;
+            weak_self.controlView.sourceData = controlDatas.copy;
+        }
+    }];
+}
+
 #pragma mark - Accessor
 
 - (UIView *)videoContainer {
@@ -487,7 +538,8 @@
     NSArray *basicFeatureDatas = @[@{
         @"image": @"ty_camera_mic_icon",
         @"title": NSLocalizedStringFromTable(@"ipc_panel_button_speak", @"IPCLocalizable", @""),
-        @"identifier": kControlTalk
+        @"identifier": kControlTalk,
+        @"videoTalk" : @NO
         },
     @{
         @"image": @"ty_camera_rec_icon",

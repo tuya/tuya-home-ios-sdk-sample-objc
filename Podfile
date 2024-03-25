@@ -1,13 +1,14 @@
 source 'https://github.com/CocoaPods/Specs'
 source 'https://github.com/tuya/TuyaPublicSpecs.git'
 source 'https://github.com/tuya/tuya-pod-specs.git'
+source 'https://github.com/tuya/screen-ipc-call-private-spec-ios'
 
 target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
   pod 'SGQRCode', '~> 4.1.0'
 
   pod 'ThingSmartHomeKit', '~> 5.8.0'
-  pod 'ThingSmartCameraKit', '~> 5.8.0'
+  pod 'ThingSmartCameraKit', '~> 5.11.0-beta.1'
   pod 'ThingCameraUIKit'
 
   # 从 iot.tuya.com 构建和获取 ThingSmartCryption
@@ -17,7 +18,7 @@ target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'ThingSmartCryption', :path => './'
 
 #  pod 'ThingCameraAutomation'
-#pod 'ThingCloudStorageDebugger', '~> 5.0.0'
+ pod 'ThingCloudStorageDebugger', '~> 5.0.0'
 
 end
 

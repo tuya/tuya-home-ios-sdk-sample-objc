@@ -53,7 +53,7 @@
     
     [items enumerateObjectsUsingBlock:^(CameraControlButton *button, NSUInteger idx, BOOL *stop) {
         button.frame = CGRectMake((idx % 3) * (buttonWith + 0.5), idx / 3 * (buttonHeight + 0.5), buttonWith - 1, buttonHeight - 1);
-        if ([button.identifier isEqualToString:@"Cloud"]) {
+        if ([self isDoubleItems:button.extra]) {
             [button.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
                 obj.frame = CGRectMake(0, idx * subbuttonHeight, subbuttonWith, subbuttonHeight);
             }];
@@ -69,8 +69,13 @@
         NSString *identifier = [obj objectForKey:@"identifier"];
         CameraControlButton *controlButton = [CameraControlButton new];
         controlButton.identifier = identifier;
-        if ([identifier isEqualToString:@"Cloud"]) {
-            [self addCloudStorageItem:controlButton];
+        controlButton.extra = obj;
+        if ([self isDoubleItems:obj]) {
+            if ([identifier isEqualToString:@"Cloud"]) {
+                [self addCloudStorageItem:controlButton];
+            } else {
+                [self addTalkItem:controlButton];
+            }
         } else {
             controlButton.imageView.image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             controlButton.titleLabel.text = title;
@@ -96,9 +101,30 @@
     [superView addSubview:cloudDebugControlButton];
 }
 
+- (void)addTalkItem:(CameraControlButton *)superView {
+    CameraControlButton *cloudControlButton = [CameraControlButton new];
+    cloudControlButton.imageView.image = [[UIImage imageNamed:@"ty_camera_mic_icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    cloudControlButton.titleLabel.text = NSLocalizedStringFromTable(@"ipc_panel_button_speak", @"IPCLocalizable", @"");
+    cloudControlButton.identifier = @"talk";
+    [cloudControlButton addTarget:self action:@selector(controlAction:)];
+    [superView addSubview:cloudControlButton];
+    
+    CameraControlButton *cloudDebugControlButton = [CameraControlButton new];
+    cloudDebugControlButton.imageView.image = cloudControlButton.imageView.image;
+    cloudDebugControlButton.titleLabel.text = NSLocalizedStringFromTable(@"ipc_panel_button_video_talk", @"IPCLocalizable", @"");
+    cloudDebugControlButton.identifier = @"videoTalk";
+    [cloudDebugControlButton addTarget:self action:@selector(controlAction:)];
+    [superView addSubview:cloudDebugControlButton];
+}
+
 - (void)enableControl:(NSString *)identifier {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.identifier isEqualToString:identifier]) {
+            if ([self isDoubleItems:obj.extra]) {
+                for (CameraControlButton *subObj in obj.subviews) {
+                    subObj.disabled = NO;
+                }
+            }
             obj.disabled = NO;
             *stop = YES;
         }
@@ -108,6 +134,11 @@
 - (void)disableControl:(NSString *)identifier {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.identifier isEqualToString:identifier]) {
+            if ([self isDoubleItems:obj.extra]) {
+                for (CameraControlButton *subObj in obj.subviews) {
+                    subObj.disabled = YES;
+                }
+            }
             obj.disabled = YES;
             *stop = YES;
         }
@@ -117,6 +148,11 @@
 - (void)selectedControl:(NSString *)identifier {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.identifier isEqualToString:identifier]) {
+            if ([self isDoubleItems:obj.extra]) {
+                for (CameraControlButton *subObj in obj.subviews) {
+                    subObj.highLighted = YES;
+                }
+            }
             obj.highLighted = YES;
             *stop = YES;
         }
@@ -126,6 +162,11 @@
 - (void)deselectedControl:(NSString *)identifier {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.identifier isEqualToString:identifier]) {
+            if ([self isDoubleItems:obj.extra]) {
+                for (CameraControlButton *subObj in obj.subviews) {
+                    subObj.highLighted = NO;
+                }
+            }
             obj.highLighted = NO;
             *stop = YES;
         }
@@ -134,12 +175,22 @@
 
 - (void)enableAllControl {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
+        if ([self isDoubleItems:obj.extra]) {
+            for (CameraControlButton *subObj in obj.subviews) {
+                subObj.disabled = NO;
+            }
+        }
         obj.disabled = NO;
     }];
 }
 
 - (void)disableAllControl {
     [self.subviews enumerateObjectsUsingBlock:^(CameraControlButton *obj, NSUInteger idx, BOOL *stop) {
+        if ([self isDoubleItems:obj.extra]) {
+            for (CameraControlButton *subObj in obj.subviews) {
+                subObj.disabled = YES;
+            }
+        }
         obj.disabled = YES;
     }];
 }
@@ -155,6 +206,19 @@
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
+}
+
+- (BOOL)isDoubleItems:(NSDictionary *)extra {
+    NSString *identifier = extra[@"identifier"];
+    if ([identifier isEqualToString:@"Cloud"]) {
+        return YES;
+    } else if ([identifier isEqualToString:@"talk"]) {
+        BOOL videoTalkEnabled = [extra[@"videoTalk"] boolValue];
+        if (videoTalkEnabled) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

@@ -49,6 +49,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use the photo library to access photos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Use the microphone to start audio talk</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

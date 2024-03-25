@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		679561A5289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679561A4289CAB5700BD0FAB /* ThingLinkActionMsgSendController.m */; };
 		67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C6522D2897D01800F1D972 /* QRCodeScanerViewController.m */; };
 		931807502A68CB890098F894 /* CameraDeviceOutlineProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9318074E2A68CB890098F894 /* CameraDeviceOutlineProperty.m */; };
+		931F4C832BAD909A003667E9 /* CameraDemoDeviceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4C822BAD909A003667E9 /* CameraDemoDeviceFetcher.m */; };
 		938CBC9829E810DE0086C6F4 /* IPCViewsLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0629E810DD0086C6F4 /* IPCViewsLocalizable.strings */; };
 		938CBC9929E810DE0086C6F4 /* IPCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0829E810DD0086C6F4 /* IPCLocalizable.strings */; };
 		938CBC9A29E810DE0086C6F4 /* ty_custom_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0C29E810DD0086C6F4 /* ty_custom_config.json */; };
@@ -140,6 +141,11 @@
 		938CBCF429E810DE0086C6F4 /* ty_camera_soundOn_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC9529E810DD0086C6F4 /* ty_camera_soundOn_icon@2x.png */; };
 		938CBCF529E810DE0086C6F4 /* ty_camera_photo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC9629E810DD0086C6F4 /* ty_camera_photo_icon@2x.png */; };
 		938CBCF629E810DE0086C6F4 /* ty_mainbt_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC9729E810DD0086C6F4 /* ty_mainbt_add@2x.png */; };
+		93F103042BAAB696003FD8B0 /* CameraCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F102FE2BAAB695003FD8B0 /* CameraCallViewController.m */; };
+		93F103052BAAB696003FD8B0 /* CameraCallInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F103002BAAB695003FD8B0 /* CameraCallInterfaceManager.m */; };
+		93F103062BAAB696003FD8B0 /* ThingCallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F103032BAAB696003FD8B0 /* ThingCallManager.m */; };
+		93F103092BAB13AB003FD8B0 /* demo_ring.caf in Resources */ = {isa = PBXBuildFile; fileRef = 93F103082BAB13AB003FD8B0 /* demo_ring.caf */; };
+		93F1030C2BABE572003FD8B0 /* CameraDeviceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F1030B2BABE572003FD8B0 /* CameraDeviceTask.m */; };
 		9A4C4908260B29A20000D9EA /* BLEModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4907260B29A20000D9EA /* BLEModelViewController.m */; };
 		9A4C490A260B2A960000D9EA /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C490C260B2A960000D9EA /* BLE.storyboard */; };
 		9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C4915260B30A40000D9EA /* DualModelTableViewController.m */; };
@@ -244,6 +250,8 @@
 		7F9264904FCE531491A81732 /* libPods-TuyaAppSDKSample-iOS-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuyaAppSDKSample-iOS-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9318074E2A68CB890098F894 /* CameraDeviceOutlineProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceOutlineProperty.m; sourceTree = "<group>"; };
 		9318074F2A68CB890098F894 /* CameraDeviceOutlineProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDeviceOutlineProperty.h; sourceTree = "<group>"; };
+		931F4C812BAD909A003667E9 /* CameraDemoDeviceFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraDemoDeviceFetcher.h; sourceTree = "<group>"; };
+		931F4C822BAD909A003667E9 /* CameraDemoDeviceFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraDemoDeviceFetcher.m; sourceTree = "<group>"; };
 		938CBC0729E810DD0086C6F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCViewsLocalizable.strings"; sourceTree = "<group>"; };
 		938CBC0929E810DD0086C6F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCLocalizable.strings"; sourceTree = "<group>"; };
 		938CBC0A29E810DD0086C6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCViewsLocalizable.strings; sourceTree = "<group>"; };
@@ -380,6 +388,15 @@
 		938CBC9529E810DD0086C6F4 /* ty_camera_soundOn_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_soundOn_icon@2x.png"; sourceTree = "<group>"; };
 		938CBC9629E810DD0086C6F4 /* ty_camera_photo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_camera_photo_icon@2x.png"; sourceTree = "<group>"; };
 		938CBC9729E810DD0086C6F4 /* ty_mainbt_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ty_mainbt_add@2x.png"; sourceTree = "<group>"; };
+		93F102FE2BAAB695003FD8B0 /* CameraCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCallViewController.m; sourceTree = "<group>"; };
+		93F102FF2BAAB695003FD8B0 /* CameraCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCallViewController.h; sourceTree = "<group>"; };
+		93F103002BAAB695003FD8B0 /* CameraCallInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCallInterfaceManager.m; sourceTree = "<group>"; };
+		93F103012BAAB696003FD8B0 /* CameraCallInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCallInterfaceManager.h; sourceTree = "<group>"; };
+		93F103022BAAB696003FD8B0 /* ThingCallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingCallManager.h; sourceTree = "<group>"; };
+		93F103032BAAB696003FD8B0 /* ThingCallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingCallManager.m; sourceTree = "<group>"; };
+		93F103082BAB13AB003FD8B0 /* demo_ring.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo_ring.caf; sourceTree = "<group>"; };
+		93F1030A2BABE572003FD8B0 /* CameraDeviceTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraDeviceTask.h; sourceTree = "<group>"; };
+		93F1030B2BABE572003FD8B0 /* CameraDeviceTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceTask.m; sourceTree = "<group>"; };
 		9A4C4906260B29A20000D9EA /* BLEModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEModelViewController.h; sourceTree = "<group>"; };
 		9A4C4907260B29A20000D9EA /* BLEModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEModelViewController.m; sourceTree = "<group>"; };
 		9A4C490B260B2A960000D9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BLE.storyboard; sourceTree = "<group>"; };
@@ -532,6 +549,7 @@
 		938CBC0429E810DD0086C6F4 /* CameraDevice */ = {
 			isa = PBXGroup;
 			children = (
+				93F102FD2BAA9515003FD8B0 /* Call */,
 				938CBC0529E810DD0086C6F4 /* Config */,
 				938CBC0D29E810DD0086C6F4 /* Utils */,
 				938CBC1429E810DD0086C6F4 /* Models */,
@@ -639,6 +657,8 @@
 				938CBC3B29E810DD0086C6F4 /* CameraDeviceModel.m */,
 				938CBC4029E810DD0086C6F4 /* CameraDevice.h */,
 				938CBC3C29E810DD0086C6F4 /* CameraDevice.m */,
+				93F1030A2BABE572003FD8B0 /* CameraDeviceTask.h */,
+				93F1030B2BABE572003FD8B0 /* CameraDeviceTask.m */,
 				938CBC3D29E810DD0086C6F4 /* CameraDeviceManager.h */,
 				938CBC3F29E810DD0086C6F4 /* CameraDeviceManager.m */,
 			);
@@ -744,6 +764,21 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		93F102FD2BAA9515003FD8B0 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				93F102FF2BAAB695003FD8B0 /* CameraCallViewController.h */,
+				93F102FE2BAAB695003FD8B0 /* CameraCallViewController.m */,
+				931F4C812BAD909A003667E9 /* CameraDemoDeviceFetcher.h */,
+				931F4C822BAD909A003667E9 /* CameraDemoDeviceFetcher.m */,
+				93F103012BAAB696003FD8B0 /* CameraCallInterfaceManager.h */,
+				93F103002BAAB695003FD8B0 /* CameraCallInterfaceManager.m */,
+				93F103022BAAB696003FD8B0 /* ThingCallManager.h */,
+				93F103032BAAB696003FD8B0 /* ThingCallManager.m */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
 		AF54CA4225A4191000FCAC1F = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +802,7 @@
 			isa = PBXGroup;
 			children = (
 				AF54CAA025A443D800FCAC1F /* AppKey.h */,
+				93F103082BAB13AB003FD8B0 /* demo_ring.caf */,
 				AF54CA4E25A4191000FCAC1F /* AppDelegate.h */,
 				AF54CA4F25A4191000FCAC1F /* AppDelegate.m */,
 				AF54CA5125A4191000FCAC1F /* SceneDelegate.h */,
@@ -916,6 +952,7 @@
 				677A4C632890D50C007C0AE8 /* ThingLinkBind.storyboard in Resources */,
 				938CBCCC29E810DE0086C6F4 /* ty_camera_rec_icon@3x.png in Resources */,
 				AF54CA5E25A4191A00FCAC1F /* LaunchScreen.storyboard in Resources */,
+				93F103092BAB13AB003FD8B0 /* demo_ring.caf in Resources */,
 				3485436C25C2638100F1EF21 /* HomeList.storyboard in Resources */,
 				938CBCDE29E810DE0086C6F4 /* ty_camera_tool_delete_normal@3x.png in Resources */,
 				938CBCC429E810DE0086C6F4 /* ty_camera_soundOff_icon@2x.png in Resources */,
@@ -1089,6 +1126,7 @@
 				938CBCA629E810DE0086C6F4 /* CameraPlaybackViewController.m in Sources */,
 				938CBCB129E810DE0086C6F4 /* CameraDeviceManager.m in Sources */,
 				AF54CAA725A44F0300FCAC1F /* MainTableViewController.m in Sources */,
+				93F103052BAAB696003FD8B0 /* CameraCallInterfaceManager.m in Sources */,
 				34FF2DF525B02A7C00152CA6 /* Home.m in Sources */,
 				938CBCBC29E810DE0086C6F4 /* CameraSwitchCell.m in Sources */,
 				938CBCB029E810DE0086C6F4 /* CameraDevice.m in Sources */,
@@ -1099,6 +1137,7 @@
 				938CBCBD29E810DE0086C6F4 /* CameraCalendarCollectionViewCell.m in Sources */,
 				34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */,
 				AF5531AE25A5599200E13562 /* ResetPasswordTableViewController.m in Sources */,
+				931F4C832BAD909A003667E9 /* CameraDemoDeviceFetcher.m in Sources */,
 				677A4C5E2890D372007C0AE8 /* ThingLinkBindViewController.m in Sources */,
 				938CBCAD29E810DE0086C6F4 /* CameraPlaybackNewViewController.m in Sources */,
 				67C6522E2897D01800F1D972 /* QRCodeScanerViewController.m in Sources */,
@@ -1118,14 +1157,17 @@
 				938CBCB229E810DE0086C6F4 /* CameraVideoView.m in Sources */,
 				938CBCA429E810DE0086C6F4 /* CameraMessageViewController.m in Sources */,
 				348543C625C2CBDA00F1EF21 /* StringTableViewCell.m in Sources */,
+				93F103062BAAB696003FD8B0 /* ThingCallManager.m in Sources */,
 				931807502A68CB890098F894 /* CameraDeviceOutlineProperty.m in Sources */,
 				9A4C4916260B30A40000D9EA /* DualModelTableViewController.m in Sources */,
 				938CBCAB29E810DE0086C6F4 /* CameraConnectBaseViewController.m in Sources */,
 				348543B025C2BDA700F1EF21 /* DeviceStatusBehaveCell.m in Sources */,
+				93F103042BAAB696003FD8B0 /* CameraCallViewController.m in Sources */,
 				34FF2E0625B03E7300152CA6 /* HomeDetailTableViewController.m in Sources */,
 				34FF2DFE25B0345500152CA6 /* SwitchHomeTableViewController.m in Sources */,
 				348543A725C2AF1B00F1EF21 /* DeviceControlTableViewController.m in Sources */,
 				938CBCB829E810DE0086C6F4 /* CameraCollectionPointListCell.m in Sources */,
+				93F1030C2BABE572003FD8B0 /* CameraDeviceTask.m in Sources */,
 				938CBCB529E810DE0086C6F4 /* CameraControlView.m in Sources */,
 				348543B525C2C25D00F1EF21 /* NotificationName.m in Sources */,
 				AF54CA5325A4191000FCAC1F /* SceneDelegate.m in Sources */,

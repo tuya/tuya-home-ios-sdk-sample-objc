@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)bindVideoRenderView;
 - (void)unbindVideoRenderView;
 
+- (void)bindLocalVideoView:(UIView<ThingSmartVideoViewType> *)videoView;
+- (void)unbindLocalVideoView:(UIView<ThingSmartVideoViewType> *)videoView;
+
 - (void)connect;
 - (void)connectWithPlayMode:(ThingSmartCameraPlayMode)playMode;
 - (void)disconnect;
@@ -40,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startPreview;
 - (void)stopPreview;
+
+- (void)enterCallState;
+- (void)leaveCallState;
 
 - (void)queryRecordDaysWithYear:(NSUInteger)year month:(NSUInteger)month;
 - (void)queryRecordTimeSlicesWithPlaybackDate:(ThingSmartPlaybackDate *)playbackDate;
@@ -63,6 +69,52 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startTalk;
 - (void)stopTalk;
+
+/**
+ start video talk
+ */
+- (int)startVideoTalk;
+
+/**
+ stop video talk
+ */
+-(int)stopVideoTalk;
+
+/**
+    pause send video talk
+ */
+- (int)pauseVideoTalk;
+
+/**
+    resume send video talk
+ */
+- (int)resumeVideoTalk;
+
+/**
+ open local video capture
+ */
+-(int)startLocalVideoCapture;
+
+/**
+ stop the local video capture.
+ */
+-(int)stopLocalVideoCapture;
+
+/**
+ switch local camera position
+ */
+-(int)switchLocalCameraPosition;
+
+/**
+ start audio record
+ */
+-(int)startAudioRecord;
+
+/**
+ start audio record
+ */
+-(int)stopAudioRecord;
+
 
 - (void)startRecord;
 - (void)stopRecord;
