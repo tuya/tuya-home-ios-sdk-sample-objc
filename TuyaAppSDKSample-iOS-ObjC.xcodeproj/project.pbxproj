@@ -51,7 +51,6 @@
 		932DB96D2BB6C34D007D8814 /* DemoPhotoLibraryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 932DB96C2BB6C34D007D8814 /* DemoPhotoLibraryUtil.m */; };
 		938CBC9829E810DE0086C6F4 /* IPCViewsLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0629E810DD0086C6F4 /* IPCViewsLocalizable.strings */; };
 		938CBC9929E810DE0086C6F4 /* IPCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0829E810DD0086C6F4 /* IPCLocalizable.strings */; };
-		938CBC9A29E810DE0086C6F4 /* ty_custom_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 938CBC0C29E810DD0086C6F4 /* ty_custom_config.json */; };
 		938CBC9B29E810DE0086C6F4 /* CameraPermissionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CBC0F29E810DD0086C6F4 /* CameraPermissionUtil.m */; };
 		938CBC9C29E810DE0086C6F4 /* CameraLocalPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CBC1129E810DD0086C6F4 /* CameraLocalPathUtil.m */; };
 		938CBC9D29E810DE0086C6F4 /* UIView+CameraAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CBC1229E810DD0086C6F4 /* UIView+CameraAdditions.m */; };
@@ -293,7 +292,6 @@
 		938CBC0929E810DD0086C6F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IPCLocalizable.strings"; sourceTree = "<group>"; };
 		938CBC0A29E810DD0086C6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCViewsLocalizable.strings; sourceTree = "<group>"; };
 		938CBC0B29E810DD0086C6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IPCLocalizable.strings; sourceTree = "<group>"; };
-		938CBC0C29E810DD0086C6F4 /* ty_custom_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ty_custom_config.json; sourceTree = "<group>"; };
 		938CBC0E29E810DD0086C6F4 /* CameraLocalPathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraLocalPathUtil.h; sourceTree = "<group>"; };
 		938CBC0F29E810DD0086C6F4 /* CameraPermissionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPermissionUtil.m; sourceTree = "<group>"; };
 		938CBC1029E810DD0086C6F4 /* UIView+CameraAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CameraAdditions.h"; sourceTree = "<group>"; };
@@ -669,7 +667,6 @@
 			children = (
 				938CBC0629E810DD0086C6F4 /* IPCViewsLocalizable.strings */,
 				938CBC0829E810DD0086C6F4 /* IPCLocalizable.strings */,
-				938CBC0C29E810DD0086C6F4 /* ty_custom_config.json */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1162,7 +1159,6 @@
 				938CBCC929E810DE0086C6F4 /* ty_camera_tool_download_normal@3x.png in Resources */,
 				AF54CA5B25A4191A00FCAC1F /* Assets.xcassets in Resources */,
 				3485438025C267BA00F1EF21 /* InfoPlist.strings in Resources */,
-				938CBC9A29E810DE0086C6F4 /* ty_custom_config.json in Resources */,
 				938CBCDC29E810DE0086C6F4 /* ty_camera_message@3x.png in Resources */,
 				3485436825C2631E00F1EF21 /* NewHome.storyboard in Resources */,
 				938CBCEE29E810DE0086C6F4 /* ty_mainbt_add@3x.png in Resources */,
