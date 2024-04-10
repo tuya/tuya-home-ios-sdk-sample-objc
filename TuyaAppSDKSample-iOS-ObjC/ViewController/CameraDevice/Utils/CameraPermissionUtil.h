@@ -17,4 +17,11 @@
 + (BOOL)microDenied;
 + (void)requestAccessForMicro:(ThingSuccessBOOL)result;
 
+// Camera is unauthorized
++ (BOOL)cameraNotDetermined;
+// Camera permission denied
++ (BOOL)cameraDenied;
+// Request Camera permission
++ (void)requestAccessForCamera:(ThingSuccessBOOL)result;
+
 @end

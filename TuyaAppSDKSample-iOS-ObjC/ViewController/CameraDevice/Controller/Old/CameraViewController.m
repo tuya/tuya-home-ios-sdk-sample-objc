@@ -635,7 +635,7 @@
                  },
              @{
                  @"image": @"ty_camera_cloud_icon",
-                 @"title": NSLocalizedStringFromTable(@"ipc_panel_button_cstorage", @"IPCLocalizable", @""),
+                 @"title": NSLocalizedStringFromTable(@"ipc_panel_button_storage", @"IPCLocalizable", @""),
                  @"identifier": kControlCloud
                  },
              @{

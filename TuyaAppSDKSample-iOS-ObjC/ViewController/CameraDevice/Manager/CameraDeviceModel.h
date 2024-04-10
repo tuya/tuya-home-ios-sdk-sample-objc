@@ -25,6 +25,13 @@ typedef enum : NSUInteger {
     CameraDevicePreviewFailed
 } CameraDevicePreviewState;
 
+typedef enum : NSUInteger {
+    CameraDeviceTaskStateNone = 0,
+    CameraDeviceTaskStateExecuting,
+    CameraDeviceTaskStateCompleted,
+    CameraDeviceTaskStateFailed
+} CameraDeviceTaskState;
+
 
 typedef enum : NSUInteger {
     CameraDevicePlaybackNone = 0,
@@ -41,7 +48,12 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) CameraDeviceConnectState connectState;
 @property (nonatomic, assign) CameraDevicePreviewState previewState;
 @property (nonatomic, assign) CameraDevicePlaybackState playbackState;
+@property (nonatomic, assign) CameraDeviceTaskState videoTalkState;
+@property (nonatomic, assign) CameraDeviceTaskState videoCaptureState;
+@property (nonatomic, assign) CameraDeviceTaskState audioCaptureState;
+
 @property (nonatomic, assign, getter=isPlaybackPaused) BOOL playbackPaused;
+@property (nonatomic, assign) BOOL videoTalkPaused;
 
 @property (nonatomic, assign, readonly) BOOL isOnPreviewMode;
 

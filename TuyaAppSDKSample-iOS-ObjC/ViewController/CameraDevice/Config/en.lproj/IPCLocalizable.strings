@@ -772,13 +772,14 @@
 "ipc_multi_view_photo_saved" = "Screenshot already saved to system album.";
 "ipc_multi_view_video_saved" = "Video already saved to system album.";
 "ipc_panel_button_calendar" = "Date";
-"ipc_panel_button_cstorage" = "Cloud Storage";
-"ipc_panel_button_cstorage_debug" = "Cloud Storage Debugger";
+"ipc_panel_button_storage" = "Cloud Storage";
+"ipc_panel_button_storage_debug" = "Cloud Storage Debugger";
 "ipc_panel_button_message" = "Message";
 "ipc_panel_button_record" = "Record";
 "ipc_panel_button_screenshot" = "Take Photo";
 "ipc_panel_button_settings" = "Settings";
 "ipc_panel_button_speak" = "Speak";
+"ipc_panel_button_video_talk" = "Video talk";
 "ipc_pir_switch" = "PIR";
 "ipc_playback_no_records_today" = "No playback videos for the current day";
 "ipc_sdcard_capacity" = "Storage Capacity";
@@ -825,6 +826,8 @@
 "enable mute failed" = "enable mute failed";
 "record failed" = "record failed";
 "Photo library permission denied" = "Photo library permission denied";
+"Camera permission denied" = "Camera permission denied";
+"call_call_finish" = "call finished";
 "Video failed save to photo library" = "Video failed save to photo library";
 "Normal" = "Normal";
 "Motion" = "Motion";
@@ -844,6 +847,7 @@
 "Dollbell is ringing" = "Dollbell is ringing";
 "Answer" = "Answer";
 "Hangup" = "Hangup";
+"Refuse" = "Refuse";
 "DollBell answered success" = "DollBell answered success";
 "Dollbell is ringing timeOut" = "Dollbell is ringing timeOut";
 "The device has canceled doorbell ringing" = "The device has canceled doorbell ringing";
@@ -894,6 +898,7 @@
 "ipc_playback_delete_fail" = "Playback delete fail";
 "ipc_playback_delete_success" = "Playback delete success";
 "ipc_playback_downloading" = "Whether to break playback downloading?";
-
+"ipc_detect_image_downloading_text" = "The image is downloading...";
+"ipc_split_video_unsupported" = "video splitting is unsupported";
 
 

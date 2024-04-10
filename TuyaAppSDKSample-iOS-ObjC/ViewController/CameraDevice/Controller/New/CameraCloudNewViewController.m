@@ -214,7 +214,7 @@
 
 
 - (NSString *)titleForCenterItem {
-    return NSLocalizedStringFromTable(@"ipc_panel_button_cstorage", @"IPCLocalizable", @"");
+    return NSLocalizedStringFromTable(@"ipc_panel_button_storage", @"IPCLocalizable", @"");
 }
 
 - (void)viewWillAppear:(BOOL)animated {

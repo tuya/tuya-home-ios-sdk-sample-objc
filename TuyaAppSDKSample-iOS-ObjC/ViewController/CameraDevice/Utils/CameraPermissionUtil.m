@@ -71,4 +71,33 @@
     }];
 }
 
+#pragma mark - Camera Permission
+
+// Camera is unauthorized
++ (BOOL)cameraNotDetermined {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if(authStatus == AVAuthorizationStatusNotDetermined) {
+        return YES;
+    }
+    return NO;
+}
+
+// Camera permission denied
++ (BOOL)cameraDenied {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if(authStatus == AVAuthorizationStatusDenied) {
+        return YES;
+    }
+    return NO;
+}
+
+// Request Camera permission
++ (void)requestAccessForCamera:(ThingSuccessBOOL)result {
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (result) result(granted);
+        });
+    }];
+}
+
 @end

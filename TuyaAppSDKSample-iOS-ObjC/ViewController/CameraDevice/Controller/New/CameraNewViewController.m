@@ -20,21 +20,38 @@
 #import "CameraCruiseView.h"
 #import "CameraViewConstants.h"
 #import "UIView+CameraAdditions.h"
+#import "UIButton+Extensions.h"
+#import "UIViewController+InterfaceOrientations.h"
 
 #import "CameraDeviceManager.h"
 #import "CameraLoadingButton.h"
 
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 
-#import <ThingCloudStorageDebugger/ThingCloudStorageDebugger.h>
-
 #import <YYModel/YYModel.h>
 
-#define VideoViewWidth [UIScreen mainScreen].bounds.size.width
-#define VideoViewHeight ([UIScreen mainScreen].bounds.size.width / 16 * 9)
+#import "CameraControlButtonItem.h"
+
+#import "DemoSplitVideoViewManager.h"
+
+#import "DemoCallManager.h"
+#if __has_include(<ThingCloudStorageDebugger/ThingCloudStorageDebugger.h>)
+#import <ThingCloudStorageDebugger/ThingCloudStorageDebugger.h>
+#define kControlCloudDebugEnable 1
+#else
+#define kControlCloudDebugEnable 0
+#endif
+
+#define VideoViewWidth (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
+#define VideoViewHeight (VideoViewWidth / 16 * 9)
+
+#define FullScreenVideoViewWidth (MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
+#define FullScreenVideoViewHeight ((FullScreenVideoViewWidth) / 16 * 9)
+
 #define BottomSwitchViewHeight 44.0
 
 #define kControlTalk        @"talk"
+#define kControlVideoTalk   @"videoTalk"
 #define kControlRecord      @"record"
 #define kControlPhoto       @"photo"
 #define kControlPlayback    @"playback"
@@ -62,6 +79,12 @@
 
 @property (nonatomic, strong) CameraLoadingButton *hdButton;
 
+@property (nonatomic, strong) CameraLoadingButton *toolbarFoldingButton;
+@property (nonatomic, strong) CameraLoadingButton *fullScreenButton;
+@property (nonatomic, strong) CameraLoadingButton *backPageButton;
+
+@property (nonatomic, strong) UIView *operationToolbar;
+
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
 @property (nonatomic, strong) UILabel *stateLabel;
@@ -71,6 +94,11 @@
 @property (nonatomic, assign) BOOL needsReconnect;
 
 @property (nonatomic, assign) NSInteger currentPage;
+
+@property (nonatomic, strong) DemoSplitVideoViewManager *splitVideoViewManager;
+@property (nonatomic, strong) CameraSplitVideoContainerView *splitVideoView;
+
+@property (nonatomic, assign, getter=isFullScreen) BOOL fullScreen;
 
 @end
 
@@ -86,6 +114,8 @@
     if (self = [super initWithDeviceId:devId]) {
         _needsReconnect = YES;
         [self setCameraDeviceOutLineFeatures];
+        _splitVideoViewManager = [[DemoSplitVideoViewManager alloc] initWithCameraDevice:self.cameraDevice];
+        _splitVideoView = _splitVideoViewManager.splitVideoView;
     }
     return self;
 }
@@ -104,6 +134,19 @@
     self.title = self.cameraDevice.deviceModel.name;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.videoContainer];
+    if (self.splitVideoView) {
+        [self.videoContainer addSubview:self.splitVideoView];
+        self.splitVideoView.frame = self.videoContainer.bounds;
+    } else {
+        [self.videoContainer addSubview:self.videoView];
+        self.videoView.frame = self.videoContainer.bounds;
+    }
+    [self.view addSubview:self.operationToolbar];
+    [self.operationToolbar addSubview:self.soundButton];
+    [self.operationToolbar addSubview:self.hdButton];
+    [self.operationToolbar addSubview:self.toolbarFoldingButton];
+    [self.operationToolbar addSubview:self.fullScreenButton];
+
     [self.view addSubview:self.indicatorView];
     [self.view addSubview:self.stateLabel];
     [self.view addSubview:self.retryButton];
@@ -115,33 +158,62 @@
     [self.bodyScrollView addSubview:self.cruiseView];
     [self.bodyScrollView layoutIfNeeded];
     
-    [self.view addSubview:self.soundButton];
-    [self.view addSubview:self.hdButton];
+    [self.view addSubview:self.backPageButton];
     
     // Tips: Speak、Record、Take Photo、Sound、HD, these buttons can be available after received video data.
     // Playback、Cloud Storage、Message, these buttons can be available after camera is connected.
     [self.retryButton addTarget:self action:@selector(retryAction) forControlEvents:UIControlEventTouchUpInside];
     [self.soundButton addTarget:self action:@selector(soundActionClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.hdButton addTarget:self action:@selector(hdActionClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolbarFoldingButton addTarget:self action:@selector(toolbarFoldingButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.fullScreenButton addTarget:self action:@selector(fullScreenButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.backPageButton addTarget:self action:@selector(backPageButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self refreshControlViewDatas];
+    
+    [self reloadAllSubviewsLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self retryAction];
-    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
-        [self startPreview];
-    }
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = NO;
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    self.fullScreen = NO;
+    [self demo_rotateWindowIfNeed];
+    self.navigationController.navigationBar.hidden = self.fullScreen;
     [super viewWillDisappear:animated];
-    [self stopPreview];
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.prefersLargeTitles = YES;
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self retryAction];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self stopPreview];
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    if (self.isFullScreen) {
+        return UIInterfaceOrientationMaskLandscapeRight;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
 }
 
 - (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification {
@@ -158,6 +230,75 @@
     }
 }
 
+- (void)reloadAllSubviewsLayout {
+    self.toolbarFoldingButton.hidden = self.fullScreen;
+    self.bodyScrollView.hidden = self.fullScreen;
+    self.navigationController.navigationBar.hidden = self.fullScreen;
+    self.operationToolbar.hidden = self.fullScreen;
+
+    self.backPageButton.hidden = !self.fullScreen;
+    if (self.fullScreen) {
+        self.backPageButton.frame = CGRectMake(IsIphoneX ? 24 : 12, 10, 44, 44);
+        CGFloat videoContainerHeight = FullScreenVideoViewHeight;
+        self.videoContainer.frame = CGRectMake(0, 0, FullScreenVideoViewWidth, videoContainerHeight);
+        if (self.splitVideoView) {
+            self.splitVideoView.frame = self.videoContainer.bounds;
+        } else {
+            self.videoView.frame = self.videoContainer.bounds;
+        }
+        CGFloat videoContainerBottom = self.videoContainer.bottom;
+        CGFloat videoContainerWidth = self.videoContainer.width;
+
+        CGPoint indicatorViewCenter = self.videoContainer.center;
+        indicatorViewCenter.y -= 20;
+        self.indicatorView.center = indicatorViewCenter;
+                
+        self.stateLabel.frame = CGRectMake(0, self.indicatorView.bottom + 8, videoContainerWidth, 20);
+
+        self.retryButton.frame = CGRectMake(0, 0, videoContainerWidth, 40);
+        self.retryButton.center = self.videoContainer.center;
+               
+        self.operationToolbar.frame = CGRectMake(0, videoContainerBottom - 50, videoContainerWidth, 50);
+    } else {
+        CGFloat videoContainerHeight = VideoViewHeight;
+        if (YES == self.toolbarFoldingButton.selected) {
+            videoContainerHeight *= 2;
+        }
+        self.videoContainer.frame = CGRectMake(0, (IsIphoneX ? 88 : 64), VideoViewWidth, videoContainerHeight);
+        if (self.splitVideoView) {
+            self.splitVideoView.frame = self.videoContainer.bounds;
+        } else {
+            self.videoView.frame = self.videoContainer.bounds;
+        }
+        CGFloat videoContainerBottom = self.videoContainer.bottom;
+        CGFloat videoContainerWidth = self.videoContainer.width;
+
+        CGPoint indicatorViewCenter = self.videoContainer.center;
+        indicatorViewCenter.y -= 20;
+        self.indicatorView.center = indicatorViewCenter;
+                
+        self.stateLabel.frame = CGRectMake(0, self.indicatorView.bottom + 8, videoContainerWidth, 20);
+
+        self.retryButton.frame = CGRectMake(0, 0, videoContainerWidth, 40);
+        self.retryButton.center = self.videoContainer.center;
+               
+        
+        self.operationToolbar.frame = CGRectMake(0, videoContainerBottom - 50, videoContainerWidth, 50);
+
+        CGFloat bottomSwitchViewHeight = IsIphoneX ? IphoneXSafeBottomMargin + BottomSwitchViewHeight : BottomSwitchViewHeight;
+        CGFloat bodyScrollViewHeight = FullScreenVideoViewWidth - videoContainerBottom - bottomSwitchViewHeight;
+        self.bodyScrollView.frame = CGRectMake(0, videoContainerBottom, videoContainerWidth, bodyScrollViewHeight);
+        self.bodyScrollView.contentSize = CGSizeMake(videoContainerWidth * 4, bodyScrollViewHeight);
+        self.controlView.frame = self.bodyScrollView.bounds;
+        self.ptzControlView.frame = CGRectMake(videoContainerWidth, 0, videoContainerWidth, bodyScrollViewHeight);
+        self.cpView.frame = CGRectMake(videoContainerWidth * 2, 0, videoContainerWidth, bodyScrollViewHeight);
+        self.cruiseView.frame = CGRectMake(videoContainerWidth * 3, 0, videoContainerWidth, bodyScrollViewHeight);
+    }
+    if (self.splitVideoView) {
+        [self.splitVideoView setLandscape:self.fullScreen];
+    }
+}
+
 #pragma mark - Action
 
 - (void)settingAction {
@@ -171,11 +312,18 @@
     if (!self.cameraDevice.deviceModel.isOnline) {
         self.stateLabel.hidden = NO;
         self.stateLabel.text = NSLocalizedStringFromTable(@"title_device_offline", @"IPCLocalizable", @"");
+        [self enableAllOperationButtons:NO];
         return;
     }
-    [self connectCamera];
-    [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
-    self.retryButton.hidden = YES;
+    if (self.cameraDevice.cameraModel.connectState == CameraDeviceConnecting || self.cameraDevice.cameraModel.connectState == CameraDeviceConnected) {
+        [self startPreview];
+    } else {
+        [self connectCamera];
+    }
+    if (self.cameraDevice.cameraModel.previewState != CameraDevicePreviewing) {
+        [self showLoadingWithTitle:NSLocalizedStringFromTable(@"loading", @"IPCLocalizable", @"")];
+        self.retryButton.hidden = YES;
+    }
 }
 
 - (void)soundActionClicked:(CameraLoadingButton *)sender {
@@ -190,6 +338,31 @@
     ThingSmartCameraDefinition definition = !self.cameraDevice.cameraModel.isHD ? ThingSmartCameraDefinitionHigh : ThingSmartCameraDefinitionStandard;
     [self.cameraDevice setDefinition:definition];
 }
+
+- (void)toolbarFoldingButtonClicked:(CameraLoadingButton *)sender {
+    sender.selected = !sender.selected;
+    
+    if (self.splitVideoView) {
+        [self.splitVideoView setToolbarFolding:sender.selected];
+    }
+    self.controlView.isSmallSize = sender.selected;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self reloadAllSubviewsLayout];
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)fullScreenButtonClicked:(CameraLoadingButton *)sender {
+    self.fullScreen = !self.isFullScreen;
+    [self demo_rotateWindowIfNeed];
+    
+    [self reloadAllSubviewsLayout];
+}
+
+- (void)backPageButtonClicked:(CameraLoadingButton *)sender {
+    [self fullScreenButtonClicked:nil];
+}
+
 
 - (void)talkAction {
     if ([CameraPermissionUtil microNotDetermined]) {
@@ -248,14 +421,11 @@
 #pragma mark - Operation
 
 - (void)connectCamera {
-    [self.controlView disableAllControl];
+    [self enableAllOperationButtons:NO];
     [self.cameraDevice connectWithPlayMode:ThingSmartCameraPlayModePreview];
 }
 
 - (void)startPreview {
-    [self.videoContainer addSubview:self.videoView];
-    self.videoView.frame = self.videoContainer.bounds;
-    
     [self stopPlayback];
     [self.cameraDevice startPreview];
     [self enableMute:self.cameraDevice.cameraModel.mutedForPreview];
@@ -272,6 +442,24 @@
 
 - (void)stopPlayback {
     [self.cameraDevice stopPlayback];
+}
+
+- (void)startVideoCall {
+    if ([DemoCallManager.sharedInstance canStartCall]) {
+        __weak typeof(self) weak_self = self;
+        NSDictionary *extraMap = @{@"bizType" : @"screen_ipc",
+                                   @"category" : @"sp_dpsxj",
+                                   @"channelType" : @2};
+        [DemoCallManager.sharedInstance startCallWithTargetId:self.devId timeout:60 extra:extraMap success:^{
+            
+        } failure:^(NSError * _Nullable error) {
+            if (error.localizedDescription) {
+                [weak_self showErrorTip:error.localizedDescription];
+            }
+        }];
+    } else {
+
+    }
 }
 
 #pragma mark - Loading && Alert
@@ -312,6 +500,10 @@
         [self talkAction];
         return;
     }
+    if ([identifier isEqualToString:kControlVideoTalk]) {
+        [self startVideoCall];
+        return;
+    }
     if ([identifier isEqualToString:kControlPlayback]) {
         CameraPlaybackNewViewController *vc = [[CameraPlaybackNewViewController alloc] initWithDeviceId:self.devId];
         [self.navigationController pushViewController:vc animated:YES];
@@ -328,7 +520,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     if ([identifier isEqualToString:kControlCloudDebug]) {
+#if __has_include(<ThingCloudStorageDebugger/ThingCloudStorageDebugger.h>)
         [[ThingCloudStorageDebugger sharedInstance] startWithDeviceSpaceId:[Home getCurrentHome].homeId navigationController:self.navigationController];
+#endif
     }
     BOOL needPhotoPermission = [identifier isEqualToString:kControlPhoto] || [identifier isEqualToString:kControlRecord];
     if (needPhotoPermission) {
@@ -370,14 +564,17 @@
     [self.hdButton stopLoadingWithEnabled:YES];
     [self.soundButton stopLoadingWithEnabled:YES];
     
-    [self.controlView disableAllControl];
+    [self enableAllOperationButtons:NO];
     self.retryButton.hidden = NO;
 }
 
 - (void)cameraDidBeginPreview:(id<ThingSmartCameraType>)camera {
     [self.cameraDevice getHD];
-    [self.controlView enableAllControl];
+    [self enableAllOperationButtons:YES];
     [self stopLoading];
+    if (self.splitVideoView) {
+        [self.splitVideoView setShowLocalizer:YES];
+    }
 }
 
 - (void)cameraDidStopPreview:(id<ThingSmartCameraType>)camera {
@@ -423,7 +620,7 @@
     if (errStepCode == Thing_ERROR_CONNECT_FAILED || errStepCode == Thing_ERROR_CONNECT_DISCONNECT) {
         [self stopLoading];
         self.retryButton.hidden = NO;
-        [self.controlView disableAllControl];
+        [self enableAllOperationButtons:NO];
     }
     else if (errStepCode == Thing_ERROR_START_PREVIEW_FAILED) {
         [self stopLoading];
@@ -472,6 +669,37 @@
     [self.cameraDevice setOutOffBoundsFeatures:@[outlineProperty]];
 }
 
+- (void)refreshControlViewDatas {
+    __weak typeof(self) weak_self = self;
+    [DemoCallManager.sharedInstance fetchDeviceCallAbilityByDevId:self.devId completion:^(BOOL result, NSError * _Nullable error) {
+        if (result == YES) {
+            NSMutableArray<NSDictionary *> *featureDatas = [NSMutableArray arrayWithArray:[weak_self controlDatas]];
+            for (NSArray *subFeatureDatas in featureDatas) {
+                for (CameraControlButtonItem *buttonItem in subFeatureDatas) {
+                    if ([buttonItem.identifier isEqualToString:kControlVideoTalk]) {
+                        buttonItem.hidden = NO;
+                        break;
+                    }
+                }
+            }
+            weak_self.controlView.buttonItems = featureDatas.copy;
+        }
+    }];
+}
+
+- (void)enableAllOperationButtons:(BOOL)enabled {
+    if (enabled) {
+        [self.controlView enableAllControl];
+    } else {
+        [self.controlView disableAllControl];
+    }
+    [self enableToolbarButtons:enabled];
+}
+
+- (void)enableToolbarButtons:(BOOL)enabled {
+    [self.operationToolbar.subviews setValue:@(enabled) forKeyPath:@"enabled"];
+}
+
 #pragma mark - Accessor
 
 - (UIView *)videoContainer {
@@ -483,44 +711,48 @@
 }
 
 - (NSArray *)controlDatas {
-    NSMutableArray *featureDatas = [NSMutableArray array];
-    NSArray *basicFeatureDatas = @[@{
-        @"image": @"ty_camera_mic_icon",
-        @"title": NSLocalizedStringFromTable(@"ipc_panel_button_speak", @"IPCLocalizable", @""),
-        @"identifier": kControlTalk
-        },
-    @{
-        @"image": @"ty_camera_rec_icon",
-        @"title": NSLocalizedStringFromTable(@"ipc_panel_button_record", @"IPCLocalizable", @""),
-        @"identifier": kControlRecord
-        },
-    @{
-        @"image": @"ty_camera_photo_icon",
-        @"title": NSLocalizedStringFromTable(@"ipc_panel_button_screenshot", @"IPCLocalizable", @""),
-        @"identifier": kControlPhoto
-        },
-    @{
-        @"image": @"ty_camera_playback_icon",
-        @"title": NSLocalizedStringFromTable(@"pps_flashback", @"IPCLocalizable", @""),
-        @"identifier": kControlPlayback
+    NSArray *localFeatureDatas = [self localConfigToolbarItems];
+    if (!localFeatureDatas) {
+        return nil;
+    }
+    NSMutableArray *featureDatas = [NSMutableArray arrayWithArray:localFeatureDatas];
+    if ([ThingSmartCloudManager isSupportCloudStorage:self.devId] ) {
+        for (NSArray *subFeatureDatas in featureDatas) {
+            for (CameraControlButtonItem *buttonItem in subFeatureDatas) {
+                if ([buttonItem.identifier isEqualToString:kControlCloud]) {
+                    buttonItem.hidden = NO;
+                }
+                if ([buttonItem.identifier isEqualToString:kControlCloudDebug]) {
+                    buttonItem.hidden = kControlCloudDebugEnable ? NO : YES;
+                }
+            }
         }
-    ];
-    [featureDatas addObjectsFromArray:basicFeatureDatas];
-    if ([ThingSmartCloudManager isSupportCloudStorage:self.devId]) {
-        [featureDatas addObject:@{
-            @"image": @"ty_camera_cloud_icon",
-            @"title": NSLocalizedStringFromTable(@"ipc_panel_button_cstorage", @"IPCLocalizable", @""),
-            @"identifier": kControlCloud
-        }];
     } else {
         [self showTip:NSLocalizedStringFromTable(@"Cloud Stroage is unsupported", @"IPCLocalizable", @"")];
     }
-    [featureDatas addObject:@{
-        @"image": @"ty_camera_message",
-        @"title": NSLocalizedStringFromTable(@"ipc_panel_button_message", @"IPCLocalizable", @""),
-        @"identifier": kControlMessage
-    }];
     return featureDatas.copy;
+}
+
+- (NSArray *)localConfigToolbarItems {
+    NSString *configFilePath = [NSBundle.mainBundle pathForResource:@"ipc_preview_toolbar_items" ofType:@"json"];
+    NSError *error = nil;
+    NSString *jsonString = [NSString stringWithContentsOfFile:configFilePath encoding:NSUTF8StringEncoding error:&error];
+    if (error) {
+        return nil;
+    }
+    NSData *jsonData = [jsonString dataUsingEncoding: NSUTF8StringEncoding];
+    if (jsonData) {
+        NSArray *parentArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:NULL];
+        NSMutableArray *tempLocalConfigItems = NSMutableArray.array;
+        for (NSArray *sonArray in parentArray) {
+            NSArray *buttonItems = [NSArray yy_modelArrayWithClass:CameraControlButtonItem.class json:sonArray];
+            [tempLocalConfigItems addObject:buttonItems];
+        }
+        if (tempLocalConfigItems.count) {
+            return tempLocalConfigItems.copy;
+        }
+    }
+    return nil;
 }
 
 - (CameraBottomSwitchView *)bottomSwitchView {
@@ -545,6 +777,9 @@
         _bodyScrollView.delegate = self;
         _bodyScrollView.showsVerticalScrollIndicator = NO;
         _bodyScrollView.showsHorizontalScrollIndicator = NO;
+        if (@available(iOS 11.0, *)) {
+            _bodyScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
     }
     return _bodyScrollView;
 }
@@ -555,7 +790,7 @@
         CGFloat bottomSwitchViewHeight = IsIphoneX ? IphoneXSafeBottomMargin + BottomSwitchViewHeight : BottomSwitchViewHeight;
         CGFloat height = UIScreen.mainScreen.bounds.size.height - top - bottomSwitchViewHeight;
         _controlView = [[CameraControlNewView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)];
-        _controlView.sourceData = [self controlDatas];
+        _controlView.buttonItems = [self controlDatas];
         _controlView.delegate = self;
     }
     return _controlView;
@@ -595,24 +830,70 @@
     return _cruiseView;
 }
 
+- (UIView *)operationToolbar {
+    if (!_operationToolbar) {
+        _operationToolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.videoContainer.bottom - 50, self.videoContainer.width, 50)];
+        _operationToolbar.backgroundColor = UIColor.clearColor;
+    }
+    return _operationToolbar;
+}
+
 - (CameraLoadingButton *)soundButton {
     if (!_soundButton) {
         _soundButton = [CameraLoadingButton buttonWithType:UIButtonTypeCustom];
-        _soundButton.frame = CGRectMake(8, APP_TOP_BAR_HEIGHT + VideoViewHeight - 50, 44, 44);
+        _soundButton.frame = CGRectMake(8, 3, 44, 44);
         [_soundButton setImage:[UIImage imageNamed:@"ty_camera_soundOff_icon"] forState:UIControlStateNormal];
         [_soundButton setImage:[UIImage imageNamed:@"ty_camera_soundOn_icon"] forState:UIControlStateSelected];
     }
     return _soundButton;
 }
 
-- (UIButton *)hdButton {
+- (CameraLoadingButton *)hdButton {
     if (!_hdButton) {
         _hdButton = [CameraLoadingButton buttonWithType:UIButtonTypeCustom];
-        _hdButton.frame = CGRectMake(60, APP_TOP_BAR_HEIGHT + VideoViewHeight - 50, 44, 44);
+        _hdButton.frame = CGRectMake(60, 3, 44, 44);
         [_hdButton setImage:[UIImage imageNamed:@"ty_camera_control_sd_normal"] forState:UIControlStateNormal];
         [_hdButton setImage:[UIImage imageNamed:@"ty_camera_control_hd_normal"] forState:UIControlStateSelected];
     }
     return _hdButton;
+}
+
+- (CameraLoadingButton *)toolbarFoldingButton {
+    if (!_toolbarFoldingButton) {
+        _toolbarFoldingButton = [CameraLoadingButton buttonWithType:UIButtonTypeCustom];
+        _toolbarFoldingButton.frame = CGRectMake(self.videoContainer.width - 44 - 8, 3, 44, 44);
+        [_toolbarFoldingButton demo_setBackgroundColor:[UIColor.blackColor colorWithAlphaComponent:0.3] forState:UIControlStateNormal];
+        [_toolbarFoldingButton setImage:[UIImage imageNamed:@"demo_camera_toolbar_fold"] forState:UIControlStateNormal];
+        [_toolbarFoldingButton setImage:[UIImage imageNamed:@"demo_camera_toolbar_unfold"] forState:UIControlStateSelected];
+        _toolbarFoldingButton.layer.cornerRadius = 6;
+        _toolbarFoldingButton.clipsToBounds = YES;
+    }
+    return _toolbarFoldingButton;
+}
+
+- (CameraLoadingButton *)fullScreenButton {
+    if (!_fullScreenButton) {
+        _fullScreenButton = [CameraLoadingButton buttonWithType:UIButtonTypeCustom];
+        _fullScreenButton.frame = CGRectMake(self.toolbarFoldingButton.left - 44 - 8, self.toolbarFoldingButton.top, 44, 44);
+        [_fullScreenButton demo_setBackgroundColor:[UIColor.blackColor colorWithAlphaComponent:0.3] forState:UIControlStateNormal];
+        [_fullScreenButton setImage:[UIImage imageNamed:@"demo_camera_control_fullscreen"] forState:UIControlStateNormal];
+        _fullScreenButton.layer.cornerRadius = 6;
+        _fullScreenButton.clipsToBounds = YES;
+    }
+    return _fullScreenButton;
+}
+
+- (CameraLoadingButton *)backPageButton {
+    if (!_backPageButton) {
+        _backPageButton = [CameraLoadingButton buttonWithType:UIButtonTypeCustom];
+        _backPageButton.frame = CGRectMake(IsIphoneX ? 24 : 12, 10, 44, 44);
+        [_backPageButton demo_setBackgroundColor:[UIColor.blackColor colorWithAlphaComponent:0.3] forState:UIControlStateNormal];
+        [_backPageButton setImage:[UIImage imageNamed:@"demo_camera_page_back"] forState:UIControlStateNormal];
+        _backPageButton.layer.cornerRadius = 22;
+        _backPageButton.clipsToBounds = YES;
+        _backPageButton.hidden = YES;
+    }
+    return _backPageButton;
 }
 
 - (UIActivityIndicatorView *)indicatorView {

@@ -6,6 +6,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CameraControlButtonItemProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class CameraControlNewView;
@@ -18,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CameraControlNewView : UIView
 
-@property (nonatomic, strong) NSArray *sourceData;
+@property (nonatomic, assign) BOOL isSmallSize;
+
+@property (nonatomic, copy) NSArray<NSArray<id<CameraControlButtonItem>>*> *buttonItems;
 
 @property (nonatomic, weak) id<CameraControlNewViewDelegate> delegate;
 

@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) BOOL disabled;
 
+@property (nonatomic, assign) CGFloat imageToTitleMargin;
+
 - (void)addTarget:(id)target action:(SEL)action;
 
 @end
