@@ -8,6 +8,8 @@
 #import <ThingEncryptImage/ThingEncryptImage.h>
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 #import "UIView+CameraAdditions.h"
+#import "CameraPermissionUtil.h"
+#import "DemoPhotoLibraryUtil.h"
 
 @interface MessageTypeViewCollectionViewCell : UICollectionViewCell
 
@@ -145,6 +147,29 @@
     return 50;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ThingSmartCameraMessageModel *messageModel = [self.messageModelList objectAtIndex:indexPath.row];
+    NSArray *components = [messageModel.attachPic componentsSeparatedByString:@"@"];
+    NSString *imageUrl = messageModel.attachPic;
+    NSString *encryptKey = nil;
+    if (components.count == 2) {
+        imageUrl = components.firstObject;
+        encryptKey = components.lastObject;
+    }
+    __weak typeof(self) weakSelf = self;
+    [self showLoadingText:NSLocalizedStringFromTable(@"ipc_detect_image_downloading_text", @"IPCLocalizable", @"")];
+    [ThingEncryptImageDownloader.sharedManager downloadEncryptImageWithPath:imageUrl encryptKey:encryptKey completed:^(UIImage * _Nullable image, NSURL * _Nullable url, ThingEncryptWebImageFromType from, ThingEncryptWebImageStage stage, NSError * _Nullable error) {
+        if (image) {
+            [weakSelf saveImageToPhotoLibrary:image];
+            [weakSelf showSuccessTip:NSLocalizedStringFromTable(@"ipc_cloud_download_complete", @"IPCLocalizable", @"")];
+        } else if (error) {
+            [weakSelf showErrorTip:NSLocalizedStringFromTable(@"ipc_cloud_download_failed", @"IPCLocalizable", @"")];
+        }
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }];
+}
+
+
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -212,6 +237,40 @@
         [self.view addSubview:_messageTypeView];
     }
     return _messageTypeView;
+}
+
+- (void)saveImageToPhotoLibrary:(UIImage *)image {
+    if ([CameraPermissionUtil isPhotoLibraryNotDetermined]) {
+        [CameraPermissionUtil requestPhotoPermission:^(BOOL result) {
+            if (result) {
+               BOOL retCode = [DemoPhotoLibraryUtil saveImageToPhotoLibrary:image];
+                if (retCode != 0) {
+                    
+                }
+            }
+        }];
+    }else if ([CameraPermissionUtil isPhotoLibraryDenied]) {
+        [self showErrorTip:NSLocalizedStringFromTable(@"Photo library permission denied", @"IPCLocalizable", @"")];
+    }else {
+        BOOL retCode = [DemoPhotoLibraryUtil saveImageToPhotoLibrary:image];
+        if (retCode != 0) {
+            
+        }
+    }
+}
+
+#pragma mark - HUD
+
+- (void)showSuccessTip:(NSString *)tip {
+    [SVProgressHUD showSuccessWithStatus:tip];
+}
+
+- (void)showErrorTip:(NSString *)tip {
+    [SVProgressHUD showErrorWithStatus:tip];
+}
+
+- (void)showLoadingText:(NSString *)text {
+    [SVProgressHUD setStatus:text];
 }
 
 @end

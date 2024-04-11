@@ -11,6 +11,8 @@
 
 #import <YYModel/YYModel.h>
 
+#import "CameraDeviceTask.h"
+
 @interface NSDictionary (ConvertedJsonString)
 
 @end
@@ -43,7 +45,10 @@
 
 @end
 
-@interface CameraDevice ()<ThingSmartCameraDelegate>
+@interface CameraDevice ()<ThingSmartCameraDelegate> {
+    dispatch_semaphore_t _deviceTasksLock;
+    BOOL _isOnCallState;
+}
 
 @property (nonatomic, strong) id<ThingSmartCameraType> camera;
 
@@ -59,6 +64,9 @@
 @property (nonatomic, assign) BOOL innerObjectOutlineEnabled;
 @property (nonatomic, assign) BOOL innerOutOffBoundsEnabled;
 
+@property (nonatomic, strong) NSMutableArray<CameraDeviceTask *> *deviceTasks;
+@property (nonatomic, strong) CameraDeviceTask *runningTask;
+
 @end
 
 @implementation CameraDevice
@@ -66,9 +74,18 @@
 - (instancetype)initWithDeviceId:(NSString *)devId {
     self = [super initWithDeviceId:devId];
     if (self) {
+        _deviceTasksLock = dispatch_semaphore_create(1);
+        _deviceTasks = NSMutableArray.array;
+        
         _camera = [ThingSmartCameraFactory cameraWithP2PType:@(self.deviceModel.p2pType) deviceId:self.deviceModel.devId delegate:self];
+        NSLog(@"[test]-%s",__func__);
         _cameraModel = [[CameraDeviceModel alloc] init];
         _innerDelegates = [NSHashTable weakObjectsHashTable];
+        
+        NSDictionary *features = [self.deviceModel cameraDeviceFeatures];
+        if (features && [_camera respondsToSelector:@selector(setDeviceFeatures:)]) {
+            [_camera setDeviceFeatures:features];
+        }
         
         ThingSmartCameraAbility *cameraAbility = [ThingSmartCameraAbility cameraAbilityWithDeviceModel:self.deviceModel];
         [_cameraModel resetCameraAbility:cameraAbility];
@@ -78,8 +95,13 @@
 
 - (void)dealloc {
     NSLog(@"%s", __func__);
+    [self clearAllTasks];
     [self.camera destory];
     [self.camera disConnect];
+}
+
+- (BOOL)isSupportedVideoSplitting {
+    return _camera.advancedConfig.isSupportedVideoSplitting;
 }
 
 - (UIView<ThingSmartVideoViewType> *)videoView {
@@ -111,6 +133,14 @@
     [self.camera uninstallVideoRenderView:nil];
 }
 
+- (void)bindLocalVideoView:(UIView<ThingSmartVideoViewType> *)videoView {
+    [self.camera bindLocalVideoView:videoView];
+}
+
+- (void)unbindLocalVideoView:(UIView<ThingSmartVideoViewType> *)videoView {
+    [self.camera unbindLocalVideoView:videoView];
+}
+
 - (void)connect {
     [self connectWithPlayMode:ThingSmartCameraPlayModePlayback];
 }
@@ -134,6 +164,8 @@
     [self.camera disConnect];
     self.cameraModel.connectState = CameraDeviceDisconnected;
     self.cameraModel.previewState = CameraDevicePreviewNone;
+    self.cameraModel.videoTalkState = CameraDeviceTaskStateNone;
+    self.cameraModel.videoTalkPaused = NO;
     self.cameraModel.muteLoading = NO;
 }
 
@@ -155,10 +187,23 @@
 }
 
 - (void)stopPreview {
+    if (_isOnCallState == YES) {
+        return;
+    }
     [self stopTalk];
     [self stopRecord];
     
     [self.camera stopPreview];
+    self.cameraModel.previewState = CameraDevicePreviewNone;
+}
+
+
+- (void)enterCallState {
+    _isOnCallState = YES;
+}
+
+- (void)leaveCallState {
+    _isOnCallState = NO;
 }
 
 - (void)queryRecordDaysWithYear:(NSUInteger)year month:(NSUInteger)month {
@@ -280,6 +325,93 @@
     }
 }
 
+- (int)startVideoTalk {
+    if (self.cameraModel.videoTalkState == CameraDeviceTaskStateExecuting || self.cameraModel.videoTalkState == CameraDeviceTaskStateCompleted || (self.cameraModel.connectState != CameraDeviceConnected)) {
+        return -1;
+    }
+    self.cameraModel.videoTalkState = CameraDeviceTaskStateExecuting;
+    return [self.camera startVideoTalk];
+}
+
+/**
+    stop video talk
+ */
+-(int)stopVideoTalk {
+    if (self.cameraModel.videoTalkState == CameraDeviceTaskStateExecuting || self.cameraModel.videoTalkState == CameraDeviceTaskStateCompleted) {
+        return [self.camera stopVideoTalk];
+    }
+    return -1;
+}
+
+/**
+    pause send video talk
+ */
+- (int)pauseVideoTalk {
+    if ((self.cameraModel.connectState == CameraDeviceConnected) && self.cameraModel.videoTalkState == CameraDeviceTaskStateCompleted && !self.cameraModel.videoTalkPaused) {
+        [self.camera pauseVideoTalk];
+    }
+    return -1;
+}
+
+/**
+    resume send video talk
+ */
+- (int)resumeVideoTalk {
+    if ((self.cameraModel.connectState == CameraDeviceConnected) && self.cameraModel.videoTalkState == CameraDeviceTaskStateCompleted && self.cameraModel.videoTalkPaused) {
+        [self.camera resumeVideoTalk];
+    }
+    return -1;
+}
+
+
+-(int)startLocalVideoCapture {
+    if (self.cameraModel.videoCaptureState == CameraDeviceTaskStateExecuting || self.cameraModel.videoCaptureState == CameraDeviceTaskStateCompleted) {
+        return 0;
+    }
+    self.cameraModel.videoCaptureState = CameraDeviceTaskStateExecuting;
+    int retCode = [self.camera startLocalVideoCaptureWithVideoInfo:nil];
+    self.cameraModel.videoCaptureState = CameraDeviceTaskStateCompleted;
+    if (retCode < 0) {
+        self.cameraModel.videoCaptureState = CameraDeviceTaskStateFailed;
+    }
+    return retCode;
+}
+
+/**
+    switch camera
+ */
+-(int)switchLocalCameraPosition {
+    if (self.cameraModel.videoCaptureState == CameraDeviceTaskStateExecuting || self.cameraModel.videoCaptureState == CameraDeviceTaskStateCompleted) {
+        int retCode = [self.camera switchLocalCameraPosition];
+        return retCode;
+    }
+    return -1;
+}
+
+/**
+    close the video capture.
+ */
+-(int)stopLocalVideoCapture  {
+    int retCode = [self.camera stopLocalVideoCapture];
+    self.cameraModel.videoCaptureState = CameraDeviceTaskStateNone;
+    return retCode;
+}
+
+/**
+ start audio record
+ */
+-(int)startAudioRecord {
+    return [self.camera startAudioRecordWithAudioInfo:nil];
+}
+
+/**
+ start audio record
+ */
+-(int)stopAudioRecord {
+    return [self.camera stopAudioRecord];
+}
+
+
 - (void)startRecord {
     if (self.cameraModel.isRecording) {
         return;
@@ -364,6 +496,11 @@
 - (void)cameraDidConnected:(id<ThingSmartCameraType>)camera {
     [self.camera enterPlayback];
     
+    NSDictionary *features = [self.deviceModel cameraDeviceFeatures];
+    if (features && [camera respondsToSelector:@selector(setDeviceFeatures:)]) {
+        [camera setDeviceFeatures:features];
+    }
+    
     self.cameraModel.connectState = CameraDeviceConnected;
         
     NSArray<id<ThingSmartCameraDelegate>> *delegates = self.innerDelegates.allObjects;
@@ -395,6 +532,8 @@
     }
     self.cameraModel.previewState = CameraDevicePreviewNone;
     self.cameraModel.playbackState = CameraDevicePlaybackNone;
+    self.cameraModel.videoTalkState = CameraDeviceTaskStateNone;
+    self.cameraModel.videoTalkPaused = NO;
     self.cameraModel.playbackPaused = NO;
     self.cameraModel.downloading = NO;
 
@@ -952,6 +1091,23 @@
     }];
 }
 
+- (void)camera:(id<ThingSmartCameraType>)camera resolutionDidChangeWithVideoExtInfo:(id<ThingSmartVideoExtInfo>)videoExtInfo {
+    NSArray<id<ThingSmartCameraDelegate>> *delegates = self.innerDelegates.allObjects;
+    if (videoExtInfo.videoIndex == -1) {
+        [delegates enumerateObjectsUsingBlock:^(id<ThingSmartCameraDelegate>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj respondsToSelector:@selector(camera:resolutionDidChangeWidth:height:)]) {
+                [obj camera:camera resolutionDidChangeWidth:videoExtInfo.frameSize.width height:videoExtInfo.frameSize.height];
+            }
+        }];
+    } else {
+        [delegates enumerateObjectsUsingBlock:^(id<ThingSmartCameraDelegate>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj respondsToSelector:@selector(camera:resolutionDidChangeWithVideoExtInfo:)]) {
+                [obj camera:camera resolutionDidChangeWithVideoExtInfo:videoExtInfo];
+            }
+        }];
+    }
+}
+
 /**
  [^en]
  if 'isRecvFrame' is true, and p2pType is "1", the video data will not decode in the SDK, and could get the orginal video frame data through this method.
@@ -1027,6 +1183,31 @@
     }];
 }
 
+- (void)cameraDidStartVideoTalk:(id<ThingSmartCameraType>)camera {
+    self.cameraModel.videoTalkState = CameraDeviceTaskStateCompleted;
+    self.cameraModel.videoTalkPaused = NO;
+}
+
+- (void)cameraDidStopVideoTalk:(id<ThingSmartCameraType>)camera {
+    self.cameraModel.videoTalkState = CameraDeviceTaskStateNone;
+    self.cameraModel.videoTalkPaused = NO;
+}
+
+- (void)cameraDidPauseVideoTalk:(id<ThingSmartCameraType>)camera {
+    self.cameraModel.videoTalkPaused = YES;
+}
+
+- (void)cameraDidResumeVideoTalk:(id<ThingSmartCameraType>)camera {
+    self.cameraModel.videoTalkPaused = NO;
+}
+
+- (void)camera:(id<ThingSmartCameraType>)camera didReceiveLocalVideoFirstFrame:(UIImage *)image localVideoInfo:(id<ThingSmartLocalVideoInfoType>)localVideoInfo {
+    NSLog(@"%s-size(%.fx%.f)",__func__,localVideoInfo.width,localVideoInfo.height);
+}
+
+- (void)camera:(id<ThingSmartCameraType>)camera didReceiveLocalVideoSampleBuffer:(CMSampleBufferRef)sampleBuffer localVideoInfo:(id<ThingSmartLocalVideoInfoType>)localVideoInfo {
+}
+
 #pragma mark - Util
 
 - (void)enableMute:(BOOL)muted {
@@ -1039,6 +1220,72 @@
     ThingSmartCameraPlayMode playMode = isOnPreviewMode ? ThingSmartCameraPlayModePreview : ThingSmartCameraPlayModePlayback;
     [self.camera enableMute:muted forPlayMode:playMode];
 }
+  
+
+#pragma mark - Task
+
+- (void)appendTask:(CameraDeviceTask *)task {
+    [self addTask:task];
+    [self syncRunTask];
+}
+
+- (void)clearAllTasks {
+    dispatch_semaphore_wait(_deviceTasksLock, DISPATCH_TIME_FOREVER);
+    [self.deviceTasks removeAllObjects];
+    self.runningTask = nil;
+    dispatch_semaphore_signal(_deviceTasksLock);
+}
+
+- (void)addTask:(CameraDeviceTask *)task {
+    dispatch_semaphore_wait(_deviceTasksLock, DISPATCH_TIME_FOREVER);
+    [self.deviceTasks addObject:task];
+    dispatch_semaphore_signal(_deviceTasksLock);
+}
+
+- (void)removeTask:(CameraDeviceTask *)task {
+    dispatch_semaphore_wait(_deviceTasksLock, DISPATCH_TIME_FOREVER);
+    [self.deviceTasks removeObject:task];
+    dispatch_semaphore_signal(_deviceTasksLock);
+}
+
+- (CameraDeviceTask *)nextDeviceTask {
+    CameraDeviceTask *deviceTask = nil;
+    dispatch_semaphore_wait(_deviceTasksLock, DISPATCH_TIME_FOREVER);
+    deviceTask = self.deviceTasks.firstObject;
+    dispatch_semaphore_signal(_deviceTasksLock);
+    return deviceTask;
+}
+
+- (void)syncRunTask {
+    if (self.runningTask.isRunning) {
+        return;
+    }
+    if (!self.runningTask) {
+        self.runningTask = [self nextDeviceTask];
+    }
+    if (self.runningTask) {
+        self.runningTask.running = YES;
+        if (self.runningTask.taskEvent == CameraDeviceTaskStartPreview) {
+            [self startPreview];
+        } else if (self.runningTask.taskEvent == CameraDeviceTaskStopPreview) {
+            [self stopPreview];
+        }
+    }
+}
+
+- (void)task:(CameraDeviceTaskEvent)taskEvent completeWithError:(NSError *)error {
+    CameraDeviceTask *task = nil;
+    if (self.runningTask.taskEvent == taskEvent) {
+        task = self.runningTask;
+        [self removeTask:task];
+        self.runningTask = nil;
+    }
+    if (!task) {
+        return;
+    }
+    task.running = NO;
+    [self syncRunTask];
     
+}
 
 @end

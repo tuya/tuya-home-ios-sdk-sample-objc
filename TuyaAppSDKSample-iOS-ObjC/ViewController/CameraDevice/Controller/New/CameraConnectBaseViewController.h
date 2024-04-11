@@ -23,9 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) CameraVideoView *videoView;
 
-- (void)applicationDidEnterBackgroundNotification:(NSNotification *)notification;
+- (void)applicationDidEnterBackgroundNotification:(nullable NSNotification *)notification;
 
-- (void)applicationWillEnterForegroundNotification:(NSNotification *)notification;
+- (void)applicationWillEnterForegroundNotification:(nullable NSNotification *)notification;
 
 - (void)disconnect;
 

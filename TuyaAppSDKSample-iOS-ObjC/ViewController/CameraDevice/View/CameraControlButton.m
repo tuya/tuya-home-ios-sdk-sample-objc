@@ -10,7 +10,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-
+        self.layer.borderColor = UIColor.blackColor.CGColor;
+        self.layer.borderWidth = 0.5;
+        _imageToTitleMargin = 8;
     }
     return self;
 }
@@ -24,7 +26,7 @@
     
     CGFloat imageHeight = self.imageView.frame.size.height;
     CGFloat titleHeight = self.titleLabel.frame.size.height;
-    CGFloat imageToTitle = 8;
+    CGFloat imageToTitle = self.imageToTitleMargin;
     
     CGFloat imageTop = (self.frame.size.height - imageHeight - titleHeight - imageToTitle) / 2;
     CGFloat imageLeft = (self.frame.size.width - self.imageView.frame.size.width) / 2;
