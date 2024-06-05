@@ -28,6 +28,7 @@
 		348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */; };
 		348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */; };
 		34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */; };
+		34F5A8422C109299009C793C /* UIImage+DemoQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5A8402C109299009C793C /* UIImage+DemoQRCode.m */; };
 		34FF2C6725AE8B6100152CA6 /* ThingSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* ThingSmartMain.storyboard */; };
 		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
 		34FF2CB025AE90C800152CA6 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2CAF25AE90C800152CA6 /* UIButton+Extensions.m */; };
@@ -247,6 +248,8 @@
 		348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APModeTableViewController.m; sourceTree = "<group>"; };
 		34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailTableViewController.h; sourceTree = "<group>"; };
 		34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailTableViewController.m; sourceTree = "<group>"; };
+		34F5A8402C109299009C793C /* UIImage+DemoQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DemoQRCode.m"; sourceTree = "<group>"; };
+		34F5A8412C109299009C793C /* UIImage+DemoQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DemoQRCode.h"; sourceTree = "<group>"; };
 		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ThingSmartMain.storyboard; sourceTree = "<group>"; };
 		34FF2C6925AE8CC900152CA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		34FF2C6A25AE8CC900152CA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -1066,6 +1069,8 @@
 		AF5531CD25A58F6D00E13562 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				34F5A8412C109299009C793C /* UIImage+DemoQRCode.h */,
+				34F5A8402C109299009C793C /* UIImage+DemoQRCode.m */,
 				AF5531CE25A58F8A00E13562 /* Alert.h */,
 				AF5531CF25A58F8A00E13562 /* Alert.m */,
 				34FF2CAE25AE904E00152CA6 /* UIButton+Extensions.h */,
@@ -1318,6 +1323,7 @@
 				93FC16FD2BC23EBA00F9EAA5 /* DemoSplitVideoViewDispatcher.m in Sources */,
 				93FC17222BC2A9CE00F9EAA5 /* DemoSplitVideoOperator.m in Sources */,
 				93FC17002BC2479800F9EAA5 /* DemoVideoLocalizerView.m in Sources */,
+				34F5A8422C109299009C793C /* UIImage+DemoQRCode.m in Sources */,
 				93077A662BBCF4D200701C65 /* CameraControlButtonItem.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
 				938CBCA829E810DE0086C6F4 /* CameraNewViewController.m in Sources */,
