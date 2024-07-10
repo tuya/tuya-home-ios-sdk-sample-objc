@@ -1,7 +1,7 @@
 # Maintenance Discontinuation Notice
 
 This Demo project is no longer maintained as of version 5.8. Please use the [Swift version Demo]((https://github.com/tuya/tuya-home-ios-sdk-sample-swift)
-) instead.
+) https://github.com/tuya/tuya-home-ios-sdk-sample-swift instead.
 
 
 ---
