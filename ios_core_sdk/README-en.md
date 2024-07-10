@@ -1,3 +1,11 @@
+# Maintenance Discontinuation Notice
+
+This Demo project is no longer maintained as of version 5.8. Please use the [Swift version Demo]((https://github.com/tuya/tuya-home-ios-sdk-sample-swift)
+) instead.
+
+
+---
+
 # iOS 5.0 SDK User Guide
 > **Note**
 > If you are upgrading from a version below 5.x, please refer to the，请根据 [Migration Guide](https://developer.tuya.com/en/docs/app-development/migration_guide?id=Kci3zqm3wlcut) for upgrading.
