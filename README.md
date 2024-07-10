@@ -1,3 +1,11 @@
+# Maintenance Discontinuation Notice
+
+This Demo project is no longer maintained as of version 5.8. Please use the [Swift version Demo]((https://github.com/tuya/tuya-home-ios-sdk-sample-swift)
+) instead.
+
+
+---
+
 # Tuya iOS Smart Life App SDK Sample for Objective-C
 
 This sample demonstrates the use of Tuya iOS Smart Life App SDK to build an IoT app from scratch. Tuya iOS Smart Life App SDK is divided into several function groups to give developers a clear insight into the implementation for different features, including the user registration process, home management for different users, device network configuration, and controls. For device network configuration, the EZ mode and AP mode are implemented. This allows developers to pair devices over Wi-Fi and control the devices over LAN and MQTT. For device control, a common panel is used to send and receive any type of data points.
