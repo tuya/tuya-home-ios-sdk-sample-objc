@@ -20,8 +20,8 @@
         _devId = devId;
         _cameraDevice = [CameraDeviceManager.sharedManager getCameraDeviceWithDevId:devId];
         
-        _videoView = [[CameraVideoView alloc] initWithFrame:CGRectZero];
-        _videoView.renderView = _cameraDevice.videoView;
+        _videoView = [[ThingCameraVideoContainer alloc] initWithFrame:CGRectZero];
+        _videoView.videoView = _cameraDevice.videoView;
     }
     return self;
 }
@@ -39,7 +39,7 @@
     [self.cameraDevice addDelegate:self];
 
     [self.cameraDevice bindVideoRenderView];
-    self.videoView.renderView = self.cameraDevice.videoView;
+    self.videoView.videoView = self.cameraDevice.videoView;
 }
 
 

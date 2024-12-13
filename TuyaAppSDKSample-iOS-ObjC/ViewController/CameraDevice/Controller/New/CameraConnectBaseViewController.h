@@ -10,6 +10,7 @@
 #import "CameraVideoView.h"
 
 #import "CameraBaseViewController.h"
+#import "ThingCameraVideoContainer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) CameraDevice *cameraDevice;
 
-@property (nonatomic, strong, readonly) CameraVideoView *videoView;
+@property (nonatomic, strong, readonly) ThingCameraVideoContainer *videoView;
 
 - (void)applicationDidEnterBackgroundNotification:(nullable NSNotification *)notification;
 

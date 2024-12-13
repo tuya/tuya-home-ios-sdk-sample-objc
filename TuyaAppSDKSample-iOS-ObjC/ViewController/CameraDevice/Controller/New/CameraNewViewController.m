@@ -341,7 +341,7 @@
 
 - (void)toolbarFoldingButtonClicked:(CameraLoadingButton *)sender {
     sender.selected = !sender.selected;
-    
+    [self.videoView setVideoScaled:1.0];
     if (self.splitVideoView) {
         [self.splitVideoView setToolbarFolding:sender.selected];
     }
