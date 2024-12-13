@@ -28,6 +28,8 @@
 		348543CA25C2CD6400F1EF21 /* LabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543C925C2CD6400F1EF21 /* LabelTableViewCell.m */; };
 		348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */; };
 		34C8EFBC25CE3AFA00503FB6 /* DeviceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */; };
+		34E708922D0BE6E2002D4741 /* CameraVideoGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E7088E2D0BE6E2002D4741 /* CameraVideoGestureView.m */; };
+		34E708932D0BE6E2002D4741 /* ThingCameraVideoContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E708902D0BE6E2002D4741 /* ThingCameraVideoContainer.m */; };
 		34F5A8422C109299009C793C /* UIImage+DemoQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5A8402C109299009C793C /* UIImage+DemoQRCode.m */; };
 		34FF2C6725AE8B6100152CA6 /* ThingSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FF2C6525AE8B6100152CA6 /* ThingSmartMain.storyboard */; };
 		34FF2C6B25AE8CC900152CA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FF2C6A25AE8CC900152CA6 /* MainViewController.m */; };
@@ -248,6 +250,10 @@
 		348543CD25C2DE5B00F1EF21 /* APModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APModeTableViewController.m; sourceTree = "<group>"; };
 		34C8EFBA25CE3AFA00503FB6 /* DeviceDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailTableViewController.h; sourceTree = "<group>"; };
 		34C8EFBB25CE3AFA00503FB6 /* DeviceDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailTableViewController.m; sourceTree = "<group>"; };
+		34E7088D2D0BE6E2002D4741 /* CameraVideoGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVideoGestureView.h; sourceTree = "<group>"; };
+		34E7088E2D0BE6E2002D4741 /* CameraVideoGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVideoGestureView.m; sourceTree = "<group>"; };
+		34E7088F2D0BE6E2002D4741 /* ThingCameraVideoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingCameraVideoContainer.h; sourceTree = "<group>"; };
+		34E708902D0BE6E2002D4741 /* ThingCameraVideoContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingCameraVideoContainer.m; sourceTree = "<group>"; };
 		34F5A8402C109299009C793C /* UIImage+DemoQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DemoQRCode.m"; sourceTree = "<group>"; };
 		34F5A8412C109299009C793C /* UIImage+DemoQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DemoQRCode.h"; sourceTree = "<group>"; };
 		34FF2C6625AE8B6100152CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ThingSmartMain.storyboard; sourceTree = "<group>"; };
@@ -599,6 +605,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		34E708912D0BE6E2002D4741 /* CameraGestureView */ = {
+			isa = PBXGroup;
+			children = (
+				34E7088D2D0BE6E2002D4741 /* CameraVideoGestureView.h */,
+				34E7088E2D0BE6E2002D4741 /* CameraVideoGestureView.m */,
+				34E7088F2D0BE6E2002D4741 /* ThingCameraVideoContainer.h */,
+				34E708902D0BE6E2002D4741 /* ThingCameraVideoContainer.m */,
+			);
+			path = CameraGestureView;
+			sourceTree = "<group>";
+		};
 		34FF2DF225B02A4700152CA6 /* HomeManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +797,7 @@
 		938CBC4129E810DD0086C6F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34E708912D0BE6E2002D4741 /* CameraGestureView */,
 				938CBC4229E810DD0086C6F4 /* CameraVideoView.m */,
 				938CBC4329E810DD0086C6F4 /* CameraCalendarView.m */,
 				938CBC4429E810DD0086C6F4 /* CameraCollectionPointListCell.h */,
@@ -1324,6 +1342,7 @@
 				93FC17222BC2A9CE00F9EAA5 /* DemoSplitVideoOperator.m in Sources */,
 				93FC17002BC2479800F9EAA5 /* DemoVideoLocalizerView.m in Sources */,
 				34F5A8422C109299009C793C /* UIImage+DemoQRCode.m in Sources */,
+				34E708932D0BE6E2002D4741 /* ThingCameraVideoContainer.m in Sources */,
 				93077A662BBCF4D200701C65 /* CameraControlButtonItem.m in Sources */,
 				348543CE25C2DE5C00F1EF21 /* APModeTableViewController.m in Sources */,
 				938CBCA829E810DE0086C6F4 /* CameraNewViewController.m in Sources */,
@@ -1376,6 +1395,7 @@
 				AF54CA5025A4191000FCAC1F /* AppDelegate.m in Sources */,
 				93FC17032BC24AC300F9EAA5 /* DemoSplitVideoLocalizerTimer.m in Sources */,
 				AF54CA6125A4191A00FCAC1F /* main.m in Sources */,
+				34E708922D0BE6E2002D4741 /* CameraVideoGestureView.m in Sources */,
 				938CBCB229E810DE0086C6F4 /* CameraVideoView.m in Sources */,
 				93FC16EF2BC239DC00F9EAA5 /* CameraSplitVideoView.m in Sources */,
 				938CBCA429E810DE0086C6F4 /* CameraMessageViewController.m in Sources */,
