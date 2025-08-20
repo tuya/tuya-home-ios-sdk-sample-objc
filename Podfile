@@ -1,9 +1,6 @@
 source 'https://cdn.cocoapods.org/'
-#source 'https://github.com/tuya/TuyaPublicSpecs.git'
-#source 'https://github.com/tuya/tuya-pod-specs.git'
-
-source 'https://registry.code.tuya-inc.top/tuyaIOS/TYSpecsThird.git' # 三方库源
-source 'https://registry.code.tuya-inc.top/tuyaIOS/TYSpecs.git'   # 私有库
+source 'https://github.com/tuya/TuyaPublicSpecs.git'
+source 'https://github.com/tuya/tuya-pod-specs.git'
 
 target 'TuyaAppSDKSample-iOS-ObjC' do
   pod 'SVProgressHUD'
